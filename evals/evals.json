@@ -1,0 +1,142 @@
+{
+  "skill_name": "mission-lock",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Can you look at this certificate of incorporation and tell me about the company's structure and whether there's anything protecting its mission long-term? It's Vital Farms.",
+      "expected_output": "A report with one section per attribute in references/attributes.md (currently Company Name, Public Benefit Corporation Status, Stated Purpose), each with a definitive Answer plus quoted/paraphrased Evidence. Company name 'Vital Farms, Inc.', PBC status 'Yes' (explicit Subchapter XV / 'Public Benefit Corporation' language), and the specific public benefit purpose quoted. No scoring or recommendation language.",
+      "files": [
+        "documents/vital-farms-cert-of-incorporation/d841617dex32.htm"
+      ],
+      "expectations": [
+        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md: Company Name, Public Benefit Corporation Status, Stated Purpose",
+        "The Company Name answer is 'Vital Farms, Inc.' (or equivalent exact legal name as stated in the document)",
+        "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation",
+        "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language rather than a generic description",
+        "No attribute answer is 'Could not determine' for this document, since all three attributes are clearly stated in it",
+        "Output contains no evaluative or judgmental language about the company's mission lock, such as 'strong', 'weak', 'good', 'bad', 'should', or 'recommend'",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (currently: Mission Existence and Breachability)",
+        "The Mission Existence and Breachability result is 'Affirmative' (Vital Farms' Article III enumerates six specific public benefits identifying who benefits), not 'Could not determine'",
+        "The rule result cites specific document language as evidence rather than asserting a conclusion without support",
+        "The rule assessment does not evaluate whether the mission is good, admirable, or worthwhile — only whether it exists, names beneficiaries, and is specific enough to be breached"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm doing diligence on Allbirds. Here's their certificate of incorporation (they converted to a PBC right around their IPO) — can you break down what that conversion actually locked in, if anything?",
+      "expected_output": "Company Name 'Allbirds, Inc.', PBC Status 'Yes', and Stated Purpose quoting the specific public benefit language, each with evidence. Should note in Notes that this is a restated certificate reflecting a conversion, not the original founding document.",
+      "files": [
+        "documents/allbirds-cert-of-incorporation/exhibit33-sx1a1.htm"
+      ],
+      "expectations": [
+        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "The Company Name answer is 'Allbirds, Inc.'",
+        "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation",
+        "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language",
+        "Output notes somewhere (Notes or Evidence) that the document is an amended and restated certificate rather than an original founding document",
+        "Output contains no evaluative or judgmental language about whether the conversion is meaningful, adequate, or effective",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "The Mission Existence and Breachability result is a definitive 'Affirmative' or 'Not affirmative' rather than 'Could not determine', since the document states a public benefit ('environmental conservation')",
+        "The rule result cites specific document language as evidence",
+        "If the result reasons about whether 'environmental conservation' is specific enough for a third party to identify a breach, it does so descriptively without judging the mission's quality or adequacy"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "attached is datadog's certificate of incorporation from their S-1, can you extract the basic info and check it against your mission lock attributes",
+      "expected_output": "Company Name 'Datadog, Inc.', PBC Status 'No' (confident negative, not 'Could not determine'), and Stated Purpose quoting the generic 'any lawful act' boilerplate as the definitive answer (not treated as a missing/undeterminable answer).",
+      "files": [
+        "documents/datadog-cert-of-incorporation/d745413dex31.htm"
+      ],
+      "expectations": [
+        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "The Company Name answer is 'Datadog, Inc.'",
+        "The Public Benefit Corporation Status answer is a confident 'No', not 'Could not determine'",
+        "The Stated Purpose answer reports the generic/boilerplate purpose language as a definitive finding, not as 'Could not determine'",
+        "No attribute answer is 'Could not determine' for this document, since all three are determinable even though PBC status is negative and purpose is generic",
+        "Output does not describe the absence of PBC status or a specific purpose using negative/judgmental framing such as 'lacks', 'fails to', or 'unprotected'",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "The Mission Existence and Breachability result is a confident 'Not affirmative' — Datadog's generic 'any lawful act' purpose clause states no mission and names no beneficiary class — and is NOT reported as 'Could not determine'",
+        "The rule result cites the generic purpose clause as the evidence for the negative finding",
+        "The negative rule result is stated neutrally, without framing the absence of a breachable mission as a deficiency (e.g. 'lacks', 'fails to', 'unprotected')"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Squarespace has this dual-class stock thing going on. Does their certificate of incorporation have any real mission-lock provisions, or is it just founder control?",
+      "expected_output": "Company Name 'Squarespace, Inc.', PBC Status 'No', Stated Purpose reported as generic boilerplate. Since dual-class voting isn't in the current attribute catalog, it should not be answered as one of the three attributes, but may be mentioned in Notes as a candidate future attribute.",
+      "files": [
+        "documents/squarespace-cert-of-incorporation/tm213918d7_ex3-1.htm"
+      ],
+      "expectations": [
+        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md, and does not answer the dual-class stock structure as if it were one of the three attributes",
+        "The Public Benefit Corporation Status answer is a confident 'No', not 'Could not determine'",
+        "The Stated Purpose answer reports the generic/boilerplate purpose language as a definitive finding",
+        "If the dual-class Class A / Class B structure is mentioned, it appears in Notes as an observation or candidate future attribute, not folded into the Stated Purpose or PBC Status answers",
+        "Output contains no evaluative language ranking founder control as better or worse than mission lock",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "The Mission Existence and Breachability result is a confident 'Not affirmative' for Squarespace's generic purpose clause, not 'Could not determine'",
+        "The rule assessment does not treat the dual-class/founder-control structure as satisfying the mission-existence rule",
+        "The negative rule result is stated neutrally rather than as a criticism of the company"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Here's Lemonade's cert of incorporation, they're a PBC I think - what does it say about their purpose and what happens if they ever wanted to change it?",
+      "expected_output": "Company Name 'Lemonade, Inc.', PBC Status 'Yes', Stated Purpose quoting the specific public benefit language. Amendment mechanics aren't in the current attribute catalog, so the 'what happens if they wanted to change it' part of the question may be addressed in Notes at most, not as a required attribute answer.",
+      "files": [
+        "documents/lemonade-cert-of-incorporation/a2241721zex-3_1.htm"
+      ],
+      "expectations": [
+        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "The Company Name answer is 'Lemonade, Inc.'",
+        "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation",
+        "The Stated Purpose answer quotes or closely paraphrases specific language from the document rather than describing it only in general terms",
+        "Output does not invent an 'Amendment Thresholds' attribute section to answer the amendment part of the question, since that attribute isn't currently in references/attributes.md",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "The Mission Existence and Breachability result is definitive ('Affirmative' or 'Not affirmative'), not 'Could not determine', given Lemonade's specific stated public benefit purpose",
+        "The rule result cites specific document language from the purpose clause as evidence",
+        "The rule assessment stays within the question asked (existence, beneficiary, breachability) without rating the mission's quality"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "this is a long one but it's Laureate Education's charter, they were one of the first big PBC IPOs. can you do the full mission lock writeup? there's also some preferred stock stuff bundled into the same exhibit, not sure if that's relevant",
+      "expected_output": "Company Name 'Laureate Education, Inc.', PBC Status 'Yes', Stated Purpose quoted. Should note in Notes that the exhibit bundles a Series A Preferred certificate of designations alongside the certificate of incorporation, without letting that content interfere with the three required attribute answers.",
+      "files": [
+        "documents/laureate-education-cert-of-incorporation/a2230553zex-3_1.htm"
+      ],
+      "expectations": [
+        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md, not truncated due to the document's length",
+        "The Company Name answer is 'Laureate Education, Inc.'",
+        "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation",
+        "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language",
+        "Output notes in Notes that the exhibit bundles a Series A Preferred Stock certificate of designations alongside the certificate of incorporation",
+        "Output contains no evaluative or judgmental language about the company's mission lock",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md, not truncated due to the document's length",
+        "The Mission Existence and Breachability result is definitive ('Affirmative' or 'Not affirmative'), not 'Could not determine'",
+        "The rule result cites specific document language from Laureate's purpose clause as evidence",
+        "The rule assessment does not evaluate whether the education-related mission is good or worthwhile, only whether it meets the rule's stated condition"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "can you compare Vital Farms and Datadog's certificates of incorporation side by side in terms of mission lock? just want to see how a PBC differs from a normal Delaware corp on paper",
+      "expected_output": "Both companies' Company Name, PBC Status, and Stated Purpose answered definitively (Vital Farms: Yes + specific purpose; Datadog: No + generic purpose), with the contrast made explicit and neutral.",
+      "files": [
+        "documents/vital-farms-cert-of-incorporation/d841617dex32.htm",
+        "documents/datadog-cert-of-incorporation/d745413dex31.htm"
+      ],
+      "expectations": [
+        "Output answers all three current attributes for both companies, not just the ones where they differ",
+        "Vital Farms' Public Benefit Corporation Status answer is 'Yes' and Datadog's is 'No', both stated as confident answers rather than 'Could not determine'",
+        "Output explicitly contrasts the two companies' Stated Purpose answers (specific public benefit language vs. generic 'any lawful act' language)",
+        "Output does not use comparative judgment language such as 'better', 'worse', 'superior', or 'more protected' when contrasting the two companies",
+        "Output includes rule results for both companies, covering every rule currently in skills/mission-lock/references/rules.md",
+        "Vital Farms' Mission Existence and Breachability result is 'Affirmative' and Datadog's is 'Not affirmative', both stated definitively rather than as 'Could not determine'",
+        "Each company's rule result cites that company's own document language as evidence",
+        "The rule comparison does not use comparative judgment language, and does not frame one company's result as better, stronger, or more protected than the other's"
+      ]
+    }
+  ]
+}
