@@ -15,10 +15,14 @@
         "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language rather than a generic description",
         "No attribute answer is 'Could not determine' for this document, since all three attributes are clearly stated in it",
         "Output contains no evaluative or judgmental language about the company's mission lock, such as 'strong', 'weak', 'good', 'bad', 'should', or 'recommend'",
-        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (currently: Mission Existence and Breachability)",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (currently: Mission Existence and Breachability, Mission Protection from Ordinary Majority)",
         "The Mission Existence and Breachability result is 'Affirmative' (Vital Farms' Article III enumerates six specific public benefits identifying who benefits), not 'Could not determine'",
         "The rule result cites specific document language as evidence rather than asserting a conclusion without support",
-        "The rule assessment does not evaluate whether the mission is good, admirable, or worthwhile — only whether it exists, names beneficiaries, and is specific enough to be breached"
+        "The rule assessment does not evaluate whether the mission is good, admirable, or worthwhile — only whether it exists, names beneficiaries, and is specific enough to be breached",
+        "The Mission Protection from Ordinary Majority result is 'Affirmative', not 'Could not determine'",
+        "The rule result cites Article IX's requirement of a 66⅔% supermajority vote to alter, amend, or repeal Article III (the public benefit article) as evidence, rather than citing PBC status alone",
+        "The rule assessment does not treat PBC status by itself as satisfying this rule — it specifically identifies the supermajority entrenchment mechanism that prevents an ordinary majority from amending the mission",
+        "The rule result does not characterize the 66⅔% threshold as 'strong' or 'good' protection — only that it exists and what it requires"
       ]
     },
     {
@@ -38,7 +42,10 @@
         "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
         "The Mission Existence and Breachability result is a definitive 'Affirmative' or 'Not affirmative' rather than 'Could not determine', since the document states a public benefit ('environmental conservation')",
         "The rule result cites specific document language as evidence",
-        "If the result reasons about whether 'environmental conservation' is specific enough for a third party to identify a breach, it does so descriptively without judging the mission's quality or adequacy"
+        "If the result reasons about whether 'environmental conservation' is specific enough for a third party to identify a breach, it does so descriptively without judging the mission's quality or adequacy",
+        "The Mission Protection from Ordinary Majority result is 'Affirmative', not 'Could not determine'",
+        "The rule result cites the requirement of a 66⅔% supermajority vote to alter, amend, or repeal Article III (the public benefit article) as evidence, not PBC status alone",
+        "The rule assessment does not equate 'converted to a PBC' with 'the mission is protected from ordinary majority' — it specifically identifies the entrenchment mechanism, distinguishing the conversion itself from what actually locks it in"
       ]
     },
     {
@@ -58,7 +65,9 @@
         "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
         "The Mission Existence and Breachability result is a confident 'Not affirmative' — Datadog's generic 'any lawful act' purpose clause states no mission and names no beneficiary class — and is NOT reported as 'Could not determine'",
         "The rule result cites the generic purpose clause as the evidence for the negative finding",
-        "The negative rule result is stated neutrally, without framing the absence of a breachable mission as a deficiency (e.g. 'lacks', 'fails to', 'unprotected')"
+        "The negative rule result is stated neutrally, without framing the absence of a breachable mission as a deficiency (e.g. 'lacks', 'fails to', 'unprotected')",
+        "The Mission Protection from Ordinary Majority result is a confident 'Not affirmative', not 'Could not determine' — there is no mission to protect and no charter-level supermajority or entrenchment provision of any kind",
+        "The negative result is stated neutrally, without framing the absence of a lock-holding body or entrenchment provision as a deficiency"
       ]
     },
     {
@@ -77,7 +86,10 @@
         "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
         "The Mission Existence and Breachability result is a confident 'Not affirmative' for Squarespace's generic purpose clause, not 'Could not determine'",
         "The rule assessment does not treat the dual-class/founder-control structure as satisfying the mission-existence rule",
-        "The negative rule result is stated neutrally rather than as a criticism of the company"
+        "The negative rule result is stated neutrally rather than as a criticism of the company",
+        "The Mission Protection from Ordinary Majority result is a confident 'Not affirmative', not 'Could not determine' — there is no mission to protect, and the dual-class supervoting structure is a founder-control mechanism, not a mission-lock provision",
+        "The rule assessment explicitly does not treat the Class A/B dual-class structure as satisfying this rule, since it entrenches founder control rather than a stated mission",
+        "The negative rule result is stated neutrally rather than as a criticism of the company's governance choices"
       ]
     },
     {
@@ -96,7 +108,11 @@
         "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
         "The Mission Existence and Breachability result is definitive ('Affirmative' or 'Not affirmative'), not 'Could not determine', given Lemonade's specific stated public benefit purpose",
         "The rule result cites specific document language from the purpose clause as evidence",
-        "The rule assessment stays within the question asked (existence, beneficiary, breachability) without rating the mission's quality"
+        "The rule assessment stays within the question asked (existence, beneficiary, breachability) without rating the mission's quality",
+        "The Mission Protection from Ordinary Majority result is a confident 'Not affirmative', not 'Could not determine', even though Lemonade is a PBC with a stated mission — the certificate has no charter-level supermajority or entrenchment provision protecting the purpose article, and no distinct lock-holding body",
+        "The rule result does not treat PBC status or the existence of a stated purpose as sufficient on its own to satisfy this rule — it distinguishes 'has a mission' (Rule 1: Affirmative) from 'the mission is protected from ordinary majority override' (Rule 2: Not affirmative)",
+        "If percentage vote thresholds elsewhere in the document (e.g. Series Seed/Series A preferred protective provisions) are mentioned, they are not mistaken for a mission-entrenchment provision, since they protect preferred stockholders' economic rights rather than the purpose article",
+        "This directly answers the user's 'what happens if they wanted to change it' question by reporting, neutrally, that ordinary majority amendment applies to the purpose clause — without characterizing that as a shortcoming"
       ]
     },
     {
@@ -116,7 +132,10 @@
         "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md, not truncated due to the document's length",
         "The Mission Existence and Breachability result is definitive ('Affirmative' or 'Not affirmative'), not 'Could not determine'",
         "The rule result cites specific document language from Laureate's purpose clause as evidence",
-        "The rule assessment does not evaluate whether the education-related mission is good or worthwhile, only whether it meets the rule's stated condition"
+        "The rule assessment does not evaluate whether the education-related mission is good or worthwhile, only whether it meets the rule's stated condition",
+        "The Mission Protection from Ordinary Majority result is 'Affirmative', not 'Could not determine'",
+        "The rule result cites the certificate's requirement of a 66⅔% supermajority vote to amend, repeal, or adopt any provision of the certificate as evidence — noting (in Evidence or Notes) that this threshold applies to the certificate as a whole rather than singling out the purpose article specifically",
+        "The rule result is not confused by the Series A Preferred certificate of designations bundled in the same exhibit — the supermajority provision cited comes from the certificate of incorporation itself, not from preferred-stock protective provisions"
       ]
     },
     {
@@ -135,7 +154,9 @@
         "Output includes rule results for both companies, covering every rule currently in skills/mission-lock/references/rules.md",
         "Vital Farms' Mission Existence and Breachability result is 'Affirmative' and Datadog's is 'Not affirmative', both stated definitively rather than as 'Could not determine'",
         "Each company's rule result cites that company's own document language as evidence",
-        "The rule comparison does not use comparative judgment language, and does not frame one company's result as better, stronger, or more protected than the other's"
+        "The rule comparison does not use comparative judgment language, and does not frame one company's result as better, stronger, or more protected than the other's",
+        "Vital Farms' Mission Protection from Ordinary Majority result is 'Affirmative' (citing Article IX's 66⅔% supermajority requirement to amend Article III) and Datadog's is 'Not affirmative' (citing the absence of any mission or entrenchment provision), both stated definitively",
+        "The contrast is described mechanically (e.g. 'Vital Farms' Article IX requires a 66⅔% vote to amend Article III; Datadog's certificate has no equivalent provision and no stated mission for one to apply to') rather than as one company being better protected than the other"
       ]
     }
   ]
