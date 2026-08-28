@@ -13,6 +13,7 @@ This is the catalog of "Mission Lock" rules this skill checks for when analyzing
 This is the most important assessment instruction in this file, applying to every Rule in perpetuity:
 
   1. Every answer must be definitive.
+  1. Never hedge a definitive answer with confidence language (e.g. "close call", "narrow margin").
   1. Never offer a best guess; guessing is not permissable.
   1. If you're uncertain, say "Could not determine."
 
@@ -62,6 +63,20 @@ Append a new `###` section following the template below.
 **Typically Found Location:** Articles of Incorporation
 
 **When to say "Could not determine:"** You cannot locate a mission of any sort, or the document is missing, illegible, or truncated where the mission would be. Note that a mission whose wording is vague is not a case for "Could not determine" — apply the breachability bar above and answer definitively.
+
+### Paramount Purpose
+
+**Positive Assertion:** Purpose is paramount in the constitutional documents.
+
+**Question:** Is the mission legally binding, or merely aspirational?
+
+**Affirmative Condition:** PBC or an equivalent legal form in the relevant jurisdiction. The stated purpose appears in the constitutional documents, and directors are permitted or required to prioritize it.
+
+**Categories of Evidence:** Filed charter / articles of association
+
+**Typically Found Location:** Articles of Incorporation
+
+**When to say "Could not determine:"** You cannot locate a mission of any sort, or the document is missing, illegible, or truncated where the mission would be. Note that a mission whose wording is vague is not a case for "Could not determine" — apply the binding bar above and answer definitively.
 
 ### Mission Protection from Ordinary Majority
 
