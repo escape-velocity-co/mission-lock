@@ -42,7 +42,7 @@ Append a new `###` section following the template below.
 
 **Typically Found Location:** The documents and location(s) within a document this information typically resides. Legal documents are relatively standard and most information will be where we expect. 
 
-**When to say "Could not determine:"** What condition(s) exist such that it is not possible for this skill to make an assertion.
+**When to say "Could not determine:"** This presence of this in the template is optional. It is provided when conditions exist in the governance documents such that it is not possible for this skill to make an assertion.
 ```
 
 ## Rule Definitions
@@ -77,3 +77,20 @@ Append a new `###` section following the template below.
 **Typically Found Location:** Articles of Incorporation
 
 **When to say "Could not determine:"** You cannot locate a mission of any sort, or the document is missing, illegible, or truncated where the mission would be. Note that a mission whose wording is vague is not a case for "Could not determine" — apply the binding bar above and answer definitively.
+
+### Mission Protection from Ordinary Majority
+
+**Positive Assertion:** No ordinary majority can override the mission.
+
+**Question:** Who can say no when everyone else says yes?
+
+**Affirmative Condition:** Tested at the level of EFFECT, not mechanism. Satisfied by ANY of:
+  * (a) a distinct lock-holding body - trust, foundation, golden share, employee ownership trust, cooperative member body - holding real power and owing a duty to the purpose;
+  * (b) a constitutionally distributed lock, where binding provisions sit across a federated or member constitution and cannot be amended by simple majority. Route (b) must be DEMONSTRATED provision by provision, not asserted;
+  * (c) a charter-level supermajority-vote entrenchment provision that specifically applies to the article(s) stating the mission/purpose (or to the certificate as a whole), set above a simple majority, so that the ordinary stockholder body cannot amend or repeal the mission by simple majority vote. A supermajority requirement aimed at an unrelated matter (e.g. removing directors for cause, approving a merger) does not satisfy this route unless it also, by its terms, covers the mission/purpose article.
+
+Advisory bodies satisfy none of the above.
+
+**Categories of Evidence:** Charter, share class terms, trust deed, federation constitution and member bylaws, charter amendment/entrenchment provisions and the vote thresholds they set
+
+**Typically Found Location:** Articles of Incorporation, particularly the amendment article (often titled "Amendment" or near the end of the document) and any article addressing supermajority voting requirements
