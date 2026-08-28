@@ -105,7 +105,10 @@ rules as it does for attributes.
      your own opinion of whether something is a *good* mission leak in.
    - Every rule gets reported, even if the answer is "Could not determine."
 
-4. **Write the report** using the structure below.
+4. **Write the report** using the structure below. Your response must begin
+   with the exact heading `# Mission Lock Analysis — ...` as its first
+   characters — no preamble narrating what was read or confirming
+   completeness before it, and nothing after the structure below.
 
 ## Report structure
 

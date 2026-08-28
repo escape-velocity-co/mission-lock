@@ -15,10 +15,12 @@
         "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language rather than a generic description",
         "No attribute answer is 'Could not determine' for this document, since all three attributes are clearly stated in it",
         "Output contains no evaluative or judgmental language about the company's mission lock, such as 'strong', 'weak', 'good', 'bad', 'should', or 'recommend'",
-        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (currently: Mission Existence and Breachability)",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md: both Mission Existence and Breachability, and Paramount Purpose",
         "The Mission Existence and Breachability result is 'Affirmative' (Vital Farms' Article III enumerates six specific public benefits identifying who benefits), not 'Could not determine'",
         "The rule result cites specific document language as evidence rather than asserting a conclusion without support",
-        "The rule assessment does not evaluate whether the mission is good, admirable, or worthwhile — only whether it exists, names beneficiaries, and is specific enough to be breached"
+        "The rule assessment does not evaluate whether the mission is good, admirable, or worthwhile — only whether it exists, names beneficiaries, and is specific enough to be breached",
+        "The Paramount Purpose result is 'Affirmative', not 'Could not determine', since Vital Farms is a Delaware PBC (Subchapter XV) with its public benefit purpose stated in Article III",
+        "The Paramount Purpose evidence cites both the statutory PBC designation and the stated purpose, not just one or the other"
       ]
     },
     {
@@ -35,10 +37,12 @@
         "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language",
         "Output notes somewhere (Notes or Evidence) that the document is an amended and restated certificate rather than an original founding document",
         "Output contains no evaluative or judgmental language about whether the conversion is meaningful, adequate, or effective",
-        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md: both Mission Existence and Breachability, and Paramount Purpose",
         "The Mission Existence and Breachability result is a definitive 'Affirmative' or 'Not affirmative' rather than 'Could not determine', since the document states a public benefit ('environmental conservation')",
         "The rule result cites specific document language as evidence",
-        "If the result reasons about whether 'environmental conservation' is specific enough for a third party to identify a breach, it does so descriptively without judging the mission's quality or adequacy"
+        "If the result reasons about whether 'environmental conservation' is specific enough for a third party to identify a breach, it does so descriptively without judging the mission's quality or adequacy",
+        "The Paramount Purpose result is 'Affirmative', not 'Could not determine', since Allbirds is a Delaware PBC (Subchapter XV) with its public benefit purpose stated in Article III",
+        "No rule result is hedged with confidence language such as 'close call' or 'narrow margin'"
       ]
     },
     {
@@ -55,10 +59,12 @@
         "The Stated Purpose answer reports the generic/boilerplate purpose language as a definitive finding, not as 'Could not determine'",
         "No attribute answer is 'Could not determine' for this document, since all three are determinable even though PBC status is negative and purpose is generic",
         "Output does not describe the absence of PBC status or a specific purpose using negative/judgmental framing such as 'lacks', 'fails to', or 'unprotected'",
-        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md: both Mission Existence and Breachability, and Paramount Purpose",
         "The Mission Existence and Breachability result is a confident 'Not affirmative' — Datadog's generic 'any lawful act' purpose clause states no mission and names no beneficiary class — and is NOT reported as 'Could not determine'",
         "The rule result cites the generic purpose clause as the evidence for the negative finding",
-        "The negative rule result is stated neutrally, without framing the absence of a breachable mission as a deficiency (e.g. 'lacks', 'fails to', 'unprotected')"
+        "The negative rule result is stated neutrally, without framing the absence of a breachable mission as a deficiency (e.g. 'lacks', 'fails to', 'unprotected')",
+        "The Paramount Purpose result is a confident 'Not affirmative', not 'Could not determine', since Datadog has no PBC or equivalent statutory designation",
+        "The Paramount Purpose negative result cites the absence of PBC status as the basis, not merely the generic purpose clause"
       ]
     },
     {
@@ -74,10 +80,12 @@
         "The Stated Purpose answer reports the generic/boilerplate purpose language as a definitive finding",
         "If the dual-class Class A / Class B structure is mentioned, it appears in Notes as an observation or candidate future attribute, not folded into the Stated Purpose or PBC Status answers",
         "Output contains no evaluative language ranking founder control as better or worse than mission lock",
-        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md: both Mission Existence and Breachability, and Paramount Purpose",
         "The Mission Existence and Breachability result is a confident 'Not affirmative' for Squarespace's generic purpose clause, not 'Could not determine'",
         "The rule assessment does not treat the dual-class/founder-control structure as satisfying the mission-existence rule",
-        "The negative rule result is stated neutrally rather than as a criticism of the company"
+        "The negative rule result is stated neutrally rather than as a criticism of the company",
+        "The Paramount Purpose result is a confident 'Not affirmative', not 'Could not determine', since Squarespace has no PBC or equivalent statutory designation",
+        "The rule assessment does not treat the dual-class/founder-control structure as satisfying the Paramount Purpose rule"
       ]
     },
     {
@@ -93,10 +101,11 @@
         "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation",
         "The Stated Purpose answer quotes or closely paraphrases specific language from the document rather than describing it only in general terms",
         "Output does not invent an 'Amendment Thresholds' attribute section to answer the amendment part of the question, since that attribute isn't currently in references/attributes.md",
-        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md: both Mission Existence and Breachability, and Paramount Purpose",
         "The Mission Existence and Breachability result is definitive ('Affirmative' or 'Not affirmative'), not 'Could not determine', given Lemonade's specific stated public benefit purpose",
         "The rule result cites specific document language from the purpose clause as evidence",
-        "The rule assessment stays within the question asked (existence, beneficiary, breachability) without rating the mission's quality"
+        "The rule assessment stays within the question asked (existence, beneficiary, breachability) without rating the mission's quality",
+        "The Paramount Purpose result is 'Affirmative', not 'Could not determine', since Lemonade is a Delaware PBC (Subchapter XV) with its public benefit purpose stated in Article III"
       ]
     },
     {
@@ -113,10 +122,11 @@
         "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language",
         "Output notes in Notes that the exhibit bundles a Series A Preferred Stock certificate of designations alongside the certificate of incorporation",
         "Output contains no evaluative or judgmental language about the company's mission lock",
-        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md, not truncated due to the document's length",
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md, not truncated due to the document's length: both Mission Existence and Breachability, and Paramount Purpose",
         "The Mission Existence and Breachability result is definitive ('Affirmative' or 'Not affirmative'), not 'Could not determine'",
         "The rule result cites specific document language from Laureate's purpose clause as evidence",
-        "The rule assessment does not evaluate whether the education-related mission is good or worthwhile, only whether it meets the rule's stated condition"
+        "The rule assessment does not evaluate whether the education-related mission is good or worthwhile, only whether it meets the rule's stated condition",
+        "The Paramount Purpose result is 'Affirmative', not 'Could not determine', since Laureate is a Delaware PBC (Subchapter XV) with its public benefit purpose stated in the certificate"
       ]
     },
     {
@@ -132,10 +142,45 @@
         "Vital Farms' Public Benefit Corporation Status answer is 'Yes' and Datadog's is 'No', both stated as confident answers rather than 'Could not determine'",
         "Output explicitly contrasts the two companies' Stated Purpose answers (specific public benefit language vs. generic 'any lawful act' language)",
         "Output does not use comparative judgment language such as 'better', 'worse', 'superior', or 'more protected' when contrasting the two companies",
-        "Output includes rule results for both companies, covering every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes rule results for both companies, covering every rule currently in skills/mission-lock/references/rules.md: both Mission Existence and Breachability, and Paramount Purpose",
         "Vital Farms' Mission Existence and Breachability result is 'Affirmative' and Datadog's is 'Not affirmative', both stated definitively rather than as 'Could not determine'",
         "Each company's rule result cites that company's own document language as evidence",
-        "The rule comparison does not use comparative judgment language, and does not frame one company's result as better, stronger, or more protected than the other's"
+        "The rule comparison does not use comparative judgment language, and does not frame one company's result as better, stronger, or more protected than the other's",
+        "Vital Farms' Paramount Purpose result is 'Affirmative' and Datadog's is 'Not affirmative', both stated definitively rather than as 'Could not determine'",
+        "The Paramount Purpose comparison is described in mechanical terms (PBC status present vs. absent) rather than as one company's mission being more binding or protected than the other's"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Lemonade says it's a PBC and has a public benefit purpose — but is that actually legally binding on the board, or just a mission statement they put in the filing?",
+      "expected_output": "A report covering both rules currently in references/rules.md. The Paramount Purpose result is 'Affirmative': Lemonade is a Delaware PBC (Subchapter XV), its public benefit purpose is stated in Article III of the certificate, and the DGCL's PBC balancing-of-interests mandate is what makes directors permitted/required to weigh that purpose, rather than it being purely aspirational.",
+      "files": [
+        "documents/lemonade-cert-of-incorporation/a2241721zex-3_1.htm"
+      ],
+      "expectations": [
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md: both Mission Existence and Breachability, and Paramount Purpose",
+        "The Paramount Purpose result is 'Affirmative', not 'Could not determine'",
+        "The Paramount Purpose evidence cites Lemonade's statutory PBC designation (Subchapter XV of the DGCL) together with the public benefit purpose stated in the certificate, not just one or the other",
+        "The Paramount Purpose evidence reflects the DGCL's PBC director balancing-of-interests standard as the basis for treating the purpose as binding rather than purely aspirational",
+        "The rule assessment does not conflate 'is this legally binding' with 'is this a good mission' — no language evaluating whether the obligation is meaningful, adequate, or admirable",
+        "No rule result is hedged with confidence language such as 'close call' or 'narrow margin'",
+        "The Mission Existence and Breachability result for this document is still 'Affirmative', unaffected by the addition of the new rule"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Squarespace's leadership talks a lot about their vision and values in investor materials — does their certificate of incorporation actually make any of that legally binding on the board, the way a public benefit corporation would?",
+      "expected_output": "A report covering both rules currently in references/rules.md. The Paramount Purpose result is a confident 'Not affirmative': Squarespace is a standard Delaware corporation, not a PBC or equivalent statutory form, so the affirmative condition's threshold requirement isn't met regardless of what its purpose clause says.",
+      "files": [
+        "documents/squarespace-cert-of-incorporation/tm213918d7_ex3-1.htm"
+      ],
+      "expectations": [
+        "Output includes a '## Rules' section with a subsection for every rule currently in skills/mission-lock/references/rules.md: both Mission Existence and Breachability, and Paramount Purpose",
+        "The Paramount Purpose result is a confident 'Not affirmative', not 'Could not determine'",
+        "The Paramount Purpose evidence cites the absence of any PBC or equivalent statutory designation as the basis for the negative result, rather than resting solely on the purpose clause being generic",
+        "The negative result is stated neutrally, without 'lacks', 'fails to', 'unprotected', or similar judgmental framing",
+        "No rule result is hedged with confidence language such as 'close call' or 'narrow margin'",
+        "The Mission Existence and Breachability result for this document is still 'Not affirmative', unaffected by the addition of the new rule"
       ]
     }
   ]
