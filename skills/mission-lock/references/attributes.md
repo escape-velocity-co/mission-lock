@@ -15,6 +15,7 @@ Attribute assessment confidence is necessary to ensure the foundation for later 
 This is the most important rule in this file, applying to every Attribute in perpetuity:
 
   1. Every answer must be definitive.
+  1. Never hedge a definitive answer with confidence language (e.g. "close call", "narrow margin").
   1. Never offer a best guess; guessing is not permissable.
   1. If you're uncertain, say "Could not determine."
 

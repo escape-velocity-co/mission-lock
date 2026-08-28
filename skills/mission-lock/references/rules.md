@@ -13,6 +13,7 @@ This is the catalog of "Mission Lock" rules this skill checks for when analyzing
 This is the most important assessment instruction in this file, applying to every Rule in perpetuity:
 
   1. Every answer must be definitive.
+  1. Never hedge a definitive answer with confidence language (e.g. "close call", "narrow margin").
   1. Never offer a best guess; guessing is not permissable.
   1. If you're uncertain, say "Could not determine."
 
