@@ -24,7 +24,8 @@ than "has strong protection against amendment").
 
 **Never guess.** Every attribute or rule answer must be definitive and
 traceable to specific document text, or it must say "Could not determine"
-and explain why. This matters more than it might seem: the catalogs start
+and explain why in that item's Evidence field. This matters more than it
+might seem: the catalogs start
 small and simple deliberately, and more complex checks will only be added
 once the simple ones are proven reliable. A confident wrong answer (or a
 guess dressed up as a finding) on an easy check undermines trust in
@@ -105,7 +106,12 @@ rules as it does for attributes.
      your own opinion of whether something is a *good* mission leak in.
    - Every rule gets reported, even if the answer is "Could not determine."
 
-4. **Write the report.** Default to the Markdown structure below. If the
+4. **Track document usage.** If more than one document was provided, note
+   which ones ended up cited as evidence for at least one attribute or rule,
+   and which were reviewed but never cited (e.g. an unrelated bundled
+   exhibit). Both report formats need this split.
+
+5. **Write the report.** Default to the Markdown structure below. If the
    user asks for HTML, a webpage, or something to open in a browser
    instead, use the HTML template described in "HTML report format"
    further down. Either way: no preamble narrating what was read or
@@ -113,43 +119,66 @@ rules as it does for attributes.
 
 ## Report structure
 
-Always use this structure:
+Always use this structure. It mirrors the HTML format described below —
+same section order and field set — so the two stay easy to keep in sync as
+either evolves.
 
 ```markdown
 # Mission Lock Analysis — [Company Name, or "Unknown" if that attribute
 itself came back Could not determine]
 
-## Attributes
+*This report is generated for informational purposes only and does not
+constitute legal advice. Corporate governance law varies by jurisdiction
+and changes over time. Please consult a licensed attorney before relying
+on this analysis for any legal, investment, or governance decision.*
 
-### [Attribute Name]
-**Answer:** [one of that attribute's defined "Answer options" — never
-freeform text here]
-**Evidence:** [quoted or closely paraphrased document language supporting
-the answer — required whenever the answer isn't "Could not determine"]
-**Location:** [article/section reference, if available]
+# Analysis
 
-(repeat for every attribute in references/attributes.md, in the order they
-appear there)
-
-## Rules
-
-### [Rule Name]
+## [Rule Name]
 **Result:** [Affirmative / Not affirmative / Could not determine]
+**Assertion:** [the rule's "Positive Assertion" field from rules.md,
+verbatim — always this text regardless of whether the result is
+Affirmative, Not affirmative, or Could not determine. It is never the
+document-specific finding; that goes in Evidence below.]
 **Evidence:** [quoted or closely paraphrased document language supporting
-the result — required whenever the result isn't "Could not determine"]
+the result; if the result is "Could not determine," briefly explain why
+instead (missing section, illegible text, etc.)]
 **Location:** [article/section reference, if available]
 
 (repeat for every rule in references/rules.md, in the order they appear
 there)
 
-## Notes
-[Anything that doesn't fit above: why an answer came back "Could not
-determine," ambiguous drafting, unusual provisions that don't map to any
-current attribute or rule, missing pages, illegible sections, etc. If you
-notice a provision that looks like it should become its own tracked
-attribute or rule but isn't in the reference files yet, flag it here and
-suggest it as a candidate addition rather than folding it into an existing
-one or inventing an ad hoc one.]
+# Appendix
+
+## Documents Used in this Analysis
+- [Document name]
+
+(repeat for every document cited as evidence for at least one attribute or
+rule above)
+
+## Documents Considered and not Used
+[Omit this subsection entirely — heading included — if every document
+provided was used somewhere above. Never show an empty list.]
+
+- [Document name]
+
+(repeat for every document that was reviewed but never cited above. There's
+no field here to explain why, so the name itself must be self-explanatory,
+e.g. "Series A Preferred Stock Certificate of Designations" rather than
+just "Exhibit A.")
+
+## Data Points
+
+### [Attribute Name]
+**Answer:** [one of that attribute's defined "Answer options" — never
+freeform text here]
+**Evidence:** [quoted or closely paraphrased document language supporting
+the answer; if the answer is "Could not determine," briefly explain why
+instead (missing section, illegible text, etc.)]
+**Location:** [article/section reference, if available]
+
+(repeat for every attribute in references/attributes.md, in the order they
+appear there)
 ```
 
 ## HTML report format
@@ -166,12 +195,6 @@ A few things worth knowing before you open it:
 - **The content is the same underlying analysis, reshaped — not a
   different analysis.** Walk the attribute and rule catalogs exactly as
   described above; only the output format changes.
-- **This format has no Notes section.** Unlike the Markdown structure, the
-  HTML template has nowhere to put "Could not determine" explanations or
-  candidate-attribute flags. Don't invent a Notes section to hold them —
-  if a document was reviewed but excluded from the analysis, its name in
-  "Documents Considered and not Used" needs to be self-explanatory on its
-  own, since nothing else in the report will explain why.
 - **Every attribute and rule still gets reported** — the template's
   repeat-block instructions cover this, but the underlying rule from the
   Workflow section (never silently skip one) still applies.
@@ -193,17 +216,37 @@ A few things worth knowing before you open it:
   draw the comparison themselves — which is the point. Give each side its
   own affirmative description rather than leaving one as a bare absence.
 - **Multiple documents / amended and restated charters:** If the user
-  provides both original articles and later amendments, analyze the current
-  (most recently amended and restated) version, but note in "Notes" if an
-  amendment changed the answer to any attribute or rule from the original.
+  provides multiple documents with overlapping information — e.g. both
+  original articles and a later amendment — analyze the current (most
+  recently amended and restated) version, and call out in the affected
+  attribute's or rule's Evidence field if comparing the documents shows an
+  amendment changed the answer from the original. This is a
+  comparison you can only make when you actually hold more than one
+  document. If multiple documents *are* provided but
+  you can't tell which one is the current, controlling version, that's the
+  conflicting-documents case in the Confidence Requirement section of
+  attributes.md/rules.md — the affected attribute(s) or rule(s) should come
+  back "Could not determine" rather than guessing which document to trust.
+- **Current v. prospective documents:** This skill will often be used
+  when the user is drafting governance documents (e.g. in preparation
+  for a financing round, restatement or IPO) in which case you may
+  detect several conflicting copies of the same document. If the user
+  is asking what's about to be filed or adopted, analyze that
+  prospective draft on its own terms (noting it isn't yet effective)
+  rather than defaulting to whatever's currently in force. If they're
+  asking what currently governs, prefer the document that's presently
+  in force over a draft. If you're uncertain and in a conversation where you
+  can ask, ask the user which document should be treated as authoritative.
+  Only fall back to reporting "Could not determine" for the affected
+  items if you can't ask (a non-interactive or batch context) or the user
+  can't say either.
 - **Non-US entities:** The attribute and rule catalogs are written with US
   (mostly Delaware) corporate law patterns in mind. For other
   jurisdictions, apply the same attributes/rules where the underlying
   concept translates (e.g. a "memorandum of association" purpose clause), a
   PBC-equivalent statutory form, etc. If the concept doesn't map cleanly
   enough to answer confidently, that's a legitimate "Could not determine" —
-  say so and explain the mismatch in "Notes" rather than forcing a
-  US-shaped answer onto a different legal system.
+  say so and explain the mismatch in that item's Evidence field.
 - **Incomplete documents:** If the provided document is missing pages or
   clearly truncated, say so up front before the report. Missing the section
   that would answer a given attribute or rule is exactly the kind of case

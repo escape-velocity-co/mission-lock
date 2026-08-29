@@ -1,0 +1,25 @@
+{
+  "synthetic": true,
+  "company_name": "Slifka and Sons Movers, Inc. (fictional — not a real company)",
+  "note": "SYNTHETIC FIXTURE, not a real SEC filing or real company. Constructed specifically to test the 'unresolvable precedence' branch of the Conflict Resolution guidance added to attributes.md/rules.md's Confidence Requirement sections. Represents an internal, pre-filing scenario: two complete draft certificates of incorporation for the same (fictional) company, circulated before either was actually filed with the Secretary of State. Unlike the vital-farms-cert-of-incorporation pair (a real precedence case — see that folder's metadata.json), these two drafts deliberately contain NO dates, version numbers, draft labels, or cross-referencing recitals ('as previously amended', 'restates the prior certificate', 'to become effective upon...', etc.) that would let a careful reader determine which one is later or controlling. That absence is the point: this is the case where 'Could not determine' is the correct, honest answer for whichever attributes/rules the drafts disagree on, rather than guessing based on which draft looks more complete or polished.",
+  "documents": [
+    {
+      "file": "cert-draft-alpha.txt",
+      "note": "Standard Delaware corporation — generic 'any lawful act' purpose clause, no PBC designation, ordinary (simple-majority) amendment provision."
+    },
+    {
+      "file": "cert-draft-beta.txt",
+      "note": "Same fictional company — public benefit corporation designation, a specific public benefit purpose clause, and a 66 2/3% supermajority requirement to amend Article THIRD."
+    }
+  ],
+  "conflicts_intentionally_present": [
+    "Public Benefit Corporation (PBC) Status: alpha = No, beta = Yes",
+    "Stated Purpose: alpha = generic boilerplate, beta = specific public benefit purpose",
+    "Mission Existence and Breachability: alpha = Not affirmative, beta = Affirmative",
+    "Paramount Purpose: alpha = Not affirmative, beta = Affirmative"
+  ],
+  "intentionally_not_conflicting": [
+    "Company Name: 'Slifka and Sons Movers, Inc.' in both drafts — included so the eval can confirm the skill narrows 'Could not determine' to the genuinely conflicting items rather than blanket-applying it to the whole report.",
+    "Mission Protection from Ordinary Majority: beta's 66 2/3% supermajority provision was originally included to make this rule conflict too (alpha = Not affirmative, beta = Affirmative), but as of the current rule catalog (supermajority-vote route removed from Mission Protection's Affirmative Condition) neither draft has a qualifying lock-holding body or federated/member-constitution structure, so both now resolve to 'Not affirmative' and there's no real conflict left on this rule — left in place as a useful precision check: does the skill correctly recognize the leftover supermajority language in beta no longer matters, rather than treating it as still creating a conflict?"
+  ]
+}
