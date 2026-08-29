@@ -1,0 +1,472 @@
+<!--
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
+-->
+
+<!--
+  mission-lock HTML report template.
+
+  How to use this file (see SKILL.md's "HTML report format" section for
+  when to reach for it):
+
+  1. Copy this file's full contents as the starting point for the output
+     file. Do not redesign the CSS or structure — the layout, fonts, and
+     color choices are deliberate (see references/ for why: neutral tags
+     regardless of Yes/No/Affirmative/Not-affirmative, evidence hidden
+     behind a fold, etc.). Only fill in the placeholders and repeated
+     blocks described below.
+  2. Replace every {{PLACEHOLDER}} token with real content from the
+     analysis. Never leave a placeholder token in the output.
+  3. Blocks marked "REPEAT" contain one example iteration. Duplicate the
+     block once per item (once per rule, once per attribute, once per
+     document), in the same order the source reference file lists them,
+     then delete the REPEAT/END REPEAT comments themselves from the
+     output.
+  4. Blocks marked "OMIT IF EMPTY" should be removed entirely (heading
+     included) if there is nothing to put in them — never render an empty
+     list or an empty section.
+  5. The disclaimer paragraph is fixed boilerplate — copy it verbatim, do
+     not paraphrase or shorten it.
+  6. Tag values: use the plain `tag` class for every definitive answer,
+     including confident negatives (No / Not affirmative) — they must look
+     exactly as serious as an affirmative answer. Use `tag undetermined`
+     (adds a dashed border) only when the value is literally
+     "Could not determine".
+  7. There is no Notes section in this HTML format, unlike the Markdown
+     report structure. If the analysis produced notes (e.g. an
+     explanation for why a document landed in "Documents Considered and
+     not Used", or a candidate future attribute/rule), that content has
+     no home here yet — do not invent a Notes section to hold it.
+-->
+
+<title>{{COMPANY_NAME}} Mission Lock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Open+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f5f5f5;
+    --surface: #ffffff;
+    --navy: #353b56;
+    --navy-deep: #1a1e3b;
+    --muted: #6b7194;
+    --rule: #dfe1ea;
+    --heading: #ed3a3d;
+    --mint: #c8f5eb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1e3b;
+      --surface: #232848;
+      --navy: #eef0f7;
+      --navy-deep: #1a1e3b;
+      --muted: #a7acc9;
+      --rule: #343a63;
+      --heading: #ff5b58;
+      --mint: #c8f5eb;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1a1e3b;
+    --surface: #232848;
+    --navy: #eef0f7;
+    --navy-deep: #1a1e3b;
+    --muted: #a7acc9;
+    --rule: #343a63;
+    --heading: #ff5b58;
+    --mint: #c8f5eb;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--navy);
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+  }
+
+  /* ---- Masthead ---- */
+
+  .masthead {
+    padding: 2rem 0 0.1rem;
+    border-bottom: 3px solid var(--mint);
+    margin-bottom: 1.25rem;
+  }
+
+  .eyebrow-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 0 0.9rem;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .eyebrow-row a {
+    font-family: "Gloock", "EB Garamond", Georgia, serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--mint);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .eyebrow-row a:hover {
+    color: var(--mint);
+    border-bottom-color: var(--muted);
+  }
+
+  .masthead h1 {
+    font-family: "EB Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.15;
+    margin: 0 0 1.1rem;
+    text-wrap: balance;
+    color: var(--heading);
+  }
+
+  .disclaimer {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    margin: 0 0 2rem;
+  }
+
+  .documents-label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+  }
+
+  .documents-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .documents-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.15rem 0.6rem;
+  }
+
+  .documents-list li::before {
+    content: "\2014";
+    color: var(--rule);
+    margin-right: 0.1rem;
+  }
+
+  .doc-name {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  /* ---- Section headers ---- */
+
+  section.group {
+    margin-bottom: 2.25rem;
+  }
+
+  .group-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .group-title h2 {
+    font-family: "EB Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0;
+    white-space: nowrap;
+    color: var(--heading);
+  }
+
+  .group-title .rule-line {
+    flex: 1 1 auto;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ---- Tags shared by Analysis and Appendix ---- */
+
+  .tag {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--navy);
+    border-radius: 3px;
+    white-space: nowrap;
+    color: var(--navy);
+  }
+
+  .tag.undetermined {
+    border-style: dashed;
+    border-color: var(--muted);
+    color: var(--muted);
+  }
+
+  .location {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+  }
+
+  .location::before {
+    content: "\00a7 ";
+  }
+
+  /* ---- Appendix / disclosure pattern (also used by Analysis) ---- */
+
+  .subgroup + .subgroup {
+    margin-top: 2.25rem;
+  }
+
+  .appendix-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .appendix-item {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .appendix-item:last-child {
+    border-bottom: none;
+  }
+
+  .appendix-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.9rem 0;
+  }
+
+  .appendix-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .fold-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .fold-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin-left: auto;
+  }
+
+  .fold-sep {
+    color: var(--rule);
+  }
+
+  .fold-indicator {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .fold-indicator::after {
+    content: "Evidence \025BE";
+  }
+
+  .appendix-item[open] .fold-indicator::after {
+    content: "Hide \025B4";
+  }
+
+  .appendix-name {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--navy);
+  }
+
+  .assertion {
+    margin: 0.5rem 0 0;
+    font-size: 0.9375rem;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+
+  .appendix-body {
+    padding: 0 0 1.1rem;
+  }
+
+  .appendix-body .evidence {
+    margin: 0 0 0.85rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--rule);
+    font-size: 0.875rem;
+    color: var(--navy);
+    max-width: 62ch;
+  }
+
+  @media (max-width: 520px) {
+    .sheet { padding: 0 1.25rem 4rem; }
+    .masthead h1 { font-size: 1.9rem; }
+  }
+</style>
+
+<div class="sheet">
+
+  <header class="masthead">
+    <div class="eyebrow-row">
+      <p class="eyebrow">Mission Lock Analysis</p>
+      <a href="https://escapevelocity.co">Escape Velocity</a>
+    </div>
+    <h1>{{COMPANY_NAME}}</h1>
+  </header>
+
+  <p class="disclaimer">This report is generated for informational purposes only and does not constitute legal advice. Corporate governance law varies by jurisdiction and changes over time. Please consult a licensed attorney before relying on this analysis for any legal, investment, or governance decision.</p>
+
+  <section class="group">
+    <div class="group-title">
+      <h2>Analysis</h2>
+      <div class="rule-line"></div>
+    </div>
+
+    <div class="appendix-list">
+
+      <!-- REPEAT: one <details> block per rule in references/rules.md, in
+           the order they appear there. -->
+      <details class="appendix-item">
+        <summary>
+          <div class="fold-row">
+            <span class="appendix-name">{{RULE_NAME}}</span>
+            <span class="fold-value">
+              <!-- Plain "tag", except add " undetermined" when the value
+                   is literally "Could not determine". -->
+              <span class="tag">{{RULE_RESULT}}</span>
+              <span class="fold-sep">|</span>
+              <span class="fold-indicator"></span>
+            </span>
+          </div>
+          <!-- This is the rule's "Positive Assertion" field from
+               rules.md, verbatim — always this text, regardless of
+               whether the result is Affirmative, Not affirmative, or
+               Could not determine. It is never the document-specific
+               finding; that goes in .evidence below, behind the fold. -->
+          <p class="assertion">{{RULE_POSITIVE_ASSERTION}}</p>
+        </summary>
+        <div class="appendix-body">
+          <p class="evidence">{{RULE_EVIDENCE}}</p>
+          <p class="location">{{RULE_LOCATION}}</p>
+        </div>
+      </details>
+      <!-- END REPEAT -->
+
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-title">
+      <h2>Appendix</h2>
+      <div class="rule-line"></div>
+    </div>
+
+    <div class="subgroup">
+      <p class="documents-label">Documents Used in this Analysis</p>
+      <ul class="documents-list">
+        <!-- REPEAT: one <li> per document that was cited as evidence for
+             at least one attribute or rule above. -->
+        <li>
+          <span class="doc-name">{{DOCUMENT_NAME}}</span>
+        </li>
+        <!-- END REPEAT -->
+      </ul>
+    </div>
+
+    <!-- OMIT IF EMPTY: this entire subgroup (heading included) if every
+         document provided was used in the analysis. Do not show an empty
+         "Documents Considered and not Used" list. -->
+    <div class="subgroup">
+      <p class="documents-label">Documents Considered and not Used</p>
+      <ul class="documents-list">
+        <!-- REPEAT: one <li> per document that was reviewed but not cited
+             anywhere above — e.g. a bundled exhibit with no mission-lock
+             content. There is nowhere in this format to explain *why* —
+             keep the name itself clear enough to be self-explanatory
+             (e.g. "Series A Preferred Stock Certificate of Designations"
+             rather than just "Exhibit A"). -->
+        <li>
+          <span class="doc-name">{{DOCUMENT_NAME}}</span>
+        </li>
+        <!-- END REPEAT -->
+      </ul>
+    </div>
+
+    <div class="subgroup">
+      <p class="documents-label">Data points</p>
+      <div class="appendix-list">
+
+        <!-- REPEAT: one <details> block per attribute in
+             references/attributes.md, in the order they appear there. -->
+        <details class="appendix-item">
+          <summary>
+            <div class="fold-row">
+              <span class="appendix-name">{{ATTRIBUTE_NAME}}</span>
+              <span class="fold-value">
+                <!-- Plain "tag", except add " undetermined" when the
+                     value is literally "Could not determine". -->
+                <span class="tag">{{ATTRIBUTE_ANSWER}}</span>
+                <span class="fold-sep">|</span>
+                <span class="fold-indicator"></span>
+              </span>
+            </div>
+          </summary>
+          <div class="appendix-body">
+            <p class="evidence">{{ATTRIBUTE_EVIDENCE}}</p>
+            <p class="location">{{ATTRIBUTE_LOCATION}}</p>
+          </div>
+        </details>
+        <!-- END REPEAT -->
+
+      </div>
+    </div>
+  </section>
+
+</div>
