@@ -117,89 +117,21 @@ rules as it does for attributes.
    further down. Either way: no preamble narrating what was read or
    confirming completeness before the report, and nothing after it.
 
-## Report structure
+## Markdown Report Structure
 
-Always use this structure. It mirrors the HTML format described below —
-same section order and field set — so the two stay easy to keep in sync as
-either evolves.
+Use [assets/report-template.md](assets/report-template.md) as the default
+report format. It contains detailed instructions (as an HTML comment near
+the top) on filling in placeholders and repeating blocks.
 
-```markdown
-# Mission Lock Analysis — [Company Name, or "Unknown" if that attribute
-itself came back Could not determine]
-
-*This report is generated for informational purposes only and does not
-constitute legal advice. Corporate governance law varies by jurisdiction
-and changes over time. Please consult a licensed attorney before relying
-on this analysis for any legal, investment, or governance decision.*
-
-# Analysis
-
-## [Rule Name]
-**Result:** [Affirmative / Not affirmative / Could not determine]
-**Assertion:** [the rule's "Positive Assertion" field from rules.md,
-verbatim — always this text regardless of whether the result is
-Affirmative, Not affirmative, or Could not determine. It is never the
-document-specific finding; that goes in Evidence below.]
-**Evidence:** [quoted or closely paraphrased document language supporting
-the result; if the result is "Could not determine," briefly explain why
-instead (missing section, illegible text, etc.)]
-**Location:** [article/section reference, if available]
-
-(repeat for every rule in references/rules.md, in the order they appear
-there)
-
-# Appendix
-
-## Documents Used in this Analysis
-- [Document name]
-
-(repeat for every document cited as evidence for at least one attribute or
-rule above)
-
-## Documents Considered and not Used
-[Omit this subsection entirely — heading included — if every document
-provided was used somewhere above. Never show an empty list.]
-
-- [Document name]
-
-(repeat for every document that was reviewed but never cited above. There's
-no field here to explain why, so the name itself must be self-explanatory,
-e.g. "Series A Preferred Stock Certificate of Designations" rather than
-just "Exhibit A.")
-
-## Data Points
-
-### [Attribute Name]
-**Answer:** [one of that attribute's defined "Answer options" — never
-freeform text here]
-**Evidence:** [quoted or closely paraphrased document language supporting
-the answer; if the answer is "Could not determine," briefly explain why
-instead (missing section, illegible text, etc.)]
-**Location:** [article/section reference, if available]
-
-(repeat for every attribute in references/attributes.md, in the order they
-appear there)
-```
-
-## HTML report format
+## HTML Report Structure
 
 If the user asks for HTML, a webpage, or something to open in a browser,
 use [assets/report-template.html](assets/report-template.html) instead of
-the Markdown structure above. Read that file fresh — it contains its own
-detailed instructions (as an HTML comment near the top) on filling in
-placeholders and repeating blocks, and it is the single source of truth
-for the design; don't reconstruct it from memory or improvise styling.
+the Markdown structure above. It contains detailed instructions (as an
+HTML comment near the top) on filling in placeholders and repeating blocks.
 
-A few things worth knowing before you open it:
-
-- **The content is the same underlying analysis, reshaped — not a
-  different analysis.** Walk the attribute and rule catalogs exactly as
-  described above; only the output format changes.
-- **Every attribute and rule still gets reported** — the template's
-  repeat-block instructions cover this, but the underlying rule from the
-  Workflow section (never silently skip one) still applies.
-- Save the result as a `.html` file rather than inlining raw HTML into a
-  chat response.
+Save the result as a `.html` file rather than inlining raw HTML into a
+chat response.
 
 ## Edge cases
 
