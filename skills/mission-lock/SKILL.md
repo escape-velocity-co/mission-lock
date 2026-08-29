@@ -105,10 +105,11 @@ rules as it does for attributes.
      your own opinion of whether something is a *good* mission leak in.
    - Every rule gets reported, even if the answer is "Could not determine."
 
-4. **Write the report** using the structure below. Your response must begin
-   with the exact heading `# Mission Lock Analysis — ...` as its first
-   characters — no preamble narrating what was read or confirming
-   completeness before it, and nothing after the structure below.
+4. **Write the report.** Default to the Markdown structure below. If the
+   user asks for HTML, a webpage, or something to open in a browser
+   instead, use the HTML template described in "HTML report format"
+   further down. Either way: no preamble narrating what was read or
+   confirming completeness before the report, and nothing after it.
 
 ## Report structure
 
@@ -150,6 +151,32 @@ attribute or rule but isn't in the reference files yet, flag it here and
 suggest it as a candidate addition rather than folding it into an existing
 one or inventing an ad hoc one.]
 ```
+
+## HTML report format
+
+If the user asks for HTML, a webpage, or something to open in a browser,
+use [assets/report-template.html](assets/report-template.html) instead of
+the Markdown structure above. Read that file fresh — it contains its own
+detailed instructions (as an HTML comment near the top) on filling in
+placeholders and repeating blocks, and it is the single source of truth
+for the design; don't reconstruct it from memory or improvise styling.
+
+A few things worth knowing before you open it:
+
+- **The content is the same underlying analysis, reshaped — not a
+  different analysis.** Walk the attribute and rule catalogs exactly as
+  described above; only the output format changes.
+- **This format has no Notes section.** Unlike the Markdown structure, the
+  HTML template has nowhere to put "Could not determine" explanations or
+  candidate-attribute flags. Don't invent a Notes section to hold them —
+  if a document was reviewed but excluded from the analysis, its name in
+  "Documents Considered and not Used" needs to be self-explanatory on its
+  own, since nothing else in the report will explain why.
+- **Every attribute and rule still gets reported** — the template's
+  repeat-block instructions cover this, but the underlying rule from the
+  Workflow section (never silently skip one) still applies.
+- Save the result as a `.html` file rather than inlining raw HTML into a
+  chat response.
 
 ## Edge cases
 
