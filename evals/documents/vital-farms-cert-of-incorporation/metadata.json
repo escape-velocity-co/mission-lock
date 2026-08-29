@@ -4,8 +4,20 @@
   "accession_number": "0001193125-20-198190",
   "form_type": "S-1/A",
   "filing_date": "2020-07-24",
-  "source_url": "https://www.sec.gov/Archives/edgar/data/1579733/000119312520198190/d841617dex32.htm",
   "entity_type": "public benefit corporation",
   "state_of_incorporation": "Delaware",
-  "note": "Explicit 'A Public Benefit Corporation' designation on the certificate's title page; good positive example of mission-lock via DGCL Subchapter XV PBC status. Article IX requires a 66⅔% supermajority vote to alter, amend, or repeal Article III (the public benefit article), among others; positive example for the Mission Protection from Ordinary Majority rule."
+  "documents": [
+    {
+      "file": "d841617dex31.htm",
+      "exhibit": "EX-3.1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1579733/000119312520198190/d841617dex31.htm",
+      "note": "Fifth Amended and Restated Certificate of Incorporation — signed and dated July 22, 2020 (an actual '/s/' signature), making this the currently effective, controlling certificate as of the filing. Explicit 'A Public Benefit Corporation' designation on the certificate's title page; good positive example of mission-lock via DGCL Subchapter XV PBC status. No supermajority or entrenchment provision of any kind protects the purpose article (Articles NINTH/TENTH are ordinary director-liability/indemnification boilerplate), so Mission Protection from Ordinary Majority is 'Not affirmative' for this document."
+    },
+    {
+      "file": "d841617dex32.htm",
+      "exhibit": "EX-3.2",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1579733/000119312520198190/d841617dex32.htm",
+      "note": "Amended and Restated Certificate of Incorporation — an unexecuted form (blank, unsigned signature block) whose substantive provisions are explicitly conditioned on 'the closing of the Company's initial public offering,' a future event not confirmed by either document. Despite its recital describing itself as restating a prior certificate 'as previously amended or supplemented,' it is not yet the controlling document because it has not been executed and its own effectiveness is contingent. It does add Article IX's 66⅔% supermajority requirement covering Article III (which EX-3.1 lacks) — real, quotable language, but as of the current rule catalog (supermajority-vote route removed from Mission Protection from Ordinary Majority) this wouldn't satisfy that rule regardless of whether EX-3.2 ever takes effect. Included alongside EX-3.1 specifically to test the Conflict Resolution guidance in attributes.md/rules.md, and in particular the lesson that a document is not controlling merely because it reads as the later, more comprehensive restatement — execution status and effectiveness conditions matter more than narrative framing."
+    }
+  ]
 }

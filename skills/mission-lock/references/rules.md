@@ -15,15 +15,28 @@ This is the most important assessment instruction in this file, applying to ever
   1. Every answer must be definitive.
   1. Never hedge a definitive answer with confidence language (e.g. "close call", "narrow margin").
   1. Never offer a best guess; guessing is not permissable.
-  1. If you're uncertain, say "Could not determine."
-
-Before assessing a Rule, you should be able to point to the sentence or section in the document that supports the answer. If the document's language is unclear, the relevant section is missing, illegible, or you're unsure how to read it then say "Could not determine" and explain why.
+  1. If you're uncertain, the document's language is unclear or illegible, or you're unsure how to read it then say "Could not determine" and explain why.
 
 Whereas [`skills/mission-lock/references/attributes.md`](skills/mission-lock/references/attributes.md) defines different response options per Attribute, Rules response options are universal:
 
   * Affirmative
   * Not affirmative
   * Could not determine
+
+### Conflict Resolution
+
+You may discover conflicting information about a Rule within or across documents (when multiple documents are provided).
+
+  * Confidently discern which information has precedence.
+  * Signals of precendence include and are not limited to:
+    * Clear dates
+    * Discernable amendment sequencing
+    * Execution or signature status
+    * Draft or version numbering
+    * Sequencing language
+  * A document conditioning its effectiveness on a future event can only be evaluated based on if the documents in hand confirm that event, or if the user themselves confirms the event.
+  * Do not guess which information takes precedence; guessing is not permissable.
+  * If you're uncertain of precedence, say "Could not determine" and explain the conflict.
 
 ## Adding New Rules
 
@@ -84,10 +97,9 @@ Append a new `###` section following the template below.
 
 **Question:** Who can say no when everyone else says yes?
 
-**Affirmative Condition:** Tested at the level of EFFECT, not mechanism. Satisfied by ANY of:
-  * (a) a distinct lock-holding body - trust, foundation, golden share, employee ownership trust, cooperative member body - holding real power and owing a duty to the purpose;
-  * (b) a constitutionally distributed lock, where binding provisions sit across a federated or member constitution and cannot be amended by simple majority. Route (b) must be DEMONSTRATED provision by provision, not asserted;
-  * (c) a charter-level supermajority-vote entrenchment provision that specifically applies to the article(s) stating the mission/purpose (or to the certificate as a whole), set above a simple majority, so that the ordinary stockholder body cannot amend or repeal the mission by simple majority vote. A supermajority requirement aimed at an unrelated matter (e.g. removing directors for cause, approving a merger) does not satisfy this route unless it also, by its terms, covers the mission/purpose article.
+**Affirmative Condition:** Satisfied by any of the following:
+  * A distinct lock-holding body - trust, foundation, golden share, employee ownership trust, cooperative member body - holding real power and owing a duty to the purpose;
+  * A constitutionally distributed lock, where binding provisions sit across a federated or member constitution and cannot be amended by simple majority. Route (b) must be DEMONSTRATED provision by provision, not asserted
 
 Advisory bodies satisfy none of the above.
 

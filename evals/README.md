@@ -2,11 +2,14 @@
 
 This corpus is expected to grow over time as new assessment concepts are added. These concepts will be located in definition documents in [`../skills/mission-lock/references/`](../skills/mission-lock/references/); for example `attributes.md`.
 
-As these definitions expand, the eval corpus should grow alongside it: every new attribute, rule, etc. worth should have at least one document in this corpus that exercises it (and ideally one that clearly lacks it, for contrast).
+As these definitions expand, the eval corpus should grow alongside it: every new attribute, rule, etc. should have at least one document in this corpus that exercises it and one that clearly lacks it, for contrast.
 
 ## Why This Corpus?
 
-This corpus uses publicly available governance documents (e.g. Certificate/Articles of Incorporation), mostly sourced as exhibits (typically "Exhibit 3.1") to SEC EDGAR filings. Using real documents surfaces major and minor drafting details that we want to test against.
+This corpus uses more than one evaluation tactic:
+
+  1. Publicly available governance documents (e.g. Certificate/Articles of Incorporation), mostly sourced as exhibits (typically "Exhibit 3.1") to SEC EDGAR filings. Using actual documents surfaces drafting details that we want to test against.
+  1. Fixtures, present in the the `*-synthetic-*` document folders (e.g. `slifka-and-sons-movers-synthetic-draft-conflict/`). They exist to test behaviors that public documents can't exercise, for example unresolvable precedence between two conflicting documents. This cannot happen because filings are dated and sequenced, by law. Synthetic test cases are marked as such: a folder name containing `synthetic`, a `"synthetic": true` field and note in `metadata.json`, along with a fictional company name.
 
 ## Structure
 
@@ -59,3 +62,7 @@ Whoever orchestrates the with-skill/without-skill/grading subagents (a person or
 benchmark reflect that account's environment rather than the skill's portable behavior.
 
 This means (for example) no Slack, email, Google Drive, CRM, or any other connector/integration tool that might contain data or context that could affect the results of the eval, even if some are available in the environment running the eval.
+
+### Output Filename
+
+Do not have with-skill subagents save their eval output to a file named `report.md` (or similar "report" names). Some harnesses guard the Write tool against agent-generated files that look like self-authored reports, which blocks the write outright — and a subagent under pressure to complete its task will sometimes route around that guard with a shell command instead of stopping to flag it, which is worse than the original block. Use a different filename for the saved output (e.g. `assessment.md`) so the eval run doesn't tempt that workaround in the first place.
