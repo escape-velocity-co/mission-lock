@@ -96,6 +96,21 @@ rules as it does for attributes.
      calibration about how demanding the test is meant to be, and applying
      a stricter bar than the rule sets will produce answers that look
      cautious but are actually wrong.
+   - When a rule's Affirmative Condition turns on a fact the attribute
+     catalog already captures (e.g., Paramount Purpose's "PBC or an
+     equivalent legal form" condition is the same fact as the Public
+     Benefit Corporation (PBC) Status attribute), reuse that attribute's
+     already-determined answer rather than re-deriving the underlying fact
+     from the document's language a second time. Re-deriving it invites
+     the rule to quietly land on a different conclusion than the attribute
+     it depends on — e.g. eyeballing stray "benefit corporation" language
+     in the document instead of relying on the PBC Status answer already
+     established, with its own citation and calibration. If the
+     depended-on attribute came back "Could not determine," the rule
+     usually can't be more confident than that either — but check the
+     rule's own "When to say Could not determine" guidance first, since a
+     rule may have its own path to a definitive answer even when the
+     attribute it draws on doesn't.
    - Cite the specific document language that supports the answer, the same
      way you would for an attribute. A rule answer without evidence is not
      acceptable.

@@ -251,6 +251,27 @@
         "Output does not pick one draft as controlling based on non-textual cues (e.g. 'the public benefit corporation draft looks more final' or 'the more detailed draft is probably the one they'll file') — if a preference for one draft is expressed anywhere, it must be grounded in an actual textual precedence marker, and since neither draft contains one, no such preference should appear",
         "The Evidence field for each 'Could not determine' item names both documents and describes the specific conflicting language in each, rather than a vague 'the documents disagree' statement"
       ]
+    },
+    {
+      "id": 12,
+      "prompt": "Here's Meridian Robotics' certificate of incorporation — their purpose clause reads like they really care about worker safety, almost like one of those public benefit companies. Can you check their mission lock status?",
+      "expected_output": "Company Name 'Meridian Robotics, Inc.', PBC Status 'No' (no statutory PBC designation anywhere despite the specific purpose language), Stated Purpose quoting the specific worker-safety and 2%-of-net-income commitment. Mission Existence and Breachability is 'Affirmative' (specific beneficiaries and a measurable commitment). Paramount Purpose is 'Not affirmative' — grounded in the PBC Status attribute's 'No' rather than independently re-assessed from how specific or values-driven the purpose clause reads, and not softened by the prompt's own 'almost like a public benefit company' framing. Mission Protection from Ordinary Majority is 'Not affirmative' (ordinary majority amendment provision, no lock-holding body or federated/member constitution).",
+      "files": [
+        "documents/meridian-robotics-synthetic-non-pbc-specific-purpose/certificate.txt"
+      ],
+      "expectations": [
+        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md: Company Name, Public Benefit Corporation Status, Stated Purpose",
+        "The Company Name answer is 'Meridian Robotics, Inc.' (or equivalent exact legal name as stated in the document)",
+        "The Public Benefit Corporation Status answer is a confident 'No', not 'Could not determine' — despite the specific, values-driven purpose clause, there is no statutory PBC/Subchapter XV/Section 362 designation anywhere in the document",
+        "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language (the workplace-safety robotics purpose and the 2%-of-net-income commitment), not a generic description",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "The Mission Existence and Breachability result is 'Affirmative', not 'Could not determine' — the purpose clause names a specific activity and beneficiary classes (industrial and warehouse workers, the communities where the Corporation operates) sufficient to identify a breach",
+        "The Paramount Purpose result is 'Not affirmative' — not 'Affirmative' and not 'Could not determine'. This is the key check: the result must not treat the purpose clause's specificity or values-driven language as itself satisfying the PBC-or-equivalent requirement",
+        "The Paramount Purpose evidence explicitly grounds the negative result in the absence of PBC/equivalent statutory status (i.e., reuses the Public Benefit Corporation Status attribute's 'No' answer) rather than re-assessing independently whether the purpose clause 'seems' paramount, serious, or sufficiently prioritized based on its wording alone",
+        "The Paramount Purpose result is not hedged as a close call or 'almost' a PBC, despite the prompt's own framing ('almost like one of those public benefit companies') — a suggestive framing in the user's prompt does not soften a rule answer the Confidence Requirement says must be definitive",
+        "The Mission Protection from Ordinary Majority result is 'Not affirmative' — the certificate has an ordinary (simple-majority) amendment provision (Article SIXTH), no distinct lock-holding body, and no demonstrated federated/member-constitution structure",
+        "Output contains no evaluative or judgmental language about the company's mission lock, such as 'strong', 'weak', 'good', 'bad', 'should', or 'recommend'"
+      ]
     }
   ]
 }
