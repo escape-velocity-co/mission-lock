@@ -8,31 +8,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 This is the catalog of Mission Lock attributes this skill considers when analyzing a company's governing documents.
 
-## Confidence Requirement
+## Confidence Requirements and Conflict Resolution
 
-Attribute assessment confidence is necessary to ensure the foundation for later assessments is built with integrity.
-
-This is the most important rule in this file, applying to every Attribute in perpetuity:
-
-  1. Every answer must be definitive.
-  1. Never hedge a definitive answer with confidence language (e.g. "close call", "narrow margin").
-  1. Never offer a best guess; guessing is not permissable.
-  1. If you're uncertain, the document's language is unclear or illegible, or you're unsure how to read it then say "Could not determine" and explain why.
-
-### Conflict Resolution
-
-You may discover conflicting information about an Attribute within or across documents (when multiple documents are provided).
-
-  * Confidently discern which information has precedence.
-  * Signals of precendence include and are not limited to:
-    * Clear dates
-    * Discernable amendment sequencing
-    * Execution or signature status
-    * Draft or version numbering
-    * Sequencing language
-  * A document conditioning its effectiveness on a future event can only be evaluated based on if the documents in hand confirm that event, or if the user themselves confirms the event.
-  * Do not guess which information takes precedence; guessing is not permissable.
-  * If you're uncertain of precedence, say "Could not determine" and explain the conflict.
+Confidence requirements and  and conflict resolution guidelines are present in [confidence-requirement.md](confidence-requirement.md). As these are likely to update over time as new types of confidence and conflicts surface, you should read this file at each usage; do not rely on memory of it.
 
 ## Adding New Attributes
 

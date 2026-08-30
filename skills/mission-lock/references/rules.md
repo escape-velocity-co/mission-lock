@@ -8,39 +8,19 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 This is the catalog of "Mission Lock" rules this skill checks for when analyzing a company's governing documents. These rules may make use of attributes defined in [`skills/mission-lock/references/attributes.md`](skills/mission-lock/references/attributes.md).
 
-## Confidence Requirement
+## Confidence Requirements and Conflict Resolution
 
-This is the most important assessment instruction in this file, applying to every Rule in perpetuity:
-
-  1. Every answer must be definitive.
-  1. Never hedge a definitive answer with confidence language (e.g. "close call", "narrow margin").
-  1. Never offer a best guess; guessing is not permissable.
-  1. If you're uncertain, the document's language is unclear or illegible, or you're unsure how to read it then say "Could not determine" and explain why.
-
-Whereas [`skills/mission-lock/references/attributes.md`](skills/mission-lock/references/attributes.md) defines different response options per Attribute, Rules response options are universal:
-
-  * Affirmative
-  * Not affirmative
-  * Could not determine
-
-### Conflict Resolution
-
-You may discover conflicting information about a Rule within or across documents (when multiple documents are provided).
-
-  * Confidently discern which information has precedence.
-  * Signals of precendence include and are not limited to:
-    * Clear dates
-    * Discernable amendment sequencing
-    * Execution or signature status
-    * Draft or version numbering
-    * Sequencing language
-  * A document conditioning its effectiveness on a future event can only be evaluated based on if the documents in hand confirm that event, or if the user themselves confirms the event.
-  * Do not guess which information takes precedence; guessing is not permissable.
-  * If you're uncertain of precedence, say "Could not determine" and explain the conflict.
+Confidence requirements and conflict resolution guidelines are present in [confidence-requirement.md](confidence-requirement.md). As these are likely to update over time as new types of confidence and conflicts surface, you should read this file at each usage; do not rely on memory of it.
 
 ## Adding New Rules
 
 Append a new `###` section following the template below.
+
+There is no "Response Options" field in the template.  Whereas [`skills/mission-lock/references/attributes.md`](skills/mission-lock/references/attributes.md) defines different response options per Attribute, Rules response options are the same for all Rules:
+
+  * Affirmative
+  * Not affirmative
+  * Could not determine
 
 ```markdown
 ### Rule Name

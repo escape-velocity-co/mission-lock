@@ -29,10 +29,9 @@ might seem: the catalogs start
 small and simple deliberately, and more complex checks will only be added
 once the simple ones are proven reliable. A confident wrong answer (or a
 guess dressed up as a finding) on an easy check undermines trust in
-everything this skill will eventually be asked to evaluate. See the
-"Confidence Requirement" section at the top of both
-[references/attributes.md](references/attributes.md) and
-[references/rules.md](references/rules.md) for the full rule.
+everything this skill will eventually be asked to evaluate. See
+[references/confidence-requirement.md](references/confidence-requirement.md)
+for the full rule.
 
 **Attributes vs. rules — a distinction worth keeping straight:**
 `references/attributes.md` holds pure fact-extraction (a name, a yes/no, a
