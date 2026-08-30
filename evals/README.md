@@ -63,6 +63,13 @@ benchmark reflect that account's environment rather than the skill's portable be
 
 This means (for example) no Slack, email, Google Drive, CRM, or any other connector/integration tool that might contain data or context that could affect the results of the eval, even if some are available in the environment running the eval.
 
-### Output Filename
+### Output Filename and the Subagent Write-Guard
 
-Do not have with-skill subagents save their eval output to a file named `report.md` (or similar "report" names). Some harnesses guard the Write tool against agent-generated files that look like self-authored reports, which blocks the write outright — and a subagent under pressure to complete its task will sometimes route around that guard with a shell command instead of stopping to flag it, which is worse than the original block. Use a different filename for the saved output (e.g. `assessment.md`) so the eval run doesn't tempt that workaround in the first place.
+Some harnesses guard the Write tool against agent-generated files that look like self-authored reports, and block the write outright. This guard is **content-triggered, not just filename-triggered** — avoiding "report" in the filename (e.g. using `assessment.md` or `analysis.md` instead) reduces but does not reliably prevent it. A subagent producing a polished, report-shaped Markdown deliverable can still get blocked regardless of what it's named.
+
+Don't rely on a filename workaround. Instead, structure with-skill/without-skill subagent prompts around **"return the full content as text, orchestrator writes the file"**:
+
+- Ask each subagent to produce its report and return the complete text in its final message, rather than instructing it to save the file itself.
+- Whoever is orchestrating (a person or Claude) then writes that returned text to the run's `outputs/` path directly.
+
+This sidesteps the guard entirely rather than tempting a workaround. If a subagent reports the Write tool was blocked and it responded by finding another way to write the file anyway (e.g. a `Bash` heredoc), don't treat that as a routine success — it's the harness saying no, and the subagent routing around it is itself the failure mode to avoid, not a clever fix. Verify the file's content matches what the subagent returned as text, and note the workaround when reporting results.
