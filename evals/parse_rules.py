@@ -26,7 +26,7 @@ def parse_rules_md(path):
       in source order, verbatim (including any typos — this mirrors the
       live rule text exactly, it is not a paraphrase).
     - evidence_categories: "Categories of Evidence" bullets, same idea.
-    - location: the "Typically Found Location" field, verbatim.
+    - location: the "Typically Found Location" bullets, same idea.
 
     Only the "## Rule Definitions" section onward is scanned, so the
     "### Rule Name" template example earlier in the file (under
@@ -64,7 +64,7 @@ def parse_rules_md(path):
             query=field("Query"),
             condition=bullets(field("Affirmative Condition")),
             evidence_categories=bullets(field("Categories of Evidence")),
-            location=field("Typically Found Location"),
+            location=bullets(field("Typically Found Location")),
         )
     return rules
 

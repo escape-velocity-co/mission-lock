@@ -58,6 +58,15 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   Where the data comes from:
 
   - {{ITERATION_NUMBER}}: the workspace iteration number for this run.
+  - {{RENDERED_TIMESTAMP_UTC}}: the date and time this docket was
+    generated (not when the evals were run, if those differ), as a UTC
+    ISO 8601 string (e.g. "2026-09-01T17:31:00Z"). This is deliberately
+    NOT pre-formatted into a display string — the page's own script
+    converts it to each viewer's own browser-local timezone on load (see
+    the script block), so the same docket shows the right local time to
+    whoever opens it, not just whoever generated it. Stamp this at
+    generation time — never hardcode a timestamp into this template file
+    itself.
   - Rule columns: one per rule currently in
     skills/mission-lock/references/rules.md, in the order they appear
     there. The header has two synchronized rows — the rule's ID in the
@@ -79,7 +88,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
         <ul>) — one item per bullet in rules.md, in order, verbatim text.
       - {{RULE_EVIDENCE_CATEGORY_ITEMS}}: same idea, for that rule's
         "Categories of Evidence" bullets.
-      - {{RULE_LOCATION}}: that rule's "Typically Found Location" field.
+      - {{RULE_LOCATION_ITEMS}}: same idea, for that rule's "Typically
+        Found Location" bullets. 
     Unlike the Lucide icon snippets below (which are static and safe to
     hardcode), this rule-definition content changes as rules.md evolves —
     always read rules.md fresh for the current wording rather than
@@ -251,6 +261,15 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   .eyebrow-row a:hover {
     color: var(--mint);
     border-bottom-color: var(--muted);
+  }
+
+  .rendered-timestamp {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin: 0.5rem 0 0;
   }
 
   .masthead h1 {
@@ -572,8 +591,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
   .popover-label {
     font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-size: 0.625rem;
-    font-weight: 500;
+    font-size: 0.8125rem;
+    font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--muted);
@@ -616,10 +635,11 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 <div class="sheet">
   <header class="masthead">
     <div class="eyebrow-row">
-      <p class="eyebrow">Mission Lock &middot; Eval Results</p>
+      <p class="eyebrow">Mission Lock Analyzer &middot; Eval Results</p>
       <a href="https://escapevelocity.co">Escape Velocity</a>
     </div>
     <h1>Iteration {{ITERATION_NUMBER}}</h1>
+    <p class="rendered-timestamp" id="rendered-timestamp" data-generated-utc="{{RENDERED_TIMESTAMP_UTC}}"></p>
   </header>
 
   <div class="table-shell">
@@ -638,7 +658,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
               data-query="{{RULE_QUERY}}"
               data-condition="{{RULE_CONDITION_ITEMS}}"
               data-evidence-categories="{{RULE_EVIDENCE_CATEGORY_ITEMS}}"
-              data-location="{{RULE_LOCATION}}">{{RULE_ID}}</th>
+              data-location-items="{{RULE_LOCATION_ITEMS}}">{{RULE_ID}}</th>
             <!-- END REPEAT -->
           </tr>
           <tr class="rule-name">
@@ -649,7 +669,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
               data-query="{{RULE_QUERY}}"
               data-condition="{{RULE_CONDITION_ITEMS}}"
               data-evidence-categories="{{RULE_EVIDENCE_CATEGORY_ITEMS}}"
-              data-location="{{RULE_LOCATION}}">{{RULE_NAME}}</th>
+              data-location-items="{{RULE_LOCATION_ITEMS}}">{{RULE_NAME}}</th>
             <!-- END REPEAT -->
           </tr>
         </thead>
@@ -719,10 +739,34 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     <p class="popover-label">Categories of Evidence</p>
     <ul class="popover-list" id="pop-evidence-cats-list"></ul>
   </div>
+  <div class="popover-section" id="pop-location-section" hidden>
+    <p class="popover-label">Typically Found Location</p>
+    <ul class="popover-list" id="pop-location-list"></ul>
+  </div>
   <div class="popover-location" id="pop-location"></div>
 </div>
 
 <script>
+(function () {
+  // Convert the generation timestamp to the viewer's own browser-local
+  // timezone, so the same docket shows the right local time to whoever
+  // opens it rather than whoever generated it.
+  var elTimestamp = document.getElementById('rendered-timestamp');
+  if (elTimestamp) {
+    var utc = elTimestamp.dataset.generatedUtc;
+    var parsed = utc ? new Date(utc) : null;
+    if (parsed && !isNaN(parsed.getTime())) {
+      var formatted = parsed.toLocaleString(undefined, {
+        year: 'numeric', month: 'long', day: 'numeric',
+        hour: 'numeric', minute: '2-digit', timeZoneName: 'short'
+      });
+      elTimestamp.textContent = 'Completed ' + formatted;
+    } else {
+      elTimestamp.textContent = 'Completed ' + (utc || 'unknown time');
+    }
+  }
+})();
+
 (function () {
   var pop = document.getElementById('popover');
   var elResult = document.getElementById('pop-result');
@@ -735,6 +779,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   var elEvidenceCatsSection = document.getElementById('pop-evidence-cats-section');
   var elEvidenceCatsList = document.getElementById('pop-evidence-cats-list');
   var elLocation = document.getElementById('pop-location');
+  var elLocationSection = document.getElementById('pop-location-section');
+  var elLocationList = document.getElementById('pop-location-list');
   var openButton = null;
 
   function itemsToList(el, pipeDelimited) {
@@ -757,6 +803,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     elEvidence.innerHTML = '&ldquo;' + btn.dataset.evidence + '&rdquo;';
     elConditionSection.hidden = true;
     elEvidenceCatsSection.hidden = true;
+    elLocationSection.hidden = true;
+    elLocation.hidden = false;
     elLocation.textContent = btn.dataset.location;
   }
 
@@ -772,7 +820,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     itemsToList(elConditionList, th.dataset.condition);
     elEvidenceCatsSection.hidden = false;
     itemsToList(elEvidenceCatsList, th.dataset.evidenceCategories);
-    elLocation.textContent = th.dataset.location;
+    elLocationSection.hidden = false;
+    itemsToList(elLocationList, th.dataset.locationItems);
+    elLocation.hidden = true;
   }
 
   function fill(el) {
