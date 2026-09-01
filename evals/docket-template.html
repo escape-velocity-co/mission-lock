@@ -87,13 +87,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
     Color comes from the surrounding element, not the icon itself: the
     .assessment button picks up var(--green/red/amber) automatically from
-    its own data-color attribute (see the CSS), and the chip icons pick
-    it up from their .chip.green/.red/.amber parent — never add a color
+    its own data-color attribute (see the CSS) — never add a color
     attribute to the <svg> or <path> tags directly.
-  - Summary chips: count every rule-result across every eval (counting
-    each subject separately in a multi-subject cell) and total them per
-    color. The three counts must sum to the total shown in each chip's
-    "/ N" denominator.
   - {{RESULT_ASSERTION_HTML}} / {{RESULT_EVIDENCE_HTML}}: may contain
     inline HTML entities (e.g. &mdash;, &ldquo;&rdquo;, &hellip;) — carry
     those through as written in the source report rather than plain
@@ -236,41 +231,6 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     text-wrap: balance;
     color: var(--heading);
   }
-
-  .summary {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 1.1rem;
-  }
-
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.4rem 0.8rem;
-    border-radius: 999px;
-    border: 1px solid var(--rule);
-    background: var(--surface);
-    font-family: "Open Sans", sans-serif;
-    font-size: 0.8125rem;
-    color: var(--navy);
-    box-shadow: var(--shadow);
-  }
-
-  .chip .count {
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-weight: 500;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .chip.green { color: var(--green); }
-  .chip.red { color: var(--red); }
-  .chip.amber { color: var(--amber); }
-  .chip.green .count { color: var(--green); }
-  .chip.red .count { color: var(--red); }
-  .chip.amber .count { color: var(--amber); }
-  .chip .total { color: var(--muted); font-family: "IBM Plex Mono", ui-monospace, monospace; }
 
   /* ---- Results table ---- */
 
@@ -542,11 +502,6 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
       <a href="https://escapevelocity.co">Escape Velocity</a>
     </div>
     <h1>Iteration {{ITERATION_NUMBER}}</h1>
-    <div class="summary">
-      <span class="chip green"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span class="count">{{AFFIRMATIVE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} affirmative</span></span>
-      <span class="chip red"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m14.5 9.5-5 5"/><path d="m9.5 9.5 5 5"/></svg><span class="count">{{NOT_AFFIRMATIVE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} not affirmative</span></span>
-      <span class="chip amber"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span class="count">{{COULD_NOT_DETERMINE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} could not determine</span></span>
-    </div>
   </header>
 
   <div class="table-shell">
