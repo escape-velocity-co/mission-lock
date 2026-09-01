@@ -51,11 +51,49 @@ There is no "Response Options" field in the template.  Whereas [`skills/mission-
 * The purpose is not the jurisdiction's default any-lawful-purpose formulation
 * The purpose Is not solely financial return
 * The purpose identifies who or what benefits beyond the owners
-* You are not considering whether or not it is a ""good"" mission
+* You are not considering whether or not it is a "good" mission
 
 **Categories of Evidence:**
 * Stated mission
 * Named beneficiary class
 
 **Typically Found Location:** 
-Articles of Incorporation
+* Articles of Incorporation
+
+### Mission Breachability
+
+**ID:** M2
+
+**Query:** Can mission pursuit and violation be easily identified?
+
+**Affirmative Condition:** 
+* The mission is written so that it can be contradicted. It identifies a domain and a direction, and a course of conduct exists that would run against it.
+* A mission naming no activity and no beneficiary, for example "any lawful act or activity", excludes no conduct and therefore cannot be breached.
+* A mission that cannot be breached is not acceptable.
+* You are not considering whether or not it is a "good" mission.
+
+**Categories of Evidence:**
+* Stated mission
+* Named beneficiary class
+
+**Typically Found Location:** 
+* Articles of Incorporation
+
+### Mission is Paramount
+
+**ID:** M3
+
+**Query:** Are Directors permitted or required to pursue the mission?
+
+**Affirmative Condition:** 
+* PBC or an equivalent legal designation in the relevant jurisdiction, that allows for the prioritization of the mission described in M1.
+* M1 asks whether a mission exists; M3 asks whether it is legally paramount.
+* Merely stating that directors are required or permitted to prioritize the mission, without the statutory election, does not satisfy this condition.
+* A provision to this effect in the bylaws, does not satisfy this condition either as bylaws are ordinarily amendable by the board alone. They cannot substitute for the certificate-level statutory election this condition requires.
+
+**Categories of Evidence:**
+* Statutory definition allowing prioritization of mission
+
+**Typically Found Location:** 
+* Articles of Incorporation
+* NOT Bylaws (see Affirmative Condition)

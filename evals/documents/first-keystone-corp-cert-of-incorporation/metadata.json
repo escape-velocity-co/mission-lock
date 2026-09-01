@@ -1,0 +1,26 @@
+{
+  "company_name": "First Keystone Corporation",
+  "cik": "0000737875",
+  "documents": [
+    {
+      "file": "exh3i.txt",
+      "description": "Articles of Incorporation of First Keystone Corporation, originally filed July 5, 1983, as amended through 1998 (aggregate share authorization amendment).",
+      "accession_number": "0000737875-06-000023",
+      "exhibit_label": "Exhibit 3i",
+      "form_type": "10-K",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/737875/000073787506000023/exh3i.txt"
+    },
+    {
+      "file": "tm214509d1_ex3-1.htm",
+      "description": "Amended and Restated Bylaws of First Keystone Corporation. NOTE: the SEC exhibit label on this filing is 'EX-3.1', which normally denotes a Certificate/Articles of Incorporation -- the filer mislabeled it. The document's own title, and its full content, confirm it is the company's Bylaws, not its Articles.",
+      "accession_number": "0001104659-21-008844",
+      "exhibit_label": "EX-3.1 (filer-mislabeled; actual content is Bylaws)",
+      "form_type": "8-K",
+      "filing_date": "2021-03-04",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/737875/000110465921008844/tm214509d1_ex3-1.htm"
+    }
+  ],
+  "state_of_incorporation": "Pennsylvania",
+  "entity_type": "standard business corporation (not a benefit corporation)",
+  "note": "Included as a positive example for M3's new 'bylaws do not satisfy this condition' bullet, and as a negative example for M1/M2. The Articles state only the generic 'any lawful act' purpose plus an 'Additional Article 9' tender-offer-defense provision (common 1980s-era Pennsylvania anti-takeover boilerplate) that lets the board consider the impact of a hostile bid on 'employees, depositors and customers... and the communities which they serve' -- but this is explicitly discretionary and limited to evaluating a takeover bid ('the Board of Directors may, but is not legally obligated to, consider'), not a stated corporate mission or purpose. The Bylaws separately contain a broader, general-purpose constituency clause (letting the board 'in discharging the duties of their respective positions... consider the effects of any action upon employees, upon suppliers and customers... and upon communities... and all other pertinent factors') that is NOT PBC-equivalent and is not in the Articles -- exactly the fact pattern M3's new bylaws-carve-out bullet addresses. No PBC, benefit-corporation, Subchapter XV, or equivalent statutory designation appears anywhere in either document."
+}
