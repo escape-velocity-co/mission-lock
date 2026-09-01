@@ -14,7 +14,7 @@ Confidence requirements and conflict resolution guidelines are present in [confi
 
 ## Adding New Rules
 
-Append a new `###` section following the template below.
+Append a new section to "Rule Definitions" following the template below.
 
 There is no "Response Options" field in the template.  Whereas [`skills/mission-lock/references/attributes.md`](skills/mission-lock/references/attributes.md) defines different response options per Attribute, Rules response options are the same for all Rules:
 
@@ -25,9 +25,9 @@ There is no "Response Options" field in the template.  Whereas [`skills/mission-
 ```markdown
 ### Rule Name
 
-**Positive Assertion:** What can be stated if evidence is found to support the Rule Name.
+**ID:** Identifier used to cross-reference rules.
 
-**Question:** What question this answers about the company.
+**Query:** What question does this analysis answer?
 
 **Affirmative Condition:** What condition(s) is/are required for this rule check to succeed.
 
@@ -40,49 +40,22 @@ There is no "Response Options" field in the template.  Whereas [`skills/mission-
 
 ## Rule Definitions
 
-### Mission Existence and Breachability
+### Mission Beyond Financial Profit
 
-**Positive Assertion:** A mission exists, is stated, and is specific enough to be breached.
+**ID:** M1
 
-**Question:** Is there a mission at all, in a form anyone could hold the company to?
+**Query:** Does a mission with more than financial benefits exist?
 
-**Affirmative Condition:**
-  * A mission is stated in a durable document, identifies who benefits, and is specific enough that a breach of it could be identified by a third party. A mission naming no activity and no beneficiary, for example "any lawful act or activity", excludes no conduct and therefore cannot be departed from.
-  * A breachable mission does not require metrics, thresholds, measurement periods, reporting obligations, third-party certification, or definitions of the evaluative words inside the mission itself.
-  * You are not considering whether or not it is a "good" mission. A mission that cannot be breached is not a mission.
+**Affirmative Condition:** 
+* A purpose is stated in a durable document
+* The purpose is not the jurisdiction's default any-lawful-purpose formulation
+* The purpose Is not solely financial return
+* The purpose identifies who or what benefits beyond the owners
+* You are not considering whether or not it is a ""good"" mission
 
-**Categories of Evidence:** Stated mission; assessor's breach-identification test; named beneficiary class
+**Categories of Evidence:**
+* Stated mission
+* Named beneficiary class
 
-**Typically Found Location:** Articles of Incorporation
-
-**When to say "Could not determine:"** You cannot locate a mission of any sort, or the document is missing, illegible, or truncated where the mission would be. Note that a mission whose wording is vague is not a case for "Could not determine" — apply the breachability bar above and answer definitively.
-
-### Paramount Purpose
-
-**Positive Assertion:** Purpose is paramount in the constitutional documents.
-
-**Question:** Is the mission legally binding, or merely aspirational?
-
-**Affirmative Condition:** PBC or an equivalent legal form in the relevant jurisdiction. The stated purpose appears in the constitutional documents, and directors are permitted or required to prioritize it.
-
-**Categories of Evidence:** Filed charter / articles of association
-
-**Typically Found Location:** Articles of Incorporation
-
-**When to say "Could not determine:"** You cannot locate a mission of any sort, or the document is missing, illegible, or truncated where the mission would be. Note that a mission whose wording is vague is not a case for "Could not determine" — apply the binding bar above and answer definitively.
-
-### Mission Protection from Ordinary Majority
-
-**Positive Assertion:** No ordinary majority can override the mission.
-
-**Question:** Who can say no when everyone else says yes?
-
-**Affirmative Condition:** Satisfied by any of the following:
-  * A distinct lock-holding body - trust, foundation, golden share, employee ownership trust, cooperative member body - holding real power and owing a duty to the purpose;
-  * A constitutionally distributed lock, where binding provisions sit across a federated or member constitution and cannot be amended by simple majority. Route (b) must be DEMONSTRATED provision by provision, not asserted
-
-Advisory bodies satisfy none of the above.
-
-**Categories of Evidence:** Charter, share class terms, trust deed, federation constitution and member bylaws, charter amendment/entrenchment provisions and the vote thresholds they set
-
-**Typically Found Location:** Articles of Incorporation, particularly the amendment article (often titled "Amendment" or near the end of the document) and any article addressing supermajority voting requirements
+**Typically Found Location:** 
+Articles of Incorporation

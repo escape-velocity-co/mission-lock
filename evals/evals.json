@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Can you look at this certificate of incorporation and tell me about the company's structure and whether there's anything protecting its mission long-term? It's Vital Farms.",
-      "expected_output": "A report with one section per attribute in references/attributes.md (currently Company Name, Public Benefit Corporation Status, Stated Purpose), each with a definitive Answer plus quoted/paraphrased Evidence. Company name 'Vital Farms, Inc.', PBC status 'Yes' (explicit Subchapter XV / 'Public Benefit Corporation' language), and the specific public benefit purpose quoted. Mission Protection from Ordinary Majority is 'Not affirmative': the rule's Affirmative Condition no longer includes a supermajority-vote route, and Vital Farms has no distinct lock-holding body and no demonstrated federated/member-constitution structure — the Article IX 66⅔% requirement doesn't satisfy this rule anymore, even though it's still real, quotable language. No scoring or recommendation language.",
+      "expected_output": "A report with one section per attribute in references/attributes.md (currently Company Name, Public Benefit Corporation Status, Stated Purpose), each with a definitive Answer plus quoted/paraphrased Evidence. Company name 'Vital Farms, Inc.', PBC status 'Yes' (explicit Subchapter XV / 'Public Benefit Corporation' language), and the specific public benefit purpose quoted. Mission Beyond Financial Profit (M1) is 'Affirmative': Article III states a specific public benefit purpose naming beneficiary classes beyond the owners, is not the jurisdiction's default any-lawful-act formulation, and is not solely a financial-return purpose. No scoring or recommendation language.",
       "files": [
         "documents/vital-farms-cert-of-incorporation/d841617dex32.htm"
       ],
@@ -16,20 +16,17 @@
         "No attribute answer is 'Could not determine' for this document, since all three attributes are clearly stated in it",
         "Output contains no evaluative or judgmental language about the company's mission lock, such as 'strong', 'weak', 'good', 'bad', 'should', or 'recommend'",
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Mission Existence and Breachability result is 'Affirmative' (Vital Farms' Article III enumerates six specific public benefits identifying who benefits), not 'Could not determine'",
+        "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Could not determine' — Article III states a specific public benefit purpose naming beneficiary classes beyond the owners",
         "The rule result cites specific document language as evidence rather than asserting a conclusion without support",
-        "The rule assessment does not evaluate whether the mission is good, admirable, or worthwhile — only whether it exists, names beneficiaries, and is specific enough to be breached",
-        "The Paramount Purpose result is 'Affirmative', not 'Could not determine', since Vital Farms is a Delaware PBC (Subchapter XV) with its public benefit purpose stated in Article III",
-        "The Paramount Purpose evidence cites both the statutory PBC designation and the stated purpose, not just one or the other",
-        "The Mission Protection from Ordinary Majority result is 'Not affirmative', not 'Could not determine' — the rule's Affirmative Condition no longer has a supermajority-vote route, and Vital Farms' certificate has no distinct lock-holding body (trust, foundation, golden share, ESOP, or cooperative) and no demonstrated federated/member-constitution structure",
-        "The rule result does not treat Article IX's 66⅔% supermajority requirement, or PBC status itself, as satisfying this rule — neither is a lock-holding body or a federated/member constitution",
-        "The negative result is stated neutrally, not as a criticism of the certificate's drafting, and not hedged as a 'close call'"
+        "The rule assessment does not evaluate whether the mission is good, admirable, or worthwhile — only whether the stated purpose is not the jurisdiction's default any-lawful-purpose formulation, is not solely financial return, and identifies who or what benefits beyond the owners",
+        "The rule result does not treat PBC status as a required element of the affirmative answer — M1's Affirmative Condition has no PBC-or-equivalent threshold, so the specific purpose language in Article III is sufficient evidence on its own",
+        "The M1 evidence reuses the Stated Purpose attribute's already-quoted language rather than independently re-deriving a separate reading of the purpose clause"
       ]
     },
     {
       "id": 2,
       "prompt": "I'm doing diligence on Allbirds. Here's their certificate of incorporation (they converted to a PBC right around their IPO) — can you break down what that conversion actually locked in, if anything?",
-      "expected_output": "Company Name 'Allbirds, Inc.', PBC Status 'Yes', and Stated Purpose quoting the specific public benefit language, each with evidence drawn from the certificate itself. Only one document is provided (no earlier, pre-conversion certificate to compare against), so the report should analyze this certificate on its own terms without asserting or speculating about what an earlier version said or whether this restatement is what changed PBC status — the user's framing of a 'conversion' is context from the prompt, not something the skill can verify from the document. Mission Protection from Ordinary Majority is 'Not affirmative': the rule no longer has a supermajority-vote route, and Allbirds has no distinct lock-holding body and no demonstrated federated/member-constitution structure.",
+      "expected_output": "Company Name 'Allbirds, Inc.', PBC Status 'Yes', and Stated Purpose quoting the specific public benefit language, each with evidence drawn from the certificate itself. Only one document is provided (no earlier, pre-conversion certificate to compare against), so the report should analyze this certificate on its own terms without asserting or speculating about what an earlier version said or whether this restatement is what changed PBC status — the user's framing of a 'conversion' is context from the prompt, not something the skill can verify from the document. Mission Beyond Financial Profit (M1) is 'Affirmative': the certificate states a specific 'environmental conservation' public benefit purpose that identifies a beneficiary beyond the owners and is not the jurisdiction's default any-lawful-act formulation.",
       "files": [
         "documents/allbirds-cert-of-incorporation/exhibit33-sx1a1.htm"
       ],
@@ -41,20 +38,17 @@
         "Output does not assert or imply, as a verified finding, that this restatement is what added PBC status or changed any answer from an earlier version — since no earlier certificate was provided to compare against, that's the user's framing from the prompt, not something the skill can confirm from the document itself",
         "Output contains no evaluative or judgmental language about whether the conversion is meaningful, adequate, or effective",
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Mission Existence and Breachability result is a definitive 'Affirmative' or 'Not affirmative' rather than 'Could not determine', since the document states a public benefit ('environmental conservation')",
+        "The Mission Beyond Financial Profit (M1) result is a definitive 'Affirmative', not 'Could not determine' — the certificate states a specific 'environmental conservation' public benefit purpose naming a beneficiary beyond the owners",
         "The rule result cites specific document language as evidence",
-        "If the result reasons about whether 'environmental conservation' is specific enough for a third party to identify a breach, it does so descriptively without judging the mission's quality or adequacy",
-        "The Paramount Purpose result is 'Affirmative', not 'Could not determine', since Allbirds is a Delaware PBC (Subchapter XV) with its public benefit purpose stated in Article III",
-        "No rule result is hedged with confidence language such as 'close call' or 'narrow margin'",
-        "The Mission Protection from Ordinary Majority result is 'Not affirmative', not 'Could not determine' — the rule no longer has a supermajority-vote route, and Allbirds' certificate has no distinct lock-holding body and no demonstrated federated/member-constitution structure",
-        "The rule assessment does not treat Article VII's 66⅔% supermajority requirement, or PBC status itself, as satisfying this rule",
-        "The rule does not equate 'converted to a PBC' with 'the mission is protected from ordinary majority' — those remain separate questions, and the negative result here is stated neutrally, not as a criticism"
+        "The rule assessment does not evaluate whether 'environmental conservation' is a good, adequate, or sufficiently ambitious public benefit — only whether it identifies a beneficiary beyond the owners and is not solely financial return",
+        "The rule result does not treat PBC status itself as satisfying M1 in place of the purpose language — the Evidence cites the specific purpose text, not merely the statutory designation",
+        "No rule result is hedged with confidence language such as 'close call' or 'narrow margin'"
       ]
     },
     {
       "id": 3,
       "prompt": "attached is datadog's certificate of incorporation from their S-1, can you extract the basic info and check it against your mission lock attributes",
-      "expected_output": "Company Name 'Datadog, Inc.', PBC Status 'No' (confident negative, not 'Could not determine'), and Stated Purpose quoting the generic 'any lawful act' boilerplate as the definitive answer (not treated as a missing/undeterminable answer).",
+      "expected_output": "Company Name 'Datadog, Inc.', PBC Status 'No' (confident negative, not 'Could not determine'), and Stated Purpose quoting the generic 'any lawful act' boilerplate as the definitive answer (not treated as a missing/undeterminable answer). Mission Beyond Financial Profit (M1) is a confident 'Not affirmative': the purpose clause is exactly the jurisdiction's default any-lawful-purpose formulation and identifies no beneficiary beyond the owners.",
       "files": [
         "documents/datadog-cert-of-incorporation/d745413dex31.htm"
       ],
@@ -66,19 +60,16 @@
         "No attribute answer is 'Could not determine' for this document, since all three are determinable even though PBC status is negative and purpose is generic",
         "Output does not describe the absence of PBC status or a specific purpose using negative/judgmental framing such as 'lacks', 'fails to', or 'unprotected'",
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Mission Existence and Breachability result is a confident 'Not affirmative' — Datadog's generic 'any lawful act' purpose clause states no mission and names no beneficiary class — and is NOT reported as 'Could not determine'",
+        "The Mission Beyond Financial Profit (M1) result is a confident 'Not affirmative', not 'Could not determine' — the purpose clause is the jurisdiction's default any-lawful-purpose formulation and names no beneficiary beyond the owners",
         "The rule result cites the generic purpose clause as the evidence for the negative finding",
-        "The negative rule result is stated neutrally, without framing the absence of a breachable mission as a deficiency (e.g. 'lacks', 'fails to', 'unprotected')",
-        "The Paramount Purpose result is a confident 'Not affirmative', not 'Could not determine', since Datadog has no PBC or equivalent statutory designation",
-        "The Paramount Purpose negative result cites the absence of PBC status as the basis, not merely the generic purpose clause",
-        "The Mission Protection from Ordinary Majority result is a confident 'Not affirmative', not 'Could not determine' — there is no mission to protect and no charter-level supermajority or entrenchment provision of any kind",
-        "The negative result is stated neutrally, without framing the absence of a lock-holding body or entrenchment provision as a deficiency"
+        "The negative rule result is stated neutrally, without framing the absence of a qualifying purpose as a deficiency (e.g. 'lacks', 'fails to', 'unprotected')",
+        "The M1 evidence reuses the Stated Purpose attribute's already-quoted boilerplate language rather than independently re-describing the purpose clause"
       ]
     },
     {
       "id": 4,
       "prompt": "Squarespace has this dual-class stock thing going on. Does their certificate of incorporation have any real mission-lock provisions, or is it just founder control?",
-      "expected_output": "Company Name 'Squarespace, Inc.', PBC Status 'No', Stated Purpose reported as generic boilerplate. Since dual-class voting isn't in the current attribute catalog, it should not be answered as one of the three attributes, and does not need to be mentioned anywhere else in the report either, since there is no Notes section.",
+      "expected_output": "Company Name 'Squarespace, Inc.', PBC Status 'No', Stated Purpose reported as generic boilerplate. Since dual-class voting isn't in the current attribute catalog, it should not be answered as one of the three attributes, and does not need to be mentioned anywhere else in the report either, since there is no Notes section. Mission Beyond Financial Profit (M1) is a confident 'Not affirmative': the purpose clause is the default any-lawful-act formulation and names no beneficiary beyond the owners; the dual-class supervoting structure is a founder-control mechanism and has no bearing on this rule.",
       "files": [
         "documents/squarespace-cert-of-incorporation/tm213918d7_ex3-1.htm"
       ],
@@ -89,20 +80,15 @@
         "The dual-class Class A / Class B structure is not folded into the Stated Purpose or PBC Status answers — and since there is no Notes section, it does not need to appear anywhere else in the report either",
         "Output contains no evaluative language ranking founder control as better or worse than mission lock",
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Mission Existence and Breachability result is a confident 'Not affirmative' for Squarespace's generic purpose clause, not 'Could not determine'",
-        "The rule assessment does not treat the dual-class/founder-control structure as satisfying the mission-existence rule",
-        "The negative rule result is stated neutrally rather than as a criticism of the company",
-        "The Paramount Purpose result is a confident 'Not affirmative', not 'Could not determine', since Squarespace has no PBC or equivalent statutory designation",
-        "The rule assessment does not treat the dual-class/founder-control structure as satisfying the Paramount Purpose rule",
-        "The Mission Protection from Ordinary Majority result is a confident 'Not affirmative', not 'Could not determine' — there is no mission to protect, and the dual-class supervoting structure is a founder-control mechanism, not a mission-lock provision",
-        "The rule assessment explicitly does not treat the Class A/B dual-class structure as satisfying this rule, since it entrenches founder control rather than a stated mission",
-        "The negative rule result is stated neutrally rather than as a criticism of the company's governance choices"
+        "The Mission Beyond Financial Profit (M1) result is a confident 'Not affirmative' for Squarespace's generic purpose clause, not 'Could not determine'",
+        "The rule assessment does not treat the dual-class/founder-control structure as satisfying M1 — a supervoting share structure has no bearing on whether the purpose clause names a beneficiary beyond the owners",
+        "The negative rule result is stated neutrally rather than as a criticism of the company"
       ]
     },
     {
       "id": 5,
       "prompt": "Here's Lemonade's cert of incorporation, they're a PBC I think - what does it say about their purpose and what happens if they ever wanted to change it?",
-      "expected_output": "Company Name 'Lemonade, Inc.', PBC Status 'Yes', Stated Purpose quoting the specific public benefit language. Amendment mechanics aren't in the current attribute catalog, so the 'what happens if they wanted to change it' part of the question is addressed through the Mission Protection from Ordinary Majority rule result instead, not as a required attribute answer.",
+      "expected_output": "Company Name 'Lemonade, Inc.', PBC Status 'Yes', Stated Purpose quoting the specific public benefit language. Amendment mechanics aren't in the current attribute catalog, and the current rule catalog no longer contains any rule about protection from ordinary-majority amendment either, so the 'what happens if they wanted to change it' part of the question isn't answered by a dedicated attribute or rule — the report should cover only what the current catalog actually defines. Mission Beyond Financial Profit (M1) is 'Affirmative': Lemonade's purpose clause states a specific public benefit beyond the owners and is not the default any-lawful-act formulation.",
       "files": [
         "documents/lemonade-cert-of-incorporation/a2241721zex-3_1.htm"
       ],
@@ -113,20 +99,17 @@
         "The Stated Purpose answer quotes or closely paraphrases specific language from the document rather than describing it only in general terms",
         "Output does not invent an 'Amendment Thresholds' attribute section to answer the amendment part of the question, since that attribute isn't currently in references/attributes.md",
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Mission Existence and Breachability result is definitive ('Affirmative' or 'Not affirmative'), not 'Could not determine', given Lemonade's specific stated public benefit purpose",
+        "The Mission Beyond Financial Profit (M1) result is a definitive 'Affirmative', not 'Could not determine', given Lemonade's specific stated public benefit purpose",
         "The rule result cites specific document language from the purpose clause as evidence",
-        "The rule assessment stays within the question asked (existence, beneficiary, breachability) without rating the mission's quality",
-        "The Paramount Purpose result is 'Affirmative', not 'Could not determine', since Lemonade is a Delaware PBC (Subchapter XV) with its public benefit purpose stated in Article III",
-        "The Mission Protection from Ordinary Majority result is a confident 'Not affirmative', not 'Could not determine', even though Lemonade is a PBC with a stated mission — the certificate has no distinct lock-holding body (trust, foundation, golden share, ESOP, or cooperative) and no demonstrated federated/member-constitution structure; the rule no longer has a supermajority-vote route, so the certificate's vote-threshold provisions are irrelevant to this rule regardless of what they cover",
-        "The rule result does not treat PBC status or the existence of a stated purpose as sufficient on its own to satisfy this rule — it distinguishes 'has a mission' (Mission Existence: Affirmative) and 'is legally binding' (Paramount Purpose: Affirmative) from 'the mission is protected from ordinary majority override' (Mission Protection from Ordinary Majority: Not affirmative)",
-        "If the Preferred Majority protective-provision veto (or any other vote-threshold language) is mentioned, it is not mistaken for a route (a) lock-holding body or a route (b) federated/member constitution — a class veto tied to protecting that class's own economic rights does not owe a duty to the mission and is not a constitutional structure of the kind this rule requires",
-        "This directly answers the user's 'what happens if they wanted to change it' question by reporting, neutrally, that ordinary majority amendment applies to the purpose clause — without characterizing that as a shortcoming"
+        "The rule assessment stays within the question M1 actually asks (durable statement, not default boilerplate, not solely financial, names a beneficiary beyond the owners) without rating the mission's quality",
+        "Output does not fabricate a rule result about amendment thresholds, supermajority requirements, or protection from ordinary-majority override, since no such rule exists in the current catalog — it answers the user's amendment question, if at all, by noting plainly that the current rule catalog doesn't cover it, rather than inventing a rule-shaped answer",
+        "The report does not treat the user's premise ('what happens if they wanted to change it') as something the skill must resolve with a rule result — it is accurate about what the current catalog does and does not check"
       ]
     },
     {
       "id": 6,
       "prompt": "this is a long one but it's Laureate Education's charter, they were one of the first big PBC IPOs. can you do the full mission lock writeup? there's also some preferred stock stuff bundled into the same exhibit, not sure if that's relevant",
-      "expected_output": "Company Name 'Laureate Education, Inc.', PBC Status 'Yes', Stated Purpose quoted. Should list the bundled Series A Preferred Stock certificate of designations under ‘Documents Considered and not Used’ in the Appendix, without letting that content interfere with the three required attribute answers.",
+      "expected_output": "Company Name 'Laureate Education, Inc.', PBC Status 'Yes', Stated Purpose quoted. Should list the bundled Series A Preferred Stock certificate of designations under 'Documents Considered and not Used' in the Appendix, without letting that content interfere with the three required attribute answers. Mission Beyond Financial Profit (M1) is 'Affirmative': Laureate's purpose clause states a specific education-related public benefit naming beneficiaries beyond the owners.",
       "files": [
         "documents/laureate-education-cert-of-incorporation/a2230553zex-3_1.htm"
       ],
@@ -135,22 +118,19 @@
         "The Company Name answer is 'Laureate Education, Inc.'",
         "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation",
         "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language",
-        "Output lists the Series A Preferred Stock certificate of designations under ‘Documents Considered and not Used’ in the Appendix (or otherwise makes clear it was reviewed but not used for the certificate of incorporation analysis)",
+        "Output lists the Series A Preferred Stock certificate of designations under 'Documents Considered and not Used' in the Appendix (or otherwise makes clear it was reviewed but not used for the certificate of incorporation analysis)",
         "Output contains no evaluative or judgmental language about the company's mission lock",
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md, not truncated due to the document's length",
-        "The Mission Existence and Breachability result is definitive ('Affirmative' or 'Not affirmative'), not 'Could not determine'",
+        "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Could not determine'",
         "The rule result cites specific document language from Laureate's purpose clause as evidence",
-        "The rule assessment does not evaluate whether the education-related mission is good or worthwhile, only whether it meets the rule's stated condition",
-        "The Paramount Purpose result is 'Affirmative', not 'Could not determine', since Laureate is a Delaware PBC (Subchapter XV) with its public benefit purpose stated in the certificate",
-        "The Mission Protection from Ordinary Majority result is 'Not affirmative', not 'Could not determine' — the rule no longer has a supermajority-vote route, and Laureate has no distinct lock-holding body and no demonstrated federated/member-constitution structure, even though Article XI's 66⅔% supermajority requirement is real and quotable",
-        "The rule result does not treat Article XI's 66⅔% supermajority requirement as satisfying this rule on its own",
-        "The rule result is not confused by the Series A Preferred certificate of designations bundled in the same exhibit — nothing in that bundled document is mistaken for a route (a) lock-holding body or route (b) federated/member constitution"
+        "The rule assessment does not evaluate whether the education-related mission is good or worthwhile, only whether it meets M1's stated condition",
+        "The rule result is not confused by the Series A Preferred certificate of designations bundled in the same exhibit — nothing in that bundled document is treated as relevant evidence for M1"
       ]
     },
     {
       "id": 7,
       "prompt": "can you compare Vital Farms and Datadog's certificates of incorporation side by side in terms of mission lock? just want to see how a PBC differs from a normal Delaware corp on paper",
-      "expected_output": "Both companies' Company Name, PBC Status, and Stated Purpose answered definitively (Vital Farms: Yes + specific purpose; Datadog: No + generic purpose), with the contrast made explicit and neutral.",
+      "expected_output": "Both companies' Company Name, PBC Status, and Stated Purpose answered definitively (Vital Farms: Yes + specific purpose; Datadog: No + generic purpose), with the contrast made explicit and neutral. Mission Beyond Financial Profit (M1) is 'Affirmative' for Vital Farms and 'Not affirmative' for Datadog, both stated definitively and contrasted neutrally.",
       "files": [
         "documents/vital-farms-cert-of-incorporation/d841617dex32.htm",
         "documents/datadog-cert-of-incorporation/d745413dex31.htm"
@@ -161,56 +141,50 @@
         "Output explicitly contrasts the two companies' Stated Purpose answers (specific public benefit language vs. generic 'any lawful act' language)",
         "Output does not use comparative judgment language such as 'better', 'worse', 'superior', or 'more protected' when contrasting the two companies",
         "Output includes rule results for both companies, covering every rule currently in skills/mission-lock/references/rules.md",
-        "Vital Farms' Mission Existence and Breachability result is 'Affirmative' and Datadog's is 'Not affirmative', both stated definitively rather than as 'Could not determine'",
+        "Vital Farms' Mission Beyond Financial Profit (M1) result is 'Affirmative' and Datadog's is 'Not affirmative', both stated definitively rather than as 'Could not determine'",
         "Each company's rule result cites that company's own document language as evidence",
         "The rule comparison does not use comparative judgment language, and does not frame one company's result as better, stronger, or more protected than the other's",
-        "Vital Farms' Paramount Purpose result is 'Affirmative' and Datadog's is 'Not affirmative', both stated definitively rather than as 'Could not determine'",
-        "The Paramount Purpose comparison is described in mechanical terms (PBC status present vs. absent) rather than as one company's mission being more binding or protected than the other's",
-        "Vital Farms' and Datadog's Mission Protection from Ordinary Majority results are BOTH 'Not affirmative' — the rule no longer has a supermajority-vote route, so Vital Farms' Article IX 66⅔% requirement doesn't satisfy it; Vital Farms has a stated mission with no qualifying lock-holding body or federated/member constitution, while Datadog has neither a mission nor such a structure. Both results are stated definitively, not as 'Could not determine'",
-        "Even though both companies land on 'Not affirmative' for this one rule, the output doesn't flatten the two into 'the same' — it distinguishes that Vital Farms has a stated, breachable mission (Mission Existence: Affirmative) that simply lacks a qualifying lock-holding body or federated/member constitution, versus Datadog having no mission at all for such a structure to protect. Neither is described as better or worse protected"
+        "The comparison is described in mechanical terms (a stated purpose naming a beneficiary beyond the owners vs. a generic any-lawful-act clause naming none) rather than as one company's mission being more legitimate or worthwhile than the other's"
       ]
     },
     {
       "id": 8,
       "prompt": "Lemonade says it's a PBC and has a public benefit purpose — but is that actually legally binding on the board, or just a mission statement they put in the filing?",
-      "expected_output": "A report covering every rule currently in references/rules.md. The Paramount Purpose result is 'Affirmative': Lemonade is a Delaware PBC (Subchapter XV), its public benefit purpose is stated in Article III of the certificate, and the DGCL's PBC balancing-of-interests mandate is what makes directors permitted/required to weigh that purpose, rather than it being purely aspirational.",
+      "expected_output": "A report covering every rule currently in references/rules.md, which is now just Mission Beyond Financial Profit (M1). M1 is 'Affirmative': Lemonade's public benefit purpose is stated in Article III, is not the default any-lawful-act formulation, and is not solely financial return. The current rule catalog no longer contains a dedicated rule addressing whether a purpose is legally binding on the board, so the report should not fabricate one to answer that specific question — it reports what M1 actually determines and lets the PBC Status attribute answer stand on its own, without asserting bindingness as a rule-level finding.",
       "files": [
         "documents/lemonade-cert-of-incorporation/a2241721zex-3_1.htm"
       ],
       "expectations": [
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Paramount Purpose result is 'Affirmative', not 'Could not determine'",
-        "The Paramount Purpose evidence cites Lemonade's statutory PBC designation (Subchapter XV of the DGCL) together with the public benefit purpose stated in the certificate, not just one or the other",
-        "The Paramount Purpose evidence reflects the DGCL's PBC director balancing-of-interests standard as the basis for treating the purpose as binding rather than purely aspirational",
-        "The rule assessment does not conflate 'is this legally binding' with 'is this a good mission' — no language evaluating whether the obligation is meaningful, adequate, or admirable",
+        "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Could not determine'",
+        "The M1 evidence cites the specific public benefit purpose language in Article III",
+        "Output does not fabricate a rule result answering whether the purpose is 'legally binding on the board', since no such rule exists in the current catalog — it answers based only on the rule actually defined in skills/mission-lock/references/rules.md",
+        "The rule assessment does not conflate 'does a qualifying mission exist' with 'is this legally binding' or 'is this a good mission' — no language evaluating whether the obligation is meaningful, adequate, or admirable",
         "No rule result is hedged with confidence language such as 'close call' or 'narrow margin'",
-        "The Mission Existence and Breachability result for this document is still 'Affirmative', unaffected by the addition of newer rules",
-        "The Mission Protection from Ordinary Majority result is a confident 'Not affirmative', not 'Could not determine' — the certificate has no distinct lock-holding body (trust, foundation, golden share, ESOP, or cooperative) and no demonstrated federated/member-constitution structure; the rule no longer has a supermajority-vote route at all",
-        "The rule assessment does not treat being a legally binding PBC (Paramount Purpose: Affirmative) as sufficient on its own to satisfy Mission Protection from Ordinary Majority — 'legally binding' and 'protected from ordinary majority override' are answered as separate, independent questions"
+        "Output does not overstate what M1 establishes — it does not claim the affirmative M1 result proves the purpose is enforceable or binding on the board, since M1 only tests whether a stated purpose beyond financial profit exists, not whether it's legally binding"
       ]
     },
     {
       "id": 9,
       "prompt": "Squarespace's leadership talks a lot about their vision and values in investor materials — does their certificate of incorporation actually make any of that legally binding on the board, the way a public benefit corporation would?",
-      "expected_output": "A report covering every rule currently in references/rules.md. The Paramount Purpose result is a confident 'Not affirmative': Squarespace is a standard Delaware corporation, not a PBC or equivalent statutory form, so the affirmative condition's threshold requirement isn't met regardless of what its purpose clause says.",
+      "expected_output": "A report covering every rule currently in references/rules.md, which is now just Mission Beyond Financial Profit (M1). Squarespace's purpose clause is the default any-lawful-act formulation and names no beneficiary beyond the owners, so M1 is a confident 'Not affirmative'. The current catalog has no dedicated rule about whether a purpose is 'legally binding on the board', so the report should not fabricate one — it reports only what M1 determines from the document's own purpose clause, unaffected by investor-facing talk that isn't in the certificate itself.",
       "files": [
         "documents/squarespace-cert-of-incorporation/tm213918d7_ex3-1.htm"
       ],
       "expectations": [
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Paramount Purpose result is a confident 'Not affirmative', not 'Could not determine'",
-        "The Paramount Purpose evidence cites the absence of any PBC or equivalent statutory designation as the basis for the negative result, rather than resting solely on the purpose clause being generic",
+        "The Mission Beyond Financial Profit (M1) result is a confident 'Not affirmative', not 'Could not determine'",
+        "The rule evidence cites the generic 'any lawful act' purpose clause as the basis for the negative result",
         "The negative result is stated neutrally, without 'lacks', 'fails to', 'unprotected', or similar judgmental framing",
         "No rule result is hedged with confidence language such as 'close call' or 'narrow margin'",
-        "The Mission Existence and Breachability result for this document is still 'Not affirmative', unaffected by the addition of newer rules",
-        "The Mission Protection from Ordinary Majority result is a confident 'Not affirmative', not 'Could not determine' — there is no mission to protect and no charter-level supermajority or entrenchment provision of any kind",
-        "The negative result is stated neutrally rather than as a criticism of the company's governance choices"
+        "Output does not fabricate a rule result answering whether the company's values are 'legally binding on the board', since no such rule exists in the current catalog",
+        "Output does not treat investor-facing 'vision and values' talk, which isn't part of the certificate itself, as evidence relevant to M1 — the rule turns only on the purpose clause's own text"
       ]
     },
     {
       "id": 10,
       "prompt": "I found two exhibits in Vital Farms' S-1/A filing that both look like certificates of incorporation — EX-3.1 and EX-3.2. Not sure if one supersedes the other or what. Can you run the mission lock analysis on whichever one actually governs?",
-      "expected_output": "Both documents are real exhibits from the same filing for the same company (Vital Farms, Inc.). EX-3.1 (Fifth Amended and Restated Certificate) is signed and dated July 22, 2020, with an actual signature. EX-3.2 (the version used in eval 1) has a blank, unsigned signature block, and several of its substantive provisions are explicitly conditioned on 'the closing of the Company's initial public offering' — a future event that neither document confirms has occurred. The precedence question is still resolvable the same way as before (EX-3.1's execution status makes it controlling), but note that under the current rule catalog this pair no longer demonstrates a genuine attribute/rule-level conflict: since Mission Protection from Ordinary Majority no longer has a supermajority-vote route, neither EX-3.1 nor EX-3.2 would satisfy it regardless of which one controls — both lack a distinct lock-holding body and a demonstrated federated/member-constitution structure. The eval still checks that the model correctly identifies EX-3.1 as controlling (the mechanical precedence-reasoning skill), even though that determination no longer changes any reported answer for this document pair.",
+      "expected_output": "Both documents are real exhibits from the same filing for the same company (Vital Farms, Inc.). EX-3.1 (Fifth Amended and Restated Certificate) is signed and dated July 22, 2020, with an actual signature. EX-3.2 (the version used in eval 1) has a blank, unsigned signature block, and several of its substantive provisions are explicitly conditioned on 'the closing of the Company's initial public offering' — a future event that neither document confirms has occurred. The precedence question is still resolvable the same way as before (EX-3.1's execution status makes it controlling). Under the current single-rule catalog, this pair doesn't demonstrate a genuine rule-level conflict either: Article THIRD's public benefit language is identical in substance between the two documents, so Mission Beyond Financial Profit (M1) is 'Affirmative' regardless of which document controls. The eval still checks that the model correctly identifies EX-3.1 as controlling (the mechanical precedence-reasoning skill), even though that determination doesn't change the reported M1 answer for this document pair.",
       "files": [
         "documents/vital-farms-cert-of-incorporation/d841617dex31.htm",
         "documents/vital-farms-cert-of-incorporation/d841617dex32.htm"
@@ -220,20 +194,18 @@
         "The determination is grounded in execution/effectiveness evidence — EX-3.1's actual signature and July 22, 2020 date vs. EX-3.2's blank, unsigned signature block and provisions explicitly conditioned on 'the closing of the Company's initial public offering' — not merely on which document reads as the more comprehensive or later-styled restatement",
         "None of the three attributes (Company Name, Public Benefit Corporation Status, Stated Purpose) come back 'Could not determine' — both documents agree on these, so there's no conflict to resolve for them",
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Mission Existence and Breachability result is 'Affirmative', based on EX-3.1's Article THIRD language (identical in substance to EX-3.2's)",
-        "The Paramount Purpose result is 'Affirmative', based on EX-3.1's PBC statutory designation",
-        "The Mission Protection from Ordinary Majority result is 'Not affirmative' for the controlling document (EX-3.1), not 'Could not determine' and not 'Affirmative' — EX-3.1 has no distinct lock-holding body and no demonstrated federated/member-constitution structure",
-        "The rule assessment does not treat EX-3.2's 66⅔% supermajority provision as something that 'would otherwise satisfy this rule' — under the current rule catalog, a supermajority-vote provision doesn't satisfy Mission Protection from Ordinary Majority regardless of which document controls, so the Evidence field should not imply that EX-3.2 taking effect would flip this result to 'Affirmative'",
+        "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Could not determine', based on EX-3.1's Article THIRD language naming a specific public benefit beyond the owners",
+        "The rule result does not depend on resolving the EX-3.1/EX-3.2 precedence question for its substance, since both documents state the same public-benefit purpose in substance — the output should not claim a rule-level conflict exists where the underlying purpose language is identical",
         "The rule assessment does not simply assert precedence without support — it points to the specific execution-status evidence (EX-3.1's signature and date; EX-3.2's blank signature block and future-contingent language) that establishes which document controls",
         "Output does not treat this as an unresolvable conflict — no attribute or rule answer is 'Could not determine' on the grounds that precedence between the two documents couldn't be determined, since the documents themselves provide enough to resolve it",
         "Output does not assume or assert, as if it were document evidence, that Vital Farms' IPO has since closed and EX-3.2 has therefore taken effect — that would be relying on outside knowledge rather than what the two documents themselves establish",
-        "Output's Appendix correctly reflects document usage: EX-3.1 is cited as the basis for the current analysis; if EX-3.2 is listed at all, it appears as context for the Mission Protection rule's Evidence rather than being treated as an equally-current, uncited-and-unexplained second source"
+        "Output's Appendix correctly reflects document usage: EX-3.1 is cited as the basis for the current analysis; if EX-3.2 is listed at all, it appears as context rather than being treated as an equally-current, uncited-and-unexplained second source"
       ]
     },
     {
       "id": 11,
       "prompt": "I've got two draft certificates of incorporation floating around for Slifka and Sons Movers, our new entity — we haven't filed either one yet and I honestly can't tell which draft is the one we're going with. Can you run the mission lock analysis so I know what we're about to file?",
-      "expected_output": "The two drafts (cert-draft-alpha.txt and cert-draft-beta.txt) are synthetic fixtures that genuinely conflict on PBC status, Stated Purpose, Mission Existence and Breachability, and Paramount Purpose, with no dates, version numbers, or cross-referencing language in either document to establish which one supersedes the other — those should come back 'Could not determine', each with Evidence explaining the conflict. Company Name is identical in both drafts and should stay a confident answer. Mission Protection from Ordinary Majority is DIFFERENT: under the current rule catalog (which no longer has a supermajority-vote route), neither draft has a distinct lock-holding body or a demonstrated federated/member-constitution structure — cert-draft-beta.txt's 66 2/3% supermajority provision doesn't satisfy this rule any more than cert-draft-alpha.txt's ordinary amendment provision does. So even though the two drafts still disagree on their amendment mechanics, they no longer disagree on the answer to THIS rule: both resolve to 'Not affirmative', and the correct behavior is a confident 'Not affirmative' rather than 'Could not determine' — recognizing that a superficial textual difference between conflicting documents doesn't always translate into a genuine disagreement on every tracked item.",
+      "expected_output": "The two drafts (cert-draft-alpha.txt and cert-draft-beta.txt) are synthetic fixtures that genuinely conflict on PBC status, Stated Purpose, and Mission Beyond Financial Profit (M1), with no dates, version numbers, or cross-referencing language in either document to establish which one supersedes the other — those should come back 'Could not determine', each with Evidence explaining the conflict. Company Name is identical in both drafts and should stay a confident answer.",
       "files": [
         "documents/slifka-and-sons-movers-synthetic-draft-conflict/cert-draft-alpha.txt",
         "documents/slifka-and-sons-movers-synthetic-draft-conflict/cert-draft-beta.txt"
@@ -244,10 +216,8 @@
         "The Public Benefit Corporation Status answer is 'Could not determine', with Evidence explaining that the two drafts disagree (one has no PBC designation, one does) and that neither draft contains a date, version marker, or supersession language that would establish which one controls",
         "The Stated Purpose answer is 'Could not determine' for the same reason — the two drafts state materially different purpose clauses (generic boilerplate vs. a specific public benefit purpose) with no way to tell which is operative",
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Mission Existence and Breachability result is 'Could not determine', since the drafts disagree on whether a mission is stated at all and neither can be established as controlling",
-        "The Paramount Purpose result is 'Could not determine' for the same reason",
-        "The Mission Protection from Ordinary Majority result is a confident 'Not affirmative', NOT 'Could not determine' — under the current rule catalog, neither draft has a distinct lock-holding body or a demonstrated federated/member-constitution structure (cert-draft-beta.txt's 66 2/3% supermajority provision no longer satisfies this rule), so the two drafts don't actually disagree on this particular rule even though they disagree on the underlying amendment mechanics",
-        "None of the 'Could not determine' results are hedged as a 'close call' or otherwise framed as though the skill leans toward one draft being more likely correct — the conflict is stated as a plain fact, not a probabilistic guess",
+        "The Mission Beyond Financial Profit (M1) result is 'Could not determine', since the drafts disagree on whether the stated purpose is the default any-lawful-act formulation (draft alpha) or a specific public-benefit purpose naming a beneficiary beyond the owners (draft beta), and neither draft can be established as controlling",
+        "The 'Could not determine' results are not hedged as a 'close call' or otherwise framed as though the skill leans toward one draft being more likely correct — the conflict is stated as a plain fact, not a probabilistic guess",
         "Output does not pick one draft as controlling based on non-textual cues (e.g. 'the public benefit corporation draft looks more final' or 'the more detailed draft is probably the one they'll file') — if a preference for one draft is expressed anywhere, it must be grounded in an actual textual precedence marker, and since neither draft contains one, no such preference should appear",
         "The Evidence field for each 'Could not determine' item names both documents and describes the specific conflicting language in each, rather than a vague 'the documents disagree' statement"
       ]
@@ -255,7 +225,7 @@
     {
       "id": 12,
       "prompt": "Here's Meridian Robotics' certificate of incorporation — their purpose clause reads like they really care about worker safety, almost like one of those public benefit companies. Can you check their mission lock status?",
-      "expected_output": "Company Name 'Meridian Robotics, Inc.', PBC Status 'No' (no statutory PBC designation anywhere despite the specific purpose language), Stated Purpose quoting the specific worker-safety and 2%-of-net-income commitment. Mission Existence and Breachability is 'Affirmative' (specific beneficiaries and a measurable commitment). Paramount Purpose is 'Not affirmative' — grounded in the PBC Status attribute's 'No' rather than independently re-assessed from how specific or values-driven the purpose clause reads, and not softened by the prompt's own 'almost like a public benefit company' framing. Mission Protection from Ordinary Majority is 'Not affirmative' (ordinary majority amendment provision, no lock-holding body or federated/member constitution).",
+      "expected_output": "Company Name 'Meridian Robotics, Inc.', PBC Status 'No' (no statutory PBC designation anywhere despite the specific purpose language), Stated Purpose quoting the specific worker-safety and 2%-of-net-income commitment. Mission Beyond Financial Profit (M1) is 'Affirmative': the purpose clause names specific beneficiary classes (industrial and warehouse workers, the communities where the Corporation operates), commits a portion of net income to their benefit, is not the jurisdiction's default any-lawful-act formulation, and is not solely a financial-return purpose — none of which requires PBC or equivalent statutory status. This is the key check: M1's Affirmative Condition has no PBC-status or paramount-purpose threshold, so a 'No' on the separate PBC Status attribute does not make M1 'Not affirmative', and the prompt's own 'almost like a public benefit company' framing should not soften a rule answer that the Confidence Requirement says must be definitive.",
       "files": [
         "documents/meridian-robotics-synthetic-non-pbc-specific-purpose/certificate.txt"
       ],
@@ -265,11 +235,10 @@
         "The Public Benefit Corporation Status answer is a confident 'No', not 'Could not determine' — despite the specific, values-driven purpose clause, there is no statutory PBC/Subchapter XV/Section 362 designation anywhere in the document",
         "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language (the workplace-safety robotics purpose and the 2%-of-net-income commitment), not a generic description",
         "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
-        "The Mission Existence and Breachability result is 'Affirmative', not 'Could not determine' — the purpose clause names a specific activity and beneficiary classes (industrial and warehouse workers, the communities where the Corporation operates) sufficient to identify a breach",
-        "The Paramount Purpose result is 'Not affirmative' — not 'Affirmative' and not 'Could not determine'. This is the key check: the result must not treat the purpose clause's specificity or values-driven language as itself satisfying the PBC-or-equivalent requirement",
-        "The Paramount Purpose evidence explicitly grounds the negative result in the absence of PBC/equivalent statutory status (i.e., reuses the Public Benefit Corporation Status attribute's 'No' answer) rather than re-assessing independently whether the purpose clause 'seems' paramount, serious, or sufficiently prioritized based on its wording alone",
-        "The Paramount Purpose result is not hedged as a close call or 'almost' a PBC, despite the prompt's own framing ('almost like one of those public benefit companies') — a suggestive framing in the user's prompt does not soften a rule answer the Confidence Requirement says must be definitive",
-        "The Mission Protection from Ordinary Majority result is 'Not affirmative' — the certificate has an ordinary (simple-majority) amendment provision (Article SIXTH), no distinct lock-holding body, and no demonstrated federated/member-constitution structure",
+        "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Not affirmative' and not 'Could not determine' — this is the key check: the result must not treat the absence of PBC/statutory status as disqualifying, since M1's Affirmative Condition has no PBC-or-equivalent requirement",
+        "The M1 evidence cites the specific worker-safety purpose language and the 2%-of-net-income commitment as what identifies beneficiaries beyond the owners and takes the purpose outside 'solely financial return'",
+        "The M1 result is not hedged as a close call or 'almost' satisfying the rule, despite the prompt's own framing ('almost like one of those public benefit companies') — a suggestive framing in the user's prompt does not soften a rule answer the Confidence Requirement says must be definitive",
+        "Output does not conflate the Public Benefit Corporation Status attribute ('No') with the Mission Beyond Financial Profit rule result — the two are independent, and a company can lack statutory PBC status while still satisfying M1",
         "Output contains no evaluative or judgmental language about the company's mission lock, such as 'strong', 'weak', 'good', 'bad', 'should', or 'recommend'"
       ]
     }

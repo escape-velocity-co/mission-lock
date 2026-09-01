@@ -1,0 +1,646 @@
+<!--
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. If a copy of the MPL was not distributed with this
+file, You can obtain one at http://mozilla.org/MPL/2.0/.
+-->
+
+<!--
+  mission-lock eval results docket — HTML template.
+
+  What this is: a single-page results grid, one row per eval and one
+  column per rule in the current rule catalog, with a colored marker
+  (🟢 Affirmative / 🔴 Not affirmative / 🟡 Could not determine) at each
+  intersection. Hovering a marker shows a popover with that call's
+  Result, Assertion, quoted Evidence, and Location — pulled straight from
+  that eval run's report.md, never re-derived or re-worded.
+
+  Branding: this reuses the exact tokens, fonts, and masthead pattern
+  from skills/mission-lock/assets/report-template.html (the Escape
+  Velocity brand: EB Garamond/Gloock headings in persimmon, Open Sans
+  body in navy, mint accent, IBM Plex Mono utility text). If that file's
+  :root token values or masthead markup ever change, bring this file's
+  <style> and header back in sync with it — the two should never drift
+  apart. The one deliberate exception is the 🟢/🔴/🟡 semantic result
+  colors (green/red/amber): those are a functional status signal, not a
+  brand color, and stay as they are regardless of what the brand palette
+  does.
+
+  When to generate this: after every eval run that produces graded
+  report.md outputs (see "Running the Eval Loop" in this directory's
+  README.md) — this is a standing deliverable of running the eval suite,
+  not a one-off request. Generate it once the full run is graded, save it
+  into that run's workspace directory, and show it to the user (e.g. via
+  the browser preview / Artifact) rather than only reporting a pass/fail
+  table in chat.
+
+  How to use this file:
+
+  1. Copy this file's full contents as the starting point for the output
+     file. Do not touch the <style> or <script> blocks — the visual
+     design and popover behavior are already finished; only the content
+     described below should change.
+  2. Replace every {{PLACEHOLDER}} token with real content. Never leave a
+     placeholder token in the output.
+  3. Blocks marked "REPEAT" contain one example iteration. Duplicate the
+     block once per item, in the order noted, then delete the REPEAT/END
+     REPEAT comment lines from the output.
+  4. Save the result as `docket.html` inside the iteration's workspace
+     directory (e.g. `skills/mission-lock-workspace/iteration-<N>/docket.html`,
+     sibling to that run's `eval-*/` directories), then open it in the
+     browser preview (serve it over http, not a bare file:// path — the
+     popover needs JavaScript to execute, which a file:// preview outside
+     the project folder renders as a static, non-interactive snapshot).
+
+  Where the data comes from:
+
+  - {{ITERATION_NUMBER}}: the workspace iteration number for this run.
+  - Rule columns: one per rule currently in
+    skills/mission-lock/references/rules.md, in the order they appear
+    there. The header has two synchronized rows — the rule's ID in the
+    first, its name in the second — so the two REPEAT blocks below must
+    produce the same number of columns in the same order.
+  - Eval rows: one per eval in evals/evals.json, in `id` order.
+  - Per-cell content: for a single-subject eval, read the Result,
+    Assertion, Evidence, and Location straight off that rule's section in
+    the run's report.md (the same fields already produced for the
+    Markdown report — do not re-derive or re-summarize them here). For a
+    comparison eval whose report nests more than one subject under a rule
+    heading (e.g. a side-by-side comparison of two companies), use the
+    "multiple subjects" cell variant below instead, with one marker per
+    subject and a short label (2-4 letters) under each.
+  - Result → marker/color mapping: Affirmative → 🟢 / green,
+    Not affirmative → 🔴 / red, Could not determine → 🟡 / amber. These
+    are the only three values the Confidence Requirement allows — do not
+    invent a fourth marker or color.
+  - Summary chips: count every rule-result across every eval (counting
+    each subject separately in a multi-subject cell) and total them per
+    color. The three counts must sum to the total shown in each chip's
+    "/ N" denominator.
+  - {{RESULT_ASSERTION_HTML}} / {{RESULT_EVIDENCE_HTML}}: may contain
+    inline HTML entities (e.g. &mdash;, &ldquo;&rdquo;, &hellip;) — carry
+    those through as written in the source report rather than plain
+    ASCII punctuation. Evidence is wrapped in curly quotes by the popover
+    script itself; do not add another layer of quotation marks in the
+    placeholder value.
+  - {{RESULT_LOCATION}}: the same citation (article/section reference)
+    already given in the report — do not add a "§" prefix, the CSS adds
+    it automatically.
+
+  This grid grows a column every time a new rule is added to rules.md —
+  nothing else about the template changes when that happens.
+-->
+
+<title>Iteration {{ITERATION_NUMBER}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Open+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* Deliberately single-theme (dark) — no light variant, no
+     prefers-color-scheme query, no [data-theme] override. Every color is
+     still declared explicitly on bare :root so the page holds regardless
+     of the viewer's own theme. */
+  :root {
+    --bg: #1a1e3b;
+    --surface: #232848;
+    --navy: #eef0f7;
+    --navy-deep: #1a1e3b;
+    --muted: #a7acc9;
+    --rule: #343a63;
+    --heading: #ff5b58;
+    --mint: #c8f5eb;
+    --green: #57b58d;
+    --green-soft: #16261f;
+    --red: #e1817f;
+    --red-soft: #2c1c1c;
+    --amber: #dcae57;
+    --amber-soft: #2a2317;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 28px -14px rgba(0, 0, 0, 0.6);
+    --shadow-pop: 0 2px 4px rgba(0, 0, 0, 0.4), 0 20px 48px -16px rgba(0, 0, 0, 0.7);
+  }
+
+  * { box-sizing: border-box; }
+
+  /* rem units throughout this file are relative to THIS font-size, not
+     body's — set the base size here or the whole type scale ignores it. */
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--navy);
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+  }
+
+  /* ---- Masthead (identical pattern to report-template.html) ---- */
+
+  .masthead {
+    padding: 2rem 0 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .eyebrow-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 0 0.9rem;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .eyebrow-row a {
+    font-family: "Gloock", "EB Garamond", Georgia, serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--mint);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .eyebrow-row a:hover {
+    color: var(--mint);
+    border-bottom-color: var(--muted);
+  }
+
+  .masthead h1 {
+    font-family: "EB Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+    color: var(--heading);
+  }
+
+  .summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.1rem;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8125rem;
+    color: var(--navy);
+    box-shadow: var(--shadow);
+  }
+
+  .chip .count {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .chip.green .count { color: var(--green); }
+  .chip.red .count { color: var(--red); }
+  .chip.amber .count { color: var(--amber); }
+  .chip .total { color: var(--muted); font-family: "IBM Plex Mono", ui-monospace, monospace; }
+
+  /* ---- Results table ---- */
+
+  .table-shell {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    min-width: 560px;
+  }
+
+  thead th {
+    background: var(--surface);
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-weight: 500;
+  }
+
+  thead tr.rule-id th {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.9rem;
+    padding-bottom: 0.2rem;
+  }
+
+  thead tr.rule-name th {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8125rem;
+    color: var(--muted);
+    font-weight: 400;
+    padding-top: 0.2rem;
+    padding-bottom: 0.75rem;
+    max-width: 160px;
+  }
+
+  thead th.corner {
+    border-right: 1px solid var(--rule);
+  }
+
+  thead tr.rule-id th.corner,
+  thead tr.rule-name th.corner {
+    text-align: left;
+  }
+
+  thead tr.rule-id th.corner {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  tbody th {
+    text-align: left;
+    padding: 0.8rem 1.1rem;
+    border-bottom: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    background: var(--surface);
+    vertical-align: top;
+    font-weight: 400;
+  }
+
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr:hover th,
+  tbody tr:hover td {
+    background: color-mix(in srgb, var(--rule) 30%, var(--surface));
+  }
+
+  .eval-id {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .eval-name {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.9375rem;
+  }
+
+  .eval-context {
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8125rem;
+    color: var(--muted);
+    margin-top: 0.15rem;
+  }
+
+  td.result {
+    text-align: center;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: middle;
+  }
+
+  .split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .dot-wrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+  }
+
+  .who {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.59375rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .assessment {
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    margin: -0.25rem;
+    border-radius: 8px;
+    font-family: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .assessment:hover,
+  .assessment:focus-visible,
+  .assessment[aria-expanded="true"] {
+    background: color-mix(in srgb, var(--mint) 35%, transparent);
+  }
+
+  .assessment:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+  }
+
+  /* Popover, rendered fixed-position at the body level via JS so it escapes
+     the table's horizontal-scroll container instead of being clipped by it. */
+  .popover {
+    position: fixed;
+    z-index: 50;
+    width: 300px;
+    max-width: calc(100vw - 32px);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    box-shadow: var(--shadow-pop);
+    padding: 0.9rem 1rem 1rem;
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+    pointer-events: none;
+    transition: opacity 0.13s ease, transform 0.13s ease;
+  }
+
+  .popover.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+
+  .popover-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .popover-result {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+  }
+
+  .popover-result.green { color: var(--green); background: var(--green-soft); }
+  .popover-result.red { color: var(--red); background: var(--red-soft); }
+  .popover-result.amber { color: var(--amber); background: var(--amber-soft); }
+
+  .popover-rule {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.65625rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  .popover-assertion {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8125rem;
+    color: var(--navy);
+    line-height: 1.5;
+    margin: 0 0 0.6rem;
+  }
+
+  .popover-evidence {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.78125rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 0 0.55rem;
+    padding-left: 0.6rem;
+    border-left: 3px solid var(--rule);
+  }
+
+  .popover-location {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.65625rem;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .popover-location::before {
+    content: "\00a7 ";
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .popover {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .sheet { padding: 0 1.25rem 4rem; }
+    .masthead h1 { font-size: 1.9rem; }
+  }
+</style>
+
+<div class="sheet">
+  <header class="masthead">
+    <div class="eyebrow-row">
+      <p class="eyebrow">Mission Lock &middot; Eval Results</p>
+      <a href="https://escapevelocity.co">Escape Velocity</a>
+    </div>
+    <h1>Iteration {{ITERATION_NUMBER}}</h1>
+    <div class="summary">
+      <span class="chip green"><span>🟢</span><span class="count">{{AFFIRMATIVE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} affirmative</span></span>
+      <span class="chip red"><span>🔴</span><span class="count">{{NOT_AFFIRMATIVE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} not affirmative</span></span>
+      <span class="chip amber"><span>🟡</span><span class="count">{{COULD_NOT_DETERMINE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} could not determine</span></span>
+    </div>
+  </header>
+
+  <div class="table-shell">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr class="rule-id">
+            <th class="corner" rowspan="2">Eval</th>
+            <!-- REPEAT: one <th> per rule in rules.md, in order. -->
+            <th>{{RULE_ID}}</th>
+            <!-- END REPEAT -->
+          </tr>
+          <tr class="rule-name">
+            <!-- REPEAT: one <th> per rule in rules.md, same order as above. -->
+            <th>{{RULE_NAME}}</th>
+            <!-- END REPEAT -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- REPEAT: one <tr> per eval in evals/evals.json, in id order. -->
+          <tr>
+            <th scope="row"><span class="eval-id">{{EVAL_ID_PADDED}}</span><span class="eval-name">{{EVAL_NAME}}</span><span class="eval-context">{{EVAL_CONTEXT}}</span></th>
+
+            <!-- REPEAT: one <td class="result"> per rule column, same
+                 order as the header. Use the SINGLE-SUBJECT variant unless
+                 this eval's report nests more than one subject under this
+                 rule (e.g. a side-by-side company comparison), in which
+                 case use the MULTIPLE-SUBJECTS variant instead. Delete
+                 whichever variant you don't use. -->
+
+            <!-- VARIANT: single subject -->
+            <td class="result">
+              <button type="button" class="assessment" aria-expanded="false"
+                data-result="{{RESULT_LABEL}}" data-color="{{RESULT_COLOR}}" data-rule="{{RULE_ID}} &middot; {{RULE_NAME}}"
+                data-assertion="{{RESULT_ASSERTION_HTML}}"
+                data-evidence="{{RESULT_EVIDENCE_HTML}}"
+                data-location="{{RESULT_LOCATION}}">{{RESULT_EMOJI}}</button>
+            </td>
+            <!-- END VARIANT -->
+
+            <!-- VARIANT: multiple subjects (e.g. a comparison eval) —
+                 nest one dot-wrap per subject inside .split, in the same
+                 order the report presents them. -->
+            <td class="result">
+              <div class="split">
+                <!-- REPEAT: one dot-wrap per subject. -->
+                <span class="dot-wrap">
+                  <button type="button" class="assessment" aria-expanded="false"
+                    data-result="{{RESULT_LABEL}}" data-color="{{RESULT_COLOR}}" data-rule="{{RULE_ID}} &middot; {{SUBJECT_NAME}}"
+                    data-assertion="{{RESULT_ASSERTION_HTML}}"
+                    data-evidence="{{RESULT_EVIDENCE_HTML}}"
+                    data-location="{{RESULT_LOCATION}}">{{RESULT_EMOJI}}</button>
+                  <span class="who">{{SUBJECT_SHORT_LABEL}}</span>
+                </span>
+                <!-- END REPEAT -->
+              </div>
+            </td>
+            <!-- END VARIANT -->
+
+            <!-- END REPEAT (rule columns) -->
+          </tr>
+          <!-- END REPEAT (eval rows) -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="popover" id="popover" role="tooltip">
+  <div class="popover-head">
+    <span class="popover-result" id="pop-result"></span>
+    <span class="popover-rule" id="pop-rule"></span>
+  </div>
+  <p class="popover-assertion" id="pop-assertion"></p>
+  <p class="popover-evidence" id="pop-evidence"></p>
+  <div class="popover-location" id="pop-location"></div>
+</div>
+
+<script>
+(function () {
+  var pop = document.getElementById('popover');
+  var elResult = document.getElementById('pop-result');
+  var elRule = document.getElementById('pop-rule');
+  var elAssertion = document.getElementById('pop-assertion');
+  var elEvidence = document.getElementById('pop-evidence');
+  var elLocation = document.getElementById('pop-location');
+  var openButton = null;
+
+  function fill(btn) {
+    elResult.textContent = btn.dataset.result;
+    elResult.className = 'popover-result ' + btn.dataset.color;
+    elRule.innerHTML = btn.dataset.rule;
+    elAssertion.innerHTML = btn.dataset.assertion;
+    elEvidence.innerHTML = '&ldquo;' + btn.dataset.evidence + '&rdquo;';
+    elLocation.textContent = btn.dataset.location;
+  }
+
+  function place(btn) {
+    var r = btn.getBoundingClientRect();
+    pop.style.left = '0px';
+    pop.style.top = '0px';
+    pop.classList.add('visible');
+    var popRect = pop.getBoundingClientRect();
+    var left = r.left + r.width / 2 - popRect.width / 2;
+    left = Math.max(16, Math.min(left, window.innerWidth - popRect.width - 16));
+    var top = r.top - popRect.height - 10;
+    var flipped = false;
+    if (top < 12) {
+      top = r.bottom + 10;
+      flipped = true;
+    }
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+    pop.dataset.flipped = flipped;
+  }
+
+  function open(btn) {
+    if (openButton === btn) return;
+    if (openButton) openButton.setAttribute('aria-expanded', 'false');
+    openButton = btn;
+    btn.setAttribute('aria-expanded', 'true');
+    fill(btn);
+    place(btn);
+  }
+
+  function close() {
+    if (!openButton) return;
+    openButton.setAttribute('aria-expanded', 'false');
+    openButton = null;
+    pop.classList.remove('visible');
+  }
+
+  document.querySelectorAll('.assessment').forEach(function (btn) {
+    btn.addEventListener('mouseenter', function () { open(btn); });
+    btn.addEventListener('mouseleave', function () { close(); });
+    btn.addEventListener('focus', function () { open(btn); });
+    btn.addEventListener('blur', function () { close(); });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
+  });
+
+  window.addEventListener('scroll', function () {
+    if (openButton) place(openButton);
+  }, true);
+
+  window.addEventListener('resize', function () {
+    if (openButton) place(openButton);
+  });
+})();
+</script>

@@ -54,6 +54,12 @@ Each entry is a task prompt plus the document(s) it should be run against. See `
 
 Use the workflow documented in Anthropic's [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) skill (spawn with-skill/without-skill runs per document, grade against assertions, review in the eval viewer). Point it at this repo's `skills/mission-lock/` and `evals/` directories.
 
+### Generate the Results Docket After Every Run
+
+Once a run is graded, generate the results docket — a single HTML page with one row per eval and one column per rule, a colored marker (🟢/🔴/🟡) at each intersection, and a hover popover showing that call's Result, Assertion, Evidence, and Location. This is a standing deliverable of running the eval suite, not a one-off request — produce it every time an eval run completes, without being asked again.
+
+Use [`docket-template.html`](docket-template.html) as the starting point; it carries its own fill-in instructions as an HTML comment at the top. Save the filled-in copy as `docket.html` inside that run's workspace directory (e.g. `skills/mission-lock-workspace/iteration-<N>/docket.html`), then show it to the user — serve it over http and open it in the browser preview, rather than just reporting a pass/fail table in chat. A bare `file://` preview outside the project folder renders as a static snapshot with no JavaScript, which breaks the hover popover.
+
 ### No Connectors in Eval Runs
 
 This eval aims to capture portable behaviour of the skill. Eval results and artifacts are meant to reflect the skill's behavior, agnostic to the environment in which the evalulation is taking place.
