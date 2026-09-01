@@ -13,7 +13,11 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   / Not affirmative / Could not determine) at each intersection. Hovering
   a marker shows a popover with that call's Result, Assertion, quoted
   Evidence, and Location — pulled straight from that eval run's
-  report.md, never re-derived or re-worded.
+  report.md, never re-derived or re-worded. Hovering a column's rule
+  ID or name (in the header, not a result cell) shows a second kind of
+  popover instead — that rule's actual definition, copied verbatim from
+  references/rules.md, so a reader can check what a column means without
+  leaving the page.
 
   Branding: this reuses the exact tokens, fonts, and masthead pattern
   from skills/mission-lock/assets/report-template.html (the Escape
@@ -58,7 +62,34 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     skills/mission-lock/references/rules.md, in the order they appear
     there. The header has two synchronized rows — the rule's ID in the
     first, its name in the second — so the two REPEAT blocks below must
-    produce the same number of columns in the same order.
+    produce the same number of columns in the same order. Both header
+    <th> cells for a column carry an IDENTICAL set of data-* attributes
+    (copy the same values into both), since either one can be hovered to
+    open the rule-definition popover:
+      - {{RULE_ID}} / {{RULE_NAME}}: same as elsewhere — RULE_NAME may
+        contain a <br> for display wrapping (e.g. "Mission Beyond<br>
+        Financial Profit").
+      - {{RULE_NAME_PLAIN}}: the same name with NO <br> — used in the
+        popover title text, which isn't wrapped the same way the header
+        cell is.
+      - {{RULE_QUERY}}: that rule's "Query" field from rules.md, verbatim.
+      - {{RULE_CONDITION_ITEMS}}: that rule's "Affirmative Condition"
+        bullet points from rules.md, joined with the literal delimiter
+        `|||` between items (the popover script splits on it to build a
+        <ul>) — one item per bullet in rules.md, in order, verbatim text.
+      - {{RULE_EVIDENCE_CATEGORY_ITEMS}}: same idea, for that rule's
+        "Categories of Evidence" bullets.
+      - {{RULE_LOCATION}}: that rule's "Typically Found Location" field.
+    Unlike the Lucide icon snippets below (which are static and safe to
+    hardcode), this rule-definition content changes as rules.md evolves —
+    always read rules.md fresh for the current wording rather than
+    reusing values from a previous docket. Use
+    [`evals/parse_rules.py`](parse_rules.py)'s `parse_rules_md()` function
+    to get it — it parses rules.md directly (regex over its actual
+    Markdown structure) rather than you retyping the bullets by hand, so
+    there's no drift risk and no chance of missing a rule the catalog
+    just added. Run `python3 evals/parse_rules.py` directly to see its
+    output for the current rules.md.
   - Eval rows: one per eval in evals/evals.json, in `id` order.
   - Per-cell content: for a single-subject eval, read the Result,
     Assertion, Evidence, and Location straight off that rule's section in
@@ -298,6 +329,25 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     color: var(--muted);
   }
 
+  /* Rule ID / name header cells double as hover targets for the rule's
+     full definition (see .popover-query / .popover-list below) — same
+     popover mechanism as the result markers, different content. */
+  .rule-header-trigger {
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.1s ease;
+  }
+
+  .rule-header-trigger:hover,
+  .rule-header-trigger:focus-visible {
+    background: color-mix(in srgb, var(--mint) 25%, transparent);
+  }
+
+  .rule-header-trigger:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: -2px;
+  }
+
   tbody th {
     text-align: left;
     padding: 0.8rem 1.1rem;
@@ -427,19 +477,35 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
   .popover-head {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.6rem;
   }
 
+  /* Icon badge (Result popover): the shield icon reused verbatim from the
+     hovered .assessment button, recolored via the same green/red/amber
+     tokens as before — no more text label ("AFFIRMATIVE" etc.). */
   .popover-result {
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-size: 0.6875rem;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 0.15rem 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
     border-radius: 999px;
+    flex-shrink: 0;
+  }
+
+  .popover-result .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  /* Without this, the explicit `display` above silently outranks the
+     browser's default [hidden] { display: none } rule (author styles
+     always beat the user-agent stylesheet), so setting .hidden = true in
+     JS would stop actually hiding this element. */
+  .popover-result[hidden] {
+    display: none;
   }
 
   .popover-result.green { color: var(--green); background: var(--green-soft); }
@@ -483,6 +549,58 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     content: "\00a7 ";
   }
 
+  /* Rule-definition popover content (triggered from .rule-header-trigger
+     header cells) — shares the same .popover shell as the result popovers
+     above, just a different set of child elements shown. */
+  .popover-rule.title {
+    font-family: "EB Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.1875rem;
+    color: var(--heading);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .popover-query {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.5;
+    margin: 0.2rem 0 0.7rem;
+  }
+
+  .popover-label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+
+  .popover-list {
+    margin: 0 0 0.7rem;
+    padding-left: 1.1rem;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.78125rem;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+
+  .popover-list li {
+    margin-bottom: 0.3rem;
+  }
+
+  .popover-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .popover-section:last-of-type .popover-list {
+    margin-bottom: 0;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .popover {
       transition: none;
@@ -510,13 +628,28 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
         <thead>
           <tr class="rule-id">
             <th class="corner" rowspan="2">Eval</th>
-            <!-- REPEAT: one <th> per rule in rules.md, in order. -->
-            <th>{{RULE_ID}}</th>
+            <!-- REPEAT: one <th> per rule in rules.md, in order. Both this
+                 <th> and its counterpart in the rule-name row below carry
+                 the SAME data-* attributes (identical copy in both), so
+                 hovering either the ID or the name shows the same
+                 popover. -->
+            <th class="rule-header-trigger" tabindex="0"
+              data-rule-id="{{RULE_ID}}" data-rule-name="{{RULE_NAME_PLAIN}}"
+              data-query="{{RULE_QUERY}}"
+              data-condition="{{RULE_CONDITION_ITEMS}}"
+              data-evidence-categories="{{RULE_EVIDENCE_CATEGORY_ITEMS}}"
+              data-location="{{RULE_LOCATION}}">{{RULE_ID}}</th>
             <!-- END REPEAT -->
           </tr>
           <tr class="rule-name">
-            <!-- REPEAT: one <th> per rule in rules.md, same order as above. -->
-            <th>{{RULE_NAME}}</th>
+            <!-- REPEAT: one <th> per rule in rules.md, same order as
+                 above, same data-* attributes as its counterpart above. -->
+            <th class="rule-header-trigger" tabindex="0"
+              data-rule-id="{{RULE_ID}}" data-rule-name="{{RULE_NAME_PLAIN}}"
+              data-query="{{RULE_QUERY}}"
+              data-condition="{{RULE_CONDITION_ITEMS}}"
+              data-evidence-categories="{{RULE_EVIDENCE_CATEGORY_ITEMS}}"
+              data-location="{{RULE_LOCATION}}">{{RULE_NAME}}</th>
             <!-- END REPEAT -->
           </tr>
         </thead>
@@ -571,12 +704,21 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 </div>
 
 <div class="popover" id="popover" role="tooltip">
-  <div class="popover-head">
+  <div class="popover-head" id="pop-head">
     <span class="popover-result" id="pop-result"></span>
     <span class="popover-rule" id="pop-rule"></span>
   </div>
+  <p class="popover-query" id="pop-query" hidden></p>
   <p class="popover-assertion" id="pop-assertion"></p>
   <p class="popover-evidence" id="pop-evidence"></p>
+  <div class="popover-section" id="pop-condition-section" hidden>
+    <p class="popover-label">Affirmative Condition</p>
+    <ul class="popover-list" id="pop-condition-list"></ul>
+  </div>
+  <div class="popover-section" id="pop-evidence-cats-section" hidden>
+    <p class="popover-label">Categories of Evidence</p>
+    <ul class="popover-list" id="pop-evidence-cats-list"></ul>
+  </div>
   <div class="popover-location" id="pop-location"></div>
 </div>
 
@@ -585,18 +727,60 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   var pop = document.getElementById('popover');
   var elResult = document.getElementById('pop-result');
   var elRule = document.getElementById('pop-rule');
+  var elQuery = document.getElementById('pop-query');
   var elAssertion = document.getElementById('pop-assertion');
   var elEvidence = document.getElementById('pop-evidence');
+  var elConditionSection = document.getElementById('pop-condition-section');
+  var elConditionList = document.getElementById('pop-condition-list');
+  var elEvidenceCatsSection = document.getElementById('pop-evidence-cats-section');
+  var elEvidenceCatsList = document.getElementById('pop-evidence-cats-list');
   var elLocation = document.getElementById('pop-location');
   var openButton = null;
 
-  function fill(btn) {
-    elResult.textContent = btn.dataset.result;
+  function itemsToList(el, pipeDelimited) {
+    el.innerHTML = pipeDelimited.split('|||').map(function (item) {
+      return '<li>' + item + '</li>';
+    }).join('');
+  }
+
+  function fillResult(btn) {
+    elResult.hidden = false;
+    elResult.innerHTML = btn.innerHTML;
+    elResult.setAttribute('aria-label', btn.dataset.result);
     elResult.className = 'popover-result ' + btn.dataset.color;
+    elRule.className = 'popover-rule';
     elRule.innerHTML = btn.dataset.rule;
+    elQuery.hidden = true;
+    elAssertion.hidden = false;
     elAssertion.innerHTML = btn.dataset.assertion;
+    elEvidence.hidden = false;
     elEvidence.innerHTML = '&ldquo;' + btn.dataset.evidence + '&rdquo;';
+    elConditionSection.hidden = true;
+    elEvidenceCatsSection.hidden = true;
     elLocation.textContent = btn.dataset.location;
+  }
+
+  function fillRule(th) {
+    elResult.hidden = true;
+    elRule.className = 'popover-rule title';
+    elRule.innerHTML = th.dataset.ruleId + ' &middot; ' + th.dataset.ruleName;
+    elQuery.hidden = false;
+    elQuery.textContent = th.dataset.query;
+    elAssertion.hidden = true;
+    elEvidence.hidden = true;
+    elConditionSection.hidden = false;
+    itemsToList(elConditionList, th.dataset.condition);
+    elEvidenceCatsSection.hidden = false;
+    itemsToList(elEvidenceCatsList, th.dataset.evidenceCategories);
+    elLocation.textContent = th.dataset.location;
+  }
+
+  function fill(el) {
+    if (el.classList.contains('rule-header-trigger')) {
+      fillRule(el);
+    } else {
+      fillResult(el);
+    }
   }
 
   function place(btn) {
@@ -634,7 +818,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     pop.classList.remove('visible');
   }
 
-  document.querySelectorAll('.assessment').forEach(function (btn) {
+  document.querySelectorAll('.assessment, .rule-header-trigger').forEach(function (btn) {
     btn.addEventListener('mouseenter', function () { open(btn); });
     btn.addEventListener('mouseleave', function () { close(); });
     btn.addEventListener('focus', function () { open(btn); });
