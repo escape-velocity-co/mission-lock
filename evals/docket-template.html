@@ -8,11 +8,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   mission-lock eval results docket — HTML template.
 
   What this is: a single-page results grid, one row per eval and one
-  column per rule in the current rule catalog, with a colored marker
-  (🟢 Affirmative / 🔴 Not affirmative / 🟡 Could not determine) at each
-  intersection. Hovering a marker shows a popover with that call's
-  Result, Assertion, quoted Evidence, and Location — pulled straight from
-  that eval run's report.md, never re-derived or re-worded.
+  column per rule in the current rule catalog, with a colored shield icon
+  (Lucide shield-check / shield-x / shield-question-mark, for Affirmative
+  / Not affirmative / Could not determine) at each intersection. Hovering
+  a marker shows a popover with that call's Result, Assertion, quoted
+  Evidence, and Location — pulled straight from that eval run's
+  report.md, never re-derived or re-worded.
 
   Branding: this reuses the exact tokens, fonts, and masthead pattern
   from skills/mission-lock/assets/report-template.html (the Escape
@@ -20,10 +21,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   body in navy, mint accent, IBM Plex Mono utility text). If that file's
   :root token values or masthead markup ever change, bring this file's
   <style> and header back in sync with it — the two should never drift
-  apart. The one deliberate exception is the 🟢/🔴/🟡 semantic result
-  colors (green/red/amber): those are a functional status signal, not a
-  brand color, and stay as they are regardless of what the brand palette
-  does.
+  apart. The one deliberate exception is the green/red/amber semantic
+  result colors: those are a functional status signal, not a brand
+  color, and stay as they are regardless of what the brand palette does.
 
   When to generate this: after every eval run that produces graded
   report.md outputs (see "Running the Eval Loop" in this directory's
@@ -68,10 +68,28 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     heading (e.g. a side-by-side comparison of two companies), use the
     "multiple subjects" cell variant below instead, with one marker per
     subject and a short label (2-4 letters) under each.
-  - Result → marker/color mapping: Affirmative → 🟢 / green,
-    Not affirmative → 🔴 / red, Could not determine → 🟡 / amber. These
-    are the only three values the Confidence Requirement allows — do not
-    invent a fourth marker or color.
+  - Result → marker/color mapping: Affirmative → shield-check / green,
+    Not affirmative → shield-x / red, Could not determine →
+    shield-question-mark / amber. These are the only three values the
+    Confidence Requirement allows — do not invent a fourth marker or
+    color. {{RESULT_ICON}} is always one of these three exact snippets
+    (fetched verbatim from lucide.dev, ISC licensed — don't hand-write or
+    re-derive the path data, copy one of these):
+
+    Affirmative (shield-check):
+    <svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+
+    Not affirmative (shield-x):
+    <svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m14.5 9.5-5 5"/><path d="m9.5 9.5 5 5"/></svg>
+
+    Could not determine (shield-question-mark):
+    <svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+
+    Color comes from the surrounding element, not the icon itself: the
+    .assessment button picks up var(--green/red/amber) automatically from
+    its own data-color attribute (see the CSS), and the chip icons pick
+    it up from their .chip.green/.red/.amber parent — never add a color
+    attribute to the <svg> or <path> tags directly.
   - Summary chips: count every rule-result across every eval (counting
     each subject separately in a multi-subject cell) and total them per
     color. The three counts must sum to the total shown in each chip's
@@ -120,6 +138,33 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   }
 
   * { box-sizing: border-box; }
+
+  /* ---- Icons (Lucide, https://lucide.dev — ISC licensed) ----
+     Icons are inlined as raw <svg class="icon"> markup, never loaded from
+     a CDN <script> — the Artifact CSP blocks non-Google-Fonts external
+     hosts, and inlining is a handful of short <path>/<circle> elements
+     per icon anyway. This is scaffolding only: no icon is placed on the
+     page yet, but any added later should use this convention so sizing
+     and color stay consistent.
+
+     To add one: open https://lucide.dev/icons/<name>, copy its <svg>,
+     keep viewBox="0 0 24 24", delete its width/height/stroke/fill
+     attributes (the .icon class supplies them), and add class="icon" to
+     the <svg> tag. It then sizes to 1em (matching the surrounding text)
+     and colors via currentColor (matching the surrounding text color —
+     var(--navy), var(--muted), var(--heading), etc., whatever the icon
+     sits inside), so it never needs its own color override. */
+  .icon {
+    width: 1em;
+    height: 1em;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    vertical-align: -0.125em;
+    flex-shrink: 0;
+  }
 
   /* rem units throughout this file are relative to THIS font-size, not
      body's — set the base size here or the whole type scale ignores it. */
@@ -219,6 +264,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     font-variant-numeric: tabular-nums;
   }
 
+  .chip.green { color: var(--green); }
+  .chip.red { color: var(--red); }
+  .chip.amber { color: var(--amber); }
   .chip.green .count { color: var(--green); }
   .chip.red .count { color: var(--red); }
   .chip.amber .count { color: var(--amber); }
@@ -363,6 +411,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   }
 
   .assessment {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.25rem;
     line-height: 1;
     cursor: pointer;
@@ -374,6 +425,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     font-family: inherit;
     -webkit-tap-highlight-color: transparent;
   }
+
+  .assessment[data-color="green"] { color: var(--green); }
+  .assessment[data-color="red"] { color: var(--red); }
+  .assessment[data-color="amber"] { color: var(--amber); }
 
   .assessment:hover,
   .assessment:focus-visible,
@@ -488,9 +543,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     </div>
     <h1>Iteration {{ITERATION_NUMBER}}</h1>
     <div class="summary">
-      <span class="chip green"><span>🟢</span><span class="count">{{AFFIRMATIVE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} affirmative</span></span>
-      <span class="chip red"><span>🔴</span><span class="count">{{NOT_AFFIRMATIVE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} not affirmative</span></span>
-      <span class="chip amber"><span>🟡</span><span class="count">{{COULD_NOT_DETERMINE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} could not determine</span></span>
+      <span class="chip green"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span class="count">{{AFFIRMATIVE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} affirmative</span></span>
+      <span class="chip red"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m14.5 9.5-5 5"/><path d="m9.5 9.5 5 5"/></svg><span class="count">{{NOT_AFFIRMATIVE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} not affirmative</span></span>
+      <span class="chip amber"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span class="count">{{COULD_NOT_DETERMINE_COUNT}}</span><span class="total">/ {{TOTAL_RESULT_COUNT}} could not determine</span></span>
     </div>
   </header>
 
@@ -528,7 +583,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                 data-result="{{RESULT_LABEL}}" data-color="{{RESULT_COLOR}}" data-rule="{{RULE_ID}} &middot; {{RULE_NAME}}"
                 data-assertion="{{RESULT_ASSERTION_HTML}}"
                 data-evidence="{{RESULT_EVIDENCE_HTML}}"
-                data-location="{{RESULT_LOCATION}}">{{RESULT_EMOJI}}</button>
+                data-location="{{RESULT_LOCATION}}">{{RESULT_ICON}}</button>
             </td>
             <!-- END VARIANT -->
 
@@ -543,7 +598,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                     data-result="{{RESULT_LABEL}}" data-color="{{RESULT_COLOR}}" data-rule="{{RULE_ID}} &middot; {{SUBJECT_NAME}}"
                     data-assertion="{{RESULT_ASSERTION_HTML}}"
                     data-evidence="{{RESULT_EVIDENCE_HTML}}"
-                    data-location="{{RESULT_LOCATION}}">{{RESULT_EMOJI}}</button>
+                    data-location="{{RESULT_LOCATION}}">{{RESULT_ICON}}</button>
                   <span class="who">{{SUBJECT_SHORT_LABEL}}</span>
                 </span>
                 <!-- END REPEAT -->
