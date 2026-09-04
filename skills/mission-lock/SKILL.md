@@ -1,6 +1,7 @@
 ---
 name: mission-lock
 description: Analyzes a company's articles of incorporation or certificate of incorporation for "mission lock" — both factual attributes (currently the company's legal name, whether it's incorporated as a public benefit corporation (PBC), and its stated purpose clause) and rules (compound checks like whether a specific, third-party-breachable mission exists at all) — each answered definitively or explicitly flagged as undeterminable, never guessed. This is a deliberately small, trust-first starting catalog (see references/attributes.md and references/rules.md) that will grow over time. Use this whenever the user provides or references articles of incorporation, a certificate of incorporation, corporate charter, or formation documents (PDF, DOCX, plain text, or pasted content) and wants to know its PBC status, purpose clause, whether it has a real/breachable mission, or basic entity facts — even if they don't say "mission lock" explicitly. This produces analytical, descriptive output only — it does not score, rate, or recommend.
+argument-hint: "[document...]"
 ---
 
 <!--
@@ -49,6 +50,14 @@ rules as it does for attributes.
 1. **Get the source document.** Accept whatever the user provides — PDF,
    DOCX, plain text, or pasted content.
 
+   - **Manual invocation (`/mission-lock`):** If invoked with arguments
+     (e.g. `/mission-lock contract.pdf`), treat `$ARGUMENTS` as identifying
+     which document(s) to use. If invoked with no arguments, and no
+     document is otherwise attached, pasted, or already present in the
+     conversation, stop and ask the user to provide one rather than
+     proceeding. Do not fabricate or assume a document, and do not treat
+     this as a "Could not determine" analysis of a document that was
+     never given.
    - **PDF:** If a dedicated PDF skill is available in this environment, use
      it to extract the text — it will typically handle multi-page layout and
      OCR for scanned pages more reliably than ad hoc parsing. Otherwise,
