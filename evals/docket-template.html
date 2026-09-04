@@ -162,8 +162,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   /* Deliberately single-theme (dark) — no light variant, no
      prefers-color-scheme query, no [data-theme] override. Every color is
      still declared explicitly on bare :root so the page holds regardless
-     of the viewer's own theme. */
+     of the viewer's own theme. `color-scheme: dark` below only tells the
+     browser to render its own UI (scrollbars, form controls) dark too —
+     it is not a theme switch and must stay paired with the hardcoded
+     dark values above, never with a light/dark toggle. */
   :root {
+    color-scheme: dark;
     --bg: #1a1e3b;
     --surface: #232848;
     --navy: #eef0f7;
