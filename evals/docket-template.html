@@ -29,6 +29,15 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   result colors: those are a functional status signal, not a brand
   color, and stay as they are regardless of what the brand palette does.
 
+  Development-build banner: the amber "Prototype" strip above the
+  masthead is fixed content, copied verbatim from report-template.html's
+  own `.dev-banner` block (same markup, same --banner-bg/--banner-fg
+  tokens) — never a placeholder. It stays the same fixed amber regardless
+  of the docket's own dark-only palette, exactly as it stays fixed across
+  report-template.html's light/dark modes. Remove this whole banner
+  (style block, tokens, and markup) from both files together once the
+  skill is out of development — never remove it from just one.
+
   When to generate this: after every eval run that produces graded
   report.md outputs (see "Running the Eval Loop" in this directory's
   README.md) — this is a standing deliverable of running the eval suite,
@@ -169,6 +178,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     --red-soft: #2c1c1c;
     --amber: #dcae57;
     --amber-soft: #2a2317;
+    --banner-bg: #f4c542;
+    --banner-fg: #2b1d00;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 28px -14px rgba(0, 0, 0, 0.6);
     --shadow-pop: 0 2px 4px rgba(0, 0, 0, 0.4), 0 20px 48px -16px rgba(0, 0, 0, 0.7);
   }
@@ -206,6 +217,27 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
      body's — set the base size here or the whole type scale ignores it. */
   html {
     font-size: 18px;
+  }
+
+  /* ---- Development-build banner (verbatim from report-template.html) ---- */
+
+  .dev-banner {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--banner-bg);
+    color: var(--banner-fg);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
   }
 
   body {
@@ -631,6 +663,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     .masthead h1 { font-size: 1.9rem; }
   }
 </style>
+
+<div class="dev-banner">
+  <svg class="icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+  Prototype
+  <svg class="icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+</div>
 
 <div class="sheet">
   <header class="masthead">
