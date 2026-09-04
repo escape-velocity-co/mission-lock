@@ -38,6 +38,18 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   (style block, tokens, and markup) from both files together once the
   skill is out of development — never remove it from just one.
 
+  Legend: the "Propensity for Mission Lock" key just below the masthead
+  is also fixed content, copied verbatim from report-template.html's own
+  `.legend-wrap`/`.legend`/`.legend-title`/`.legend-list`/`.result-icon`
+  blocks (same markup, same classes, same three icons) — never a
+  placeholder, and never re-worded. It's a plain-language key to this
+  page's own green/red/amber shield markers (Likely/Unlikely/Unclear are
+  legend-only wording, same as in report-template.html — never a
+  substitute for the actual Affirmative/Not affirmative/Could not
+  determine result values used elsewhere on this page). If
+  report-template.html's legend content or styling ever changes, bring
+  this file's copy back in sync with it.
+
   When to generate this: after every eval run that produces graded
   report.md outputs (see "Running the Eval Loop" in this directory's
   README.md) — this is a standing deliverable of running the eval suite,
@@ -243,6 +255,66 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     text-transform: uppercase;
     text-align: center;
   }
+
+  /* ---- Legend (verbatim from report-template.html) ---- */
+
+  .legend-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 1.75rem;
+  }
+
+  .legend {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+
+  .legend-title {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .legend-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .legend-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8125rem;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .result-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .result-icon[data-color="green"] { color: var(--green); }
+  .result-icon[data-color="red"] { color: var(--red); }
+  .result-icon[data-color="amber"] { color: var(--amber); }
 
   body {
     margin: 0;
@@ -683,6 +755,17 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     <h1>Iteration {{ITERATION_NUMBER}}</h1>
     <p class="rendered-timestamp" id="rendered-timestamp" data-generated-utc="{{RENDERED_TIMESTAMP_UTC}}"></p>
   </header>
+
+  <div class="legend-wrap">
+    <div class="legend">
+      <p class="legend-title">Propensity for Mission Lock</p>
+      <ul class="legend-list">
+        <li><span class="result-icon" data-color="green"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Likely</li>
+        <li><span class="result-icon" data-color="red"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m14.5 9.5-5 5"/><path d="m9.5 9.5 5 5"/></svg></span>Unlikely</li>
+        <li><span class="result-icon" data-color="amber"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>Unclear</li>
+      </ul>
+    </div>
+  </div>
 
   <div class="table-shell">
     <div class="table-scroll">
