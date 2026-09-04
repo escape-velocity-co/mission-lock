@@ -37,13 +37,15 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
        These are the only three values; never invent a fourth marker or
        color. The `aria-label` still carries {{RULE_RESULT}} as text (e.g.
        "Affirmative") so the result isn't lost for screen readers.
-     - Appendix section (data points): use the plain `tag` class, with
-       no `data-color` and no icon, for every attribute answer —
-       including confident negatives (No) — they must look exactly as
-       serious as an affirmative answer. Attribute answers aren't a
-       three-way result, so they never get the green/red/amber
-       treatment. Use `tag undetermined` (adds a dashed border) only
-       when the value is literally "Could not determine".
+     - Appendix section (data points): the `{{ATTRIBUTE_ANSWER}}` value
+       is plain text in an `answer` paragraph below the attribute name
+       (not a boxed tag, and not inline next to the name), with no
+       color and no icon, for every attribute answer — including
+       confident negatives (No) — they must look exactly as serious as
+       an affirmative answer. Attribute answers aren't a three-way
+       result, so they never get the green/red/amber treatment. Use
+       `answer undetermined` (muted, italic) only when the value is
+       literally "Could not determine".
   7. {{RULE_QUERY}}: that rule's "Query" field from
      skills/mission-lock/references/rules.md, verbatim — always this
      text, regardless of the result. It is never the document-specific
@@ -52,6 +54,15 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
      is fixed content, not a placeholder — carry it through unchanged.
      Remove this whole step, and the `.dev-banner` block below, once the
      skill is out of development.
+  9. The legend (the "Propensity for Mission Lock" key above the
+     Analysis section) is also fixed content, not a placeholder — carry
+     it through unchanged.
+     It's a plain-language key to the Analysis section's shield markers
+     (green/Likely, red/Unlikely, amber/Unclear) — Likely/Unlikely/Unclear
+     are legend-only wording, never a substitute for the actual
+     Affirmative/Not affirmative/Could not determine result values used
+     elsewhere. Its three icons are the same verbatim shield-check/
+     shield-x/shield-question-mark SVGs as {{RESULT_ICON}} above.
 -->
 
 <title>{{COMPANY_NAME}} Mission Lock</title>
@@ -241,6 +252,54 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     margin: 0 0 2rem;
   }
 
+  /* ---- Legend (key to the Analysis section's shield markers) ---- */
+
+  .legend-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 2rem;
+  }
+
+  .legend {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+  }
+
+  .legend-title {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .legend-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .legend-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.8125rem;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
   .documents-label {
     font-family: "IBM Plex Mono", ui-monospace, monospace;
     font-size: 0.9375rem;
@@ -308,33 +367,24 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     background: var(--rule);
   }
 
-  /* ---- Tags shared by Analysis and Appendix ---- */
+  /* ---- Data-point answers (Appendix) ---- */
 
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-family: "IBM Plex Mono", ui-monospace, monospace;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    padding: 0.2rem 0.6rem;
-    border: 1px solid var(--navy);
-    border-radius: 3px;
-    white-space: nowrap;
+  .answer {
+    margin: 0.4rem 0 0;
+    font-size: 0.9375rem;
     color: var(--navy);
+    max-width: 62ch;
   }
 
-  .tag.undetermined {
-    border-style: dashed;
-    border-color: var(--muted);
+  .answer.undetermined {
     color: var(--muted);
+    font-style: italic;
   }
 
   /* Rule-result marker (Analysis section only) — the colored shield icon
      alone, no text label, no border box: same treatment as the eval
-     docket's .assessment marker. Data-point tags in the Appendix are a
-     separate element (.tag above) and are never colored — those
+     docket's .assessment marker. Data-point answers in the Appendix are
+     a separate element (.answer above) and are never colored — those
      attribute answers aren't a three-way result and shouldn't read as
      good/bad. */
   .result-icon {
@@ -460,7 +510,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 <div class="dev-banner">
   <svg class="icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
-  Early prototype — not for distribution
+  Prototype
   <svg class="icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
 </div>
 
@@ -475,6 +525,17 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   </header>
 
   <p class="disclaimer">This report is generated for informational purposes only and does not constitute legal advice. Corporate governance law varies by jurisdiction and changes over time. Please consult a licensed attorney before relying on this analysis for any legal, investment, or governance decision.</p>
+
+  <div class="legend-wrap">
+    <div class="legend">
+      <p class="legend-title">Propensity for Mission Lock</p>
+      <ul class="legend-list">
+        <li><span class="result-icon" data-color="green"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>Likely</li>
+        <li><span class="result-icon" data-color="red"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m14.5 9.5-5 5"/><path d="m9.5 9.5 5 5"/></svg></span>Unlikely</li>
+        <li><span class="result-icon" data-color="amber"><svg class="icon" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span>Unclear</li>
+      </ul>
+    </div>
+  </div>
 
   <section class="group">
     <div class="group-title">
@@ -570,13 +631,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
             <div class="fold-row">
               <span class="appendix-name">{{ATTRIBUTE_NAME}}</span>
               <span class="fold-value">
-                <!-- Plain "tag", except add " undetermined" when the
-                     value is literally "Could not determine". -->
-                <span class="tag">{{ATTRIBUTE_ANSWER}}</span>
-                <span class="fold-sep">|</span>
                 <span class="fold-indicator"></span>
               </span>
             </div>
+            <!-- Plain "answer", except add " undetermined" when the
+                 value is literally "Could not determine". -->
+            <p class="answer">{{ATTRIBUTE_ANSWER}}</p>
           </summary>
           <div class="appendix-body">
             <p class="evidence">{{ATTRIBUTE_EVIDENCE}}</p>
