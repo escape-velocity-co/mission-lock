@@ -1,6 +1,16 @@
 # Mission Lock Analyzer
 
-This project contains the "Mission Lock Analyzer" Skill and its eval harness, developed using Anthropic's [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator). See [`skills/mission-lock/SKILL.md`](skills/mission-lock/SKILL.md) for what the skill does, and [`evals/README.md`](evals/README.md) for the eval corpus and eval loop.
+This project contains the "Mission Lock Analyzer" Skill and its eval harness, developed using Anthropic's [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator). See [`SKILL.md`](skills/mission-lock/SKILL.md) for what the skill does, and [`evals/README.md`](evals/README.md) for the eval corpus and loop.
+
+## Glossary
+
+**Docket**: the eval iteration results page (built from [`evals/docket-template.html`](evals/docket-template.html), saved as `docket.html` in a run's workspace directory). One page per eval run, a grid of every eval against every rule. Used by developers of the skill to grade a run.
+
+**Report**: the per-document analysis output the skill itself produces for an end user, in either [`Markdown`](skills/mission-lock/assets/report-template.md) or [HTML](skills/mission-lock/assets/report-template.html).
+
+### Disambiguation
+
+When encountering a word in the Glossary whose meaning you're unable to discern from context, do not guess; ask which is meant before taking action. For example, "docket"'s use is clear however since a docket is a type of report, using "report" without context may not be clear. In that case, prompt the user for guidance.
 
 ## Rule Catalog Change Workflow
 
