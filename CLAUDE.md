@@ -8,6 +8,8 @@ This project contains the "Mission Lock Analyzer" Skill and its eval harness, de
 
 **Report**: the per-document analysis output the skill itself produces for an end user, in either [`Markdown`](skills/mission-lock/assets/report-template.md) or [HTML](skills/mission-lock/assets/report-template.html).
 
+**Report Template**: see "Report".
+
 ### Disambiguation
 
 When encountering a word in the Glossary whose meaning you're unable to discern from context, do not guess; ask which is meant before taking action. For example, "docket"'s use is clear however since a docket is a type of report, using "report" without context may not be clear. In that case, prompt the user for guidance.
