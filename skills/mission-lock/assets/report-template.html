@@ -11,10 +11,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
   1. Copy this file's full contents as the starting point for the output
      file. Do not redesign the CSS or structure — the layout, fonts, and
-     color choices are deliberate (see references/ for why: neutral tags
-     regardless of Yes/No/Affirmative/Not-affirmative, evidence hidden
-     behind a fold, etc.). Only fill in the placeholders and repeated
-     blocks described below.
+     color choices are deliberate (see references/ for why: evidence
+     hidden behind a fold, etc.). Only fill in the placeholders and
+     repeated blocks described below.
   2. Replace every {{PLACEHOLDER}} token with real content from the
      analysis. Never leave a placeholder token in the output.
   3. Blocks marked "REPEAT" contain one example iteration. Duplicate the
@@ -26,11 +25,33 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
      included) if there is nothing to put in them — never render an empty
      list or an empty section.
   5. Insert the disclaimer verbatim, do not paraphrase or shorten it.
-  6. Tag values: use the plain `tag` class for every definitive answer,
-     including confident negatives (No / Not affirmative) — they must look
-     exactly as serious as an affirmative answer. Use `tag undetermined`
-     (adds a dashed border) only when the value is literally
-     "Could not determine".
+  6. The result marker is handled differently in the two places it
+     appears:
+     - Analysis section (rule results): a `result-icon` span, icon only,
+       no text label — {{RESULT_ICON}} colored via its `data-color`
+       attribute, using the same Affirmative → shield-check/green, Not
+       affirmative → shield-x/red, Could not determine →
+       shield-question-mark/amber mapping as the eval docket (see
+       docket-template.html's own instructions for the exact verbatim SVG
+       snippets to copy — don't hand-write or re-derive the path data).
+       These are the only three values; never invent a fourth marker or
+       color. The `aria-label` still carries {{RULE_RESULT}} as text (e.g.
+       "Affirmative") so the result isn't lost for screen readers.
+     - Appendix section (data points): use the plain `tag` class, with
+       no `data-color` and no icon, for every attribute answer —
+       including confident negatives (No) — they must look exactly as
+       serious as an affirmative answer. Attribute answers aren't a
+       three-way result, so they never get the green/red/amber
+       treatment. Use `tag undetermined` (adds a dashed border) only
+       when the value is literally "Could not determine".
+  7. {{RULE_QUERY}}: that rule's "Query" field from
+     skills/mission-lock/references/rules.md, verbatim — always this
+     text, regardless of the result. It is never the document-specific
+     finding; that goes in the evidence field, behind the fold.
+  8. The development-build banner (the amber strip above the masthead)
+     is fixed content, not a placeholder — carry it through unchanged.
+     Remove this whole step, and the `.dev-banner` block below, once the
+     skill is out of development.
 -->
 
 <title>{{COMPANY_NAME}} Mission Lock</title>
@@ -48,6 +69,19 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     --rule: #dfe1ea;
     --heading: #ed3a3d;
     --mint: #c8f5eb;
+    --green: #2f8f66;
+    --green-soft: #e7f6ef;
+    --red: #c94a48;
+    --red-soft: #fbebea;
+    --amber: #a6790f;
+    --amber-soft: #fbf1dc;
+    /* Dev-build banner only — a fixed, bright caution stripe (like a
+       hazard band), deliberately the same in both themes rather than
+       toning down to match the surface. Kept separate from --amber
+       above, which colors the "Could not determine" status icon and
+       needs to stay a quieter, semantic status color, not a loud one. */
+    --banner-bg: #f4c542;
+    --banner-fg: #2b1d00;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -60,6 +94,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
       --rule: #343a63;
       --heading: #ff5b58;
       --mint: #c8f5eb;
+      --green: #57b58d;
+      --green-soft: #16261f;
+      --red: #e1817f;
+      --red-soft: #2c1c1c;
+      --amber: #dcae57;
+      --amber-soft: #2a2317;
     }
   }
 
@@ -72,9 +112,61 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     --rule: #343a63;
     --heading: #ff5b58;
     --mint: #c8f5eb;
+    --green: #57b58d;
+    --green-soft: #16261f;
+    --red: #e1817f;
+    --red-soft: #2c1c1c;
+    --amber: #dcae57;
+    --amber-soft: #2a2317;
   }
 
   * { box-sizing: border-box; }
+
+  /* ---- Icons (Lucide, https://lucide.dev — ISC licensed) ----
+     Icons are inlined as raw <svg class="icon"> markup, never loaded from
+     a CDN <script> — the Artifact CSP blocks non-Google-Fonts external
+     hosts, and inlining is a handful of short <path>/<circle> elements
+     per icon anyway.
+
+     To add one: open https://lucide.dev/icons/<name>, copy its <svg>,
+     keep viewBox="0 0 24 24", delete its width/height/stroke/fill
+     attributes (the .icon class supplies them), and add class="icon" to
+     the <svg> tag. It then sizes to 1em (matching the surrounding text)
+     and colors via currentColor (matching the surrounding text color —
+     var(--navy), var(--muted), var(--green/red/amber), etc., whatever
+     the icon sits inside), so it never needs its own color override. */
+  .icon {
+    width: 1em;
+    height: 1em;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    vertical-align: -0.125em;
+    flex-shrink: 0;
+  }
+
+  /* ---- Development-build banner ---- */
+
+  .dev-banner {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--banner-bg);
+    color: var(--banner-fg);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-align: center;
+  }
 
   body {
     margin: 0;
@@ -219,6 +311,9 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   /* ---- Tags shared by Analysis and Appendix ---- */
 
   .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     font-family: "IBM Plex Mono", ui-monospace, monospace;
     font-size: 0.75rem;
     font-weight: 500;
@@ -235,6 +330,24 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     border-color: var(--muted);
     color: var(--muted);
   }
+
+  /* Rule-result marker (Analysis section only) — the colored shield icon
+     alone, no text label, no border box: same treatment as the eval
+     docket's .assessment marker. Data-point tags in the Appendix are a
+     separate element (.tag above) and are never colored — those
+     attribute answers aren't a three-way result and shouldn't read as
+     good/bad. */
+  .result-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .result-icon[data-color="green"] { color: var(--green); }
+  .result-icon[data-color="red"] { color: var(--red); }
+  .result-icon[data-color="amber"] { color: var(--amber); }
 
   .location {
     font-family: "IBM Plex Mono", ui-monospace, monospace;
@@ -285,7 +398,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
   .fold-value {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 0.6rem;
     margin-left: auto;
   }
@@ -318,9 +431,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     color: var(--navy);
   }
 
-  .assertion {
+  .query {
     margin: 0.5rem 0 0;
     font-size: 0.9375rem;
+    font-style: italic;
     color: var(--muted);
     max-width: 62ch;
   }
@@ -343,6 +457,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     .masthead h1 { font-size: 1.9rem; }
   }
 </style>
+
+<div class="dev-banner">
+  <svg class="icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+  Early prototype — not for distribution
+  <svg class="icon" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+</div>
 
 <div class="sheet">
 
@@ -371,19 +491,26 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
           <div class="fold-row">
             <span class="appendix-name">{{RULE_NAME}}</span>
             <span class="fold-value">
-              <!-- Plain "tag", except add " undetermined" when the value
-                   is literally "Could not determine". -->
-              <span class="tag">{{RULE_RESULT}}</span>
-              <span class="fold-sep">|</span>
               <span class="fold-indicator"></span>
+              <span class="fold-sep">|</span>
+              <!-- {{RESULT_ICON}} / {{RESULT_COLOR}}: same three
+                   Affirmative/Not affirmative/Could not determine →
+                   shield-check/green, shield-x/red,
+                   shield-question-mark/amber mapping (and the same
+                   verbatim Lucide SVG snippets) as the eval docket's
+                   {{RESULT_ICON}} — see docket-template.html's own
+                   instructions for the exact markup to copy. Icon only,
+                   no text label — the color and shape carry the result,
+                   same as the docket's marker. -->
+              <span class="result-icon" data-color="{{RESULT_COLOR}}" role="img" aria-label="{{RULE_RESULT}}">{{RESULT_ICON}}</span>
             </span>
           </div>
-          <!-- This is the rule's "Positive Assertion" field from
-               rules.md, verbatim — always this text, regardless of
-               whether the result is Affirmative, Not affirmative, or
-               Could not determine. It is never the document-specific
-               finding; that goes in .evidence below, behind the fold. -->
-          <p class="assertion">{{RULE_POSITIVE_ASSERTION}}</p>
+          <!-- This is the rule's "Query" field from rules.md, verbatim —
+               always this text, regardless of whether the result is
+               Affirmative, Not affirmative, or Could not determine. It
+               is never the document-specific finding; that goes in
+               .evidence below, behind the fold. -->
+          <p class="query">{{RULE_QUERY}}</p>
         </summary>
         <div class="appendix-body">
           <p class="evidence">{{RULE_EVIDENCE}}</p>
