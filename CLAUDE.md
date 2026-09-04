@@ -14,6 +14,10 @@ This project contains the "Mission Lock Analyzer" Skill and its eval harness, de
 
 When encountering a word in the Glossary whose meaning you're unable to discern from context, do not guess; ask which is meant before taking action. For example, "docket"'s use is clear however since a docket is a type of report, using "report" without context may not be clear. In that case, prompt the user for guidance.
 
+## Previewing the Markdown Report as an Artifact
+
+When asked to publish the Markdown report (`report-template.md`, or a generated instance of it) as an Artifact, render it as plain CommonMark would.
+
 ## Rule Catalog Change Workflow
 
 Whenever a rule in [`skills/mission-lock/references/rules.md`](skills/mission-lock/references/rules.md) is added, edited, or removed, work through this checklist before considering the change done.
