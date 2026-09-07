@@ -1,12 +1,12 @@
 # Mission Lock Analyzer
 
-This project contains the "Mission Lock Analyzer" Skill and its eval harness, developed using Anthropic's [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator). See [`SKILL.md`](skills/mission-lock/SKILL.md) for what the skill does, and [`evals/README.md`](evals/README.md) for the eval corpus and loop.
+This project contains the "Mission Lock Analyzer" (aka "MLA") Skill and its eval harness, developed using Anthropic's [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator). See [`SKILL.md`](skills/mission-lock/SKILL.md) for what the skill does, and [`evals/README.md`](evals/README.md) for the eval corpus and loop.
 
 ## Glossary
 
-**Docket**: the eval iteration results page (built from [`evals/docket-template.html`](evals/docket-template.html), saved as `docket.html` in a run's workspace directory). One page per eval run, a grid of every eval against every rule. Used by developers of the skill to grade a run.
+**Docket**: the eval iteration results page. The Docket is built from [`evals/docket-template.html`](evals/docket-template.html) and saved as `docket.html` in a run's workspace directory. It contains one page per eval run, consisting of a grid of every eval against every rule. It is used by developers of the skill to grade eval runs.
 
-**Report**: the per-document analysis output the skill itself produces for an end user, in either [`Markdown`](skills/mission-lock/assets/report-template.md) or [HTML](skills/mission-lock/assets/report-template.html).
+**Report**: the per-document analysis MLA produces for an end user, in either [`Markdown`](skills/mission-lock/assets/report-template.md) or [HTML](skills/mission-lock/assets/report-template.html).
 
 **Report Template**: see "Report".
 
