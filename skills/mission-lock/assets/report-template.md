@@ -34,6 +34,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
      title) is fixed content, not a placeholder — carry it through
      unchanged, verbatim, on its own line. Remove this whole step, and
      the banner line below, once the skill is out of development.
+  8. {{SKILL_VERSION}}: the `metadata.version` field from
+     skills/mission-lock/SKILL.md's own frontmatter — read it fresh each
+     time rather than reusing a value from a previous report, since it
+     changes as the skill does.
 -->
 
 🟡 PROTOTYPE 🟡 PROTOTYPE 🟡 PROTOTYPE 🟡 PROTOTYPE 🟡 
@@ -60,6 +64,8 @@ on this analysis for any legal, investment, or governance decision.*
 <!-- END REPEAT -->
 
 # Appendix
+
+*Mission Lock Analyzer - v{{SKILL_VERSION}}*
 
 ## Documents Used in this Analysis
 <!-- REPEAT: one line per document that was cited as evidence for at

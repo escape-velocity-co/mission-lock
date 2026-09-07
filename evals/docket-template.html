@@ -83,6 +83,10 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   Where the data comes from:
 
   - {{ITERATION_NUMBER}}: the workspace iteration number for this run.
+  - {{SKILL_VERSION}}: the `metadata.version` field from
+    skills/mission-lock/SKILL.md's own frontmatter as of this run — read it
+    fresh rather than reusing a value from a previous docket, since it
+    changes as the skill does.
   - {{RENDERED_TIMESTAMP_UTC}}: the date and time this docket was
     generated (not when the evals were run, if those differ), as a UTC
     ISO 8601 string (e.g. "2026-09-01T17:31:00Z"). This is deliberately
@@ -169,7 +173,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   nothing else about the template changes when that happens.
 -->
 
-<title>Mission Lock Eval Results - Iteration {{ITERATION_NUMBER}}</title>
+<title>Eval Results - Iteration {{ITERATION_NUMBER}}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gloock&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Open+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -759,12 +763,12 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 <div class="sheet">
   <header class="masthead">
     <div class="eyebrow-row">
-      <p class="eyebrow">Mission Lock Analyzer &middot; Eval Results</p>
+      <p class="eyebrow">Mission Lock Analyzer &middot; v{{SKILL_VERSION}}</p>
       <a href="https://escapevelocity.co">Escape Velocity</a>
     </div>
     <div class="masthead-row">
       <div class="masthead-title-group">
-        <h1>Iteration {{ITERATION_NUMBER}}</h1>
+        <h1>Eval Results - Iteration {{ITERATION_NUMBER}}</h1>
         <p class="rendered-timestamp" id="rendered-timestamp" data-generated-utc="{{RENDERED_TIMESTAMP_UTC}}"></p>
       </div>
       <div class="legend">
