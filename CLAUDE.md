@@ -61,3 +61,10 @@ Packaging is performed via Anthropic's "skill-creator" skill.
   ```
   3. Rename the output file to `mla-<version>.skill` where `<version>` is the value from `SKILL.md`'s `metadata.version` field.
   1. Place the output file in `dist/` at the repo root.
+
+## Maintaining the Changelog
+
+[`CHANGELOG.md`](CHANGELOG.md) tracks what's changed between versions.
+
+1. Add a bullet under `[Unreleased]` for any notable change as it's made (new/edited/removed rule or attribute, report format change, eval harness change, etc.). *Only add bullets for notable changes; not for every commit.*
+1. When `metadata.version` is bumped, rename `[Unreleased]` to the new version (adding today's date) and start a fresh empty `[Unreleased]` above it.
