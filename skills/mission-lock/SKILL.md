@@ -1,7 +1,6 @@
 ---
 name: mission-lock
 description: Analyzes a company's articles of incorporation or certificate of incorporation for "mission lock" — both factual attributes (currently the company's legal name, whether it's incorporated as a public benefit corporation (PBC), and its stated purpose clause) and rules (compound checks like whether a specific, third-party-breachable mission exists at all) — each answered definitively or explicitly flagged as undeterminable, never guessed. This is a deliberately small, trust-first starting catalog (see references/attributes.md and references/rules.md) that will grow over time. Use this whenever the user provides or references articles of incorporation, a certificate of incorporation, corporate charter, or formation documents (PDF, DOCX, plain text, or pasted content) and wants to know its PBC status, purpose clause, whether it has a real/breachable mission, or basic entity facts — even if they don't say "mission lock" explicitly. This produces analytical, descriptive output only — it does not score, rate, or recommend.
-argument-hint: "[document...]"
 metadata:
   version: 0.1.0
 ---
