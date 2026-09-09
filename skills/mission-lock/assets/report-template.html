@@ -67,6 +67,13 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
       skills/mission-lock/SKILL.md's own frontmatter — read it fresh each
       time rather than reusing a value from a previous report, since it
       changes as the skill does.
+  11. The theme toggle (the sun/moon button pair in the masthead) is fixed
+      content, not a placeholder — carry it, its styles, and its trailing
+      `<script>` through unchanged. It flips the `data-theme` attribute
+      the CSS already keys off of (see the `:root[data-theme="dark"]` /
+      `:root:not([data-theme="light"])` blocks above) and remembers the
+      reader's choice in `localStorage`; clicking the already-active
+      button reverts to following the system theme.
 -->
 
 <title>Mission Lock Analysis - {{COMPANY_NAME}}</title>
@@ -233,6 +240,54 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   .eyebrow-row a:hover {
     color: var(--mint);
     border-bottom-color: var(--muted);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* ---- Theme toggle ---- */
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
+    border: 1px solid var(--rule);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .theme-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.375rem;
+    height: 1.375rem;
+    padding: 0;
+    border: none;
+    background: var(--surface);
+    color: var(--muted);
+    cursor: pointer;
+  }
+
+  .theme-btn + .theme-btn {
+    border-left: 1px solid var(--rule);
+  }
+
+  .theme-btn .icon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .theme-btn:hover {
+    color: var(--navy);
+  }
+
+  .theme-btn[aria-pressed="true"] {
+    color: var(--mint);
+    background: var(--green-soft);
   }
 
   .masthead h1 {
@@ -519,7 +574,17 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   <header class="masthead">
     <div class="eyebrow-row">
       <p class="eyebrow">Mission Lock Analyzer &middot; v{{SKILL_VERSION}}</p>
-      <a href="https://escapevelocity.co">Escape Velocity</a>
+      <div class="header-right">
+        <div class="theme-toggle" role="group" aria-label="Color theme">
+          <button type="button" class="theme-btn" data-theme-choice="light" aria-label="Light mode" aria-pressed="false">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          </button>
+          <button type="button" class="theme-btn" data-theme-choice="dark" aria-label="Dark mode" aria-pressed="false">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+          </button>
+        </div>
+        <a href="https://escapevelocity.co">Escape Velocity</a>
+      </div>
     </div>
     <h1>{{COMPANY_NAME}}</h1>
   </header>
@@ -655,3 +720,44 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   </section>
 
 </div>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var buttons = document.querySelectorAll('.theme-btn');
+    var STORAGE_KEY = 'mission-lock-theme';
+
+    function apply(theme) {
+      if (theme === 'light' || theme === 'dark') {
+        root.setAttribute('data-theme', theme);
+      } else {
+        root.removeAttribute('data-theme');
+      }
+      buttons.forEach(function (btn) {
+        btn.setAttribute('aria-pressed', btn.dataset.themeChoice === theme ? 'true' : 'false');
+      });
+    }
+
+    var stored = null;
+    try {
+      stored = localStorage.getItem(STORAGE_KEY);
+    } catch (e) {}
+
+    apply(stored);
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var choice = btn.dataset.themeChoice;
+        var next = root.getAttribute('data-theme') === choice ? null : choice;
+        apply(next);
+        try {
+          if (next) {
+            localStorage.setItem(STORAGE_KEY, next);
+          } else {
+            localStorage.removeItem(STORAGE_KEY);
+          }
+        } catch (e) {}
+      });
+    });
+  })();
+</script>
