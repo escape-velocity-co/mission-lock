@@ -48,3 +48,16 @@ Whenever a rule in [`skills/mission-lock/references/rules.md`](skills/mission-lo
 1. When a result looks like a shortfall, verify against the source document before concluding it's a model failure. An assumption about what a document "should" contain is not evidence about what it does contain.
 1. Generate the results docket (per `evals/README.md`) and confirm the changed rule's column and popover render correctly.
 1. Surface the run's pass rate and any findings to the user, and wait for an explicit go-ahead before committing. A rule catalog change and the eval updates it required should land together in one reviewed commit, not be split across separate silent ones.
+
+## Packaging the Skill
+
+Packaging is performed via Anthropic's "skill-creator" skill.
+
+  1. Package the contents of `skills/mission-lock/`.
+  1. Package from the `skill-creator` plugin's `skills/skill-creator/` directory:
+  
+  ```
+  python3 -m scripts.package_skill /path/to/skills/mission-lock /path/to/mission-lock/dist
+  ```
+  3. Rename the output file to `mla-<version>.skill` where `<version>` is the value from `SKILL.md`'s `metadata.version` field.
+  1. Place the output file in `dist/` at the repo root.
