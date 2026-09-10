@@ -38,6 +38,11 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
      skills/mission-lock/SKILL.md's own frontmatter — read it fresh each
      time rather than reusing a value from a previous report, since it
      changes as the skill does.
+  9. {{RULE_QUERY}} (Analysis section only): that rule's "Query" field
+     from skills/mission-lock/references/rules.md, verbatim — always this
+     text, regardless of whether the result is Affirmative, Not
+     affirmative, or Could not determine. It is never the
+     document-specific finding; that goes in the Evidence field.
 -->
 
 🟡 PROTOTYPE 🟡 PROTOTYPE 🟡 PROTOTYPE 🟡 PROTOTYPE 🟡 
@@ -49,12 +54,14 @@ constitute legal advice. Corporate governance law varies by jurisdiction
 and changes over time. Please consult a licensed attorney before relying
 on this analysis for any legal, investment, or governance decision.*
 
+---
+
 # Analysis
 
 <!-- REPEAT: one block per rule in references/rules.md, in the order they
      appear there. -->
 ## {{RULE_NAME}}
-**Assertion:** {{RULE_POSITIVE_ASSERTION}}
+*{{RULE_QUERY}}*
 
 **Result:** {{RULE_RESULT}}
 
@@ -62,6 +69,8 @@ on this analysis for any legal, investment, or governance decision.*
 
 **Location:** {{RULE_LOCATION}}
 <!-- END REPEAT -->
+
+---
 
 # Appendix
 
