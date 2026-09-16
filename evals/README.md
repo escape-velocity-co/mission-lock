@@ -54,6 +54,10 @@ Each entry is a task prompt plus the document(s) it should be run against. See `
 
 Use the workflow documented in Anthropic's [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) skill (spawn with-skill/without-skill runs per document, grade against assertions, review in the eval viewer). Point it at this repo's `skills/mission-lock/` and `evals/` directories.
 
+### What Counts as a Failure
+
+A graded run's divergence from an eval's `expectations` is a failure only if the **result itself is wrong, unsupported by any evidence, or hedged when it shouldn't be**. If the Result is correct and with evidence, but the write-up organizes or distributes its reasoning differently than an assertion anticipated - that is not a skill defect. It likely means the assertion needs to be re-examined and called to the attention of the author. Fix or remove the assertion in that case.
+
 ### Generate the Results Docket After Every Run
 
 Once a run is graded, generate the results docket. This is a standing deliverable of running the eval suite, not a one-off request. Produce it every time an eval run completes, without being asked again.
