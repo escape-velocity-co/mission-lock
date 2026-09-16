@@ -67,3 +67,19 @@ Append a new `###` section following the template below.
 **Typically Found In:** Article II or III, often titled "Purpose" or "Objects."
 
 **When to Say "Could not Determine":** Only when no purpose clause or equivalent article can be located in the document at all. Generic boilerplate language is itself a definitive, reportable answer — quote it as-is. Don't confuse "the purpose clause is generic" (a confident finding) with "I couldn't find a purpose clause" (genuine uncertainty) — these are different answers and should never be conflated.
+
+### Governing Jurisdiction
+
+**Definition:** The US state, or similar granularity of jurisdiction outside of the US, under whose corporate statute the company is incorporated.
+
+**Response Options:** The exact jurisdiction as stated (e.g. "Delaware") / Could not determine.
+
+**What to Look For:** A statement of incorporation in the introductory paragraph (e.g. "a Delaware corporation," "organized and existing under the laws of the State of ___"); a citation to the state's corporate statute (e.g. "the General Corporation Law of the State of Delaware"); a Secretary of State (or equivalent) filing stamp or certification page naming the jurisdiction.
+
+**Typically Found In:**
+* Certificate/Articles of Incorporation
+* Filing stamp
+* Certification page
+* Statutory citation
+
+**When to Say "Could not determine":** When no statement of incorporation, statutory citation, or filing stamp naming a jurisdiction appears anywhere in the open documents. A registered agent's address alone is not evidence of jurisdiction.

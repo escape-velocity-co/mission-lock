@@ -75,12 +75,9 @@ rules as it does for attributes.
      the user for OCR'd text or a text-based copy rather than guessing at
      content from a blank or corrupted extraction.
 
-2. **Walk the attribute catalog.** Read
-   [references/attributes.md](references/attributes.md) for the current
-   list of mission-lock attributes — it starts deliberately small (currently
-   just company name, PBC status, and stated purpose) and is expected to
-   grow over time, so always read the reference file fresh rather than
-   relying on memory of it. For each attribute:
+2. **Walk the attribute catalog.** Always read
+   [references/attributes.md](references/attributes.md) fresh for the current
+   list of mission-lock attributes. For each attribute:
    - Give a definitive answer using that attribute's specific "Answer
      options" (see the reference file) — or "Could not determine" if you
      can't support an answer with specific document text. Read each

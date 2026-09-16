@@ -15,11 +15,12 @@
   "conflicts_intentionally_present": [
     "Public Benefit Corporation (PBC) Status: alpha = No, beta = Yes",
     "Stated Purpose: alpha = generic boilerplate, beta = specific public benefit purpose",
-    "Mission Existence and Breachability: alpha = Not affirmative, beta = Affirmative",
-    "Paramount Purpose: alpha = Not affirmative, beta = Affirmative"
+    "Mission Beyond Financial Profit (M1): alpha = Not affirmative, beta = Affirmative",
+    "Mission Breachability (M2): alpha = Not affirmative, beta = Affirmative",
+    "Mission is Paramount (M3): alpha = Not affirmative, beta = Affirmative"
   ],
   "intentionally_not_conflicting": [
     "Company Name: 'Slifka and Sons Movers, Inc.' in both drafts — included so the eval can confirm the skill narrows 'Could not determine' to the genuinely conflicting items rather than blanket-applying it to the whole report.",
-    "Mission Protection from Ordinary Majority: beta's 66 2/3% supermajority provision was originally included to make this rule conflict too (alpha = Not affirmative, beta = Affirmative), but as of the current rule catalog (supermajority-vote route removed from Mission Protection's Affirmative Condition) neither draft has a qualifying lock-holding body or federated/member-constitution structure, so both now resolve to 'Not affirmative' and there's no real conflict left on this rule — left in place as a useful precision check: does the skill correctly recognize the leftover supermajority language in beta no longer matters, rather than treating it as still creating a conflict?"
+    "Governing Jurisdiction: both drafts state incorporation under the General Corporation Law of the State of Delaware — no conflict to resolve for this attribute despite the PBC status and purpose conflicts."
   ]
 }

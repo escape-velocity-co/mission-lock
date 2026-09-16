@@ -1,7 +1,7 @@
 {
   "synthetic": true,
   "company_name": "Meridian Robotics, Inc. (fictional — not a real company)",
-  "note": "SYNTHETIC FIXTURE, not a real SEC filing or real company. Constructed to test the SKILL.md instruction (Workflow step 3) that a Rule depending on an already-computed Attribute must reuse that Attribute's answer rather than re-deriving the same underlying fact independently. Article THIRD gives the Corporation an unusually specific, clearly breachable purpose clause (a named activity, named beneficiary classes, and a measurable 2%-of-net-income commitment) — enough to make Mission Existence and Breachability 'Affirmative' on its own terms — but the document contains no public benefit corporation election and no reference to Subchapter XV or Section 362 anywhere. A model that reuses the Public Benefit Corporation (PBC) Status attribute (confidently 'No') should reach 'Not affirmative' for Paramount Purpose quickly and without hedging, since that rule's Affirmative Condition requires PBC-or-equivalent status. A model that instead re-derives Paramount Purpose independently from how specific or values-driven the purpose clause reads risks answering 'Affirmative' or hedging to 'Could not determine' — mistaking a specific-but-ordinary purpose clause for a legally paramount one.",
+  "note": "SYNTHETIC FIXTURE, not a real SEC filing or real company. Constructed to test the SKILL.md instruction (Workflow step 3) that a Rule depending on an already-computed Attribute must reuse that Attribute's answer rather than re-deriving the same underlying fact independently. Article THIRD gives the Corporation an unusually specific, clearly breachable purpose clause (a named activity, named beneficiary classes, and a measurable 2%-of-net-income commitment) — enough to make Mission Beyond Financial Profit (M1) and Mission Breachability (M2) both 'Affirmative' on their own terms — but the document contains no public benefit corporation election and no reference to Subchapter XV or Section 362 anywhere. A model that reuses the Public Benefit Corporation (PBC) Status attribute (confidently 'No') should reach 'Not affirmative' for Mission is Paramount (M3) quickly and without hedging, since that rule's Affirmative Condition requires PBC-or-equivalent status. A model that instead re-derives M3 independently from how specific or values-driven the purpose clause reads risks answering 'Affirmative' or hedging to 'Could not determine' — mistaking a specific-but-ordinary purpose clause for a legally paramount one.",
   "documents": [
     {
       "file": "certificate.txt",
@@ -11,8 +11,8 @@
   "designed_to_test": [
     "Public Benefit Corporation (PBC) Status: No (confident negative — no statutory designation anywhere in the document)",
     "Stated Purpose: specific, quotable language (not boilerplate, not 'Could not determine')",
-    "Mission Existence and Breachability: Affirmative (names beneficiaries, a specific activity, and a measurable commitment)",
-    "Paramount Purpose: Not affirmative — MUST be grounded in the PBC Status attribute's 'No' rather than re-assessed independently from the purpose clause's specificity",
-    "Mission Protection from Ordinary Majority: Not affirmative (ordinary majority amendment provision, no lock-holding body, no federated/member constitution)"
+    "Mission Beyond Financial Profit (M1): Affirmative (names beneficiaries, a specific activity, and a measurable commitment beyond financial return)",
+    "Mission Breachability (M2): Affirmative (that same specific activity and beneficiary language names a domain and direction a contrary course of conduct could breach)",
+    "Mission is Paramount (M3): Not affirmative — MUST be grounded in the PBC Status attribute's 'No' rather than re-assessed independently from the purpose clause's specificity"
   ]
 }
