@@ -11,9 +11,14 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   column per rule in the current rule catalog, with a colored shield icon
   (Lucide shield-check / shield-x / shield-question-mark, for Affirmative
   / Not affirmative / Could not determine) at each intersection. Hovering
-  a marker shows a popover with that call's Result, Assertion, quoted
-  Evidence, and Location — pulled straight from that eval run's
-  report.md, never re-derived or re-worded. Hovering a column's rule
+  a marker shows a popover with that call's Result, Evidence, and
+  Location — pulled straight from that eval run's report.md, never
+  re-derived or re-worded. (report-template.md has only these three
+  fields per rule as of skill version 0.2.0+; if a future report
+  format reintroduces a separate Assertion field or otherwise changes
+  this shape, this template's popover markup/script need the matching
+  update — see the note near {{RESULT_EVIDENCE_HTML}} below, and
+  CLAUDE.md's guidance on keeping this in sync.) Hovering a column's rule
   ID or name (in the header, not a result cell) shows a second kind of
   popover instead — that rule's actual definition, copied verbatim from
   references/rules.md, so a reader can check what a column means without
@@ -131,7 +136,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     output for the current rules.md.
   - Eval rows: one per eval in evals/evals.json, in `id` order.
   - Per-cell content: for a single-subject eval, read the Result,
-    Assertion, Evidence, and Location straight off that rule's section in
+    Evidence, and Location straight off that rule's section in
     the run's report.md (the same fields already produced for the
     Markdown report — do not re-derive or re-summarize them here). For a
     comparison eval whose report nests more than one subject under a rule
@@ -159,12 +164,20 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     .assessment button picks up var(--green/red/amber) automatically from
     its own data-color attribute (see the CSS) — never add a color
     attribute to the <svg> or <path> tags directly.
-  - {{RESULT_ASSERTION_HTML}} / {{RESULT_EVIDENCE_HTML}}: may contain
-    inline HTML entities (e.g. &mdash;, &ldquo;&rdquo;, &hellip;) — carry
+  - {{RESULT_EVIDENCE_HTML}}: the rule's full Evidence paragraph, copied
+    verbatim from report.md — may contain inline HTML entities (e.g.
+    &mdash;, &ldquo;&rdquo;, &hellip;) that were already there; carry
     those through as written in the source report rather than plain
-    ASCII punctuation. Evidence is wrapped in curly quotes by the popover
-    script itself; do not add another layer of quotation marks in the
-    placeholder value.
+    ASCII punctuation. This is the report's single Evidence field, not a
+    short excerpt — the popover script renders it as plain text with no
+    added quote-wrapping, so don't pre-wrap it in quotation marks either.
+    (There is no separate {{RESULT_ASSERTION_HTML}} placeholder — an
+    earlier version of this template had one, back when report-template.md
+    had a distinct Assertion field; that field was merged into Evidence
+    and this template's popover markup/script/CSS were updated to match.
+    If report-template.md's field structure changes again, this template's
+    popover needs the matching update — don't let the two drift, per
+    CLAUDE.md.)
   - {{RESULT_LOCATION}}: the same citation (article/section reference)
     already given in the report — do not add a "§" prefix, the CSS adds
     it automatically.
@@ -660,14 +673,6 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     letter-spacing: 0.03em;
   }
 
-  .popover-assertion {
-    font-family: "Open Sans", sans-serif;
-    font-size: 0.8125rem;
-    color: var(--navy);
-    line-height: 1.5;
-    margin: 0 0 0.6rem;
-  }
-
   .popover-evidence {
     font-family: "Open Sans", sans-serif;
     font-size: 0.78125rem;
@@ -829,7 +834,6 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
             <td class="result">
               <button type="button" class="assessment" aria-expanded="false"
                 data-result="{{RESULT_LABEL}}" data-color="{{RESULT_COLOR}}" data-rule="{{RULE_ID}} &middot; {{RULE_NAME}}"
-                data-assertion="{{RESULT_ASSERTION_HTML}}"
                 data-evidence="{{RESULT_EVIDENCE_HTML}}"
                 data-location="{{RESULT_LOCATION}}">{{RESULT_ICON}}</button>
             </td>
@@ -844,7 +848,6 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
                 <span class="dot-wrap">
                   <button type="button" class="assessment" aria-expanded="false"
                     data-result="{{RESULT_LABEL}}" data-color="{{RESULT_COLOR}}" data-rule="{{RULE_ID}} &middot; {{SUBJECT_NAME}}"
-                    data-assertion="{{RESULT_ASSERTION_HTML}}"
                     data-evidence="{{RESULT_EVIDENCE_HTML}}"
                     data-location="{{RESULT_LOCATION}}">{{RESULT_ICON}}</button>
                   <span class="who">{{SUBJECT_SHORT_LABEL}}</span>
@@ -869,7 +872,6 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     <span class="popover-rule" id="pop-rule"></span>
   </div>
   <p class="popover-query" id="pop-query" hidden></p>
-  <p class="popover-assertion" id="pop-assertion"></p>
   <p class="popover-evidence" id="pop-evidence"></p>
   <div class="popover-section" id="pop-condition-section" hidden>
     <p class="popover-label">Affirmative Condition</p>
@@ -912,7 +914,6 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
   var elResult = document.getElementById('pop-result');
   var elRule = document.getElementById('pop-rule');
   var elQuery = document.getElementById('pop-query');
-  var elAssertion = document.getElementById('pop-assertion');
   var elEvidence = document.getElementById('pop-evidence');
   var elConditionSection = document.getElementById('pop-condition-section');
   var elConditionList = document.getElementById('pop-condition-list');
@@ -937,10 +938,8 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     elRule.className = 'popover-rule';
     elRule.innerHTML = btn.dataset.rule;
     elQuery.hidden = true;
-    elAssertion.hidden = false;
-    elAssertion.innerHTML = btn.dataset.assertion;
     elEvidence.hidden = false;
-    elEvidence.innerHTML = '&ldquo;' + btn.dataset.evidence + '&rdquo;';
+    elEvidence.innerHTML = btn.dataset.evidence;
     elConditionSection.hidden = true;
     elEvidenceCatsSection.hidden = true;
     elLocationSection.hidden = true;
@@ -954,7 +953,6 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
     elRule.innerHTML = th.dataset.ruleId + ' &middot; ' + th.dataset.ruleName;
     elQuery.hidden = false;
     elQuery.textContent = th.dataset.query;
-    elAssertion.hidden = true;
     elEvidence.hidden = true;
     elConditionSection.hidden = false;
     itemsToList(elConditionList, th.dataset.condition);
