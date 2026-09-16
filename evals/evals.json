@@ -142,28 +142,6 @@
       ]
     },
     {
-      "id": 7,
-      "prompt": "can you compare Vital Farms and Datadog's certificates of incorporation side by side in terms of mission lock? just want to see how a PBC differs from a normal Delaware corp on paper",
-      "expected_output": "Both companies' Company Name, PBC Status, Governing Jurisdiction, and Stated Purpose answered definitively (Vital Farms: Yes + specific purpose; Datadog: No + generic purpose), with the contrast made explicit and neutral. Both companies are Delaware corporations, so Governing Jurisdiction is identical for the two and is not part of the contrast. All three rules split the same way: 'Affirmative' for Vital Farms and 'Not affirmative' for Datadog on M1, M2, and M3 alike, each evaluated independently for each company.",
-      "files": [
-        "documents/vital-farms-cert-of-incorporation/d841617dex32.htm",
-        "documents/datadog-cert-of-incorporation/d745413dex31.htm"
-      ],
-      "expectations": [
-        "Output answers all four current attributes for both companies, not just the ones where they differ",
-        "Vital Farms' Public Benefit Corporation Status answer is 'Yes' and Datadog's is 'No', both stated as confident answers rather than 'Could not determine'",
-        "Both companies' Governing Jurisdiction answer is 'Delaware', each with its own citation to the General Corporation Law of the State of Delaware, and the output does not manufacture a contrast between them on this attribute since none exists",
-        "Output explicitly contrasts the two companies' Stated Purpose answers (specific public benefit language vs. generic 'any lawful act' language)",
-        "Output does not use comparative judgment language such as 'better', 'worse', 'superior', or 'more protected' when contrasting the two companies",
-        "Output includes rule results for both companies, covering every rule currently in skills/mission-lock/references/rules.md (M1, M2, and M3)",
-        "Vital Farms' M1, M2, and M3 results are all 'Affirmative' and Datadog's are all 'Not affirmative', each stated definitively rather than as 'Could not determine'",
-        "Each company's rule results cite that company's own document language as evidence",
-        "The rule comparison does not use comparative judgment language, and does not frame one company's result as better, stronger, or more protected than the other's for any of the three rules",
-        "The M3 comparison specifically cites Vital Farms' PBC/Subchapter XV status vs. Datadog's absence of any statutory designation as the basis for the split — not the specificity of either purpose clause, which is what M1 and M2 turn on instead",
-        "M1, M2, and M3 are reported as three separate comparisons rather than collapsed into one undifferentiated 'PBC vs. normal corp' verdict"
-      ]
-    },
-    {
       "id": 8,
       "prompt": "Lemonade says it's a PBC and has a public benefit purpose — but is that actually legally binding on the board, or just a mission statement they put in the filing?",
       "expected_output": "A report covering every rule currently in references/rules.md — M1, M2, and M3. M1 and M2 are both 'Affirmative' (a specific, breachable purpose beyond financial return exists). Mission is Paramount (M3) is now the rule that directly answers the user's actual question, and it is 'Affirmative': Lemonade is a Delaware PBC under Subchapter XV with an explicit director balancing-of-interests clause in Article III, so directors are legally permitted/required to prioritize the stated purpose — it is not merely a mission statement, it is a legally paramount consideration for the board. Unlike the prior rule catalog (which had no bindingness rule and correctly avoided fabricating one), M3 genuinely exists now and should be reported as the direct answer.",
