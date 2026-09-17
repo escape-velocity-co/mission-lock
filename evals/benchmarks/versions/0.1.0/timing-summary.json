@@ -1,0 +1,98 @@
+{
+  "iteration": 10,
+  "generated_utc": "2026-09-17T22:12:51Z",
+  "skill_version": "0.1.0",
+  "note": "Approximate: this data is from dev iteration 10, run when SKILL.md's frontmatter already said 0.2.0 (0.1.0 was never actually benchmarked this way). Labeled 0.1.0 as a convenient historical baseline, not a precise re-run of the original 0.1.0 release.",
+  "evals": [
+    {
+      "name": "eval-vital-farms-pbc",
+      "id": 1,
+      "tokens": 86976,
+      "duration_ms": 67362,
+      "tool_uses": 6
+    },
+    {
+      "name": "eval-allbirds-pbc-conversion",
+      "id": 2,
+      "tokens": 90207,
+      "duration_ms": 93134,
+      "tool_uses": 9
+    },
+    {
+      "name": "eval-datadog-standard",
+      "id": 3,
+      "tokens": 97767,
+      "duration_ms": 50330,
+      "tool_uses": 10
+    },
+    {
+      "name": "eval-squarespace-dual-class",
+      "id": 4,
+      "tokens": 110952,
+      "duration_ms": 68548,
+      "tool_uses": 12
+    },
+    {
+      "name": "eval-lemonade-purpose-amendment",
+      "id": 5,
+      "tokens": 128476,
+      "duration_ms": 103026,
+      "tool_uses": 13
+    },
+    {
+      "name": "eval-laureate-bundled-preferred",
+      "id": 6,
+      "tokens": 106720,
+      "duration_ms": 115833,
+      "tool_uses": 14
+    },
+    {
+      "name": "eval-lemonade-legally-binding",
+      "id": 8,
+      "tokens": 117351,
+      "duration_ms": 89655,
+      "tool_uses": 13
+    },
+    {
+      "name": "eval-squarespace-legally-binding",
+      "id": 9,
+      "tokens": 113817,
+      "duration_ms": 88330,
+      "tool_uses": 11
+    },
+    {
+      "name": "eval-vital-farms-precedence",
+      "id": 10,
+      "tokens": 148520,
+      "duration_ms": 160060,
+      "tool_uses": 15
+    },
+    {
+      "name": "eval-slifka-draft-conflict",
+      "id": 11,
+      "tokens": 77903,
+      "duration_ms": 82053,
+      "tool_uses": 7
+    },
+    {
+      "name": "eval-meridian-robotics-non-pbc",
+      "id": 12,
+      "tokens": 71631,
+      "duration_ms": 32758,
+      "tool_uses": 6
+    },
+    {
+      "name": "eval-first-keystone-bylaws-carveout",
+      "id": 13,
+      "tokens": 128260,
+      "duration_ms": 90514,
+      "tool_uses": 9
+    }
+  ],
+  "totals": {
+    "tokens": 1278580,
+    "duration_ms": 1041603,
+    "tool_uses": 125
+  },
+  "wall_clock_ms": 160060
+}

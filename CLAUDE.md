@@ -110,4 +110,5 @@ Packaging is performed via Anthropic's "skill-creator" skill.
 [`CHANGELOG.md`](CHANGELOG.md) tracks what's changed between versions.
 
 1. Add a bullet under `[Unreleased]` for any notable change as it's made (new/edited/removed rule or attribute, report format change, eval harness change, etc.). *Only add bullets for notable changes; not for every commit.*
-1. When `metadata.version` is bumped, rename `[Unreleased]` to the new version (adding today's date) and start a fresh empty `[Unreleased]` above it.
+1. When `metadata.version` is bumped: rename `[Unreleased]` to the new version (adding today's date) and start a fresh empty `[Unreleased]` above it.
+1. When `metadata.version` is bumped: rename `evals/benchmarks/versions/unreleased/` to `evals/benchmarks/versions/<new-version>/`, add a row for that version to `evals/benchmarks/history.md`, and start a new `unreleased/` snapshot from the next eval suite run.

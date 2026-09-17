@@ -64,6 +64,10 @@ Once a run is graded, generate the results docket. This is a standing deliverabl
 
 Use [`docket-template.html`](docket-template.html) as the starting point; it carries its own fill-in instructions as an HTML comment at the top. For the rule-definition popover content specifically, use [`parse_rules.py`](parse_rules.py)'s `parse_rules_md()` function to pull it straight from `rules.md` rather than retyping it — see the template's own instructions for the exact fields it returns. Save the filled-in copy as `docket.html` inside that run's workspace directory (e.g. `skills/mission-lock-workspace/iteration-<N>/docket.html`), then show it to the user — serve it over http and open it in the browser preview, rather than just reporting a pass/fail table in chat. A bare `file://` preview outside the project folder renders as a static snapshot with no JavaScript, which breaks the hover popover.
 
+### Capture and Roll Up Timing After Every Run
+
+See [`evals/benchmarks/README.md`](benchmarks/README.md) for instructions on how to maintain the benchmarks.
+
 ### No Connectors in Eval Runs
 
 This eval aims to capture portable behaviour of the skill. Eval results and artifacts are meant to reflect the skill's behavior, agnostic to the environment in which the evalulation is taking place.
