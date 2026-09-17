@@ -103,17 +103,14 @@ rules as it does for attributes.
      calibration about how demanding the test is meant to be, and applying
      a stricter bar than the rule sets will produce answers that look
      cautious but are actually wrong.
-   - When a rule's Affirmative Condition turns on a fact the attribute
-     catalog already captures (e.g., Mission Beyond Financial Profit
+   - When a rule's Affirmative Condition relies on a fact the attribute
+     catalog captures (e.g., Mission Beyond Financial Profit
      (M1)'s "purpose is stated" and "purpose is not the default
-     any-lawful-purpose formulation" conditions are the same fact as the
-     Stated Purpose attribute), reuse that attribute's already-determined
-     answer rather than re-deriving the underlying fact from the
-     document's language a second time. Re-deriving it invites the rule
-     to quietly land on a different conclusion than the attribute it
-     depends on — e.g. re-reading the purpose clause fresh and judging it
-     "specific enough" by eye, instead of relying on the Stated Purpose
-     answer already established, with its own citation and calibration.
+     any-lawful-purpose formulation" conditions, and Mission
+     Breachability (M2)'s "identifies a domain and a direction" condition,
+     are all read off the same underlying text as the Stated Purpose
+     attribute), reuse that attribute's already-determined answer and
+     citation.
      If the depended-on attribute came back "Could not determine," the
      rule usually can't be more confident than that either — but check
      the rule's own "When to say Could not determine" guidance first,

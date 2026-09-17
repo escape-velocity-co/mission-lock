@@ -27,7 +27,7 @@ Whenever a rule's or attribute's write-up fields change in `report-template.md` 
 1. Remove mentions of fields no longer present.
 1. Regenerate the current iteration's `docket.html` from the corrected template.
 
-## Rule Catalog Change Workflow
+## Assessment Catalog Change Workflow
 
 Whenever a rule in [`skills/mission-lock/references/rules.md`](skills/mission-lock/references/rules.md) is added, edited, or removed, work through this checklist before considering the change done.
 
@@ -53,10 +53,44 @@ Whenever a rule in [`skills/mission-lock/references/rules.md`](skills/mission-lo
 ### Always, Regardless of Add / Edit / Remove
 
 1. Run `python3 evals/parse_rules.py` and confirm `rules.md` still parses cleanly, e.g. malformed bullet or missing fields.
+1. Check [`evals/check_mechanical_assertions.py`](evals/check_mechanical_assertions.py)'s `CURRENT_RULE_HEADINGS` list matches the current rule names in `rules.md`. A stale list doesn't error or fail loudly — it just silently stops checking for whatever changed, which is worse than a loud failure since nothing draws attention to the gap.
 1. Run the full eval suite (see `evals/README.md`'s "Running the Eval Loop"), not only the ones touching the changed rule. A rule edit can change what a shared attribute means for every eval that reads it.
 1. When a result looks like a shortfall, verify against the source document before concluding it's a model failure. An assumption about what a document "should" contain is not evidence about what it does contain.
 1. Generate the results docket (per `evals/README.md`) and confirm the changed rule's column and popover render correctly.
 1. Surface the run's pass rate and any findings to the user, and wait for an explicit go-ahead before committing. A rule catalog change and the eval updates it required should land together in one reviewed commit, not be split across separate silent ones.
+
+## Attribute Catalog Change Workflow
+
+Whenever an attribute in [`skills/mission-lock/references/attributes.md`](skills/mission-lock/references/attributes.md) is added, edited, or removed, work through this checklist before considering the change done.
+
+### Adding an Attribute
+
+1. Ensure at least one eval in `evals/evals.json` exercises a document where the attribute has a clear, determinate answer.
+1. Ensure the corpus includes at least one document whose answer for this attribute genuinely differs from whatever the "default" or most common answer is elsewhere in the corpus (e.g. a non-Delaware jurisdiction, when most of the corpus is Delaware). Without that contrast, there's no way to tell a model that actually read the attribute from one that just defaulted to the common case out of habit.
+1. If the attribute has a genuine "Could not determine" case (e.g. conflicting values across multiple documents, or the attribute being altogether absent), ensure at least one eval exercises it, with Evidence that names the specific conflicting or missing language rather than a vague "could not determine."
+1. Check whether any existing rule in `rules.md` reads the same underlying fact this attribute now captures. If so, per `SKILL.md`'s attribute-reuse instruction, that rule should cite this attribute's answer instead of re-deriving the fact independently — update `SKILL.md`'s rule-walking guidance to name the new attribute as a reuse target if appropriate.
+1. Update every relevant `evals.json` entry: add the attribute to the "section for every attribute" enumeration in `expectations`, and add a specific value-check assertion for that document.
+1. Check `skills/mission-lock/assets/report-template.md` and `report-template.html` for whether their Data Points block needs anything new for this attribute (it's meant to be generic enough to add a section per current attribute automatically — confirm that's still true rather than assuming it).
+
+### Editing an Attribute
+
+1. For every existing eval whose expected value for this attribute could plausibly change under the new definition, re-read the source document and re-derive the expected answer. Don't assume the previous expectations still hold, and don't assume what one document contains transfers to a similar-looking one.
+1. Update every `evals.json` expectation that names the attribute — including `expected_output` prose, not just the `expectations` array.
+1. Check `SKILL.md` and `rules.md` for any rule that reuses this attribute's answer (per the attribute-reuse instruction) — if the edit changes what the attribute answers, or how confidently, the dependent rule's reasoning may now be wrong too.
+
+### Removing an Attribute
+
+1. Strip every `evals.json` expectation and `expected_output` sentence naming the removed attribute, across every eval.
+1. Check `SKILL.md` for any mention of the removed attribute by name, and check `rules.md` for any rule that named it as a reuse target.
+1. Check `report-template.md`/`report-template.html` for a Data Points placeholder tied to this attribute.
+
+### Always, Regardless of Add / Edit / Remove
+
+1. Check [`evals/check_mechanical_assertions.py`](evals/check_mechanical_assertions.py)'s `CURRENT_ATTRIBUTES` list matches the current attribute names in `attributes.md`. A stale list doesn't error or fail loudly — it just silently stops checking for whatever changed.
+1. Run the full eval suite (see `evals/README.md`'s "Running the Eval Loop"), not only the evals touching the changed attribute. An attribute edit can change what any rule that reuses it means, for every eval that reads it.
+1. When a result looks like a shortfall, verify against the source document before concluding it's a model failure. An assumption about what a document "should" contain is not evidence about what it does contain.
+1. Attribute-only changes don't need a new docket — the results docket's columns are rules, not attributes. Skip docket regeneration unless this change is bundled with a rule change too.
+1. Surface the run's pass rate and any findings to the user, and wait for an explicit go-ahead before committing. An attribute catalog change and the eval updates it required should land together in one reviewed commit, not be split across separate silent ones.
 
 ## Packaging the Skill
 
