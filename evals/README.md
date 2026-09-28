@@ -58,6 +58,12 @@ Use the workflow documented in Anthropic's [`skill-creator`](https://github.com/
 
 A graded run's divergence from an eval's `expectations` is a failure only if the **result itself is wrong, unsupported by any evidence, or hedged when it shouldn't be**. If the Result is correct and with evidence, but the write-up organizes or distributes its reasoning differently than an assertion anticipated - that is not a skill defect. It likely means the assertion needs to be re-examined and called to the attention of the author. Fix or remove the assertion in that case.
 
+### Grounding Expected-Output Reasoning
+
+When drafting an eval's `expected_output` or `expectations` text, ground the reasoning in facts the source document itself states, not in a supporting legal or factual generalization you supply to justify the conclusion. A generalization offered only to explain *why* a result should hold is a separate claim from the result itself, and it can be wrong even when the result is right. For example, an eval once justified excluding a Bylaws provision from a certificate-only rule by asserting "bylaws are ordinarily amendable by the board alone" — a legal claim that isn't reliably true (DGCL §109(a) defaults bylaw-amendment power to stockholders unless the certificate grants it to the board) — when the document-grounded reason was simply that the statute requires the election to be made in the certificate itself.
+
+Before writing an assertion that leans on a rule of thumb you haven't verified against the actual statute or document text, check it, the same way you'd verify a "should be a failure" call against the source document per "What Counts as a Failure" above.
+
 ### Generate the Results Docket After Every Run
 
 Once a run is graded, generate the results docket. This is a standing deliverable of running the eval suite, not a one-off request. Produce it every time an eval run completes, without being asked again.

@@ -24,6 +24,7 @@ numbers) — ready to paste in rather than hand-computed.
 import argparse
 import json
 import math
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -32,6 +33,16 @@ def load(path: Path):
     if path.is_dir():
         path = path / "timing-summary.json"
     return json.loads(path.read_text())
+
+
+def model_effort_label(summary):
+    """Older timing-summary.json files (pre-model/effort capture) won't
+    have these keys at all — report "unknown" rather than crashing or
+    silently omitting it, since an unrecorded model/effort is itself
+    important context, not a missing detail to paper over."""
+    model = summary.get("model") or "unknown"
+    effort = summary.get("effort") or "unknown"
+    return f"{model} (effort: {effort})"
 
 
 def pct(a, b):
@@ -69,13 +80,15 @@ def fmt_seconds_whole(ms):
 
 def markdown_data_row(label, date, summary):
     t = summary["totals"]
-    return (f"| {label} | {date} | {len(summary['evals'])} | {fmt_tokens_millions(t['tokens'])} | "
+    model = summary.get("model") or "unknown"
+    effort = summary.get("effort") or "unknown"
+    return (f"| {label} | {date} | {len(summary['evals'])} | {model} | {effort} | {fmt_tokens_millions(t['tokens'])} | "
             f"{t['tool_uses']} | {fmt_seconds_whole(t['duration_ms'])} | {fmt_seconds_whole(summary['wall_clock_ms'])} |")
 
 
 def markdown_delta_row(a, b):
     ta, tb = a["totals"], b["totals"]
-    return (f"| Δ vs. previous | | | {fmt_delta_pct_whole(ta['tokens'], tb['tokens'])} | "
+    return (f"| Δ vs. previous | | | | | {fmt_delta_pct_whole(ta['tokens'], tb['tokens'])} | "
             f"{fmt_delta_pct_whole(ta['tool_uses'], tb['tool_uses'])} | "
             f"{fmt_delta_pct_whole(ta['duration_ms'], tb['duration_ms'])} | "
             f"{fmt_delta_pct_whole(a['wall_clock_ms'], b['wall_clock_ms'])} |")
@@ -96,6 +109,13 @@ def main():
 
     if args.markdown_rows:
         date = args.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        if (a.get("model"), a.get("effort")) != (b.get("model"), b.get("effort")):
+            print(
+                f"WARNING: model/effort differ between A ({model_effort_label(a)}) and "
+                f"B ({model_effort_label(b)}) — the Δ row below may reflect that "
+                "difference rather than a real change.",
+                file=sys.stderr,
+            )
         print(markdown_data_row(args.label, date, b))
         print(markdown_delta_row(a, b))
         return
@@ -104,6 +124,17 @@ def main():
     label_b = f"iteration {b['iteration']} (v{b['skill_version']})"
 
     print(f"Comparing {label_a}  ->  {label_b}\n")
+
+    model_a, model_b = model_effort_label(a), model_effort_label(b)
+    print(f"Model/effort — A: {model_a}   B: {model_b}")
+    if (a.get("model"), a.get("effort")) != (b.get("model"), b.get("effort")):
+        print(
+            "WARNING: model and/or effort differ between these two runs — any timing "
+            "delta below may reflect that difference rather than a change to the skill "
+            "or eval suite. Treat this comparison as inconclusive until re-run under "
+            "matching model/effort."
+        )
+    print()
 
     print(f"{'':22s} {label_a:>22s} {label_b:>22s} {'delta':>12s}")
     ta, tb = a["totals"], b["totals"]

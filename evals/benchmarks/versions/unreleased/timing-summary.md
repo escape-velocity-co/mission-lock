@@ -1,21 +1,22 @@
-# Timing Summary — iteration 11 (skill v0.2.0)
+# Timing Summary — iteration 13 (skill v0.2.0)
 
-Generated 2026-09-17T22:12:51Z
+Generated 2026-09-28T22:57:38Z
+Model: claude-sonnet-5 (effort: medium)
 
 | Eval | Tokens | Tool Uses | Duration |
 |---|---:|---:|---:|
-| Vital Farms Pbc | 85,745 | 7 | 58.0s |
-| Allbirds Pbc Conversion | 89,655 | 10 | 100.7s |
-| Datadog Standard | 104,542 | 10 | 60.0s |
-| Squarespace Dual Class | 107,955 | 11 | 63.0s |
-| Lemonade Purpose Amendment | 108,302 | 9 | 69.0s |
-| Laureate Bundled Preferred | 110,081 | 11 | 114.8s |
-| Lemonade Legally Binding | 108,586 | 9 | 83.5s |
-| Squarespace Legally Binding | 102,456 | 12 | 77.5s |
-| Vital Farms Precedence | 121,573 | 11 | 139.2s |
-| Slifka Draft Conflict | 78,717 | 7 | 91.3s |
-| Meridian Robotics Non Pbc | 72,006 | 6 | 40.8s |
-| First Keystone Bylaws Carveout | 85,511 | 10 | 81.1s |
-| **Total** | **1,175,129** | **113** | **978.9s** |
+| Vital Farms Pbc | 91,897 | 7 | 72.6s |
+| Allbirds Pbc Conversion | 93,893 | 10 | 87.9s |
+| Datadog Standard | 108,325 | 11 | 64.5s |
+| Squarespace Dual Class | 112,999 | 10 | 70.5s |
+| Lemonade Purpose Amendment | 134,481 | 13 | 102.5s |
+| Laureate Bundled Preferred | 149,483 | 16 | 154.4s |
+| Lemonade Legally Binding | 111,535 | 8 | 80.1s |
+| Squarespace Legally Binding | 112,190 | 10 | 64.7s |
+| Vital Farms Precedence | 155,340 | 11 | 184.8s |
+| Slifka Draft Conflict | 81,927 | 11 | 62.2s |
+| Meridian Robotics Non Pbc | 78,193 | 7 | 50.5s |
+| First Keystone Bylaws Carveout | 133,383 | 9 | 95.5s |
+| **Total** | **1,363,646** | **123** | **1090.2s** |
 
-Wall-clock (slowest single run): 139.2s
+Wall-clock (slowest single run): 184.8s

@@ -28,10 +28,18 @@ evals/benchmarks/
 
 ## Maintaining the Benchmarks
 
-1. As each with-skill subagent's completion notification arrives, save its `total_tokens`/`duration_ms`/`tool_uses` to `<eval-dir>/with_skill/run-1/timing.json` in that run's workspace directory. This is the only opportunity to capture this data — it isn't persisted anywhere else.
+1. As each with-skill subagent's completion notification arrives, save its `total_tokens`/`duration_ms`/`tool_uses`/`model`/`effort` via the harness's own session/agent metadata to `<eval-dir>/with_skill/run-1/timing.json` in that run's workspace directory.
 2. Once the run is graded, roll it up: `python3 evals/benchmarks/scripts/aggregate_timing.py skills/mission-lock-workspace/iteration-<N> --output evals/benchmarks/versions/unreleased`.
-3. Update `evals/benchmarks/history.md`'s "In Development" row and its "Δ vs. previous" row with the new totals — `compare_timing.py --markdown-rows` (below) prints both, pre-formatted and ready to paste in.
-4. If comparing against a prior run or a released version, use `evals/benchmarks/scripts/compare_timing.py`.
+3. Update `evals/benchmarks/history.md`'s "In Development" row with the new totals — `compare_timing.py --markdown-rows` (below) prints it pre-formatted and ready to paste in. See "history.md Format" below for what belongs in that row.
+4. Update history.md (see below).
+
+## history.md Format
+
+`history.md` is used to capture and compare historical results. It consists of a table only, with no description.
+
+- The table consists of one row per released version, in order of release date.
+- There is also a single "In Development" row for the current unreleased snapshot.
+- Finally, include a "Δ vs. previous" row comparing the "In Development" run to the most recently released run.
 
 ## Comparing Two Versions (or a Version Against Unreleased)
 
