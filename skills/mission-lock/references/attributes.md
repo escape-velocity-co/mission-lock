@@ -19,6 +19,8 @@ Append a new `###` section following the template below.
 ```markdown
 ### <Attribute Name>
 
+**ID:** Identifier used to cross-reference attributes.
+
 **Definition:** One or two sentences defining what this attribute captures.
 
 **Response Options:** The set of results an answer can take (e.g. "Yes / No / Could not determine", or "the exact legal name / Could not determine"). A relatively short list of specifics or types of responses helps ensure greater accuracy.
@@ -34,6 +36,8 @@ Append a new `###` section following the template below.
 
 ### Company Name
 
+**ID:** A1
+
 **Definition:** The entity's exact legal name.
 
 **Response Options:** The exact legal name as written (including suffix, e.g. "Inc.", "Corp.").
@@ -45,6 +49,8 @@ Append a new `###` section following the template below.
 **When to Say "Could not Determine":** Only if the document is missing its opening section, or the name is illegible/corrupted in extraction. A name that appears but seems unusual or hard to read cleanly should still be reported as-is with a note, not withheld.
 
 ### Public Benefit Corporation (PBC) Status
+
+**ID:** A2
 
 **Definition:** Whether the company is incorporated as a public benefit corporation (PBC) or equivalent statutory benefit-corporation form, as opposed to a standard for-profit corporation.
 
@@ -58,6 +64,8 @@ Append a new `###` section following the template below.
 
 ### Stated Purpose
 
+**ID:** A3
+
 **Definition:** The clause defining what the company exists to do.
 
 **Response Options:** A quote or close paraphrase of the purpose clause / Could not determine.
@@ -69,6 +77,8 @@ Append a new `###` section following the template below.
 **When to Say "Could not Determine":** Only when no purpose clause or equivalent article can be located in the document at all. Generic boilerplate language is itself a definitive, reportable answer — quote it as-is. Don't confuse "the purpose clause is generic" (a confident finding) with "I couldn't find a purpose clause" (genuine uncertainty) — these are different answers and should never be conflated.
 
 ### Governing Jurisdiction
+
+**ID:** A4
 
 **Definition:** The US state, or similar granularity of jurisdiction outside of the US, under whose corporate statute the company is incorporated.
 

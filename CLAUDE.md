@@ -1,6 +1,6 @@
 # Mission Lock Analyzer
 
-This project contains the "Mission Lock Analyzer" (aka "MLA") Skill and its eval harness, developed using Anthropic's [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator). See [`SKILL.md`](skills/mission-lock/SKILL.md) for what the skill does, and [`evals/README.md`](evals/README.md) for the eval corpus and loop.
+This project contains the "Mission Lock Analyzer" (aka "MLA") Skill and its eval harness, developed using Anthropic's [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator). See [`SKILL.md`](skills/mission-lock/SKILL.md) for what the skill does, and [`evals/README.md`](evals/README.md) for the eval harness.
 
 ## Glossary
 
@@ -81,15 +81,14 @@ Whenever an attribute in [`skills/mission-lock/references/attributes.md`](skills
 ### Removing an Attribute
 
 1. Strip every `evals.json` expectation and `expected_output` sentence naming the removed attribute, across every eval.
-1. Check `SKILL.md` for any mention of the removed attribute by name, and check `rules.md` for any rule that named it as a reuse target.
-1. Check `report-template.md`/`report-template.html` for a Data Points placeholder tied to this attribute.
+1. Check `SKILL.md` for any mention of the removed attribute by name or ID, and check `rules.md` for any rule that named it as a reuse target.
+1. Check `report-template.md`/`report-template.html` for placeholders tied to this attribute.
 
 ### Always, Regardless of Add / Edit / Remove
 
-1. Check [`evals/check_mechanical_assertions.py`](evals/check_mechanical_assertions.py)'s `CURRENT_ATTRIBUTES` list matches the current attribute names in `attributes.md`. A stale list doesn't error or fail loudly — it just silently stops checking for whatever changed.
-1. Run the full eval suite (see `evals/README.md`'s "Running the Eval Loop"), not only the evals touching the changed attribute. An attribute edit can change what any rule that reuses it means, for every eval that reads it.
-1. When a result looks like a shortfall, verify against the source document before concluding it's a model failure. An assumption about what a document "should" contain is not evidence about what it does contain.
-1. Attribute-only changes don't need a new docket — the results docket's columns are rules, not attributes. Skip docket regeneration unless this change is bundled with a rule change too.
+1. Run `python3 evals/parse_attributes.py` and confirm `attributes.md` parses cleanly.
+1. Check [`evals/check_mechanical_assertions.py`](evals/check_mechanical_assertions.py)'s `CURRENT_ATTRIBUTES` list matches the current attribute names in `attributes.md`.
+1. Run the full eval suite (see `evals/README.md`'s "Running the Eval Loop").
 1. Surface the run's pass rate and any findings to the user, and wait for an explicit go-ahead before committing. An attribute catalog change and the eval updates it required should land together in one reviewed commit, not be split across separate silent ones.
 
 ## Packaging the Skill
