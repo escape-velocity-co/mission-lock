@@ -34,6 +34,7 @@ CURRENT_ATTRIBUTES = [
     "Public Benefit Corporation",  # matches "Public Benefit Corporation (PBC) Status"
     "Stated Purpose",
     "Governing Jurisdiction",
+    "Amendment Supermajority Requirements",  # matches "Amendment Supermajority Requirements for PBC/Purpose Article(s)"
 ]
 CURRENT_RULE_HEADINGS = [
     "Mission Beyond Financial Profit",
@@ -57,7 +58,7 @@ def check_attribute_sections(assertion, report_text):
     missing = [a for a in CURRENT_ATTRIBUTES if not any(a in h for h in h3)]
     if missing:
         return False, f"Missing attribute section heading(s): {missing}"
-    return True, "All 4 current attribute headings present (### level)."
+    return True, "All attribute headings present (### level)."
 
 
 def _quoted_words_after(marker, text):

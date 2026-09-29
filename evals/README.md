@@ -40,6 +40,14 @@ evals/
 
 Each entry is a task prompt plus the document(s) it should be run against. See `skill-creator`'s eval schema (`references/schemas.md` in [anthropics/skills](https://github.com/anthropics/skills)) for the full spec — assertions are added incrementally.
 
+### Prompts Test Report Generation, Not Request Interpretation
+
+This corpus exists to validate report generation deterministically against a standard output format across a variety of charters. It is not designed to test conversational requests. We trust that responding to those requests will be handled adequately at query time, given the skill will have been validated against retrieving the underlying accurate information.
+
+* Every eval prompt should read as a variation on a request for the report.
+* An eval prompt can motivate *why* the user is asking.
+* An eval prompt should not explicitly name or request a narrower slice of the report.
+
 ## Adding to the corpus
 
 1. Find a Certificate/Articles of Incorporation on [SEC EDGAR full text search](https://www.sec.gov/edgar/search/) (or another public-record source).

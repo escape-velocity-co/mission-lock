@@ -93,3 +93,26 @@ Append a new `###` section following the template below.
 * Statutory citation
 
 **When to Say "Could not determine":** When no statement of incorporation, statutory citation, or filing stamp naming a jurisdiction appears anywhere in the open documents. A registered agent's address alone is not evidence of jurisdiction.
+
+### Amendment Supermajority Requirements for PBC/Purpose Article(s)
+
+**ID:** A5
+
+**Definition:** Whether amending, altering, repealing, or waiving the article(s) that state the corporation's PBC status or purpose (A2, A3 respectively) requires greater than the amendment default (e.g. DGCL §242 if A4 is Delaware) in the relevant jurisdiction's (A4) statute.
+
+**Response Options:**
+* Yes (Specifically) - When the amendment is covered specifically by an increased threshold, a quote or close paraphrase of the elevated threshold and the voting group it applies to
+* Yes (Generally) - When the amendment is covered generally by an increased threshold, a quote or close paraphrase of the elevated threshold and the voting group it applies to
+* No — the article is amendable at the jurisdiction's ordinary default
+* Could not determine - (see below for possible scenarios)
+
+**What to Look For:** An elevated-vote provision (above the jurisdiction's ordinary amendment default) that reaches the article(s) already identified by A2 and A3. It shows up in one of two shapes, which is what distinguishes the two "Yes" response options above:
+* **Yes (Specifically):** the clause names which article(s) it protects — e.g. "the affirmative vote of at least [X]%... shall be required to amend, alter, or repeal Articles III, V, VI..." — and the article(s) already identified by A2/A3 are among those named.
+* **Yes (Generally):** the clause reaches every provision of the certificate with no named-article list and no carve-out — e.g. "...shall be required to amend, alter, or repeal any provision of this Certificate of Incorporation," or a separate-class protective-provision veto (a "Preferred Majority" or "Requisite Investors" consent right) phrased as "shall not... amend this corporation's Certificate of Incorporation or Bylaws" with no qualifying language. Because it reaches everything with no exception, it exceeds the ordinary default for the PBC/purpose article too, even though it wasn't drafted with that article specifically in mind.
+
+Distinguish either of these from a separate-class vote that only triggers when an amendment adversely affects that class's own rights or preferences (e.g. "...in a manner that adversely affects the powers, preferences or rights of the Series X Preferred Stock") — that narrower, conditioned form doesn't reach an unrelated purpose/PBC article and doesn't by itself satisfy A5.
+
+**Typically Found In:** Certificate of Incorporation, usually in the same article as the general amendment-reservation clause, or in a dedicated protective-provisions article.
+
+**When to Say "Could not determine":**
+* When the certificate's amendment mechanics reference an external document and that document wasn't provided.
