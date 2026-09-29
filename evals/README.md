@@ -1,14 +1,12 @@
 # Eval Corpus
 
-This corpus is expected to grow over time as new assessment concepts are added. These concepts will be located in definition documents in [`../skills/mission-lock/references/`](../skills/mission-lock/references/); for example `attributes.md`.
-
-As these definitions expand, the eval corpus should grow alongside it: every new attribute, rule, etc. should have at least one document in this corpus that exercises it and one that clearly lacks it, for contrast.
+This corpus is expected to grow over time as new assessment concepts are added. These concepts will be located in definition documents in [`../skills/mission-lock/references/`](../skills/mission-lock/references/); for example `attributes.md`. Every new attribute, rule, etc. should have at least one document in this corpus that exercises it and one that clearly lacks it, for contrast. Test cases can do double-duty, serving as positive and negative assertions for many tests.
 
 ## Why This Corpus?
 
-This corpus uses more than one evaluation tactic:
+This corpus uses multiple tactics:
 
-  1. Publicly available governance documents (e.g. Certificate/Articles of Incorporation), mostly sourced as exhibits (typically "Exhibit 3.1") to SEC EDGAR filings. Using actual documents surfaces drafting details that we want to test against.
+  1. Publicly available governance documents (e.g. Certificate/Articles of Incorporation), mostly sourced as exhibits (typically "Exhibit 3.1") to SEC EDGAR filings. Using filed documents allows us to test real-life variations.
   1. Fixtures, present in the the `*-synthetic-*` document folders (e.g. `slifka-and-sons-movers-synthetic-draft-conflict/`). They exist to test behaviors that public documents can't exercise, for example unresolvable precedence between two conflicting documents. This cannot happen because filings are dated and sequenced, by law. Synthetic test cases are marked as such: a folder name containing `synthetic`, a `"synthetic": true` field and note in `metadata.json`, along with a fictional company name.
 
 ## Structure
@@ -44,7 +42,7 @@ Each entry is a task prompt plus the document(s) it should be run against. See `
 
 ## Adding to the corpus
 
-1. Find a real Certificate/Articles of Incorporation on [SEC EDGAR full text search](https://www.sec.gov/edgar/search/) (or another public-record source).
+1. Find a Certificate/Articles of Incorporation on [SEC EDGAR full text search](https://www.sec.gov/edgar/search/) (or another public-record source).
 2. When querying `sec.gov`/`efts.sec.gov`, send a descriptive `User-Agent` header with a contact email, and keep request rates low — see the [EDGAR fair access guidance](https://www.sec.gov/os/webmaster-faq#developers).
 3. Save the unmodified document plus a `metadata.json` under `documents/<company-slug>-cert-of-incorporation/`.
 4. Note in `metadata.json` which attribute(s) this document is meant to exercise.
@@ -76,12 +74,7 @@ See [`evals/benchmarks/README.md`](benchmarks/README.md) for instructions on how
 
 ### No Connectors in Eval Runs
 
-This eval aims to capture portable behaviour of the skill. Eval results and artifacts are meant to reflect the skill's behavior, agnostic to the environment in which the evalulation is taking place.
-
-Whoever orchestrates the with-skill/without-skill/grading subagents (a person or Claude) must restrict those subagents to local file tools (read/write/edit/bash) and public web fetches only. An eval-executor subagent that incidentally reaches into a connector could leak organization-specific context into results that live in this public repo, and would make the
-benchmark reflect that account's environment rather than the skill's portable behavior.
-
-This means (for example) no Slack, email, Google Drive, CRM, or any other connector/integration tool that might contain data or context that could affect the results of the eval, even if some are available in the environment running the eval.
+This eval aims to capture portable behaviour of the skill. Eval results and artifacts are meant to reflect the skill's behavior, agnostic to the environment in which the evalulation is taking place. Spawn with-skill runs using the project's `mission-lock-eval-runner` subagent, which codifies this behaviour by limiting available tools.
 
 ### Output Filename and the Subagent Write-Guard
 

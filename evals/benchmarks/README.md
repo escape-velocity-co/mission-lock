@@ -28,7 +28,7 @@ evals/benchmarks/
 
 ## Maintaining the Benchmarks
 
-1. As each with-skill subagent's completion notification arrives, save its `total_tokens`/`duration_ms`/`tool_uses`/`model`/`effort` via the harness's own session/agent metadata to `<eval-dir>/with_skill/run-1/timing.json` in that run's workspace directory.
+1. Spawn with-skill runs using the `mission-lock-eval-runner` subagent. As each completion notification arrives, save its `total_tokens`/`duration_ms`/`tool_uses` (from the notification's usage data) plus the pinned `model`/`effort` from the subagent frontmatter, to `<eval-dir>/with_skill/run-1/timing.json` in that run's workspace directory.
 2. Once the run is graded, roll it up: `python3 evals/benchmarks/scripts/aggregate_timing.py skills/mission-lock-workspace/iteration-<N> --output evals/benchmarks/versions/unreleased`.
 3. Update `evals/benchmarks/history.md`'s "In Development" row with the new totals — `compare_timing.py --markdown-rows` (below) prints it pre-formatted and ready to paste in. See "history.md Format" below for what belongs in that row.
 4. Update history.md (see below).
