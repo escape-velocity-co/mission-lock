@@ -84,6 +84,14 @@ See [`evals/benchmarks/README.md`](benchmarks/README.md) for instructions on how
 
 This eval aims to capture portable behaviour of the skill. Eval results and artifacts are meant to reflect the skill's behavior, agnostic to the environment in which the evalulation is taking place. Spawn with-skill runs using the project's `mission-lock-eval-runner` subagent, which codifies this behaviour by limiting available tools.
 
+### Generating the Subagent Runner
+
+In order to save tokens and eval time, we generate the subagent `.claude/agents/mission-lock-eval-runner.md` at each eval invocation. `SKILL.md`, `references/*.md` and `assets/report-template.md` are embedded in the agent's system prompt so parallel runs share one cacheable prefix and skip the skill-reading tool calls.
+
+Run `python3 evals/build_bundled_runner.py` after any change under `skills/mission-lock/` and before every eval run.
+
+To edit the frontmatter, modify [`build_bundled_runner.py`](build_bundled_runner.py).
+
 ### Output Filename and the Subagent Write-Guard
 
 Some harnesses guard the Write tool against agent-generated files that look like self-authored reports, and block the write outright. This guard is **content-triggered, not just filename-triggered** — avoiding "report" in the filename (e.g. using `assessment.md` or `analysis.md` instead) reduces but does not reliably prevent it. A subagent producing a polished, report-shaped Markdown deliverable can still get blocked regardless of what it's named.
