@@ -1,123 +1,123 @@
 {
-  "iteration": 14,
-  "generated_utc": "2026-09-29T20:46:45Z",
+  "iteration": 15,
+  "generated_utc": "2026-09-29T21:44:19Z",
   "skill_version": "0.2.0",
   "model": "claude-sonnet-5",
   "effort": "medium",
   "evals": [
     {
-      "name": "eval-vital-farms-pbc",
+      "name": "eval-1",
       "id": 1,
-      "tokens": 43833,
-      "duration_ms": 64209,
-      "tool_uses": 7,
+      "tokens": 37483,
+      "duration_ms": 41103,
+      "tool_uses": 6,
       "model": "claude-sonnet-5",
       "effort": "medium"
     },
     {
-      "name": "eval-allbirds-pbc-conversion",
+      "name": "eval-2",
       "id": 2,
-      "tokens": 46773,
-      "duration_ms": 68164,
+      "tokens": 42031,
+      "duration_ms": 71421,
       "tool_uses": 9,
       "model": "claude-sonnet-5",
       "effort": "medium"
     },
     {
-      "name": "eval-datadog-standard",
+      "name": "eval-3",
       "id": 3,
-      "tokens": 84080,
-      "duration_ms": 46908,
-      "tool_uses": 10,
-      "model": "claude-sonnet-5",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-squarespace-dual-class",
-      "id": 4,
-      "tokens": 73366,
-      "duration_ms": 54897,
-      "tool_uses": 11,
-      "model": "claude-sonnet-5",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-lemonade-purpose-amendment",
-      "id": 5,
-      "tokens": 77873,
-      "duration_ms": 76280,
-      "tool_uses": 11,
-      "model": "claude-sonnet-5",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-laureate-bundled-preferred",
-      "id": 6,
-      "tokens": 98972,
-      "duration_ms": 135215,
-      "tool_uses": 19,
-      "model": "claude-sonnet-5",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-lemonade-legally-binding",
-      "id": 8,
-      "tokens": 114389,
-      "duration_ms": 135231,
-      "tool_uses": 14,
-      "model": "claude-sonnet-5",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-squarespace-legally-binding",
-      "id": 9,
-      "tokens": 60337,
-      "duration_ms": 44126,
-      "tool_uses": 9,
-      "model": "claude-sonnet-5",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-vital-farms-precedence",
-      "id": 10,
-      "tokens": 78665,
-      "duration_ms": 137054,
-      "tool_uses": 15,
-      "model": "claude-sonnet-5",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-slifka-draft-conflict",
-      "id": 11,
-      "tokens": 32244,
-      "duration_ms": 64100,
+      "tokens": 79370,
+      "duration_ms": 60773,
       "tool_uses": 8,
       "model": "claude-sonnet-5",
       "effort": "medium"
     },
     {
-      "name": "eval-meridian-robotics-non-pbc",
-      "id": 12,
-      "tokens": 28458,
-      "duration_ms": 41576,
+      "name": "eval-4",
+      "id": 4,
+      "tokens": 94911,
+      "duration_ms": 70752,
+      "tool_uses": 12,
+      "model": "claude-sonnet-5",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-5",
+      "id": 5,
+      "tokens": 79183,
+      "duration_ms": 62036,
+      "tool_uses": 10,
+      "model": "claude-sonnet-5",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-6",
+      "id": 6,
+      "tokens": 59290,
+      "duration_ms": 122805,
+      "tool_uses": 13,
+      "model": "claude-sonnet-5",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-8",
+      "id": 8,
+      "tokens": 78552,
+      "duration_ms": 76177,
+      "tool_uses": 9,
+      "model": "claude-sonnet-5",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-9",
+      "id": 9,
+      "tokens": 67388,
+      "duration_ms": 62375,
+      "tool_uses": 9,
+      "model": "claude-sonnet-5",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-10",
+      "id": 10,
+      "tokens": 77586,
+      "duration_ms": 119159,
+      "tool_uses": 13,
+      "model": "claude-sonnet-5",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-11",
+      "id": 11,
+      "tokens": 27682,
+      "duration_ms": 66044,
       "tool_uses": 7,
       "model": "claude-sonnet-5",
       "effort": "medium"
     },
     {
-      "name": "eval-first-keystone-bylaws-carveout",
+      "name": "eval-12",
+      "id": 12,
+      "tokens": 25931,
+      "duration_ms": 34980,
+      "tool_uses": 6,
+      "model": "claude-sonnet-5",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-13",
       "id": 13,
-      "tokens": 82893,
-      "duration_ms": 87468,
-      "tool_uses": 9,
+      "tokens": 75928,
+      "duration_ms": 82355,
+      "tool_uses": 8,
       "model": "claude-sonnet-5",
       "effort": "medium"
     }
   ],
   "totals": {
-    "tokens": 821883,
-    "duration_ms": 955228,
-    "tool_uses": 129
+    "tokens": 745335,
+    "duration_ms": 869980,
+    "tool_uses": 110
   },
-  "wall_clock_ms": 137054
+  "wall_clock_ms": 122805
 }

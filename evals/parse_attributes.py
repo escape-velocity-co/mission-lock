@@ -62,7 +62,7 @@ def parse_attributes_md(path):
             response_options=field("Response Options"),
             what_to_look_for=field("What to Look For"),
             typically_found_in=field("Typically Found In"),
-            when_to_say_cnd=field('When to Say "Could not [Dd]etermine"'),
+            when_to_say_cnd=field("Could not Determine"),
         )
     return attributes
 
