@@ -25,6 +25,7 @@ evals/
 ```json
 {
   "company_name": "Example Inc.",
+  "featured": false,
   "cik": "0001234567",
   "accession_number": "0001234567-24-000123",
   "form_type": "S-1",
@@ -35,6 +36,8 @@ evals/
   "note": "Explicit public benefit purpose clause; included as a positive example for the Stated Purpose Clause and Entity Type attributes."
 }
 ```
+
+`featured` is `true` if the company appears in the book *Incorruptible*, `false` if it does not.
 
 ### `evals.json` format
 

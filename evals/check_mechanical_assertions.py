@@ -14,6 +14,12 @@ a human or grader agent to judge normally — this script is conservative on
 purpose: a false PASS here would silently skip real grading, so any pattern
 it isn't confident about is left unclassified rather than guessed at.
 
+It also runs a fixed set of template-conformance checks on every report,
+independent of any eval's assertions (banner placement, Result vocabulary,
+bare document-list lines, no extra content in the rule blocks), so drift
+from report-template.md is visible on every run rather than only when a
+grader happens to notice it.
+
 Usage:
     python3 check_mechanical_assertions.py <path/to/report.md> --eval-id <N>
     python3 check_mechanical_assertions.py <path/to/report.md> --assertions-file <path/to/eval_metadata.json>
@@ -135,6 +141,112 @@ def check_no_could_not_determine(assertion, report_text):
     return True, "No attribute Answer field reads 'Could not determine'."
 
 
+# ---------------------------------------------------------------------------
+# Template conformance: checks against report-template.md's own rules, run on
+# every report regardless of which assertions the eval defines.
+# ---------------------------------------------------------------------------
+ALLOWED_RESULTS = {"Mission-lock more likely", "Mission-lock less likely", "Mission-lock uncertain"}
+TEMPLATE_PATH = REPO_ROOT / "skills" / "mission-lock" / "assets" / "report-template.md"
+BANNER_PREFIX = "🟡 PROTOTYPE"
+
+
+def _section(report_text, heading):
+    """Body of a top-level ('# ') section, up to the next top-level heading
+    (so its own '## ' subsections stay inside it)."""
+    m = re.search(r"^" + re.escape(heading) + r"[^\n]*\n(.*?)(?=^# |\Z)", report_text, re.S | re.M)
+    return m.group(1) if m else None
+
+
+def conformance_banner(report_text):
+    # The banner is fixed content only while the template still carries it.
+    if BANNER_PREFIX not in TEMPLATE_PATH.read_text():
+        return True, "Template no longer carries the prototype banner; not checked."
+    lines = [l for l in report_text.splitlines() if l.strip()]
+    if not lines or not lines[0].startswith(BANNER_PREFIX):
+        return False, f"First line should be the prototype banner; got: {lines[0][:60] if lines else '(empty)'!r}"
+    return True, "Prototype banner is the first line."
+
+
+def conformance_result_values(report_text):
+    values = re.findall(r"^\*\*Result:\*\*\s*(.+?)\s*$", report_text, re.M)
+    if not values:
+        return False, "No '**Result:**' fields found."
+    bad = [v for v in values if v not in ALLOWED_RESULTS]
+    if bad:
+        return False, f"Result value(s) outside the three allowed wordings: {bad}"
+    return True, f"All {len(values)} Result values use an allowed wording."
+
+
+def conformance_document_lines(report_text):
+    problems = []
+    for heading in ("## Documents Used in this Analysis", "## Documents Considered and not Used"):
+        body = _section_h2(report_text, heading)
+        if body is None:
+            continue
+        for line in body.splitlines():
+            if not line.startswith("- "):
+                continue
+            if "(" in line or " — " in line or " - " in line[2:] or ": " in line:
+                problems.append(line.strip())
+    if problems:
+        return False, f"Document line(s) with text beyond the bare name: {problems}"
+    return True, "All document-list lines are bare names."
+
+
+def _section_h2(report_text, heading):
+    m = re.search(r"^" + re.escape(heading) + r"\s*\n(.*?)(?=^## |^# |\Z)", report_text, re.S | re.M)
+    return m.group(1) if m else None
+
+
+def conformance_rule_blocks(report_text):
+    """Each rule block is: italic query, then the Result, Evidence and Location
+    fields, in that order, and nothing else. Evidence may run to several
+    paragraphs or bullets (that is where a user's specific question gets
+    answered); what is not allowed is any other field or paragraph after
+    Location, or anything between the query and Result."""
+    analysis = _section(report_text, "# Analysis")
+    if analysis is None:
+        return False, "No '# Analysis' section."
+    blocks = re.split(r"^## ", analysis, flags=re.M)[1:]
+    problems = []
+    for block in blocks:
+        title, _, body = block.partition("\n")
+        body = body.strip()
+        m = re.match(r"\*[^*\n]+\*\n\n\*\*Result:\*\* [^\n]+\n\n\*\*Evidence:\*\* .*?\n\n\*\*Location:\*\* ([^\n]*)(.*)\Z", body, re.S)
+        if not m:
+            problems.append(f"{title.strip()}: not query / Result / Evidence / Location in order")
+            continue
+        trailing = re.sub(r"^\s*---\s*$", "", m.group(2), flags=re.M).strip()
+        if trailing:
+            problems.append(f"{title.strip()}: extra content after Location: {trailing[:60]!r}")
+    if problems:
+        return False, "; ".join(problems)
+    return True, f"{len(blocks)} rule block(s), each query/Result/Evidence/Location only."
+
+
+def conformance_nothing_after_report(report_text):
+    """The report ends with the last attribute's Location line; nothing
+    (other than a TOOL_USE_COUNT line the eval runner appends) follows it."""
+    idx = [m.end() for m in re.finditer(r"^\*\*Location:\*\* [^\n]*", report_text, re.M)]
+    if not idx:
+        return False, "No '**Location:**' fields found."
+    tail = report_text[idx[-1]:]
+    tail = re.sub(r"^TOOL_USE_COUNT:.*$", "", tail, flags=re.M)
+    tail = re.sub(r"^\s*---\s*$", "", tail, flags=re.M).strip()
+    if tail:
+        return False, f"Content after the final attribute: {tail[:80]!r}"
+    return True, "Nothing follows the final attribute."
+
+
+CONFORMANCE_CHECKS = [
+    ("Template: prototype banner is the first line", conformance_banner),
+    ("Template: rule Results use only the three allowed wordings", conformance_result_values),
+    ("Template: document-list lines are bare names", conformance_document_lines),
+    ("Template: each rule block holds only query, Result, Evidence, Location", conformance_rule_blocks),
+    ("Template: nothing follows the final attribute", conformance_nothing_after_report),
+]
+
+
 CHECKERS = [
     check_attribute_sections,
     check_no_evaluative_language,
@@ -185,6 +297,9 @@ def main():
         r = check_one(a, report_text)
         r["assertion"] = a
         results.append(r)
+    for label, fn in CONFORMANCE_CHECKS:
+        passed, reason = fn(report_text)
+        results.append({"mechanical": True, "passed": passed, "reason": reason, "assertion": label, "conformance": True})
 
     if args.json:
         print(json.dumps(results, indent=2))
@@ -192,7 +307,7 @@ def main():
 
     mechanical = [r for r in results if r["mechanical"]]
     manual = [r for r in results if not r["mechanical"]]
-    print(f"{len(assertions)} total assertions — {len(mechanical)} mechanically checked, {len(manual)} need manual/LLM grading\n")
+    print(f"{len(assertions)} eval assertions + {len(CONFORMANCE_CHECKS)} template-conformance checks — {len(mechanical)} mechanically checked, {len(manual)} need manual/LLM grading\n")
     for r in mechanical:
         status = "PASS" if r["passed"] else ("NEEDS REVIEW" if r["passed"] is None else "FAIL")
         print(f"[{status}] {r['assertion'][:90]}")
