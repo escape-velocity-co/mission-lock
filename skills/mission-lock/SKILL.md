@@ -81,7 +81,7 @@ rules as it does for attributes.
    - Give a definitive answer using that attribute's specific "Answer
      options" (see the reference file) — or "Could not determine" if you
      can't support an answer with specific document text. Read each
-     attribute's "When to say Could not determine" guidance carefully: a
+     attribute's "Could not Determine" guidance carefully: a
      confident negative or "this is generic boilerplate" is a valid,
      definitive answer and should NOT be reported as "Could not determine."
    - Quote or closely paraphrase the relevant language as evidence, with an

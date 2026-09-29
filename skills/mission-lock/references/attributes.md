@@ -29,7 +29,7 @@ Append a new `###` section following the template below.
 
 **Typically Found In:** The documents and location(s) within a document this information typically resides.
 
-**When to Say "Could not determine":** Specific situations in which "Could not determine" is an appropriate response. The general case for "Could not determine" is defined in the "Confidence Requirement" section above.
+**Could not Determine:** This is an optional template field that catalogs **specific** scenarios in which "Could not determine" is an appropriate response. The **general** scenarios for "Could not determine" are defined in the "Confidence Requirement" section above.
 ```
 
 ## Attribute Definitions
@@ -46,9 +46,7 @@ Append a new `###` section following the template below.
 
 **Typically Found In:** The opening paragraph or Article I.
 
-**When to Say "Could not Determine":** Only if the document is missing its opening section, or the name is illegible/corrupted in extraction. A name that appears but seems unusual or hard to read cleanly should still be reported as-is with a note, not withheld.
-
-### Public Benefit Corporation (PBC) Status
+### Public Benefit Corporation Status
 
 **ID:** A2
 
@@ -59,8 +57,6 @@ Append a new `###` section following the template below.
 **What to Look For:** Explicit statutory language — e.g. "...is a public benefit corporation" or a citation to the relevant statute (in Delaware, Subchapter XV / Section 362 of the General Corporation Law). Don't infer PBC status from mission-sounding language elsewhere in the document (e.g. a values statement in a preamble) — it must be the actual statutory designation.
 
 **Typically Found In:** The introductory article, immediately after the company name, or wherever the entity's statutory form is declared.
-
-**When to Say "Could not determine":** When the relevant introductory section is missing, illegible, or genuinely doesn't state the entity's statutory form one way or the other. A document that declares itself a standard corporation under the general corporation law, with no PBC language anywhere, supports a confident "No" — that is not a case for "Could not determine."
 
 ### Stated Purpose
 
@@ -74,7 +70,7 @@ Append a new `###` section following the template below.
 
 **Typically Found In:** Article II or III, often titled "Purpose" or "Objects."
 
-**When to Say "Could not Determine":** Only when no purpose clause or equivalent article can be located in the document at all. Generic boilerplate language is itself a definitive, reportable answer — quote it as-is. Don't confuse "the purpose clause is generic" (a confident finding) with "I couldn't find a purpose clause" (genuine uncertainty) — these are different answers and should never be conflated.
+**Could not Determine:** When no purpose clause or equivalent article can be located in the document at all.
 
 ### Governing Jurisdiction
 
@@ -92,7 +88,7 @@ Append a new `###` section following the template below.
 * Certification page
 * Statutory citation
 
-**When to Say "Could not determine":** When no statement of incorporation, statutory citation, or filing stamp naming a jurisdiction appears anywhere in the open documents. A registered agent's address alone is not evidence of jurisdiction.
+**Could not Determine:** When no statement of incorporation, statutory citation, or filing stamp naming a jurisdiction appears anywhere in the open documents. A registered agent's address alone is not evidence of jurisdiction.
 
 ### Amendment Supermajority Requirements for PBC/Purpose Article(s)
 
@@ -114,5 +110,4 @@ Distinguish either of these from a separate-class vote that only triggers when a
 
 **Typically Found In:** Certificate of Incorporation, usually in the same article as the general amendment-reservation clause, or in a dedicated protective-provisions article.
 
-**When to Say "Could not determine":**
-* When the certificate's amendment mechanics reference an external document and that document wasn't provided.
+**Could not Determine:** When the certificate's amendment mechanics reference an external document and that document wasn't provided.

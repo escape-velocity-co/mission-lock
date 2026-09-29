@@ -31,10 +31,10 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CURRENT_ATTRIBUTES = [
     "Company Name",
-    "Public Benefit Corporation",  # matches "Public Benefit Corporation (PBC) Status"
+    "Public Benefit Corporation",
     "Stated Purpose",
     "Governing Jurisdiction",
-    "Amendment Supermajority Requirements",  # matches "Amendment Supermajority Requirements for PBC/Purpose Article(s)"
+    "Amendment Supermajority Requirements",
 ]
 CURRENT_RULE_HEADINGS = [
     "Mission Beyond Financial Profit",

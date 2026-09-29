@@ -8,4 +8,4 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 | Version | Date | Evals | Model | Effort | Tokens | Tool Uses | Duration | Wall-clock |
 |---|---|---:|---|---|---:|---:|---:|---:|
-| In Development | 2026-09-29 | 12 | claude-sonnet-5 | medium | 0.82M | 129 | 955s | 137s |
+| In Development | 2026-09-29 | 12 | claude-sonnet-5 | medium | 0.75M | 110 | 870s | 123s |
