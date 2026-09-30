@@ -1,5 +1,6 @@
 {
   "synthetic": true,
+  "featured": false,
   "company_name": "Slifka and Sons Movers, Inc. (fictional — not a real company)",
   "note": "SYNTHETIC FIXTURE, not a real SEC filing or real company. Constructed specifically to test the 'unresolvable precedence' branch of the Conflict Resolution guidance added to attributes.md/rules.md's Confidence Requirement sections. Represents an internal, pre-filing scenario: two complete draft certificates of incorporation for the same (fictional) company, circulated before either was actually filed with the Secretary of State. Unlike the vital-farms-cert-of-incorporation pair (a real precedence case — see that folder's metadata.json), these two drafts deliberately contain NO dates, version numbers, draft labels, or cross-referencing recitals ('as previously amended', 'restates the prior certificate', 'to become effective upon...', etc.) that would let a careful reader determine which one is later or controlling. That absence is the point: this is the case where 'Could not determine' is the correct, honest answer for whichever attributes/rules the drafts disagree on, rather than guessing based on which draft looks more complete or polished.",
   "documents": [

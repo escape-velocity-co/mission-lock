@@ -1,123 +1,132 @@
 {
-  "iteration": 15,
-  "generated_utc": "2026-09-29T21:44:19Z",
+  "iteration": 2,
+  "generated_utc": "2026-09-29T23:04:22Z",
   "skill_version": "0.2.0",
-  "model": "claude-sonnet-5",
+  "model": "sonnet",
   "effort": "medium",
   "evals": [
     {
       "name": "eval-1",
       "id": 1,
-      "tokens": 37483,
-      "duration_ms": 41103,
-      "tool_uses": 6,
-      "model": "claude-sonnet-5",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-2",
-      "id": 2,
-      "tokens": 42031,
-      "duration_ms": 71421,
-      "tool_uses": 9,
-      "model": "claude-sonnet-5",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-3",
-      "id": 3,
-      "tokens": 79370,
-      "duration_ms": 60773,
-      "tool_uses": 8,
-      "model": "claude-sonnet-5",
+      "tokens": 32824,
+      "duration_ms": 36303,
+      "tool_uses": 2,
+      "model": "sonnet",
       "effort": "medium"
     },
     {
       "name": "eval-4",
       "id": 4,
-      "tokens": 94911,
-      "duration_ms": 70752,
-      "tool_uses": 12,
-      "model": "claude-sonnet-5",
+      "tokens": 37995,
+      "duration_ms": 64992,
+      "tool_uses": 9,
+      "model": "sonnet",
       "effort": "medium"
     },
     {
       "name": "eval-5",
       "id": 5,
-      "tokens": 79183,
-      "duration_ms": 62036,
-      "tool_uses": 10,
-      "model": "claude-sonnet-5",
+      "tokens": 44262,
+      "duration_ms": 49319,
+      "tool_uses": 5,
+      "model": "sonnet",
       "effort": "medium"
     },
     {
       "name": "eval-6",
       "id": 6,
-      "tokens": 59290,
-      "duration_ms": 122805,
-      "tool_uses": 13,
-      "model": "claude-sonnet-5",
+      "tokens": 40472,
+      "duration_ms": 56279,
+      "tool_uses": 6,
+      "model": "sonnet",
       "effort": "medium"
     },
     {
       "name": "eval-8",
       "id": 8,
-      "tokens": 78552,
-      "duration_ms": 76177,
-      "tool_uses": 9,
-      "model": "claude-sonnet-5",
+      "tokens": 33134,
+      "duration_ms": 34196,
+      "tool_uses": 5,
+      "model": "sonnet",
       "effort": "medium"
     },
     {
       "name": "eval-9",
       "id": 9,
-      "tokens": 67388,
-      "duration_ms": 62375,
-      "tool_uses": 9,
-      "model": "claude-sonnet-5",
+      "tokens": 35746,
+      "duration_ms": 36228,
+      "tool_uses": 6,
+      "model": "sonnet",
       "effort": "medium"
     },
     {
       "name": "eval-10",
       "id": 10,
-      "tokens": 77586,
-      "duration_ms": 119159,
-      "tool_uses": 13,
-      "model": "claude-sonnet-5",
+      "tokens": 42756,
+      "duration_ms": 65067,
+      "tool_uses": 7,
+      "model": "sonnet",
       "effort": "medium"
     },
     {
       "name": "eval-11",
       "id": 11,
-      "tokens": 27682,
-      "duration_ms": 66044,
-      "tool_uses": 7,
-      "model": "claude-sonnet-5",
+      "tokens": 27550,
+      "duration_ms": 27238,
+      "tool_uses": 3,
+      "model": "sonnet",
       "effort": "medium"
     },
     {
       "name": "eval-12",
       "id": 12,
-      "tokens": 25931,
-      "duration_ms": 34980,
-      "tool_uses": 6,
-      "model": "claude-sonnet-5",
+      "tokens": 23598,
+      "duration_ms": 14639,
+      "tool_uses": 2,
+      "model": "sonnet",
       "effort": "medium"
     },
     {
       "name": "eval-13",
       "id": 13,
-      "tokens": 75928,
-      "duration_ms": 82355,
-      "tool_uses": 8,
-      "model": "claude-sonnet-5",
+      "tokens": 38925,
+      "duration_ms": 48400,
+      "tool_uses": 5,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-14",
+      "id": 14,
+      "tokens": 41876,
+      "duration_ms": 44356,
+      "tool_uses": 4,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-15",
+      "id": 15,
+      "tokens": 33356,
+      "duration_ms": 30610,
+      "tool_uses": 2,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-16",
+      "id": 16,
+      "tokens": 39533,
+      "duration_ms": 50135,
+      "tool_uses": 4,
+      "model": "sonnet",
       "effort": "medium"
     }
   ],
   "totals": {
-    "tokens": 745335,
-    "duration_ms": 869980,
-    "tool_uses": 110
+    "tokens": 472027,
+    "duration_ms": 557762,
+    "tool_uses": 60
   },
-  "wall_clock_ms": 122805
+  "wall_clock_ms": 65067
 }

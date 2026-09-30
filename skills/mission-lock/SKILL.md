@@ -139,6 +139,31 @@ rules as it does for attributes.
    field from this file's own frontmatter at the top, never hardcode or
    recall a previous value, since it changes as the skill does.
 
+   The template's own instructions are authoritative, but these are
+   the ones most often broken, so apply them explicitly:
+   - The prototype banner is the very first line of the report, above the
+     title, not below it.
+   - In the Analysis section each rule's Result is exactly one of
+     "Mission-lock more likely", "Mission-lock less likely", or
+     "Mission-lock uncertain" — never "Affirmative", "Not affirmative", or
+     "Could not determine" there (those are for the attribute/rule
+     catalogs, not the report's Result field).
+   - Each line under "Documents Used in this Analysis" and "Documents
+     Considered and not Used" is the file name exactly as provided, and
+     nothing else (e.g. `d841617dex32.htm`) — no description, exhibit label,
+     parenthetical, dash, or colon, and never a description plus the file
+     name. Only for a document that has no file name of its own, such as an
+     exhibit bundled inside another file, use a descriptive name instead
+     (e.g. "Series A Preferred Stock Certificate of Designations").
+   - Each rule's block holds only its italic query, Result, Evidence, and
+     Location. If the user asked a specific question (e.g. whether a
+     provision is legally binding), answer it through those fields — in the
+     Evidence text of the rule it bears on — and do not add a paragraph,
+     note, or heading to the report for it.
+   - The report ends with the last attribute's Location line. Nothing
+     follows it: no closing summary, no "answer to your question" section,
+     no note.
+
 ## Markdown Report Structure
 
 Use [assets/report-template.md](assets/report-template.md) as the default
