@@ -18,15 +18,6 @@ When encountering a word in the Glossary whose meaning you're unable to discern 
 
 When asked to publish the Markdown report (`report-template.md`, or a generated instance of it) as an Artifact, render it as plain CommonMark would.
 
-## Report Template Change Workflow
-
-Whenever a rule's or attribute's write-up fields change in `report-template.md` or `report-template.html`:
-
-1. Check `docket-template.html`'s for every field name that changed.
-1. Update all of them together in the same change.
-1. Remove mentions of fields no longer present.
-1. Regenerate the current iteration's `docket.html` from the corrected template.
-
 ## Assessment Catalog Change Workflow
 
 Whenever a rule in [`rules.md`](skills/mission-lock/references/rules.md) is added, edited, or removed, follow the [`rule-catalog-workflow`](.claude/skills/rule-catalog-workflow/SKILL.md) skill's checklist before considering the change done.
