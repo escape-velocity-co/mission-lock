@@ -6,7 +6,7 @@ file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # Mission-Lock Rules
 
-This is the catalog of "Mission Lock" rules this skill checks for when analyzing a company's governing documents. These rules may make use of attributes defined in [`skills/mission-lock/references/attributes.md`](skills/mission-lock/references/attributes.md).
+This is the catalog of "Mission Lock" rules this skill checks for when analyzing a company's governing documents. These rules may make use of attributes defined in [`skills/mission-lock/definitions/attributes.md`](skills/mission-lock/definitions/attributes.md).
 
 ## Confidence Requirements and Conflict Resolution
 
@@ -16,7 +16,7 @@ Confidence requirements and conflict resolution guidelines are present in [confi
 
 Append a new section to "Rule Definitions" following the template below.
 
-There is no "Response Options" field in the template.  Whereas [`skills/mission-lock/references/attributes.md`](skills/mission-lock/references/attributes.md) defines different response options per Attribute, Rules response options are the same for all Rules:
+There is no "Response Options" field in the template.  Whereas [`skills/mission-lock/definitions/attributes.md`](skills/mission-lock/definitions/attributes.md) defines different response options per Attribute, Rules response options are the same for all Rules:
 
   * Affirmative
   * Not affirmative

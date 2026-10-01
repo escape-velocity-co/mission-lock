@@ -3,7 +3,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-"""Parse skills/mission-lock/references/attributes.md into structured data.
+"""Parse skills/mission-lock/definitions/attributes.md into structured data.
 
 Mirrors parse_rules.py for the attribute catalog. There's no docket
 consumer for this today (the results docket's columns are rules, not
@@ -78,7 +78,7 @@ if __name__ == "__main__":
             "..",
             "skills",
             "mission-lock",
-            "references",
+            "definitions",
             "attributes.md",
         )
     )

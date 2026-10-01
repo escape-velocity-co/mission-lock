@@ -32,13 +32,13 @@ small and simple deliberately, and more complex checks will only be added
 once the simple ones are proven reliable. A confident wrong answer (or a
 guess dressed up as a finding) on an easy check undermines trust in
 everything this skill will eventually be asked to evaluate. See
-[references/confidence-requirement.md](references/confidence-requirement.md)
+[definitions/confidence-requirement.md](definitions/confidence-requirement.md)
 for the full rule.
 
 **Attributes vs. rules — a distinction worth keeping straight:**
-`references/attributes.md` holds pure fact-extraction (a name, a yes/no, a
+`definitions/attributes.md` holds pure fact-extraction (a name, a yes/no, a
 quoted clause) — no interpretive judgment beyond reading the document.
-`references/rules.md` holds compound checks that require judgment to apply
+`definitions/rules.md` holds compound checks that require judgment to apply
 (e.g. "is the stated purpose specific enough that a third party could
 identify a breach of it") but stay strictly non-evaluative about *quality*
 — a rule may ask whether a mission is specific enough to be breached, never
@@ -76,7 +76,7 @@ rules as it does for attributes.
      content from a blank or corrupted extraction.
 
 2. **Walk the attribute catalog.** Always read
-   [references/attributes.md](references/attributes.md) fresh for the current
+   [definitions/attributes.md](definitions/attributes.md) fresh for the current
    list of mission-lock attributes. For each attribute:
    - Give a definitive answer using that attribute's specific "Answer
      options" (see the reference file) — or "Could not determine" if you
@@ -90,7 +90,7 @@ rules as it does for attributes.
      determine" — never silently skip one.
 
 3. **Walk the rule catalog.** Read
-   [references/rules.md](references/rules.md) fresh for the current list of
+   [definitions/rules.md](definitions/rules.md) fresh for the current list of
    rules. For each rule:
    - Answer the rule's stated "Question" using the universal response
      options defined at the top of `rules.md` — read them there rather than

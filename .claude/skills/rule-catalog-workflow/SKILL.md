@@ -1,11 +1,11 @@
 ---
 name: rule-catalog-workflow
-description: Checklist to run whenever a Rule in skills/mission-lock/references/rules.md is added, edited, or removed. Covers evals.json coverage, SKILL.md's rule-reuse guidance, and the parse/check scripts. Use this before considering any Rule catalog change done.
+description: Checklist to run whenever a Rule in skills/mission-lock/definitions/rules.md is added, edited, or removed. Covers evals.json coverage, SKILL.md's rule-reuse guidance, and the parse/check scripts. Use this before considering any Rule catalog change done.
 ---
 
 # Rule Catalog Change Workflow
 
-Whenever a Rule in [rules.md](../../../skills/mission-lock/references/rules.md) is added, edited, or removed, work through this checklist before considering the change done.
+Whenever a Rule in [rules.md](../../../skills/mission-lock/definitions/rules.md) is added, edited, or removed, work through this checklist before considering the change done.
 
 If only the Name of the Rule has changed (i.e. the text after `###` that describes the Rule) you can ignore these steps. That is a cosmetic change that will not affect assessment.
 
@@ -22,7 +22,7 @@ During this workflow you may discover the corpus lacks a document exercising a n
 ## Removing a Rule
 
 1. Check every `evals.json` expectation and `expected_output` sentence citing the removed Rule by name or ID. If the expectation or expected output test only that removed Rule, strip it. If it tests more than that Rule, prompt the user for how to proceed.
-1. Check `SKILL.md` and all definitions in the [references](../../../skills/mission-lock/references/) folder for any mention of the removed Rule by name or ID and prompt the user for how to proceed.
+1. Check `SKILL.md` and all files in the [definitions](../../../skills/mission-lock/definitions/) folder for any mention of the removed Rule by name or ID and prompt the user for how to proceed.
 
 ## Always, Regardless of Add / Edit / Remove
 

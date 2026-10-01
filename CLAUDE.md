@@ -20,11 +20,11 @@ When asked to publish the Markdown report (`report-template.md`, or a generated 
 
 ## Assessment Catalog Change Workflow
 
-Whenever a rule in [`rules.md`](skills/mission-lock/references/rules.md) is added, edited, or removed, follow the [`rule-catalog-workflow`](.claude/skills/rule-catalog-workflow/SKILL.md) skill's checklist before considering the change done.
+Whenever a rule in [`rules.md`](skills/mission-lock/definitions/rules.md) is added, edited, or removed, follow the [`rule-catalog-workflow`](.claude/skills/rule-catalog-workflow/SKILL.md) skill's checklist before considering the change done.
 
 ## Attribute Catalog Change Workflow
 
-Whenever an attribute in [`attributes.md`](skills/mission-lock/references/attributes.md) is added, edited, or removed, follow the [`attribute-catalog-workflow`](.claude/skills/attribute-catalog-workflow/SKILL.md) skill's checklist before considering the change done.
+Whenever an attribute in [`attributes.md`](skills/mission-lock/definitions/attributes.md) is added, edited, or removed, follow the [`attribute-catalog-workflow`](.claude/skills/attribute-catalog-workflow/SKILL.md) skill's checklist before considering the change done.
 
 ## Packaging the Skill
 

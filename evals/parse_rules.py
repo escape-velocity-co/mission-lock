@@ -3,7 +3,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-"""Parse skills/mission-lock/references/rules.md into structured data.
+"""Parse skills/mission-lock/definitions/rules.md into structured data.
 
 Used when generating the eval results docket (see docket-template.html's
 own instructions) so each rule's Query / Affirmative Condition /
@@ -80,7 +80,7 @@ if __name__ == "__main__":
             "..",
             "skills",
             "mission-lock",
-            "references",
+            "definitions",
             "rules.md",
         )
     )

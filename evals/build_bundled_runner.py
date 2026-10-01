@@ -4,7 +4,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """Generate .claude/agents/mission-lock-eval-runner.md (do not edit that file by hand).
 
-The runner embeds SKILL.md and the files it points at (references/*.md
+The runner embeds SKILL.md and the files it points at (definitions/*.md
 and assets/report-template.md) in the agent's system prompt, so parallel eval
 subagents share one cacheable prefix instead of each re-reading the skill.
 
@@ -19,7 +19,7 @@ OUT = REPO_ROOT / ".claude" / "agents" / "mission-lock-eval-runner.md"
 
 BUNDLED = [
     "SKILL.md",
-    *sorted(str(p.relative_to(SKILL_DIR)) for p in (SKILL_DIR / "references").glob("*.md")),
+    *sorted(str(p.relative_to(SKILL_DIR)) for p in (SKILL_DIR / "definitions").glob("*.md")),
     "assets/report-template.md",
 ]
 

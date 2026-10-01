@@ -22,7 +22,7 @@ mission-lock/
 ├── skills/
 │   └── mission-lock/
 │       ├── SKILL.md            # MLA
-│       └── references/
+│       └── definitions/
 │           ├── attributes.md   # Mission-lock attribute definitions
 |           └── rules.md        # Mission-lock rule definitions
 ├── CLAUDE.md

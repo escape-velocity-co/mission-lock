@@ -4,12 +4,12 @@
     {
       "id": 1,
       "prompt": "Can you look at this certificate of incorporation and tell me about the company's structure and whether there's anything protecting its mission long-term? It's Vital Farms.",
-      "expected_output": "A report with one section per attribute currently in references/attributes.md, each with a definitive Answer plus quoted/paraphrased Evidence. Company name 'Vital Farms, Inc.', PBC status 'Yes' (explicit Subchapter XV / 'Public Benefit Corporation' language), Governing Jurisdiction 'Delaware' (General Corporation Law of the State of Delaware citation), and the specific public benefit purpose quoted. This exhibit (EX-3.2) also has an amendment supermajority \u2014 'Yes (Specifically)': a 66 2/3% single-class vote is required to amend Articles III, V, VI, VII, VIII and IX, which includes Article III where the purpose and PBC election are stated. All three current rules are 'Affirmative': Mission Beyond Financial Profit (M1) because Article III states a specific public benefit purpose naming beneficiary classes beyond the owners; Mission Breachability (M2) because that same language names specific domains against which a contrary course of conduct is identifiable; Mission is Paramount (M3) because Vital Farms is a Delaware PBC (Subchapter XV), so directors are statutorily permitted/required to prioritize the stated purpose. All three are evaluated independently on their own terms, not inferred from one another. No scoring or recommendation language.",
+      "expected_output": "A report with one section per attribute currently in definitions/attributes.md, each with a definitive Answer plus quoted/paraphrased Evidence. Company name 'Vital Farms, Inc.', PBC status 'Yes' (explicit Subchapter XV / 'Public Benefit Corporation' language), Governing Jurisdiction 'Delaware' (General Corporation Law of the State of Delaware citation), and the specific public benefit purpose quoted. This exhibit (EX-3.2) also has an amendment supermajority \u2014 'Yes (Specifically)': a 66 2/3% single-class vote is required to amend Articles III, V, VI, VII, VIII and IX, which includes Article III where the purpose and PBC election are stated. All three current rules are 'Affirmative': Mission Beyond Financial Profit (M1) because Article III states a specific public benefit purpose naming beneficiary classes beyond the owners; Mission Breachability (M2) because that same language names specific domains against which a contrary course of conduct is identifiable; Mission is Paramount (M3) because Vital Farms is a Delaware PBC (Subchapter XV), so directors are statutorily permitted/required to prioritize the stated purpose. All three are evaluated independently on their own terms, not inferred from one another. No scoring or recommendation language.",
       "files": [
         "documents/vital-farms-cert-of-incorporation/d841617dex32.htm"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md",
         "The Company Name answer is 'Vital Farms, Inc.' (or equivalent exact legal name as stated in the document)",
         "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation",
         "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language rather than a generic description",
@@ -17,7 +17,7 @@
         "The Amendment Supermajority Requirements answer is 'Yes (Specifically)', citing the 66 2/3% single-class vote required to amend Articles III, V, VI, VII, VIII and IX \u2014 and specifically noting that Article III (where the purpose and PBC election are stated) is among the protected articles",
         "No attribute answer is 'Could not determine' for this document, since every current attribute is clearly stated in it",
         "Output contains no evaluative or judgmental language about the company's mission lock, such as 'strong', 'weak', 'good', 'bad', 'should', or 'recommend'",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (now three: M1, M2, M3)",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md (now three: M1, M2, M3)",
         "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Could not determine' \u2014 Article III states a specific public benefit purpose naming beneficiary classes beyond the owners",
         "The M1 assessment does not evaluate whether the mission is good, admirable, or worthwhile \u2014 only whether the stated purpose is not the jurisdiction's default any-lawful-purpose formulation, is not solely financial return, and identifies who or what benefits beyond the owners",
         "The M1 result does not treat PBC status as a required element of its own affirmative answer \u2014 M1's Affirmative Condition has no PBC-or-equivalent threshold, so the specific purpose language in Article III is sufficient evidence on its own",
@@ -36,14 +36,14 @@
         "documents/squarespace-cert-of-incorporation/tm213918d7_ex3-1.htm"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md, and does not answer the dual-class stock structure as if it were one of the current attributes",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md, and does not answer the dual-class stock structure as if it were one of the current attributes",
         "The Public Benefit Corporation Status answer is a confident 'No', not 'Could not determine'",
         "The Stated Purpose answer reports the generic/boilerplate purpose language as a definitive finding",
         "The Governing Jurisdiction answer is 'Delaware', with evidence citing the certificate's incorporation under the General Corporation Law of the State of Delaware \u2014 not the dual-class Class A/B stock structure, which has no bearing on jurisdiction",
         "The Amendment Supermajority Requirements answer is 'Yes (Generally)', citing Article IV(B) Section 6(a)'s Requisite Investors protective-provisions clause (\u2018amend, waive, repeal or otherwise effect any other change... to this corporation's Amended and Restated Certificate of Incorporation or Bylaws\u2019) \u2014 a blanket veto with no carve-out limiting it to preferred-specific terms, so it reaches the purpose article too; the report should not treat this as merely protecting Preferred Stock/dual-class terms and therefore irrelevant to A5, since the clause's own text draws no such distinction",
         "The dual-class Class A / Class B structure is not folded into the Stated Purpose, PBC Status, or Governing Jurisdiction answers \u2014 and since there is no Notes section, it does not need to appear anywhere else in the report either",
         "Output contains no evaluative language ranking founder control as better or worse than mission lock",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md",
         "The Mission Beyond Financial Profit (M1) result is a confident 'Not affirmative' for Squarespace's generic purpose clause, not 'Could not determine'",
         "The Mission Breachability (M2) result is a confident 'Not affirmative', not 'Could not determine' \u2014 no course of conduct could contradict a purpose that names no activity and no beneficiary",
         "The Mission is Paramount (M3) result is a confident 'Not affirmative', not 'Could not determine' \u2014 there is no PBC or equivalent statutory designation, so M3's threshold condition fails regardless of the dual-class structure",
@@ -59,13 +59,13 @@
         "documents/lemonade-cert-of-incorporation/a2241721zex-3_1.htm"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md",
         "The Company Name answer is 'Lemonade, Inc.'",
         "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation",
         "The Stated Purpose answer quotes or closely paraphrases specific language from the document rather than describing it only in general terms",
         "The Governing Jurisdiction answer is 'Delaware', with evidence citing the certificate's incorporation under the Delaware General Corporation Law",
         "The Amendment Supermajority Requirements answer is 'Yes (Generally)', citing Article IV(B) Section 6(b)'s Preferred Majority protective-provisions clause (\u2018amend this corporation's Certificate of Incorporation or Bylaws\u2019, no carve-out) \u2014 this directly and correctly answers the user's 'what happens if they wanted to change it' question via a dedicated attribute, rather than declining to address it or inventing a rule-shaped answer",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md",
         "The Mission Beyond Financial Profit (M1) result is a definitive 'Affirmative', not 'Could not determine', given Lemonade's specific stated public benefit purpose",
         "The Mission Breachability (M2) result is a definitive 'Affirmative', not 'Could not determine' \u2014 the purpose clause names a specific domain and beneficiary against which a contrary course of conduct is identifiable",
         "The Mission is Paramount (M3) result is a definitive 'Affirmative', not 'Could not determine' \u2014 Lemonade is a Delaware PBC under Subchapter XV with a director balancing-of-interests clause, so directors are legally permitted/required to prioritize the stated purpose",
@@ -82,7 +82,7 @@
         "documents/laureate-education-cert-of-incorporation/a2230553zex-3_1.htm"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md, not truncated due to the document's length",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md, not truncated due to the document's length",
         "The Company Name answer is 'Laureate Education, Inc.'",
         "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation",
         "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language",
@@ -90,7 +90,7 @@
         "The Amendment Supermajority Requirements answer is 'Yes (Generally)', citing the 66 2/3% single-class vote required to amend or repeal 'any provision' of the certificate \u2014 a blanket requirement with no article-specific exclusions, so it covers the PBC status and purpose articles along with everything else. This is distinct from the certificate's separate, narrower Class A/B class-vote requirement, which protects only Articles V and VI (unrelated stock-structure provisions) \u2014 the report should not conflate the two or treat the narrower class-vote as the answer to this attribute",
         "Output lists the Laureate exhibit under 'Documents Used' and does not list the bundled Series A Preferred Stock certificate of designations under 'Documents Considered and not Used' \u2014 it is part of the same exhibit and the attributes cite it (the PBC Status evidence, and the Amendment Supermajority Requirements evidence where its consent right is considered and set aside)",
         "Output contains no evaluative or judgmental language about the company's mission lock",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md, not truncated due to the document's length",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md, not truncated due to the document's length",
         "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Could not determine'",
         "The Mission Breachability (M2) result is 'Affirmative', not 'Could not determine' \u2014 the education-focused purpose clause names a specific domain and beneficiary against which a contrary course of conduct is identifiable",
         "The Mission is Paramount (M3) result is 'Affirmative', not 'Could not determine' \u2014 Laureate's Subchapter XV PBC designation is cited as the basis, reusing the Public Benefit Corporation Status attribute's answer rather than re-deriving it",
@@ -100,12 +100,12 @@
     {
       "id": 8,
       "prompt": "Lemonade says it's a PBC and has a public benefit purpose \u2014 but is that actually legally binding on the board, or just a mission statement they put in the filing?",
-      "expected_output": "A report covering every rule currently in references/rules.md \u2014 M1, M2, and M3. M1 and M2 are both 'Affirmative' (a specific, breachable purpose beyond financial return exists). Mission is Paramount (M3) is now the rule that directly answers the user's actual question, and it is 'Affirmative': Lemonade is a Delaware PBC under Subchapter XV with an explicit director balancing-of-interests clause in Article III, so directors are legally permitted/required to prioritize the stated purpose \u2014 it is not merely a mission statement, it is a legally paramount consideration for the board. Unlike the prior rule catalog (which had no bindingness rule and correctly avoided fabricating one), M3 genuinely exists now and should be reported as the direct answer. The report also includes the standard Appendix with all five current attributes answered (Company Name, PBC Status, Stated Purpose, Governing Jurisdiction, Amendment Supermajority Requirements) \u2014 the user's question shapes which rule the prose emphasizes, not whether the standard report structure is produced.",
+      "expected_output": "A report covering every rule currently in definitions/rules.md \u2014 M1, M2, and M3. M1 and M2 are both 'Affirmative' (a specific, breachable purpose beyond financial return exists). Mission is Paramount (M3) is now the rule that directly answers the user's actual question, and it is 'Affirmative': Lemonade is a Delaware PBC under Subchapter XV with an explicit director balancing-of-interests clause in Article III, so directors are legally permitted/required to prioritize the stated purpose \u2014 it is not merely a mission statement, it is a legally paramount consideration for the board. Unlike the prior rule catalog (which had no bindingness rule and correctly avoided fabricating one), M3 genuinely exists now and should be reported as the direct answer. The report also includes the standard Appendix with all five current attributes answered (Company Name, PBC Status, Stated Purpose, Governing Jurisdiction, Amendment Supermajority Requirements) \u2014 the user's question shapes which rule the prose emphasizes, not whether the standard report structure is produced.",
       "files": [
         "documents/lemonade-cert-of-incorporation/a2241721zex-3_1.htm"
       ],
       "expectations": [
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (M1, M2, and M3)",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md (M1, M2, and M3)",
         "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Could not determine'",
         "The Mission Breachability (M2) result is 'Affirmative', not 'Could not determine'",
         "The Mission is Paramount (M3) result is 'Affirmative', not 'Could not determine' \u2014 this is the key check: M3 now exists in the catalog and directly answers the user's 'is it legally binding on the board' question, so the report should report it rather than avoiding the question the way an earlier catalog without M3 would have had to",
@@ -113,18 +113,18 @@
         "The rule assessment does not conflate 'a qualifying mission exists' (M1) with 'is legally paramount' (M3) \u2014 the two are reported as distinct rules with distinct evidence, even though both are 'Affirmative' here",
         "No rule result is hedged with confidence language such as 'close call' or 'narrow margin'",
         "Output does not overstate what M1 or M2 establish on their own \u2014 the 'legally binding' finding is attributed specifically to M3's statutory-form-based reasoning, not to M1's or M2's purpose-clause-based reasoning",
-        "Output includes the standard Appendix with a section for every attribute currently in skills/mission-lock/references/attributes.md, even though the user's question was framed around a single rule (M3) \u2014 the report is still the full standard mission-lock report, not a scoped-down answer to just the question asked"
+        "Output includes the standard Appendix with a section for every attribute currently in skills/mission-lock/definitions/attributes.md, even though the user's question was framed around a single rule (M3) \u2014 the report is still the full standard mission-lock report, not a scoped-down answer to just the question asked"
       ]
     },
     {
       "id": 9,
       "prompt": "Squarespace's leadership talks a lot about their vision and values in investor materials \u2014 does their certificate of incorporation actually make any of that legally binding on the board, the way a public benefit corporation would?",
-      "expected_output": "A report covering every rule currently in references/rules.md \u2014 M1, M2, and M3. M1 and M2 are both a confident 'Not affirmative' (the purpose clause is generic boilerplate). Mission is Paramount (M3) is now the rule that directly answers the user's question, and it is also a confident 'Not affirmative': Squarespace has no PBC or equivalent statutory designation, so there is no director balancing-of-interests duty \u2014 nothing makes any values or vision legally paramount for the board the way Subchapter XV would. This directly confirms the user's implicit suspicion, grounded in the specific statutory-form gap rather than in the vagueness of the investor-facing talk. The report also includes the standard Appendix with all five current attributes answered (Company Name, PBC Status, Stated Purpose, Governing Jurisdiction, Amendment Supermajority Requirements) \u2014 the user's question shapes which rule the prose emphasizes, not whether the standard report structure is produced.",
+      "expected_output": "A report covering every rule currently in definitions/rules.md \u2014 M1, M2, and M3. M1 and M2 are both a confident 'Not affirmative' (the purpose clause is generic boilerplate). Mission is Paramount (M3) is now the rule that directly answers the user's question, and it is also a confident 'Not affirmative': Squarespace has no PBC or equivalent statutory designation, so there is no director balancing-of-interests duty \u2014 nothing makes any values or vision legally paramount for the board the way Subchapter XV would. This directly confirms the user's implicit suspicion, grounded in the specific statutory-form gap rather than in the vagueness of the investor-facing talk. The report also includes the standard Appendix with all five current attributes answered (Company Name, PBC Status, Stated Purpose, Governing Jurisdiction, Amendment Supermajority Requirements) \u2014 the user's question shapes which rule the prose emphasizes, not whether the standard report structure is produced.",
       "files": [
         "documents/squarespace-cert-of-incorporation/tm213918d7_ex3-1.htm"
       ],
       "expectations": [
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (M1, M2, and M3)",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md (M1, M2, and M3)",
         "The Mission Beyond Financial Profit (M1) result is a confident 'Not affirmative', not 'Could not determine'",
         "The Mission Breachability (M2) result is a confident 'Not affirmative', not 'Could not determine'",
         "The Mission is Paramount (M3) result is a confident 'Not affirmative', not 'Could not determine' \u2014 this is the key check: M3 now exists and directly answers the user's 'legally binding on the board' question, so the report should answer it via M3 rather than declining to address it",
@@ -132,7 +132,7 @@
         "All three negative results are stated neutrally, without 'lacks', 'fails to', 'unprotected', or similar judgmental framing",
         "No rule result is hedged with confidence language such as 'close call' or 'narrow margin'",
         "Output does not treat investor-facing 'vision and values' talk, which isn't part of the certificate itself, as evidence relevant to M1, M2, or M3 \u2014 all three rules turn only on the certificate's own text and statutory form",
-        "Output includes the standard Appendix with a section for every attribute currently in skills/mission-lock/references/attributes.md, even though the user's question was framed around a single rule (M3) \u2014 the report is still the full standard mission-lock report, not a scoped-down answer to just the question asked"
+        "Output includes the standard Appendix with a section for every attribute currently in skills/mission-lock/definitions/attributes.md, even though the user's question was framed around a single rule (M3) \u2014 the report is still the full standard mission-lock report, not a scoped-down answer to just the question asked"
       ]
     },
     {
@@ -148,7 +148,7 @@
         "The determination is grounded in execution/effectiveness evidence \u2014 EX-3.1's actual signature and July 22, 2020 date vs. EX-3.2's blank, unsigned signature block and provisions explicitly conditioned on 'the closing of the Company's initial public offering' \u2014 not merely on which document reads as the more comprehensive or later-styled restatement",
         "None of the current attributes come back 'Could not determine'",
         "The Amendment Supermajority Requirements answer is a confident 'No', grounded specifically in EX-3.1 (the controlling document), which has no amendment-reservation supermajority clause at all \u2014 the report does not answer this attribute using EX-3.2's 66 2/3% clause (which does cover Article III) just because EX-3.2 was also provided; that clause belongs to the non-controlling document and is not part of what currently governs",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (M1, M2, and M3)",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md (M1, M2, and M3)",
         "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Could not determine', based on EX-3.1's Article THIRD language naming a specific public benefit beyond the owners",
         "The Mission Breachability (M2) result is also 'Affirmative', not 'Could not determine', based on the same Article THIRD language naming a domain and beneficiary against which a contrary course of conduct is identifiable",
         "The Mission is Paramount (M3) result is also 'Affirmative', not 'Could not determine', based on EX-3.1's PBC/Subchapter XV designation, which is the same statutory form stated in EX-3.2 as well",
@@ -168,13 +168,13 @@
         "documents/slifka-and-sons-movers-synthetic-draft-conflict/cert-draft-beta.txt"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md",
         "The Company Name answer is a confident 'Slifka and Sons Movers, Inc.', not 'Could not determine' \u2014 both drafts agree on this, so there is no conflict to resolve",
         "The Public Benefit Corporation Status answer is 'Could not determine', with Evidence explaining that the two drafts disagree (one has no PBC designation, one does) and that neither draft contains a date, version marker, or supersession language that would establish which one controls",
         "The Stated Purpose answer is 'Could not determine' for the same reason \u2014 the two drafts state materially different purpose clauses with no way to tell which is operative",
         "The Governing Jurisdiction answer is a confident 'Delaware', not 'Could not determine' \u2014 both drafts state incorporation under the General Corporation Law of the State of Delaware, so unlike Public Benefit Corporation Status, Stated Purpose, and Amendment Supermajority Requirements, there is no conflict to resolve for this attribute",
         "The Amendment Supermajority Requirements answer is 'Could not determine', with Evidence explaining that draft alpha has no amendment supermajority provision of any kind, while draft beta requires a 66 2/3% single-class vote to amend Article THIRD specifically (i.e. 'Yes (Specifically)' if draft beta alone controlled), and neither draft contains a date, version marker, or supersession language establishing which one controls",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (M1, M2, and M3)",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md (M1, M2, and M3)",
         "The Mission Beyond Financial Profit (M1) result is 'Could not determine', since the drafts disagree on whether the stated purpose is the default any-lawful-act formulation (draft alpha) or a specific public-benefit purpose (draft beta), and neither draft can be established as controlling",
         "The Mission Breachability (M2) result is also 'Could not determine' for the same underlying reason \u2014 draft alpha's boilerplate purpose is unbreachable while draft beta's specific purpose is breachable, and neither draft controls",
         "The Mission is Paramount (M3) result is also 'Could not determine' \u2014 draft alpha has no PBC or equivalent statutory designation (M3 would fail) while draft beta is an explicit PBC with a balancing clause (M3 would succeed), and neither draft can be established as controlling",
@@ -191,13 +191,13 @@
         "documents/meridian-robotics-synthetic-non-pbc-specific-purpose/certificate.txt"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md",
         "The Company Name answer is 'Meridian Robotics, Inc.' (or equivalent exact legal name as stated in the document)",
         "The Public Benefit Corporation Status answer is a confident 'No', not 'Could not determine' \u2014 despite the specific, values-driven purpose clause, there is no statutory PBC/Subchapter XV/Section 362 designation anywhere in the document",
         "The Stated Purpose answer quotes or closely paraphrases the document's actual purpose language (the workplace-safety robotics purpose and the 2%-of-net-income commitment), not a generic description",
         "The Governing Jurisdiction answer is 'Delaware', with evidence citing the certificate's incorporation under the General Corporation Law of the State of Delaware \u2014 a plain extraction fact that does not vary with the absence of PBC status",
         "The Amendment Supermajority Requirements answer is a confident 'No', not 'Could not determine' \u2014 no supermajority or elevated-vote provision of any kind appears anywhere in the document, so the purpose article is amendable at the ordinary default",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (M1, M2, and M3)",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md (M1, M2, and M3)",
         "The Mission Beyond Financial Profit (M1) result is 'Affirmative', not 'Not affirmative' and not 'Could not determine' \u2014 M1's Affirmative Condition has no PBC-or-equivalent requirement, so the absence of PBC/statutory status does not disqualify it",
         "The Mission Breachability (M2) result is 'Affirmative', not 'Not affirmative' and not 'Could not determine' \u2014 M2's Affirmative Condition also has no PBC-or-equivalent requirement; the worker-safety purpose and 2%-of-net-income commitment name a domain and beneficiary a contrary course of conduct could breach, regardless of PBC status",
         "The Mission is Paramount (M3) result is 'Not affirmative', not 'Affirmative' and not 'Could not determine' \u2014 this is the key check for M3: its Affirmative Condition explicitly requires PBC or an equivalent statutory form, which is genuinely absent here, so M3 correctly fails where M1 and M2 correctly succeed",
@@ -217,14 +217,14 @@
         "documents/first-keystone-corp-cert-of-incorporation/tm214509d1_ex3-1.htm"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md",
         "The Company Name answer is 'First Keystone Corporation'",
         "The Public Benefit Corporation Status answer is a confident 'No', not 'Could not determine' \u2014 no PBC, benefit-corporation, or Subchapter XV/equivalent statutory designation appears anywhere in either document",
         "The Governing Jurisdiction answer is 'Pennsylvania', not 'Delaware' \u2014 grounded in the Articles' citation to the Business Corporation Law of the Commonwealth of Pennsylvania, not merely the Bylaws' passing references to a Pennsylvania registered office. This is the corpus's only non-Delaware document, so it's the key check that the answer is actually read from this document rather than defaulted to Delaware out of habit",
         "The Stated Purpose answer reports the Articles' generic 'any lawful act' language as the definitive answer",
         "The Amendment Supermajority Requirements answer is a confident 'No', not 'Yes' and not 'Could not determine' \u2014 Article 7's 66 2/3% supermajority provision exists but by its own terms protects only Article 7 (an asset-sale/merger provision); the report does not treat the mere presence of a supermajority clause elsewhere in the Articles as satisfying this attribute for the Purpose article, which the clause never names",
         "Output correctly identifies that one input file (exh3i.txt) is the Articles of Incorporation and the other (tm214509d1_ex3-1.htm) is the Bylaws, despite the second file's SEC exhibit label ('EX-3.1') misleadingly suggesting it's a certificate \u2014 the report does not mistake the Bylaws for the Articles or vice versa",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md (M1, M2, and M3)",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md (M1, M2, and M3)",
         "The Mission Beyond Financial Profit (M1) result is 'Not affirmative', not 'Could not determine' \u2014 the Articles state no specific mission beyond the generic any-lawful-act formulation",
         "The Mission Breachability (M2) result is 'Not affirmative' for the same underlying reason \u2014 with no stated mission, there is no domain or direction a course of conduct could run against",
         "The Mission is Paramount (M3) result is a confident 'Not affirmative', not 'Could not determine' \u2014 grounded first in the absence of any PBC or equivalent statutory election in either document",
@@ -242,7 +242,7 @@
         "documents/veeva-systems-cert-of-incorporation/veevex31jun2021.htm"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md",
         "The Company Name answer is 'Veeva Systems Inc.'",
         "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the explicit statutory PBC designation (the '(A Public Benefit Corporation)' caption and/or Article THIRD's subchapter XV election)",
         "The Stated Purpose answer quotes or closely paraphrases the specific public benefit language (industry productivity and high-quality employment in the communities in which it operates), not only the default any-lawful-act sentence",
@@ -251,7 +251,7 @@
         "The Amendment Supermajority Requirements evidence names the specific language it considered (the 66 2/3% article list and/or the Class B protective provisions) rather than a vague 'no supermajority found'",
         "Output does not assert or imply, as a verified finding, that this restatement is what added PBC status or changed any answer from an earlier version \u2014 since no earlier certificate was provided, that is the user's framing from the prompt, not something the skill can confirm from the document itself",
         "Output contains no evaluative or judgmental language about whether the conversion is meaningful, adequate, or effective",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md",
         "The Mission Beyond Financial Profit (M1) result is a definitive 'Affirmative', not 'Could not determine' \u2014 the certificate states a specific public benefit purpose naming beneficiaries beyond the owners",
         "The Mission Breachability (M2) result is a definitive 'Affirmative', not 'Could not determine' \u2014 the purpose names a domain and direction (making the industries served more productive; creating high-quality employment in the communities it operates in) against which a contrary course of conduct is identifiable",
         "The Mission is Paramount (M3) result is a definitive 'Affirmative', not 'Could not determine' \u2014 Veeva is a Delaware PBC under Subchapter XV with an explicit balancing-of-interests clause",
@@ -267,13 +267,13 @@
         "documents/united-therapeutics-cert-of-incorporation/tm2128821d1_ex3-1.htm"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md",
         "The Company Name answer is 'United Therapeutics Corporation'",
         "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the '(A Public Benefit Corporation)' caption and/or Article IV's election 'as contemplated by subchapter XV of the DGCL'",
         "The Stated Purpose answer quotes or closely paraphrases the specific public benefit purpose (a brighter future for patients through novel pharmaceutical therapies and technologies that expand the availability of transplantable organs), not only the default any-lawful-act sentence that shares Article IV",
         "The Governing Jurisdiction answer is 'Delaware', with evidence citing the certificate's incorporation under the Delaware General Corporation Law",
         "The Amendment Supermajority Requirements answer is 'No' \u2014 the certificate contains no elevated vote for amending any provision, and the answer's evidence does not treat the majority-of-voting-power director-removal provision or the board's power to amend the By-Laws as an elevated bar on the purpose/PBC article",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md",
         "The Mission Beyond Financial Profit (M1) result is a definitive 'Affirmative', not 'Could not determine' \u2014 the certificate states a specific public benefit purpose naming beneficiaries beyond the owners, not solely the default any-lawful-act formulation",
         "The Mission Breachability (M2) result is a definitive 'Affirmative', not 'Could not determine' \u2014 the purpose names specific domains (novel pharmaceutical therapies; technologies expanding the availability of transplantable organs) against which a contrary course of conduct is identifiable",
         "The Mission is Paramount (M3) result is a definitive 'Affirmative', not 'Could not determine' \u2014 the certificate itself elects PBC status under subchapter XV",
@@ -289,7 +289,7 @@
         "documents/warby-parker-cert-of-incorporation/exhibit31-sx1.htm"
       ],
       "expectations": [
-        "Output includes a section for every attribute currently in skills/mission-lock/references/attributes.md",
+        "Output includes a section for every attribute currently in skills/mission-lock/definitions/attributes.md",
         "The Company Name answer is 'Warby Parker Inc.', with evidence that acknowledges the certificate's caption and recital name JAND, Inc. and grounds the answer in the restated Article I ('The name of this corporation is Warby Parker Inc.')",
         "Output does not treat the user's belief that JAND, Inc. is the same company as a finding; any statement that the two names refer to one corporation is grounded in the certificate's own restatement of Article I",
         "The Public Benefit Corporation Status answer is 'Yes', with evidence quoting or citing the '(A Public Benefit Corporation)' designation and/or Article III.B's subchapter XV election",
@@ -297,7 +297,7 @@
         "The Governing Jurisdiction answer is 'Delaware', with evidence citing the certificate's incorporation under the Delaware General Corporation Law",
         "The Amendment Supermajority Requirements answer is 'No' \u2014 the Preferred Stock protective provisions only trigger for amendments that 'adversely alter or change the powers, preferences or special rights' of the Preferred Stock, a conditioned form that does not reach the purpose/PBC article, and Article XI is only the statutory reservation of the right to amend; the answer must not report 'Yes (Generally)'",
         "The Amendment Supermajority Requirements evidence names the specific conditioned language it considered and set aside, rather than a vague 'no supermajority found'",
-        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/references/rules.md",
+        "Output includes a '# Analysis' section with a subsection for every rule currently in skills/mission-lock/definitions/rules.md",
         "The Mission Beyond Financial Profit (M1) result is a definitive 'Affirmative', not 'Could not determine'",
         "The Mission Breachability (M2) result is a definitive 'Affirmative', not 'Could not determine' \u2014 the purpose names a domain (vision and eye health) and direction (access) against which a contrary course of conduct is identifiable",
         "The Mission is Paramount (M3) result is a definitive 'Affirmative', not 'Could not determine' \u2014 Warby Parker is a Delaware PBC under Subchapter XV with an explicit balancing-of-interests clause in Article III.B",

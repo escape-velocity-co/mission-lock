@@ -1,6 +1,6 @@
 # Eval Corpus
 
-This corpus is expected to grow over time as new assessment concepts are added. These concepts will be located in definition documents in [`../skills/mission-lock/references/`](../skills/mission-lock/references/); for example `attributes.md`. Every new attribute, rule, etc. should have at least one document in this corpus that exercises it and one that clearly lacks it, for contrast. Test cases can do double-duty, serving as positive and negative assertions for many tests.
+This corpus is expected to grow over time as new assessment concepts are added. These concepts will be located in definition documents in [`../skills/mission-lock/definitions/`](../skills/mission-lock/definitions/); for example `attributes.md`. Every new attribute, rule, etc. should have at least one document in this corpus that exercises it and one that clearly lacks it, for contrast. Test cases can do double-duty, serving as positive and negative assertions for many tests.
 
 ## Why This Corpus?
 
@@ -89,7 +89,7 @@ This eval aims to capture portable behaviour of the skill. Eval results and arti
 
 ### Generating the Subagent Runner
 
-In order to save tokens and eval time, we generate the subagent `.claude/agents/mission-lock-eval-runner.md` at each eval invocation. `SKILL.md`, `references/*.md` and `assets/report-template.md` are embedded in the agent's system prompt so parallel runs share one cacheable prefix and skip the skill-reading tool calls.
+In order to save tokens and eval time, we generate the subagent `.claude/agents/mission-lock-eval-runner.md` at each eval invocation. `SKILL.md`, `definitions/*.md` and `assets/report-template.md` are embedded in the agent's system prompt so parallel runs share one cacheable prefix and skip the skill-reading tool calls.
 
 Run `python3 evals/build_bundled_runner.py` after any change under `skills/mission-lock/` and before every eval run.
 
