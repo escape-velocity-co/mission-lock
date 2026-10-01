@@ -40,7 +40,8 @@ CURRENT_ATTRIBUTES = [
     "Public Benefit Corporation",
     "Stated Purpose",
     "Governing Jurisdiction",
-    "Amendment Supermajority Requirements",
+    "Supermajority/Veto Requirements for PBC/Purpose Article(s) Amendments",
+    "Supermajority/Veto Requirements for Mergers",
 ]
 CURRENT_RULE_HEADINGS = [
     "Mission Beyond Financial Profit",

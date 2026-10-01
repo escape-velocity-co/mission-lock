@@ -90,15 +90,15 @@ Append a new `###` section following the template below.
 
 **Could not Determine:** When no statement of incorporation, statutory citation, or filing stamp naming a jurisdiction appears anywhere in the open documents. A registered agent's address alone is not evidence of jurisdiction.
 
-### Amendment Supermajority Requirements for PBC/Purpose Article(s)
+### Supermajority/Veto Requirements for PBC/Purpose Article(s) Amendments
 
 **ID:** A5
 
 **Definition:** Whether amending, altering, repealing, or waiving the article(s) that state the corporation's PBC status or purpose (A2, A3 respectively) requires greater than the amendment default (e.g. DGCL §242 if A4 is Delaware) in the relevant jurisdiction's (A4) statute.
 
 **Response Options:**
-* Yes (Specifically) - When the amendment is covered specifically by an increased threshold, a quote or close paraphrase of the elevated threshold and the voting group it applies to
-* Yes (Generally) - When the amendment is covered generally by an increased threshold, a quote or close paraphrase of the elevated threshold and the voting group it applies to
+* Yes (Specifically) - When the amendment is covered specifically by an increased threshold. Respond with a concise quote or close paraphrase of the elevated threshold and the voting group it applies to
+* Yes (Generally) - When the amendment is covered generally by an increased threshold. Respond with a concise quote or close paraphrase of the elevated threshold and the voting group it applies to
 * No — the article is amendable at the jurisdiction's ordinary default
 * Could not determine - (see below for possible scenarios)
 
@@ -111,3 +111,20 @@ Distinguish either of these from a separate-class vote that only triggers when a
 **Typically Found In:** Certificate of Incorporation, usually in the same article as the general amendment-reservation clause, or in a dedicated protective-provisions article.
 
 **Could not Determine:** When the certificate's amendment mechanics reference an external document and that document wasn't provided.
+
+### Supermajority/Veto Requirements for Mergers, Consolidations, or Reorganizations
+
+**ID:** A6
+
+**Definition:** Whether approving a merger, consolidation, reorganization, or sale/lease/exchange of substantially all assets requires greater than the jurisdiction's ordinary default (e.g. DGCL §251/§271 if A4 is Delaware) in the relevant jurisdiction's (A4) statute.
+
+**Response Options:**
+* Yes — the clause names merger, consolidation, reorganization, or a sale/lease/exchange of substantially all assets as requiring an elevated threshold or separate consent. Respond with a concise quote or close paraphrase of the elevated threshold and the voting group it applies to.
+* No — these transactions are approvable at the jurisdiction's ordinary default
+* Could not determine — (see below for possible scenarios)
+
+**What to Look For:** An elevated-vote or separate-consent provision that names merger, consolidation, reorganization, or a sale/lease/exchange of substantially all assets directly — often via a defined term such as "Liquidation Event," "Change in Control Transaction," or a DGCL §203-style "Business Combination." The term alone isn't enough if it's paired only with a proceeds-allocation rule rather than an actual "shall not consummate without [vote/consent]" requirement — only the latter satisfies this attribute.
+
+**Typically Found In:** Certificate of Incorporation, in a protective-provisions article or a dedicated "Mergers, Consolidations, and Sales of Assets" article.
+
+**Could not Determine:** When the certificate's merger/reorganization-approval mechanics reference an external document and that document wasn't provided.
