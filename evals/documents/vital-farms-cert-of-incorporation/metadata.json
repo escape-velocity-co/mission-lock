@@ -9,13 +9,13 @@
   "state_of_incorporation": "Delaware",
   "documents": [
     {
-      "file": "d841617dex31.htm",
+      "file": "d841617dex31.txt",
       "exhibit": "EX-3.1",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1579733/000119312520198190/d841617dex31.htm",
       "note": "Fifth Amended and Restated Certificate of Incorporation — signed and dated July 22, 2020 (an actual '/s/' signature), making this the currently effective, controlling certificate as of the filing. Explicit 'A Public Benefit Corporation' designation on the certificate's title page; good positive example of mission-lock via DGCL Subchapter XV PBC status. No supermajority or entrenchment provision of any kind protects the purpose article (Articles NINTH/TENTH are ordinary director-liability/indemnification boilerplate) — no rule in the current catalog (M1, M2, M3) tests amendment thresholds, so this has no bearing on any of the three rule results."
     },
     {
-      "file": "d841617dex32.htm",
+      "file": "d841617dex32.txt",
       "exhibit": "EX-3.2",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1579733/000119312520198190/d841617dex32.htm",
       "note": "Amended and Restated Certificate of Incorporation — an unexecuted form (blank, unsigned signature block) whose substantive provisions are explicitly conditioned on 'the closing of the Company's initial public offering,' a future event not confirmed by either document. Despite its recital describing itself as restating a prior certificate 'as previously amended or supplemented,' it is not yet the controlling document because it has not been executed and its own effectiveness is contingent. It does add Article IX's 66⅔% supermajority requirement covering Article III (which EX-3.1 lacks) — real, quotable language documenting a heightened-amendment threshold, though no rule in the current catalog (M1, M2, M3) tests amendment thresholds. Included alongside EX-3.1 specifically to test the Conflict Resolution guidance in attributes.md/rules.md, and in particular the lesson that a document is not controlling merely because it reads as the later, more comprehensive restatement — execution status and effectiveness conditions matter more than narrative framing."

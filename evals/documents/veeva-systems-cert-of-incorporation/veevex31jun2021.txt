@@ -1,0 +1,230 @@
+EX-3.1
+2
+veevex31jun2021.htm
+EX-3.1
+
+AMENDED AND RESTATED
+
+CERTIFICATE OF INCORPORATION
+
+OF
+
+VEEVA SYSTEMS INC.
+
+(A PUBLIC BENEFIT CORPORATION)
+
+Veeva Systems Inc., a public benefit corporation organized and existing under the laws of the State of Delaware, hereby certifies as follows:
+
+1. The corporation was originally incorporated under the name of Rags2Riches, Inc., and the original certificate of incorporation was filed with the Secretary of State of the State of Delaware on January 12, 2007.
+
+2. This Amended and Restated Certificate of Incorporation was duly adopted in accordance with Sections 242 and 245 of the DGCL, and restates, integrates and further amends the provisions of the corporation’s certificate of incorporation.
+
+3. The certificate of incorporation of the corporation is hereby amended and restated in its entirety to read as follows:
+
+FIRST: The name of the corporation is Veeva Systems Inc. (hereinafter called the “Corporation”).
+
+SECOND: The address of the registered office of the Corporation in the State of Delaware is 251 Little Falls Drive in the City of Wilmington, County of New Castle, 19808. The name of the registered agent of the Corporation in the State of Delaware at such address is Corporation Service Company.
+
+THIRD: The purpose of the Corporation is to engage in any lawful act or activity for which corporations may be organized and incorporated under the General Corporation Law of the State of Delaware or any applicable successor act thereto, as the same may be amended from time to time (the “DGCL”).
+
+The Corporation shall be a public benefit corporation, as contemplated by subchapter XV of the DGCL, and is to be managed in a manner that balances our stockholders’ pecuniary (financial) interests, the best interests of those materially affected by the corporation’s conduct (including customers, employees, partners, and the communities in which we operate), and the public benefits identified in this certificate of incorporation. We believe this corporate structure reflects our guiding principle, “do the right thing.”
+
+The specific public benefits to be promoted by the Corporation are to provide products and services that are intended to help make the industries we serve more productive, and to create high-quality employment opportunities in the communities in which we operate.
+
+-1-
+
+FOURTH: The total number of shares of all classes of capital stock that the Corporation is authorized to issue is 1,000,000,000 shares, consisting of (i) 800,000,000 shares of Class A Common Stock, par value $0.00001 per share (“Class A Common Stock”), (ii) 190,000,000 shares of Class B Common Stock, par value $0.00001 per share (“Class B Common Stock” and together with Class A Common Stock, “Common Stock”), and (iii) 10,000,000 shares of Preferred Stock, par value $0.00001 per share (“Preferred Stock”). Subject to the rights of the holders of any series of Preferred Stock, the number of authorized shares of any of the Common Stock or Preferred Stock may be increased or decreased (but not below the number of shares thereof then outstanding) by the affirmative vote of the holders of a majority in voting power of the capital stock of the Corporation entitled to vote thereon irrespective of the provisions of Section 242(b)(2) of the DGCL, and no vote of the holders of any of the Common Stock or Preferred Stock voting separately as a class shall be required therefor.
+
+A. Class A Common Stock and Class B Common Stock. The powers, preferences and relative participating, optional or other special rights, and the qualifications, limitations and restrictions of the Class A Common Stock and Class B Common Stock are as follows:
+
+1. Equal Status; Ranking. Except as otherwise provided in this Amended and Restated Certificate of Incorporation (as amended from time to time, including the terms of any Preferred Stock Designation (as defined below), this “Certificate of Incorporation”) or required by applicable law, shares of Class A Common Stock and Class B Common Stock will have the same rights and powers, rank equally (including as to dividends and distributions, and upon any liquidation, dissolution or winding up of the Corporation), share ratably and be identical in all respects and as to all matters. The voting, dividend and liquidation rights of the holders of the Common Stock are subject to and qualified by the rights of the holders of the Preferred Stock of any series as may be designated by the Board of Directors of the Corporation (the “Board”) upon any issuance of the Preferred Stock of any series.
+
+2. Voting.
+
+(a) Except as otherwise expressly provided by this Certificate of Incorporation or as provided by law, the holders of shares of Class A Common Stock and Class B Common Stock will (i) at all times vote together as a single class on all matters (including the election of directors) submitted to a vote of the stockholders of the Corporation, (ii) be entitled to notice of any stockholders’ meeting in accordance with the Amended and Restated Bylaws of the Corporation (as amended from time to time, the “Bylaws”), and (iii) be entitled to vote upon such matters and in such manner as may be provided by applicable law. Except as otherwise expressly provided herein or required by applicable law, each holder of Class A Common Stock will have the right to one (1) vote per share of Class A Common Stock held of record by such holder and each holder of Class B Common Stock will have the right to ten (10) votes per share of Class B Common Stock held of record by such holder.
+
+(b) Except as otherwise provided by law or by the resolution or resolutions providing for the issue of any series of Preferred Stock, the holders of outstanding shares of Common Stock shall have the exclusive right to vote for the election and removal of directors and for all other purposes. Notwithstanding any other provision of this Certificate of Incorporation to the contrary, the holders of Common Stock shall not be entitled to vote on
+
+-2-
+
+any amendment to this Certificate of Incorporation (including any Preferred Stock Designation) that relates solely to the terms of one or more outstanding series of Preferred Stock if the holders of such affected series are entitled, either separately or together as a class with the holders of one or more other such series, to vote thereon pursuant to this Certificate of Incorporation (including any Preferred Stock Designation) or the DGCL.
+
+3. Dividends. Subject to the rights of the holders of Preferred Stock, the holders of shares of Class A Common Stock and Class B Common Stock shall be entitled to receive such dividends and distributions and other distributions in cash, stock or property of the Corporation when, as and if declared thereon by the Board from time to time, out of assets or funds of the Corporation legally available therefor. The holders of shares of Class A Common Stock and Class B Common Stock will be treated equally, identically and ratably, on a per share basis, with respect to any dividends or distributions as may be declared and paid from time to time by the Board out of any assets of the Corporation legally available therefor; provided, however, that in the event a dividend is paid in the form of shares of Class A Common Stock or Class B Common Stock (or rights to acquire such shares), then the holders of Class A Common Stock will receive shares of Class A Common Stock (or rights to acquire such shares, as the case may be) and holders of Class B Common Stock will receive shares of Class B Common Stock (or rights to acquire such shares, as the case may be), with the holders of shares of Class A Common Stock and Class B Common Stock receiving, on a per share basis, an identical number of shares of Class A Common Stock or Class B Common Stock, as applicable. Notwithstanding the foregoing, the Board may pay or make a disparate dividend or distribution per share of Class A Common Stock or Class B Common Stock (whether in the amount of such dividend or distribution payable per share, the form in which such dividend or distribution is payable, the timing of the payment, or otherwise) if such disparate dividend or distribution is approved in advance by the holders of a majority of the outstanding shares of Class A Common Stock and the holders of a majority of the outstanding shares of Class B Common Stock, each voting separately as a class.
+
+4. Subdivisions or Combinations. Shares of Class A Common Stock or Class B Common Stock may not be subdivided, combined or reclassified unless the shares of the other class are concurrently therewith proportionately subdivided, combined or reclassified in a manner that maintains the same proportionate equity ownership between the holders of the outstanding Class A Common Stock and the holders of the outstanding Class B Common Stock on the record date for such subdivision, combination or reclassification; provided, however, that shares of one such class may be subdivided, combined or reclassified in a different or disproportionate manner if such subdivision, combination or reclassification is approved in advance by the holders of a majority of the outstanding shares of Class A Common Stock and the holders of a majority of the outstanding shares of Class B Common Stock, each voting separately as a class.
+
+5. Liquidation. Subject to the rights of the holders of Preferred Stock, holders of shares of Class A Common Stock and Class B Common Stock shall be entitled to receive ratably the assets and funds of the Corporation available for distribution in the event of any liquidation, dissolution or winding up of the affairs of the Corporation, whether voluntary or involuntary, unless disparate or different treatment of the shares of each such class with respect to distributions upon any such liquidation, dissolution or winding up is approved in advance by holders of a majority of the outstanding shares of Class A Common
+
+-3-
+
+Stock and the holders of a majority of the outstanding shares of Class B Common Stock, each voting separately as a class. A liquidation, dissolution or winding up of the affairs of the Corporation, as such terms are used in this Section A.5, shall not be deemed to be occasioned by or to include any consolidation or merger of the Corporation with or into any other person or a sale, lease, exchange or conveyance of all or a part of its assets.
+
+6. Redemption. Neither the Class A Common Stock nor the Class B Common Stock is redeemable.
+
+7. Change in Control Vote. The Corporation will not consummate a Change in Control Transaction (as defined below) without first obtaining the approval of the holders of a majority of the then outstanding shares of Class B Common Stock, voting as a separate class, in addition to any other vote required by applicable law, this Certificate of Incorporation or the Bylaws. For the purposes of this Section 7, a “Change in Control Transaction” means the occurrence of any of the following events:
+
+(a) the sale, lease, exchange, encumbrance or other disposition (other than licenses in the ordinary course of business, and the grant of security interests in the ordinary course of business) by the Corporation of all or substantially all of the assets of the Corporation and its subsidiaries, taken as a whole; or
+
+(b) the merger or consolidation of the Corporation with or into any other corporation or entity, other than a merger or consolidation that would result in the Class B Common Stock of the Corporation outstanding immediately prior thereto continuing to represent (either by remaining outstanding or by being converted into voting securities of the surviving entity or its sole parent entity) more than fifty percent (50%) of the total voting power represented by the voting securities of the Corporation or such surviving entity or its sole parent entity outstanding immediately after such merger or consolidation.
+
+8. Voluntary and Automatic Conversion of Class B Common Stock.
+
+(a) Voluntary Conversion of Shares of Class B Common Stock. Each share of Class B Common Stock will be convertible into one (1) fully paid and nonassessable share of Class A Common Stock at the option of the holder thereof at any time upon written notice to the Corporation. Before any holder of Class B Common Stock will be entitled to voluntarily convert any shares of such Class B Common Stock, such holder will surrender the certificate or certificates therefor (if any), duly endorsed, at the principal corporate office of the Corporation or of any transfer agent for the Class B Common Stock, and will give written notice to the Corporation at its principal corporate office, of the election to convert the same and will state therein the name or names (i) in which the certificate or certificates for shares of Class A Common Stock are to be issued if such shares are certificated, or (ii) in which such shares are to be registered in book entry if such shares are uncertificated. The Corporation will, as soon as practicable thereafter, issue and deliver at such office to such holder of Class B Common Stock, or to the nominee or nominees of such holder, a certificate or certificates representing the number of shares of Class A Common Stock to which such holder will be entitled as aforesaid (if such shares are certificated) or, if such shares are uncertificated, register such shares in book-entry form. Such conversion will be deemed to have been made immediately prior to the close of business on the date of such
+
+-4-
+
+surrender of the shares of Class B Common Stock to be converted following or contemporaneously with the written notice of such holder’s election to convert required by this Section 8(a), and the person or persons entitled to receive the shares of Class A Common Stock issuable upon such conversion will be treated for all purposes as the record holder or holders of such shares of Class A Common Stock as of such date. Each share of Class B Common Stock that is converted pursuant to this Section 8(a) will be retired by the Corporation and will not be available for reissuance.
+
+(b) Automatic Conversion of Shares of Class B Common Stock. Shares of Class B Common Stock will be automatically, without further action by the holder thereof, converted into an equal number of fully paid and nonassessable shares of Class A Common Stock, upon the occurrence of any of the following events:
+
+(i) any Transfer of such shares of Class B Common Stock, except for a Permitted Transfer;
+
+(ii) the date that any Permitted Transferee of such shares ceases to meet the qualifications to be a Permitted Transferee of the holder of Class B Common Stock who effected the Transfer of such shares to such Permitted Transferee; and
+
+(iii) the death or Incapacity of a holder of such shares who is a natural person, or the death or Incapacity of the transferor of such shares who is a natural person from whom a Permitted Transferee acquired such shares of Class B Common Stock.
+
+Each outstanding stock certificate that, immediately prior to such conversion, represented one or more shares of Class B Common Stock subject to such conversion will, upon such conversion, be deemed to represent an equal number of shares of Class A Common Stock, without the need for surrender or exchange thereof. The Corporation will, upon the request of any holder whose shares of Class B Common Stock have been converted into shares of Class A Common Stock as a result of such conversion and upon surrender by such holder to the Corporation of the outstanding certificate(s) formerly representing such holder’s shares of Class B Common Stock (if any), issue and deliver to such holder certificate(s) representing the shares of Class A Common Stock into which such holder’s shares of Class B Common Stock were converted as a result of such conversion (if such shares are certificated) or, if such shares are uncertificated or the stockholder otherwise consents, register such shares in book-entry form. Shares of Class B Common Stock that are converted pursuant to this Section 8(b) will be retired by the Corporation and will not be available for reissuance.
+
+(c) Conversion of All Outstanding Class B Common Stock. Each share of Class B Common Stock then outstanding will be automatically, without further action by the holder thereof, converted into one (1) fully paid and nonassessable share of Class A Common Stock, upon the earliest to occur of:
+
+(i) the date specified by the holders of a majority of the then outstanding shares of Class B Common Stock, voting as a separate class; or
+
+(ii) October 15, 2023.
+
+-5-
+
+Each outstanding stock certificate that, immediately prior to such conversion, represented one or more shares of Class B Common Stock subject to such conversion will, upon such conversion, be deemed to represent an equal number of shares of Class A Common Stock, without the need for surrender or exchange thereof. The Corporation will, upon the request of any holder whose shares of Class B Common Stock have been converted into shares of Class A Common Stock as a result of such conversion and upon surrender by such holder to the Corporation of the outstanding certificate(s) formerly representing such holder’s shares of Class B Common Stock (if any), issue and deliver to such holder certificate(s) representing the shares of Class A Common Stock into which such holder’s shares of Class B Common Stock were converted as a result of such conversion (if such shares are certificated) or, if such shares are uncertificated or the stockholder otherwise consents, register such shares in book-entry form.
+
+Following such conversion, the reissuance of shares of Class B Common Stock will be prohibited, and such shares of Class B Common Stock will be retired by the Corporation and cancelled in accordance with the DGCL and the filing with the Delaware Secretary of State required thereby. Upon such retirement and filing, all references herein to Class A Common Stock will be deemed to be references to Common Stock. Each outstanding stock certificate that, immediately prior to such retirement and filing, represented one or more shares of Class A Common Stock will, following such retirement and filing, be deemed to represent an equal number of shares Common Stock, without the need for surrender or exchange thereof.
+
+(d) The Corporation may, from time to time, establish such policies and procedures, not in violation of applicable law or the other provisions of this Certificate of Incorporation, relating to the conversion of the Class B Common Stock into Class A Common Stock pursuant to the terms of this Certificate of Incorporation, as the Corporation may deem necessary or advisable in connection therewith. If the Corporation has reason to believe that a Transfer giving rise to a conversion of shares of Class B Common Stock into Class A Common Stock has occurred but has not theretofore been reflected on the books of the Corporation, the Corporation may request that the holder of such shares furnish affidavits or other evidence to the Corporation as the Corporation deems necessary to determine whether a conversion of shares of Class B Common Stock to Class A Common Stock has occurred, and if such holder does not within ten (10) days after the date of such request furnish sufficient evidence to the Corporation (in the manner provided in the request) to enable the Corporation to determine that no such conversion has occurred, any such shares of Class B Common Stock, to the extent not previously converted, will be automatically converted into shares of Class A Common Stock as of the date of the transfer in question and the same will thereupon be registered on the books, records and stock ledger of the Corporation. In connection with any action of stockholders taken at a meeting, the stock ledger of the Corporation will be presumptive evidence as to who are the stockholders entitled to vote in person or by proxy at any meeting of stockholders and the class or classes or series of shares held by each such stockholder and the number of shares of each class or classes or series held by such stockholder.
+
+9. Definitions. For purposes of this Article FOURTH of the Certificate of Incorporation,
+
+-6-
+
+(a) “Incapacity” means, for a holder of Class B Common Stock, incapacity such that such holder is incapable of managing his financial affairs under the criteria set forth in California Probate Code Section 810 et seq. that can be expected to result in death or which has lasted or can be expected to last for a continuous period of not less than 12 months as determined by a licensed medical practitioner. In the event of a dispute regarding whether a holder of Class B Common Stock has suffered an Incapacity, no Incapacity of such holder will be deemed to have occurred unless and until an affirmative ruling regarding such Incapacity has been made by a court of competent jurisdiction, and such ruling has become final and non-appealable.
+
+(b) “Permitted Transfer” means any Transfer of a share of Class B Common Stock:
+
+(i) by a Qualified Stockholder to a Permitted Transferee of such Qualified Stockholder; or
+
+(ii) by a Permitted Transferee of a Qualified Stockholder, to such Qualified Stockholder or any other Permitted Transferee of such Qualified Stockholder.
+
+(c) “Permitted Transferee” means: Any trust, corporation, limited liability company, partnership, foundation or similar entity established by a holder of Class B Common Stock; provided that the holder of Class B Common Stock has sole dispositive power and exclusive right to vote all of the shares of Class B Common Stock held by such entity and the Transfer to the transferee does not involve any payment of cash, securities, property or other consideration (other than an interest in such entity) to the holder of Class B Common Stock.
+
+(d) “Qualified Stockholder” means (i) the initial registered holder of any share of Class B Common Stock that are originally issued by the Corporation (including, without limitation, upon conversion of the Preferred Stock or upon exercise of options or warrants) and (ii) a Permitted Transferee.
+
+(e) “Transfer” of a share of Class B Common Stock means, directly or indirectly, any sale, assignment, transfer by bequest, devise or descent, conveyance (including a conveyance in trust) or other transfer or disposition of such share or any legal or beneficial interest in such share, whether or not for value and whether voluntary or involuntary or by operation of law. A Transfer includes, without limitation, a transfer of a share of Class B Common Stock to a broker or other nominee (regardless of whether or not there is a corresponding change in beneficial ownership) and the transfer of, or entering into an agreement with respect to, Voting Control over a share of Class B Common Stock by proxy or otherwise; provided, however, that the following will not be considered a Transfer:
+
+(i) the grant of a revocable proxy to officers or directors of the Corporation at the request of the Board, in connection with actions to be taken at an annual or special meeting of stockholders;
+
+-7-
+
+(ii) the issuance by the Corporation of any shares of Class B Common Stock pursuant to the exercise of options, warrants, securities or rights that are exercisable or exchangeable for, or convertible into, Class B Common Stock;
+
+(iii) an encumbrance, hypothecation or pledge of shares of Class B Common Stock by a holder of Class B Common Stock in connection with a bona fide loan or indebtedness transaction prior to an event of default or other event that gives any other person the right to vote or control the disposition of the shares subject to such encumbrance, hypothecation or pledge; provided, however, that a foreclosure on such shares or other similar action by the encumbrance or hypothecation holder or pledgee shall constitute a Transfer unless such foreclosure or similar action qualifies as a Permitted Transfer; or
+
+(iv) any acquisition or disposition (including by judicial determination) of a community property interest in any shares of Class B Common Stock that does not result in a disposition by a holder of Class B Common Stock of either his or her economic interest in such shares of Class B Common Stock or an acquisition of exclusive Voting Control by another person (including the spouse or former-spouse of such holder) of such shares of Class B Common Stock.
+
+(f) “Voting Control” with respect to a share of Class B Common Stock means the power (whether exclusive or shared) to vote or direct the voting of such share of Class B Common Stock by proxy, voting agreement or otherwise.
+
+10. Reservation of Stock. The Corporation will at all times reserve and keep available out of its authorized but unissued shares of Class A Common Stock, solely for the purpose of effecting the conversion of the shares of Class B Common Stock, such number of shares of Class A Common Stock as will from time to time be sufficient to effect the conversion of all outstanding shares of Class B Common Stock into shares of Class A Common Stock.
+
+11. Protective Provisions. So long as any shares of Class B Common Stock remain outstanding:
+
+(a) The Corporation will not, whether by merger, consolidation, reclassification of capital stock or otherwise, amend, alter, change, repeal or waive Section A of this Article FOURTH (or adopt any provision inconsistent therewith), without first obtaining the approval of the holders of a majority of the then outstanding shares of Class B Common Stock, voting as a separate class, in addition to any other vote required by applicable law, this Certificate of Incorporation or the Bylaws.
+
+(b) The Corporation will not, without first obtaining the approval of the holders of a majority of the then outstanding shares of Class B Common Stock, voting as a separate class, in addition to any other vote required by applicable law, this Certificate of Incorporation or the Bylaws, authorize or issue, or obligate itself to issue, any Preferred Stock (including any other security convertible into or exercisable for any such Preferred Stock).
+
+-8-
+
+B. Preferred Stock. Shares of Preferred Stock may be issued from time to time in one or more series. Subject to Section A.11(b), the Board is hereby authorized to provide by resolution or resolutions from time to time for the issuance, out of the unissued shares of Preferred Stock, of one or more series of Preferred Stock, without stockholder approval, by filing a certificate pursuant to the applicable law of the State of Delaware (the “Preferred Stock Designation”), setting forth such resolution and, with respect to each such series, establishing the number of shares to be included in such series, and fixing the voting powers, full or limited, or no voting power of the shares of such series, and the designation, preferences and relative, participating, optional or other special rights, if any, of the shares of each such series and any qualifications, limitations or restrictions thereof. The powers, designation, preferences and relative, participating, optional and other special rights of each series of Preferred Stock, and the qualifications, limitations and restrictions thereof, if any, may differ from those of any and all other series at any time outstanding. Subject to Section A.11(b), the authority of the Board with respect to each series of Preferred Stock shall include, but not be limited to, the determination of the following:
+
+(a) the designation of the series, which may be by distinguishing number, letter or title;
+
+(b) the number of shares of the series, which number the Board may thereafter (except where otherwise provided in the Preferred Stock Designation) increase or decrease (but not below the number of shares thereof then outstanding);
+
+(c) the amounts or rates at which dividends will be payable on, and the preferences, if any, of shares of the series in respect of dividends, and whether such dividends, if any, shall be cumulative or noncumulative;
+
+(d) the dates on which dividends, if any, shall be payable;
+
+(e) the redemption rights and price or prices, if any, for shares of the series;
+
+(f) the terms and amount of any sinking fund, if any, provided for the purchase or redemption of shares of the series;
+
+(g) the amounts payable on, and the preferences, if any, of shares of the series in the event of any voluntary or involuntary liquidation, dissolution or winding up of the affairs of the Corporation;
+
+(h) whether the shares of the series shall be convertible into or exchangeable for, shares of any other class or series, or any other security, of the Corporation or any other corporation, and, if so, the specification of such other class or series or such other security, the conversion or exchange price or prices or rate or rates, any adjustments thereof, the date or dates at which such shares shall be convertible or exchangeable and all other terms and conditions upon which such conversion or exchange may be made;
+
+-9-
+
+(i) restrictions on the issuance of shares of the same series or any other class or series;
+
+(j) the voting rights, if any, of the holders of shares of the series generally or upon specified events; and
+
+(k) any other powers, preferences and relative, participating, optional or other special rights of each series of Preferred Stock, and any qualifications, limitations or restrictions of such shares, all as may be determined from time to time by the Board and stated in the resolution or resolutions providing for the issuance of such Preferred Stock.
+
+Without limiting the generality of the foregoing, the resolutions providing for issuance of any series of Preferred Stock may provide that such series shall be superior or rank equally or be junior to any other series of Preferred Stock to the extent permitted by law.
+
+FIFTH: This Article FIFTH is inserted for the management of the business and for the conduct of the affairs of the Corporation.
+
+A. General Powers. The business and affairs of the Corporation shall be managed by or under the direction of the Board, except as otherwise provided by law.
+
+B. Number of Directors; Election of Directors. Subject to the rights of holders of any series of Preferred Stock to elect directors, the number of directors of the Corporation shall be fixed from time to time by resolution of the majority of the Whole Board. For purposes of this Certificate of Incorporation, the term “Whole Board” will mean the total number of authorized directors whether or not there exist any vacancies in previously authorized directorships. No decrease in the number of directors constituting the Board shall shorten the term of any incumbent director.
+
+C. [RESERVED]
+
+D. Terms of Office. Each director shall serve for a term ending on the date of the next annual meeting of stockholders following the annual meeting of stockholders at which such director was elected. The term of each director shall continue until the election and qualification of his or her successor and be subject to his or her earlier death, disqualification, resignation or removal.
+
+E. Vacancies. Subject to the rights of holders of any series of Preferred Stock, any newly created directorship that results from an increase in the number of directors or any vacancy on the Board that results from the death, disability, resignation, disqualification or removal of any director or from any other cause shall be filled solely by the affirmative vote of a majority of the total number of directors then in office, even if less than a quorum, or by a sole remaining director and shall not be filled by the stockholders. Any director elected to fill a vacancy not resulting from an increase in the number of directors shall hold office for the remaining term of his or her predecessor.
+
+-10-
+
+F. Removal. Any director or the entire Board may be removed from office at any time, with or without cause, by the affirmative vote of the holders of at least 66 2/3% in voting power of the stock of the Corporation entitled to vote thereon.
+
+G. Committees. Pursuant to the Bylaws, the Board may establish one or more committees to which may be delegated any or all of the powers and duties of the Board to the full extent permitted by law.
+
+H. Stockholder Nominations and Introduction of Business. Advance notice of stockholder nominations for election of directors and other business to be brought by stockholders before a meeting of stockholders shall be given in the manner provided by the Bylaws.
+
+SIXTH: Unless and except to the extent that the Bylaws shall so require, the election of directors of the Corporation need not be by written ballot.
+
+SEVENTH: To the fullest extent permitted by the DGCL as it now exists and as it may hereafter be amended, no director of the Corporation shall be personally liable to the Corporation or any of its stockholders for monetary damages for breach of fiduciary duty as a director; provided, however, that nothing contained in this Article SEVENTH shall eliminate or limit the liability of a director (i) for any breach of the director’s duty of loyalty to the Corporation or its stockholders, (ii) for acts or omissions not in good faith or which involve intentional misconduct or a knowing violation of law, (iii) pursuant to the provisions of Section 174 of the DGCL, or (iv) for any transaction from which the director derived an improper personal benefit. No repeal or modification of this Article SEVENTH shall apply to or have any adverse effect on any right or protection of, or any limitation of the liability of, a director of the Corporation existing at the time of such repeal or modification with respect to acts or omissions occurring prior to such repeal or modification.
+
+EIGHTH: The Corporation may indemnify, and advance expenses to, to the fullest extent permitted by law, any person who was or is a party to or is threatened to be made a party to any threatened, pending or completed action, suit or proceeding, whether civil, criminal, administrative or investigative by reason of the fact that the person is or was a director, officer, employee or agent of the Corporation, or is or was serving at the request of the Corporation as a director, officer, employee or agent of another corporation, partnership, joint venture, trust or other enterprise.
+
+NINTH: Subject to the terms of any series of Preferred Stock, any action required or permitted to be taken by the stockholders of the Corporation must be effected at an annual or special meeting of the stockholders called in accordance with the Bylaws and may not be effected by written consent in lieu of a meeting.
+
+TENTH: Special meetings of stockholders for any purpose or purposes may be called at any time by the majority of the Whole Board, the Chairman of the Board, the Chief Executive Officer of the Corporation or the Chairman of the Board or the Chief Executive Officer of the Corporation at the written request of one or more stockholders of record who have delivered such request in accordance with and subject to the procedures and conditions and any other provisions set forth in the Bylaws (as amended from time to time). Special
+
+-11-
+
+meetings of stockholders may not be called by any other person or persons. Business transacted at any special meeting of stockholders shall be limited to matters relating to the purpose or purposes stated in the notice of meeting.
+
+ELEVENTH: If any provision or provisions of this Certificate of Incorporation shall be held to be invalid, illegal or unenforceable as applied to any circumstance for any reason whatsoever: (i) the validity, legality and enforceability of such provisions in any other circumstance and of the remaining provisions of this Certificate of Incorporation (including, without limitation, each portion of any paragraph of this Certificate of Incorporation containing any such provision held to be invalid, illegal or unenforceable that is not itself held to be invalid, illegal or unenforceable) shall not in any way be affected or impaired thereby and (ii) to the fullest extent possible, the provisions of this Certificate of Incorporation (including, without limitation, each such portion of any paragraph of this Certificate of Incorporation containing any such provision held to be invalid, illegal or unenforceable) shall be construed so as to permit the Corporation to protect its directors, officers, employees and agents from personal liability in respect of their good faith service or for the benefit of the Corporation to the fullest extent permitted by law.
+
+The Corporation reserves the right at any time from time to time to amend, alter, change or repeal any provision contained in this Certificate of Incorporation, and any other provisions authorized by the DGCL may be added or inserted, in the manner now or hereafter prescribed by law; and all rights, preferences and privileges of whatsoever nature conferred upon stockholders, directors or any other persons whomsoever by and pursuant to this Certificate of Incorporation in its present form or as hereafter amended are granted subject to the right reserved in this Article ELEVENTH. Notwithstanding any other provision of this Certificate of Incorporation or any provision of law that might otherwise permit a lesser vote or no vote, but in addition to any affirmative vote of the holders of any series of Preferred Stock required by law or any affirmative vote of the holders of Class B Common Stock required by Section A.11 of Article FOURTH, by this Certificate of Incorporation or by any Preferred Stock Designation, the affirmative vote of the holders of a majority in voting power of the stock of the Corporation entitled to vote thereon shall be required to amend, alter, change or repeal any provision of this Certificate of Incorporation, or to adopt any new provision of this Certificate of Incorporation; provided, however, that the affirmative vote of the holders of at least 66 2/3% in voting power of the stock of the Corporation entitled to vote thereon shall be required to amend, alter, change or repeal, or adopt any provision inconsistent with, any of Article FIFTH, Article SEVENTH, Article EIGHTH, Article NINTH, Article TENTH, Article TWELFTH, Article THIRTEENTH, and this sentence of this Certificate of Incorporation, or in each case, the definition of any capitalized terms used therein or any successor provision (including, without limitation, any such article or section as renumbered as a result of any amendment, alteration, change, repeal or adoption of any other provision of this Certificate of Incorporation). Any amendment, repeal or modification of any of Article SEVENTH, Article EIGHTH, and this sentence shall not adversely affect any right or protection of any person existing thereunder with respect to any act or omission occurring prior to such repeal or modification.
+
+TWELFTH: In furtherance and not in limitation of the powers conferred upon it by law, the Board is expressly authorized and empowered to adopt, amend and repeal the Bylaws by the affirmative vote of a majority of the Whole Board. Notwithstanding any other provision of
+
+-12-
+
+this Certificate of Incorporation or any provision of law that might otherwise permit a lesser vote or no vote, but in addition to any affirmative vote of the holders of any series of Preferred Stock required by law, by this Certificate of Incorporation or by any Preferred Stock Designation, the Bylaws may also be amended, altered or repealed and new Bylaws may be adopted by the affirmative vote of the holders of at least 66 2/3% in voting power of the stock of the Corporation entitled to vote thereon.
+
+THIRTEENTH: Unless the Corporation consents in writing to the selection of an alternative forum, the Court of Chancery of the State of Delaware shall, to the fullest extent permitted by law, be the sole and exclusive forum for (1) any derivative action or proceeding brought on behalf of the Corporation, (2) any action asserting a claim of breach of a fiduciary duty owed by any director, officer or other employee of the Corporation to the Corporation or the Corporation’s stockholders, (3) any action arising pursuant to any provision of the DGCL, or (4) any action asserting a claim governed by the internal affairs doctrine. Any person or entity purchasing or otherwise acquiring or holding any interest in shares of capital stock of the Corporation shall be deemed to have notice of and consented to the provisions of this Article THIRTEENTH.
+
+* * *
+
+[Remainder of Page Intentionally Left Blank]
+
+-13-
+
+IN WITNESS WHEREOF, the undersigned has executed this Amended and Restated Certificate of Incorporation as of this 25th day of June, 2021.
+
+By: /s/ Josh Faddis
+
+Name: Josh Faddis
+
+Title: Corporate Secretary
+
+-14-

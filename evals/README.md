@@ -15,10 +15,12 @@ This corpus uses multiple tactics:
 evals/
 ├── documents/
 │   └── <company-slug>-cert-of-incorporation/
-│       ├── <original-exhibit-file>.htm   # unmodified source document
+│       ├── <original-exhibit-file>.txt   # plain-text extraction, committed
 │       └── metadata.json
 └── evals.json                            # test prompts, referencing documents/
 ```
+
+`<original-exhibit-file>.txt` is generated from the filed `.htm`/`.txt` exhibit by [`extract_text.py`](extract_text.py) when the document is added (see "Adding to the corpus" below). The raw `.htm` download is never committed — only the extraction is. If extraction looks wrong for some document (a mangled table, dropped text), fix `extract_text.py` and regenerate; don't hand-edit the `.txt`.
 
 ### `metadata.json` format
 
@@ -51,13 +53,15 @@ This corpus exists to validate report generation deterministically against a sta
 * An eval prompt can motivate *why* the user is asking.
 * An eval prompt should not explicitly name or request a narrower slice of the report.
 
-## Adding to the corpus
+## Adding to the Corpus
 
 1. Find a Certificate/Articles of Incorporation on [SEC EDGAR full text search](https://www.sec.gov/edgar/search/) (or another public-record source).
-2. When querying `sec.gov`/`efts.sec.gov`, send a descriptive `User-Agent` header with a contact email, and keep request rates low — see the [EDGAR fair access guidance](https://www.sec.gov/os/webmaster-faq#developers).
-3. Save the unmodified document plus a `metadata.json` under `documents/<company-slug>-cert-of-incorporation/`.
-4. Note in `metadata.json` which attribute(s) this document is meant to exercise.
-5. Add or update the corresponding entry in `evals.json`.
+1. When querying `sec.gov`/`efts.sec.gov`, send a `User-Agent` header with a contact email, and keep request rates low.
+1. Save the downloaded `.htm` plus a `metadata.json` under `documents/<company-slug>-cert-of-incorporation/`.
+1. Run `python3 extract_text.py documents/<company-slug>-cert-of-incorporation/<file>.htm` to generate the `.txt` extraction.
+1. Delete the `.htm`.
+1. Note in `metadata.json` which attribute(s) this document is meant to exercise.
+1. Add or update the corresponding entry in `evals.json`, referencing the `.txt` file.
 
 ## Running the Eval Loop
 

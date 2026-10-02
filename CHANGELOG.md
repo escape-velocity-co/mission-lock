@@ -5,6 +5,7 @@
 - Eval corpus: Add *Incorruptible* examples: Veeva Systems, United Therapeutics, Warby Parker.
 - Eval corpus: Capture which charters are featured in *Incorruptible*.
 - Eval corpus: cache prompts by bundling into subagents in the eval runner (~50% faster, ~40% fewer tokens).
+- Eval corpus: replace committed raw `.htm` exhibits with plain-text extractions (`evals/extract_text.py`), generated when a document is added and committed in place of the `.htm`.
 - Added "Amendment Supermajority Requirements for PBC/Purpose Article(s)" attribute (A5), capturing whether a supermajority is required to action on these declarations generally or specifically.
 - Clarifying that our eval suite tests report generation (since that's deterministically verifiable).
 - Added "Governing Jurisdiction" attribute, capturing the state (or country) under whose corporate statute the company is incorporated.
