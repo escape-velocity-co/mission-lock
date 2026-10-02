@@ -8,6 +8,8 @@ This project contains the "Mission Lock Analyzer" (aka "MLA") skill and its eval
 - **Assessment**: Colloquially used to mean the results of a generating a full report against accessible governing documents.
 - **Definition**: A single Rule, Attribute, etc. defined in the skill itself (i.e. any file under [definitions/](skills/mission-lock/definitions))
 - **Docket**: The eval iteration results page. The Docket is built from [`evals/docket-template.html`](evals/docket-template.html) and saved as `docket.html` in a run's workspace directory. It contains one page per eval run, consisting of a grid of every eval against every rule. It is used by developers of the skill to grade eval runs.
+- **Mission Lock Analyzer**: this skill this project is responsible for developing.
+- **MLA**: See "Mission Lock Analyzer".
 - **Report**: The per-document analysis MLA produces for an end user, in either [`Markdown`](skills/mission-lock/assets/report-template.md) or [HTML](skills/mission-lock/assets/report-template.html).
 - **Report Template**: see "Report".
 - **Rule**: A qualitative, subjective interpretation made by the MLA skill. For example, is the mission stated in a breachable way? Rules can be built on the findings of other definitions (e.g. Attributes, Rules) for consistency and optimization.
