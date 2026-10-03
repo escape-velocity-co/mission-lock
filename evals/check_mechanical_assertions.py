@@ -2,31 +2,14 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-"""Pre-check the purely structural assertions in evals.json against a
-report.md, so a human/LLM grader only has to spend judgment on the
-assertions that actually require reading and reasoning about the document.
-
-This does NOT replace grading. It only recognizes a handful of recurring
-assertion *shapes* that are checkable by string/structure matching alone
-(section presence, forbidden-keyword absence, "Could not determine" absence
-when none is expected). Every other assertion is left "not automated" for
-a human or grader agent to judge normally — this script is conservative on
-purpose: a false PASS here would silently skip real grading, so any pattern
-it isn't confident about is left unclassified rather than guessed at.
-
-It also runs a fixed set of template-conformance checks on every report,
-independent of any eval's assertions (banner placement, Result vocabulary,
-bare document-list lines, no extra content in the rule blocks), so drift
-from report-template.md is visible on every run rather than only when a
-grader happens to notice it.
+"""
+This script checks the structural assertions in evals.json against a
+report.md; an optimization in the eval process to reduce reliance on
+an LLM.
 
 Usage:
     python3 check_mechanical_assertions.py <path/to/report.md> --eval-id <N>
     python3 check_mechanical_assertions.py <path/to/report.md> --assertions-file <path/to/eval_metadata.json>
-
-Either --eval-id (looked up in this repo's evals/evals.json) or
---assertions-file (a JSON file with an "assertions" list, e.g. an
-eval_metadata.json from a workspace run) must be given.
 """
 import argparse
 import json
