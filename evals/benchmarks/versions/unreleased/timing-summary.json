@@ -1,132 +1,132 @@
 {
-  "iteration": 2,
-  "generated_utc": "2026-09-29T23:04:22Z",
+  "iteration": 17,
+  "generated_utc": "2026-10-03T04:53:35Z",
   "skill_version": "0.2.0",
   "model": "sonnet",
   "effort": "medium",
   "evals": [
     {
-      "name": "eval-1",
+      "name": "eval-vital-farms-pbc",
       "id": 1,
-      "tokens": 32824,
-      "duration_ms": 36303,
+      "tokens": 37512,
+      "duration_ms": 41809,
       "tool_uses": 2,
       "model": "sonnet",
       "effort": "medium"
     },
     {
-      "name": "eval-4",
+      "name": "eval-squarespace-dual-class",
       "id": 4,
-      "tokens": 37995,
-      "duration_ms": 64992,
-      "tool_uses": 9,
-      "model": "sonnet",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-5",
-      "id": 5,
-      "tokens": 44262,
-      "duration_ms": 49319,
-      "tool_uses": 5,
-      "model": "sonnet",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-6",
-      "id": 6,
-      "tokens": 40472,
-      "duration_ms": 56279,
-      "tool_uses": 6,
-      "model": "sonnet",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-8",
-      "id": 8,
-      "tokens": 33134,
-      "duration_ms": 34196,
-      "tool_uses": 5,
-      "model": "sonnet",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-9",
-      "id": 9,
-      "tokens": 35746,
-      "duration_ms": 36228,
-      "tool_uses": 6,
-      "model": "sonnet",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-10",
-      "id": 10,
-      "tokens": 42756,
-      "duration_ms": 65067,
-      "tool_uses": 7,
-      "model": "sonnet",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-11",
-      "id": 11,
-      "tokens": 27550,
-      "duration_ms": 27238,
+      "tokens": 74338,
+      "duration_ms": 59391,
       "tool_uses": 3,
       "model": "sonnet",
       "effort": "medium"
     },
     {
-      "name": "eval-12",
+      "name": "eval-lemonade-purpose-amendment",
+      "id": 5,
+      "tokens": 56891,
+      "duration_ms": 48907,
+      "tool_uses": 2,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-laureate-bundled-preferred",
+      "id": 6,
+      "tokens": 75450,
+      "duration_ms": 111095,
+      "tool_uses": 7,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-lemonade-legally-binding",
+      "id": 8,
+      "tokens": 57603,
+      "duration_ms": 57236,
+      "tool_uses": 2,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-squarespace-legally-binding",
+      "id": 9,
+      "tokens": 73359,
+      "duration_ms": 54550,
+      "tool_uses": 3,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-vital-farms-precedence",
+      "id": 10,
+      "tokens": 76706,
+      "duration_ms": 118657,
+      "tool_uses": 4,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-slifka-draft-conflict",
+      "id": 11,
+      "tokens": 36181,
+      "duration_ms": 62879,
+      "tool_uses": 3,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-meridian-robotics-non-pbc",
       "id": 12,
-      "tokens": 23598,
-      "duration_ms": 14639,
+      "tokens": 29725,
+      "duration_ms": 23718,
       "tool_uses": 2,
       "model": "sonnet",
       "effort": "medium"
     },
     {
-      "name": "eval-13",
+      "name": "eval-first-keystone-bylaws-carveout",
       "id": 13,
-      "tokens": 38925,
-      "duration_ms": 48400,
-      "tool_uses": 5,
+      "tokens": 61181,
+      "duration_ms": 81222,
+      "tool_uses": 3,
       "model": "sonnet",
       "effort": "medium"
     },
     {
-      "name": "eval-14",
+      "name": "eval-veeva-pbc-conversion",
       "id": 14,
-      "tokens": 41876,
-      "duration_ms": 44356,
-      "tool_uses": 4,
-      "model": "sonnet",
-      "effort": "medium"
-    },
-    {
-      "name": "eval-15",
-      "id": 15,
-      "tokens": 33356,
-      "duration_ms": 30610,
+      "tokens": 46470,
+      "duration_ms": 52788,
       "tool_uses": 2,
       "model": "sonnet",
       "effort": "medium"
     },
     {
-      "name": "eval-16",
+      "name": "eval-united-therapeutics-pbc",
+      "id": 15,
+      "tokens": 39630,
+      "duration_ms": 40200,
+      "tool_uses": 2,
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    {
+      "name": "eval-warby-parker-rename",
       "id": 16,
-      "tokens": 39533,
-      "duration_ms": 50135,
-      "tool_uses": 4,
+      "tokens": 62906,
+      "duration_ms": 70511,
+      "tool_uses": 2,
       "model": "sonnet",
       "effort": "medium"
     }
   ],
   "totals": {
-    "tokens": 472027,
-    "duration_ms": 557762,
-    "tool_uses": 60
+    "tokens": 727952,
+    "duration_ms": 822963,
+    "tool_uses": 37
   },
-  "wall_clock_ms": 65067
+  "wall_clock_ms": 118657
 }
