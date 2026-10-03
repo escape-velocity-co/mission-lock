@@ -2,17 +2,8 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
-"""Extract plain text from a SEC EDGAR exhibit .htm file.
-
-Unlike parse_attributes.py/parse_rules.py, which re-read their source
-fresh on every call, this script's output is meant to be generated once
-and committed: when a document is added to the corpus, run this against
-the downloaded exhibit, review the .txt it produces, then delete the
-.htm and commit only the .txt (plus metadata.json). The raw .htm is a
-transient download, never a repo artifact — see "Adding to the corpus"
-in evals/README.md. If extraction turns out wrong for some document,
-fix this script and regenerate; never hand-edit a .txt directly.
+"""
+Extract plain text from a SEC EDGAR exhibit .htm file.
 """
 
 import html

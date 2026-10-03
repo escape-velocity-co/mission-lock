@@ -2,21 +2,10 @@
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
-
-"""Parse skills/mission-lock/definitions/attributes.md into structured data.
-
-Mirrors parse_rules.py for the attribute catalog. There's no docket
-consumer for this today (the results docket's columns are rules, not
-attributes — see CLAUDE.md's "Attribute Catalog Change Workflow"), so
-this exists mainly as the same kind of structural-sanity check
-parse_rules.py gives rules.md: a malformed bullet, a missing field, or a
-duplicate/skipped attribute ID will surface here rather than fail
-silently. Read fresh every time it's used — this content changes as the
-attribute catalog evolves.
 """
-
+Parse skills/mission-lock/definitions/attributes.md into structured data.
+"""
 import re
-
 
 def parse_attributes_md(path):
     """Return {attribute_id: {name_plain, definition, response_options,
