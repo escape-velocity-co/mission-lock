@@ -8,10 +8,28 @@ MLA analyzes a company's governing documents and assesses conditions related to 
 
 ## Installation
 
-* The latest stable release can always be found on the [Releases](https://github.com/rslifka/mission-lock/releases) page.
-* To install directly, point at the skill itself: `https://github.com/rslifka/mission-lock/tree/main/skills/mission-lock` 
+* Latest stable: found on the [Releases](https://github.com/rslifka/mission-lock/releases) page.
+* In development: `https://github.com/rslifka/mission-lock/tree/main/skills/mission-lock` 
 
 ## Structure
 
-* [`skills/mission-lock/SKILL.md`](skills/mission-lock/SKILL.md) - skill behaviour
-* [`evals/README.md`](evals/README.md) - eval suite
+```
+mission-lock/
+├── README.md            👋
+├── CLAUDE.md            instructions for Claude Code
+├── CHANGELOG.md         
+├── skills/
+│   └── mission-lock/    ← the installable skill
+│       ├── SKILL.md     skill behaviour & metadata
+│       ├── definitions/ assessment descriptions
+│       └── assets/      report templates
+│
+├── evals/               eval harness
+│   ├── evals.json       assertions checked per assessment
+│   ├── documents/       sample governing documents
+│   └── benchmarks/      eval run history
+│
+└── .claude/
+    ├── agents/          placeholder for eval runner subagent
+    └── skills/          change workflows
+```
