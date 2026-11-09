@@ -1,6 +1,6 @@
 # Mission Lock Analyzer
 
-This is the development repository for the "Mission Lock Analyzer" (MLA) skill. If you're looking for the skill itself, here too, but [a little further on in](https://github.com/rslifka/mission-lock/tree/main/skills/mission-lock).
+This is the development repository for the "Mission Lock Analyzer" (MLA) skill. If you're looking for the skill itself, here too, but [a little further on in](skills/mission-lock).
 
 MLA analyzes a company's governing documents and assesses conditions related to the concept of "Mission Lock": qualities that affect how durably a company's mission is protected. These are mechanisms like Public Benefit Corporation status, purpose declaration and amendment thresholds.
 
