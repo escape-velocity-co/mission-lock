@@ -54,3 +54,11 @@ Packaging is performed via Anthropic's [`skill-creator`](https://github.com/anth
 1. Package from the `skill-creator` plugin's `skills/skill-creator/` directory: ```python3 -m scripts.package_skill /path/to/skills/mission-lock /path/to/mission-lock/dist```
 1. Rename the output file to `mla-<version>.zip` where `<version>` is the value from `SKILL.md`'s `metadata.version` field.
 1. Place the output file in `dist/` at the repo root.
+
+## Publishing a Release
+
+1. Tag the release commit `v<version>`.
+1. Create a GitHub release for that tag:
+    1. Title the release `v<version>`
+    1. Attach `dist/mla-<version>.zip` to the release.
+    1. Include the contents of the [`CHANGELOG.md`](CHANGELOG.md) for that version, copied verbatim (its `###` sections and bullets, without the `## [<version>]` heading).
