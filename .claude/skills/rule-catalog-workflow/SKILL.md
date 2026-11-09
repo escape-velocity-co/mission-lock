@@ -1,6 +1,8 @@
 ---
 name: rule-catalog-workflow
 description: Checklist to run whenever a Rule in skills/mission-lock/definitions/rules.md is added, edited, or removed. Covers evals.json coverage, SKILL.md's rule-reuse guidance, and the parse/check scripts. Use this before considering any Rule catalog change done.
+metadata:
+  internal: true
 ---
 
 # Rule Catalog Change Workflow

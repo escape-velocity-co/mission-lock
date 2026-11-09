@@ -1,6 +1,8 @@
 ---
 name: attribute-catalog-workflow
 description: Checklist to run whenever an attribute in skills/mission-lock/definitions/attributes.md is added, edited, or removed. Covers evals.json coverage, SKILL.md's attribute-reuse guidance, and the parse/check scripts. Use this before considering any Attribute catalog change done.
+metadata:
+  internal: true
 ---
 
 # Attribute Catalog Change Workflow

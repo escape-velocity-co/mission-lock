@@ -42,6 +42,7 @@ When a **notable** change is made:
 
 When `metadata.version` is bumped:
 1. Rename `[Unreleased]` to the new version (adding today's date) and start an empty `[Unreleased]` above it.
+1. In [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json), set the plugin entry's `version` to the new version and its `source.ref` to the release tag (`v<new-version>`), so plugin installs get the release rather than `main`.
 1. Rename `evals/benchmarks/versions/unreleased/` to `evals/benchmarks/versions/<new-version>/`, add a row for that version to `evals/benchmarks/history.md`, and start a new `unreleased/` snapshot from the next eval suite run.
 
 ## Packaging the Skill
@@ -51,5 +52,5 @@ Packaging is performed via Anthropic's [`skill-creator`](https://github.com/anth
 1. Confirm that `skills/mission-lock/LICENSE.txt` is identical to the root `LICENSE` (e.g. `cmp LICENSE skills/mission-lock/LICENSE.txt`).
 1. Package the contents of `skills/mission-lock/`.
 1. Package from the `skill-creator` plugin's `skills/skill-creator/` directory: ```python3 -m scripts.package_skill /path/to/skills/mission-lock /path/to/mission-lock/dist```
-1. Rename the output file to `mla-<version>.skill` where `<version>` is the value from `SKILL.md`'s `metadata.version` field.
+1. Rename the output file to `mla-<version>.zip` where `<version>` is the value from `SKILL.md`'s `metadata.version` field.
 1. Place the output file in `dist/` at the repo root.

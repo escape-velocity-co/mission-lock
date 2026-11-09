@@ -6,11 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-09
+
 ### Added
 
 - Attribute A4: "Governing Jurisdiction", capturing the state (or country) under whose corporate statutes the company is incorporated.
-- Attribute A5: "Supermajority/Veto Requirements for PBC/Purpose Article(s) Amendments" attribute), capturing whether amendment voting rights require elevated privileges.
-- Attribute A6: "Supermajority/Veto Requirements for Mergers, Consolidations, or Reorganizations" attribute), capturing whether liquidation actions require elevated privileges.
+- Attribute A5: "Supermajority/Veto Requirements for PBC/Purpose Article(s) Amendments", capturing whether amendment voting rights require elevated privileges.
+- Attribute A6: "Supermajority/Veto Requirements for Mergers, Consolidations, or Reorganizations", capturing whether liquidation actions require elevated privileges.
 - Eval: Add *Incorruptible* examples: Veeva Systems, United Therapeutics, Warby Parker.
 - Claude Code plugin marketplace (`.claude-plugin/marketplace.json`), so the skill can be installed straight from this repo.
 

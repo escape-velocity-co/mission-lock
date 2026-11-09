@@ -6,9 +6,11 @@ MLA analyzes a company's governing documents and assesses conditions related to 
 
 ***This skill produces summaries for informational purposes. It is not legal advice, and its output should not be relied on as a substitute for review by a qualified attorney.***
 
-## Installation
+## Installation Options
 
-TODO 
+* Stable release: [Claude Plugin Marketplace (this repo)](https://github.com/escape-velocity-co/mission-lock/)
+* Stable release: Skill archive (see [Releases](https://github.com/escape-velocity-co/mission-lock/releases) for the latest)
+* In development: [Skill source](https://github.com/escape-velocity-co/mission-lock/tree/main/skills/mission-lock)
 
 ## Structure
 
