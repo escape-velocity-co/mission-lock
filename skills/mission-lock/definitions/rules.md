@@ -1,6 +1,6 @@
 # Mission-Lock Rules
 
-This is the catalog of "Mission Lock" rules this skill checks for when analyzing a company's governing documents. These rules may make use of attributes defined in [`skills/mission-lock/definitions/attributes.md`](skills/mission-lock/definitions/attributes.md).
+This is the catalog of "Mission Lock" rules this skill checks for when analyzing a company's governing documents. These rules may make use of attributes defined in [`attributes.md`](attributes.md).
 
 ## Confidence Requirements and Conflict Resolution
 
@@ -10,7 +10,7 @@ Confidence requirements and conflict resolution guidelines are present in [confi
 
 Append a new section to "Rule Definitions" following the template below.
 
-There is no "Response Options" field in the template.  Whereas [`skills/mission-lock/definitions/attributes.md`](skills/mission-lock/definitions/attributes.md) defines different response options per Attribute, Rules response options are the same for all Rules:
+There is no "Response Options" field in the template.  Whereas [`attributes.md`](attributes.md) defines different response options per Attribute, Rules response options are the same for all Rules:
 
   * Affirmative
   * Not affirmative
@@ -25,11 +25,11 @@ There is no "Response Options" field in the template.  Whereas [`skills/mission-
 
 **Affirmative Condition:** What condition(s) is/are required for this rule check to succeed.
 
-**Categories of Evidence:** Examples of items whose presence would construe evidence of this making this assertion.
+**Categories of Evidence:** Examples of items whose presence would be evidence supporting this assertion.
 
 **Typically Found Location:** The documents and location(s) within a document this information typically resides. Legal documents are relatively standard and most information will be where we expect. 
 
-**When to say "Could not determine:"** This presence of this in the template is optional. It is provided when conditions exist in the governance documents such that it is not possible for this skill to make an assertion.
+**When to say "Could not determine:"** This field is optional. It is provided when conditions exist in the governance documents such that it is not possible for this skill to make an assertion.
 ```
 
 ## Rule Definitions

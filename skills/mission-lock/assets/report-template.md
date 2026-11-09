@@ -27,7 +27,7 @@
   7. The prototype banner (the line of 🟡 PROTOTYPE emoji above the
      title) is fixed content, not a placeholder — carry it through
      unchanged, verbatim, on its own line. Remove this whole step, and
-     the banner line below, once the skill is out of development.
+     the banner line below, at v1.0.
   8. {{SKILL_VERSION}}: the `metadata.version` field from
      skills/mission-lock/SKILL.md's own frontmatter — read it fresh each
      time rather than reusing a value from a previous report, since it

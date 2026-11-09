@@ -4,7 +4,7 @@ This is the catalog of Mission Lock attributes this skill considers when analyzi
 
 ## Confidence Requirements and Conflict Resolution
 
-Confidence requirements and  and conflict resolution guidelines are present in [confidence-requirement.md](confidence-requirement.md). As these are likely to update over time as new types of confidence and conflicts surface, you should read this file at each usage; do not rely on memory of it.
+Confidence requirements and conflict resolution guidelines are present in [confidence-requirement.md](confidence-requirement.md). As these are likely to update over time as new types of confidence and conflicts surface, you should read this file at each usage; do not rely on memory of it.
 
 ## Adding New Attributes
 
@@ -23,7 +23,7 @@ Append a new `###` section following the template below.
 
 **Typically Found In:** The documents and location(s) within a document this information typically resides.
 
-**Could not Determine:** This is an optional template field that catalogs **specific** scenarios in which "Could not determine" is an appropriate response. The **general** scenarios for "Could not determine" are defined in the "Confidence Requirement" section above.
+**Could not Determine:** This is an optional template field that catalogs **specific** scenarios in which "Could not determine" is an appropriate response. The **general** scenarios for "Could not determine" are defined in [confidence-requirement.md](confidence-requirement.md).
 ```
 
 ## Attribute Definitions

@@ -50,15 +50,17 @@ evals/
   "source_url": "https://www.sec.gov/Archives/edgar/data/...",
   "entity_type": "public benefit corporation",
   "state_of_incorporation": "Delaware",
-  "note": "Explicit public benefit purpose clause; included as a positive example for the Stated Purpose Clause and Entity Type attributes."
+  "note": "Explicit public benefit purpose clause; included as a positive example for the Stated Purpose (A3) and Public Benefit Corporation Status (A2) attributes."
 }
 ```
+
+When a folder holds more than one document (e.g. a certificate plus bylaws, or two drafts), list them in a `documents` array instead of a top-level `source_url`, with one object per file giving its `file` name, `source_url` and a short description. Synthetic fixtures set `"synthetic": true` and describe what they exercise (e.g. `designed_to_test`); see the existing `*-synthetic-*` folders for examples.
 
 `featured` is `true` if the company appears in the book *Incorruptible*, `false` if it does not.
 
 ## Test Creation
 
-Tests are created following the pattern from Anthropic's `skill-creator`. Prompts and expectations are present in [evals.json](evals.json), as well as the documents those prompts are evaluating. See the eval schema (`references/schemas.md` in [anthropics/skills](https://github.com/anthropics/skills)) for the full spec.
+Tests are created following the pattern from Anthropic's `skill-creator`. Prompts and expectations are present in [evals.json](evals.json), as well as the documents those prompts are evaluating. See the eval schema ([`references/schemas.md`](https://github.com/anthropics/skills/blob/main/skills/skill-creator/references/schemas.md) in Anthropic's `skill-creator`) for the full spec.
 
 ### Guidance for Creating Prompts and Expectations
 

@@ -16,23 +16,25 @@ MLA analyzes a company's governing documents and assesses conditions related to 
 
 ```
 mission-lock/
-├── README.md            👋
-├── CLAUDE.md            
-├── CHANGELOG.md         
-├── skills/
-│   └── mission-lock/    MLA
-│       ├── SKILL.md     
-│       ├── definitions/ Assessment descriptions
-│       └── assets/      Report templates
-│
-├── evals/               Eval harness
-│   ├── evals.json       Assertions checked per assessment
-│   ├── documents/       Sample governing documents
-│   └── benchmarks/      Eval run history (to monitor/optimize performance)
-│
-└── .claude/
-    ├── agents/          Placeholder for eval runner subagent(s)
-    └── skills/          Skill change workflows
+├── README.md               👋
+├── CLAUDE.md
+├── CHANGELOG.md
+├── LICENSE                 MPL-2.0
+├── THIRD_PARTY_NOTICES.md  
+├── .claude/
+│   ├── agents/             Placeholder for eval runner subagent(s)
+│   └── skills/             Skills for MLA development change workflows
+├── .claude-plugin/         Claude plugin marketplace
+├── evals/                  Eval harness (see evals/README.md)
+│   ├── evals.json          Assertions checked per assessment
+│   ├── documents/          Sample governing documents
+│   └── benchmarks/         Eval run history (to monitor/optimize performance)
+└── skills/   
+    └── mission-lock/       MLA
+        ├── SKILL.md   
+        ├── LICENSE.txt     Copy of LICENSE (packaged with the MLA)
+        ├── definitions/    Assessment descriptions
+        └── assets/         Report templates
 ```
 
 ## License

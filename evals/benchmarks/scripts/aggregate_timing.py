@@ -6,8 +6,8 @@ Reads timing data from a workspace iteration directory (e.g.
 skills/mission-lock-workspace/iteration-11/eval-*/with_skill/run-1/timing.json
 — gitignored, ephemeral) and writes the rolled-up summary to an output
 directory under evals/benchmarks/ (tracked) — normally
-evals/benchmarks/versions/unreleased/, per CLAUDE.md's "Maintaining the
-Changelog" workflow. That output directory only ever holds the latest
+evals/benchmarks/versions/unreleased/, per evals/benchmarks/README.md's
+"Maintaining the Benchmarks". That output directory only ever holds the latest
 snapshot; this script overwrites it in place rather than accumulating one
 per run.
 

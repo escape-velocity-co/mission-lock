@@ -29,8 +29,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - Claims included in prompts should not be echoed back as though they were findings the skill derived.
 - Modified M3's "Affirmative Condition" to require the PBC-or-equivalent election be made in the certificate of incorporation itself (as required by law).
+- If a governance document is incomplete, provide a conversational warning (i.e. not part of the report).
+- Corrected outdated field names and cross-references across the skill and evals.
 
-## [0.1.0]
+## [0.1.0] - 2026-09-17
 
 Initial release.
 

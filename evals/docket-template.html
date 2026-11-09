@@ -11,8 +11,7 @@
   fields per rule as of skill version 0.2.0+; if a future report
   format reintroduces a separate Assertion field or otherwise changes
   this shape, this template's popover markup/script need the matching
-  update — see the note near {{RESULT_EVIDENCE_HTML}} below, and
-  CLAUDE.md's guidance on keeping this in sync.) Hovering a column's rule
+  update — see the note near {{RESULT_EVIDENCE_HTML}} below.) Hovering a column's rule
   ID or name (in the header, not a result cell) shows a second kind of
   popover instead — that rule's actual definition, copied verbatim from
   definitions/rules.md, so a reader can check what a column means without
@@ -34,8 +33,8 @@
   tokens) — never a placeholder. It stays the same fixed amber regardless
   of the docket's own dark-only palette, exactly as it stays fixed across
   report-template.html's light/dark modes. Remove this whole banner
-  (style block, tokens, and markup) from both files together once the
-  skill is out of development — never remove it from just one.
+  (style block, tokens, and markup) from both files together at v1.0
+  — never remove it from just one.
 
   Legend: the "Propensity for Mission Lock" key, positioned inside the
   masthead beside the title (see the masthead-row note in the <style>

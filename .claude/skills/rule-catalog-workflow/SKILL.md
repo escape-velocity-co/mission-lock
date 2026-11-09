@@ -9,11 +9,11 @@ metadata:
 
 Whenever a Rule in [rules.md](../../../skills/mission-lock/definitions/rules.md) is added, edited, or removed, work through this checklist before considering the change done.
 
-If only the Name of the Rule has changed (i.e. the text after `###` that describes the Rule) you can ignore these steps. That is a cosmetic change that will not affect assessment.
+If only the Name of the Rule has changed (i.e. the text after `###` that describes the Rule), it is a cosmetic change that will not affect assessment, so you can skip the steps below except one: update the `CURRENT_RULE_HEADINGS` list in [check_mechanical_assertions.py](../../../evals/check_mechanical_assertions.py), plus any `evals.json` text that quotes the old name, so the structural checks keep matching.
 
 ## Adding or Editing a Rule
 
-During this workflow you may discover the corpus lacks a document exercising a needed case. If so, follow the guidance in the "Adding to the corpus" section of [README.md](../../../evals/README.md).
+During this workflow you may discover the corpus lacks a document exercising a needed case. If so, follow the guidance in the "Adding a Document to the Corpus" section of [evals/CLAUDE.md](../../../evals/CLAUDE.md).
 
 1. Ensure at least one eval in [evals.json](../../../evals/evals.json) exercises the Affirmative case.
 1. Ensure at least one eval in [evals.json](../../../evals/evals.json) exercises the Not affirmative case.
@@ -30,7 +30,7 @@ During this workflow you may discover the corpus lacks a document exercising a n
 
 1. Run `python3 evals/parse_rules.py` and confirm `rules.md` parses cleanly.
 1. Ensure that the `CURRENT_RULE_HEADINGS` list in [check_mechanical_assertions.py](../../../evals/check_mechanical_assertions.py) matches the Rule names in `rules.md`.
-1. Consider which portions of the eval suite need to be rerun (see [evals/README.md](../../../evals/README.md)'s "Running the Eval Loop") and rerun only those portions. Any eval that depends on this Rule directly or transitively is a candidate.
-1. Generate the results docket (per `evals/README.md`).
+1. Consider which portions of the eval suite need to be rerun (see [evals/CLAUDE.md](../../../evals/CLAUDE.md)'s "Running the Eval Loop") and rerun only those portions. Any eval that depends on this Rule directly or transitively is a candidate.
+1. Generate the results docket (per [evals/CLAUDE.md](../../../evals/CLAUDE.md)'s "Step 4 - Results").
 1. Surface the run's pass rate and any findings to the user.
 1. Wait for an explicit go-ahead before committing.

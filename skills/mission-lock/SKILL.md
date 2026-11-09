@@ -74,8 +74,8 @@ rules as it does for attributes.
 2. **Walk the attribute catalog.** Always read
    [definitions/attributes.md](definitions/attributes.md) fresh for the current
    list of mission-lock attributes. For each attribute:
-   - Give a definitive answer using that attribute's specific "Answer
-     options" (see the reference file) — or "Could not determine" if you
+   - Give a definitive answer using that attribute's specific "Response
+     Options" (see the reference file) — or "Could not determine" if you
      can't support an answer with specific document text. Read each
      attribute's "Could not Determine" guidance carefully: a
      confident negative or "this is generic boilerplate" is a valid,
@@ -88,7 +88,7 @@ rules as it does for attributes.
 3. **Walk the rule catalog.** Read
    [definitions/rules.md](definitions/rules.md) fresh for the current list of
    rules. For each rule:
-   - Answer the rule's stated "Question" using the universal response
+   - Answer the rule's stated "Query" using the universal response
      options defined at the top of `rules.md` — read them there rather than
      assuming them, since that file is the authority. As of this writing
      they are Affirmative / Not affirmative / Could not determine. Note that
@@ -128,9 +128,11 @@ rules as it does for attributes.
 
 5. **Write the report.** Default to the Markdown structure below. If the
    user asks for HTML, a webpage, or something to open in a browser
-   instead, use the HTML template described in "HTML report format"
+   instead, use the HTML template described in "HTML Report Structure"
    further down. Either way: no preamble narrating what was read or
-   confirming completeness before the report, and nothing after it.
+   confirming completeness before the report, and nothing after it. The
+   one exception is the incomplete-document warning described under
+   "Edge cases".
    Every report stamps {{SKILL_VERSION}} — read the `metadata.version`
    field from this file's own frontmatter at the top, never hardcode or
    recall a previous value, since it changes as the skill does.
@@ -199,8 +201,9 @@ chat response.
   comparison you can only make when you actually hold more than one
   document. If multiple documents *are* provided but
   you can't tell which one is the current, controlling version, that's the
-  conflicting-documents case in the Confidence Requirement section of
-  attributes.md/rules.md — the affected attribute(s) or rule(s) should come
+  conflicting-documents case in
+  [definitions/confidence-requirement.md](definitions/confidence-requirement.md)
+  — the affected attribute(s) or rule(s) should come
   back "Could not determine" rather than guessing which document to trust.
 - **Current v. prospective documents:** This skill will often be used
   when the user is drafting governance documents (e.g. in preparation
@@ -223,6 +226,8 @@ chat response.
   enough to answer confidently, that's a legitimate "Could not determine" —
   say so and explain the mismatch in that item's Evidence field.
 - **Incomplete documents:** If the provided document is missing pages or
-  clearly truncated, say so up front before the report. Missing the section
-  that would answer a given attribute or rule is exactly the kind of case
-  where "Could not determine" is the correct, honest answer.
+  clearly truncated, tell the user so conversationally in your response,
+  before the report. This warning is never part of the report itself.
+  Missing the section that would answer a given attribute or rule is
+  exactly the kind of case where "Could not determine" is the correct,
+  honest answer.
