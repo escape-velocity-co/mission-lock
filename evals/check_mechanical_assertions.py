@@ -46,6 +46,7 @@ CURRENT_RULE_HEADINGS = [
     "Mission Beyond Financial Profit",
     "Mission Breachability",
     "Mission is Paramount",
+    "Mission Entrenchment Against Ordinary-Majority Amendment",
 ]
 
 

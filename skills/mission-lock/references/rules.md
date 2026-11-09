@@ -94,3 +94,26 @@ There is no "Response Options" field in the template.  Whereas [`skills/mission-
 
 **Typically Found Location:** 
 * Articles of Incorporation
+
+### Mission Entrenchment Against Ordinary-Majority Amendment
+
+**ID:** M4
+
+**Query:** Does amending or removing the mission-related provisions (stated purpose, PBC-or-equivalent status, or any director mission-prioritization provision) require a two-thirds-or-greater shareholder vote, rather than being changeable by an ordinary-majority override?
+
+**Affirmative Condition:**
+* A mission-related provision exists: a stated purpose beyond the jurisdiction's default any-lawful-purpose formulation, a PBC-or-equivalent statutory election, or a director mission-prioritization provision. (In Delaware, the statutory election that also satisfies Mission is Paramount (M3) is the same provision that authorizes director prioritization, so a clause protecting the PBC-status article protects both at once — a separately named "benefit-director" article is not required.)
+* An elevated-vote provision reaches the article(s) stating that content. Reuse the Amendment Supermajority Requirements attribute's answer for this: it must read "Yes (Specifically)," naming the article(s) in question, or "Yes (Generally)," a blanket clause with no carve-out that by that attribute's own definition reaches every article.
+* The elevated threshold itself, as quoted or paraphrased in that attribute's evidence, is two-thirds (66⅔%) or greater of the shares or voting power entitled to vote generally — not merely "above the jurisdiction's ordinary default" if that margin still falls short of two-thirds, and not a majority confined to a single class or defined subset of shareholders (e.g. a "Preferred Majority" or "Requisite Investors" consent right defined as a majority of one series or class) standing in for an overall supermajority of the whole shareholder base.
+* You are not considering how hard the threshold would be to assemble in practice, who currently holds enough shares to trigger or block it, or whether the entrenchment is "good" policy — only what the document's own amendment mechanics require.
+
+**Categories of Evidence:**
+* Amendment Supermajority Requirements attribute's quoted elevated-vote clause, its voting group, and whether it names the mission-related article(s) or sweeps in every provision
+* The specific fraction or percentage the clause specifies, or, for a defined consent-right term (e.g. "Preferred Majority"), that term's own definition and the class it is confined to
+
+**Typically Found Location:** 
+* Certificate of Incorporation, usually in the same article as the general amendment-reservation clause, or in a dedicated protective-provisions article
+
+**When to say "Could not determine:"**
+* When the Amendment Supermajority Requirements attribute itself is "Could not determine"
+* When an elevated-vote clause reaches the mission-related article but uses an undefined term for the required vote (e.g. "supermajority") without stating or cross-referencing an actual fraction, so whether it meets or exceeds two-thirds cannot be confirmed or ruled out

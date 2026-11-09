@@ -109,8 +109,12 @@ rules as it does for attributes.
      any-lawful-purpose formulation" conditions, and Mission
      Breachability (M2)'s "identifies a domain and a direction" condition,
      are all read off the same underlying text as the Stated Purpose
-     attribute), reuse that attribute's already-determined answer and
-     citation.
+     attribute; Mission Entrenchment Against Ordinary-Majority Amendment
+     (M4)'s "elevated-vote provision reaches the mission-related article"
+     and "threshold is two-thirds or greater" conditions are both read off
+     the Amendment Supermajority Requirements attribute's own answer and
+     quoted threshold language), reuse that attribute's already-determined
+     answer and citation.
      If the depended-on attribute came back "Could not determine," the
      rule usually can't be more confident than that either — but check
      the rule's own "When to say Could not determine" guidance first,

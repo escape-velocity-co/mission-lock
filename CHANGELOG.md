@@ -2,6 +2,7 @@
 
 ## [Unreleased]
 
+- Added "Mission Entrenchment Against Ordinary-Majority Amendment" rule (M4), flagging whether amending or removing the mission-related provisions (stated purpose, PBC status, or director mission-prioritization) requires a two-thirds-or-greater shareholder vote, reusing the Amendment Supermajority Requirements attribute (A5).
 - Eval corpus: Add *Incorruptible* examples: Veeva Systems, United Therapeutics, Warby Parker.
 - Eval corpus: Capture which charters are featured in *Incorruptible*.
 - Eval corpus: cache prompts by bundling into subagents in the eval runner (~50% faster, ~40% fewer tokens).
