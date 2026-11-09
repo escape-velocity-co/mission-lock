@@ -1,7 +1,9 @@
 ---
 name: mission-lock
 description: Analyzes a company's governing documents (e.g. articles of incorporation, certificate of incorporation) for likelihood of "mission lock" - how protected the company's mission is. Use this whenever the user provides or references articles of incorporation, a certificate of incorporation, corporate charter, or formation documents (PDF, DOCX, plain text, or pasted content) and has questions regarding its mission, purpose and related concepts (e.g. PBC status) even if they don't say "mission lock" explicitly.
+license: MPL-2.0
 metadata:
+  author: Escape Velocity
   version: 0.2.0
 ---
 

@@ -48,6 +48,7 @@ When `metadata.version` is bumped:
 
 Packaging is performed via Anthropic's [`skill-creator`](https://github.com/anthropics/skills/tree/main/skills/skill-creator) skill.
 
+1. Confirm that `skills/mission-lock/LICENSE.txt` is identical to the root `LICENSE` (e.g. `cmp LICENSE skills/mission-lock/LICENSE.txt`).
 1. Package the contents of `skills/mission-lock/`.
 1. Package from the `skill-creator` plugin's `skills/skill-creator/` directory: ```python3 -m scripts.package_skill /path/to/skills/mission-lock /path/to/mission-lock/dist```
 1. Rename the output file to `mla-<version>.skill` where `<version>` is the value from `SKILL.md`'s `metadata.version` field.
