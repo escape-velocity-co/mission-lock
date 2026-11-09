@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-# This Source Code Form is subject to the terms of the Mozilla Public
-# License, v. 2.0. If a copy of the MPL was not distributed with this
-# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """Diff two timing-summary.json files (from aggregate_timing.py) and print
 the delta: totals (tokens/duration/tool_uses), wall-clock, and a per-eval
 breakdown, matched by eval id (so it still works if the eval corpus itself
