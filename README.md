@@ -8,7 +8,7 @@ MLA analyzes a company's governing documents and assesses conditions related to 
 
 ## Installation Options
 
-* Stable release: [Claude Plugin Marketplace (this repo)](https://github.com/escape-velocity-co/mission-lock/)
+* Stable release: [Escape Velocity Claude Plugin Marketplace](https://github.com/escape-velocity-co/claude-plugins)
 * Stable release: Skill archive (see [Releases](https://github.com/escape-velocity-co/mission-lock/releases) for the latest)
 * In development: [Skill source](https://github.com/escape-velocity-co/mission-lock/tree/main/skills/mission-lock)
 
@@ -24,7 +24,6 @@ mission-lock/
 ├── .claude/
 │   ├── agents/             Placeholder for eval runner subagent(s)
 │   └── skills/             Skills for MLA development change workflows
-├── .claude-plugin/         Claude plugin marketplace
 ├── evals/                  Eval harness (see evals/README.md)
 │   ├── evals.json          Assertions checked per assessment
 │   ├── documents/          Sample governing documents

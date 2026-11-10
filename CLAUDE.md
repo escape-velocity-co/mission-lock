@@ -42,7 +42,7 @@ When a **notable** change is made:
 
 When `metadata.version` is bumped:
 1. Rename `[Unreleased]` to the new version (adding today's date) and start an empty `[Unreleased]` above it.
-1. In [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json), set the plugin entry's `version` to the new version and its `source.ref` to the release tag (`v<new-version>`), so plugin installs get the release rather than `main`.
+1. In the [`escape-velocity-co/claude-plugins`](https://github.com/escape-velocity-co/claude-plugins) marketplace's `.claude-plugin/marketplace.json`, set the `mission-lock` entry's `version` to the new version and its `source.ref` to the release tag (`v<new-version>`).
 1. Rename `evals/benchmarks/versions/unreleased/` to `evals/benchmarks/versions/<new-version>/`, add a row for that version to `evals/benchmarks/history.md`, and start a new `unreleased/` snapshot from the next eval suite run.
 
 ## Packaging the Skill
