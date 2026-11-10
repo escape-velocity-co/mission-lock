@@ -19,7 +19,7 @@ body:
     id: item
     attributes:
       label: Rule or Attribute
-      description: "Which rule or attribute is wrong (name or ID, e.g. \"M3\" or "A5")."
+      description: Which rule or attribute is wrong (name or ID, e.g. M3, A5).
     validations:
       required: true
   - type: textarea
