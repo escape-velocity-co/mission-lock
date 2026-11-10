@@ -10,7 +10,7 @@ body:
         
         Charters that exercise something the corpus doesn't cover yet are the most useful.
 
-        *Remember, documents are public. Submit only what you're comfortable having published.**
+        *Remember, documents are public. Submit only what you're comfortable having published.*
   - type: input
     id: document
     attributes:
