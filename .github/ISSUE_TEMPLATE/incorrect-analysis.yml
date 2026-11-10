@@ -6,34 +6,31 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug! If you need real-time help, join us on Discord.
+        Thanks for taking the time to help! Just a reminder that documents here public.
   - type: input
     id: document
     attributes:
-      label: Document
+      label: Document(s)
       description: "Link or upload the document(s)"
-      placeholder: "Example Inc. — https://www.sec.gov/Archives/edgar/data/..."
     validations:
       required: true
   - type: input
     id: item
     attributes:
       label: Rule or Attribute
-      description: Which rule or attribute is wrong (name or ID, e.g. M3, A5).
+      description: Which rule or attribute?
     validations:
       required: true
   - type: textarea
     id: reported
     attributes:
       label: MLA Reporting
-      description: "The Result or Answer, plus its Evidence and Location."
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
       label: Expected Reporting
-      description: "What did you expect and why did you expect that?"
     validations:
       required: true
   - type: input
