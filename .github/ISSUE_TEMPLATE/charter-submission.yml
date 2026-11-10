@@ -21,12 +21,12 @@ body:
   - type: textarea
     id: why
     attributes:
-      label: What it would add
+      label: What Does It Add?
       description: Anything about this charter the corpus might not cover yet? We'll have a look either way!
   - type: checkboxes
     id: consent
     attributes:
-      label: Consent
+      label: Publication Consent
       options:
         - label: I'm comfortable with this charter being public, both in this issue and in the eval corpus.
           required: true
