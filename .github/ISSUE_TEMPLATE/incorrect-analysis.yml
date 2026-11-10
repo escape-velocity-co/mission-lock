@@ -6,8 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to help! Just a reminder that documents here public.
-  - type: input
+        Thanks for taking the time to help! Just a reminder that documents here are public.
+  - type: textarea
     id: document
     attributes:
       label: Document(s)
