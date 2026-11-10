@@ -6,46 +6,23 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for offering a charter1 Charters that exercise something the corpus doesn't cover yet are the most useful, e.g. a state other than Delaware, an unusual purpose clause, or uncommon amendment or voting requirements.
+        Thanks for offering a charter!
+        
+        Charters that exercise something the corpus doesn't cover yet are the most useful.
 
-        *Submit only a charter you're comfortable having published.**
+        *Remember, documents are public. Submit only what you're comfortable having published.**
   - type: input
-    id: company
-    attributes:
-      label: Company
-      placeholder: "Example Inc."
-    validations:
-      required: true
-  - type: textarea
     id: document
     attributes:
-      label: Charter
-      description: A link to the charter's public source (e.g. its SEC EDGAR exhibit or a state filing), or attach the file. If it was amended, include the current version.
-    validations:
-      required: true
-  - type: input
-    id: state
-    attributes:
-      label: State (or country) of incorporation
-      placeholder: "Texas"
-    validations:
-      required: true
-  - type: dropdown
-    id: entity-type
-    attributes:
-      label: Entity type
-      options:
-        - Public benefit corporation (or a state equivalent)
-        - Ordinary corporation
-        - Other
-        - Not sure
+      label: Document(s)
+      description: "Link or upload the document(s)"
     validations:
       required: true
   - type: textarea
     id: why
     attributes:
       label: What it would add
-      description: Anything about this charter the corpus might not cover yet. Optional; we'll look either way.
+      description: Anything about this charter the corpus might not cover yet? We'll have a look either way!
   - type: checkboxes
     id: consent
     attributes:
