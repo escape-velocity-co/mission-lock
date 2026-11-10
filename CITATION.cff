@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you build on Mission Lock Analyzer, whether its files or its ideas, please cite it as below."
+type: software
+title: "Mission Lock Analyzer"
+abstract: "A Claude skill that analyzes a company's governing documents and assesses conditions related to mission lock: qualities that affect how durably a company's mission is protected."
+authors:
+  - name: "Escape Velocity"
+    website: "https://www.escapevelocity.co/"
+repository-code: "https://github.com/escape-velocity-co/mission-lock"
+url: "https://github.com/escape-velocity-co/mission-lock"
+license: MPL-2.0
+version: "0.2.0"
+date-released: "2026-11-09"
+keywords:
+  - mission lock
+  - public benefit corporation
+  - corporate governance
+  - certificate of incorporation
+  - claude skill

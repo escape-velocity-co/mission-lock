@@ -1,0 +1,44 @@
+name: Incorrect analysis
+description: Mission Lock Analyzer reported something wrong about a document.
+title: "[Incorrect analysis]: "
+labels: ["incorrect analysis"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please share only **publicly available** documents. Never attach confidential or unfiled documents.
+  - type: input
+    id: document
+    attributes:
+      label: Document
+      description: The company and a link to the document's public source (e.g. its SEC EDGAR exhibit).
+      placeholder: "Example Inc. — https://www.sec.gov/Archives/edgar/data/..."
+    validations:
+      required: true
+  - type: input
+    id: item
+    attributes:
+      label: Rule or attribute
+      description: Which rule or attribute is wrong (name or ID, e.g. "M3" or "A5").
+    validations:
+      required: true
+  - type: textarea
+    id: reported
+    attributes:
+      label: What MLA reported
+      description: The Result or Answer, plus its Evidence and Location.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What it should have reported
+      description: The correct answer, and the document text (with article or section) that supports it.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Version and environment
+      description: The MLA version from the report's Appendix, and where you ran it (e.g. Claude Code, claude.ai) with which model.
+      placeholder: "v0.2.0, Claude Code, Claude Sonnet"
