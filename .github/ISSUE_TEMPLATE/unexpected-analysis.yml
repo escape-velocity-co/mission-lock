@@ -1,6 +1,6 @@
-name: Incorrect Analysis
+name: Unexpected Analysis
 description: Mission Lock Analyzer reported something unexpected during an analysis.
-title: "[Unexpected analysis] "
+title: "[Unexpected Analysis]: "
 labels: ["unexpected analysis"]
 body:
   - type: markdown

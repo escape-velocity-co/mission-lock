@@ -12,7 +12,7 @@ Where we could really use help are the following:
   * **[Request](https://github.com/escape-velocity-co/mission-lock/issues/new?template=charter-submission.yml) to add your charter to the corpus**: I'll have a look and see if it exercises something the corpus doesn't cover yet. *The corpus is public, as are charters, but if you're not comfortable with that, don't submit it.*
   * **Live feedback session**: Schedule a call with me (`rob at escapevelocity dot co`). If you've got a charter you'd like to go through together and I've got room, it would be great to connect.
 
-* **Report an incorrect analysis**: If MLA understood things unclearly or incorrectly, please [open an issue](https://github.com/escape-velocity-co/mission-lock/issues/new?template=incorrect-analysis.yml).
+* **Report an unexpected analysis**: If MLA understood things unclearly or incorrectly, please [open an issue](https://github.com/escape-velocity-co/mission-lock/issues/new?template=unexpected-analysis.yml).
 
 * **Improve analysis accuracy of the Attributes or Rules**: The corpus consists of as many positive and negative tests cases are required to fully exercise each Attribute and Rule, though it's certainly possible cases have been missed! Please open an [issue](https://github.com/escape-velocity-co/mission-lock/issues) should you discover one.
 
