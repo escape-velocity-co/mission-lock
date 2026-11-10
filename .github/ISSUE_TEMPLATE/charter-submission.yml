@@ -1,6 +1,6 @@
 name: Charter submission
 description: Suggest a charter to add to the eval corpus.
-title: "[Charter submission]: "
+title: "[Charter Submission]: "
 labels: ["charter submission"]
 body:
   - type: markdown
